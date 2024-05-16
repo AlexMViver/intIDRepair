@@ -84,12 +84,12 @@ awk 'BEGIN {FS=OFS=","} {sub(/\./,"/",$1); sub("_output$","",$1)}1' "$temp_file"
 
 sort -o "$temp_file" "$temp_file2"
 sed -i 's/#/./g' "$temp_file"
-sed -i 's/\(\)//g' "$temp_file"
+sed -i 's/()//g' "$temp_file"
 sort -t ',' -u -k2,2 "$temp_file" | awk 'BEGIN {FS=OFS=","} {print $1,$2}' > "$temp_file2"
 
 > "$temp_file"
 while IFS=, read -r string rest_of_line; do
-    match=$(awk -F',' -v search="$string" '$1 ~ search {print $2; exit}' "$projects_file")
+    match=$(awk -F',' -v search="$string" 'tolower($1) ~ tolower(search) {print $2; exit}' "$projects_file")
     if [ -n "$match" ]; then
         echo "$string,$rest_of_line,$match,." >> "$temp_file"
     else
