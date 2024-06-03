@@ -1,0 +1,6 @@
+Transforms the overall_results.csv file into a txt with the repaired tests
+
+awk -F ',' 'NR > 1 && $14 != "null" && $14 != "FAIL" && $14 !~ /wrongjsonfail/ && $14 != "" { print $4 }' overall_results.csv > repairedTests.txt
+
+
+

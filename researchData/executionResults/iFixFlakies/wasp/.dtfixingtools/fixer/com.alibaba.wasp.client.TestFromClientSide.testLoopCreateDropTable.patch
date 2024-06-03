@@ -1,0 +1,34 @@
+STATUS: CLEANER DOES NOT FIX
+MODIFIED: N/A
+MODIFIED FILE: N/A
+CLEANER: com.alibaba.wasp.client.TestFromClientSide.testInvalidDatatype
+CLEANER FILE: /home/alex/Repositories/wasp/src/test/java/com/alibaba/wasp/client/TestFromClientSide.java
+POLLUTER: com.alibaba.wasp.client.TestFromClientSide.testCreateTableAndIndex
+POLLUTER FILE: /home/alex/Repositories/wasp/src/test/java/com/alibaba/wasp/client/TestFromClientSide.java
+ORIGINAL CLEANER SIZE: 6
+NEW CLEANER SIZE: 6
+ELAPSED TIME: 0.0
+==========================
+@@ -0,0 +0,22 @@
++ {
++     {
++         try {
++         } catch (Throwable ex) {
++         } finally {
++         }
++     }
++     try {
++         Map<String, String> sqlGroup = new HashMap<String, String>();
++         sqlGroup.put(INSERT, "Insert into " + TABLE_NAME + " (column1,column2,column3) values ('abc','def',123);");
++         sqlGroup.put(SELECT_FOR_INSERT, "select column1,column2,column3,column4,column5 from " + TABLE_NAME + " where column1='abc' and column3=123;");
++         testSqlGroupExecute(sqlGroup);
++     } catch (Throwable ex) {
++     } finally {
++     }
++     {
++         try {
++         } catch (Throwable ex) {
++         } finally {
++         }
++     }
++ }

@@ -1,0 +1,81 @@
+ERROR StatusLogger Unable to locate a logging implementation, using SimpleLogger
+2024-04-26 13:59:08,807 [INFO] TableUtils dropping table 'foo'
+2024-04-26 13:59:08,930 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOO" not found; SQL statement:
+DROP TABLE `foo`  [42102-200]' for statement: DROP TABLE `foo` 
+2024-04-26 13:59:08,930 [INFO] TableUtils creating table 'foo'
+2024-04-26 13:59:08,947 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `foo` (`id` INTEGER AUTO_INCREMENT , `val` INTEGER , `equal` INTEGER , `string` VARCHAR(255) , PRIMARY KEY (`id`) ) 
+2024-04-26 13:59:08,960 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `foo` (`val` ,`equal` ,`string` ) VALUES (?,?,?)' and 3 args, changed 1 rows
+2024-04-26 13:59:08,960 [TRACE] BaseMappedStatement insert arguments: [1232131321, 0, null]
+2024-04-26 13:59:08,960 [DEBUG] BaseMappedStatement assigned id '1' from keyholder to 'id' in Foo object
+2024-04-26 13:59:08,966 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:59:08,966 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:59:08,967 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:08,968 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo`' with 0 args returned 1 results
+2024-04-26 13:59:08,968 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:08,970 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE `id` = 1' with 0 args
+2024-04-26 13:59:08,970 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE `id` = 1' with 0 args returned 1 results
+2024-04-26 13:59:08,971 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE (`id` = 1 AND `val` = 1232131321)' with 0 args
+2024-04-26 13:59:08,972 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE (`id` = 1 AND `val` = 1232131321)' with 0 args returned 1 results
+2024-04-26 13:59:08,973 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE (`id` = ? AND `val` = ?)' with 2 args
+2024-04-26 13:59:08,973 [TRACE] BaseMappedStatement prepared statement arguments: [1, 1232131321]
+2024-04-26 13:59:08,973 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE (`id` = ? AND `val` = ?)' with 2 args returned 1 results
+2024-04-26 13:59:08,973 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:59:08,974 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:59:08,974 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:59:08,974 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:59:08,976 [DEBUG] BaseMappedStatement update data with statement 'UPDATE `foo` SET `val` = ?, `equal` = ?, `string` = ? WHERE `id` = ?' and 4 args, changed 1 rows
+2024-04-26 13:59:08,976 [TRACE] BaseMappedStatement update arguments: [342342343, 0, null, 1]
+2024-04-26 13:59:08,976 [DEBUG] BaseMappedStatement refresh using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:59:08,977 [TRACE] BaseMappedStatement refresh arguments: [1]
+2024-04-26 13:59:08,978 [DEBUG] BaseMappedStatement delete data with statement 'DELETE FROM `foo` WHERE `id` = ?' and 1 args, changed 1 rows
+2024-04-26 13:59:08,978 [TRACE] BaseMappedStatement delete arguments: [1]
+2024-04-26 13:59:08,978 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got no results
+2024-04-26 13:59:08,978 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:59:08,979 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:08,979 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo`' with 0 args returned 0 results
+2024-04-26 13:59:08,979 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,029 [INFO] TableUtils dropping table 'foo'
+2024-04-26 13:59:09,031 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOO" not found; SQL statement:
+DROP TABLE `foo`  [42102-200]' for statement: DROP TABLE `foo` 
+2024-04-26 13:59:09,031 [INFO] TableUtils creating table 'foo'
+2024-04-26 13:59:09,032 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `foo` (`id` INTEGER AUTO_INCREMENT , `val` INTEGER , `equal` INTEGER , `string` VARCHAR(255) , PRIMARY KEY (`id`) ) 
+2024-04-26 13:59:09,033 [DEBUG] StatementExecutor query of 'SELECT COUNT(*) FROM `foo`' returned 0
+2024-04-26 13:59:09,033 [INFO] TableUtils dropping table 'foo'
+2024-04-26 13:59:09,035 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOO" not found; SQL statement:
+DROP TABLE `foo`  [42102-200]' for statement: DROP TABLE `foo` 
+2024-04-26 13:59:09,035 [INFO] TableUtils creating table 'foo'
+2024-04-26 13:59:09,036 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `foo` (`id` INTEGER AUTO_INCREMENT , `val` INTEGER , `equal` INTEGER , `string` VARCHAR(255) , PRIMARY KEY (`id`) ) 
+2024-04-26 13:59:09,037 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `foo` (`val` ,`equal` ,`string` ) VALUES (?,?,?)' and 3 args, changed 1 rows
+2024-04-26 13:59:09,037 [TRACE] BaseMappedStatement insert arguments: [1232131321, 0, null]
+2024-04-26 13:59:09,037 [DEBUG] BaseMappedStatement assigned id '1' from keyholder to 'id' in Foo object
+2024-04-26 13:59:09,037 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE (`id` = 1)' with 0 args
+2024-04-26 13:59:09,037 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE (`id` = 1)' with 0 args returned 1 results
+2024-04-26 13:59:09,038 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE (`id` = ?)' with 1 args
+2024-04-26 13:59:09,038 [TRACE] BaseMappedStatement prepared statement arguments: [1]
+2024-04-26 13:59:09,038 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE (`id` = ?)' with 1 args returned 1 results
+2024-04-26 13:59:09,038 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,039 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo`' with 0 args returned 1 results
+2024-04-26 13:59:09,040 [DEBUG] BaseMappedStatement prepared statement 'UPDATE `foo` SET `val` = 65809' with 0 args
+2024-04-26 13:59:09,040 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,040 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo`' with 0 args returned 1 results
+2024-04-26 13:59:09,043 [DEBUG] StatementExecutor query of 'SELECT COUNT(*) FROM `foo` WHERE `id` = ?' returned 1
+2024-04-26 13:59:09,044 [DEBUG] BaseMappedStatement update data with statement 'UPDATE `foo` SET `val` = ?, `equal` = ?, `string` = ? WHERE `id` = ?' and 4 args, changed 1 rows
+2024-04-26 13:59:09,044 [TRACE] BaseMappedStatement update arguments: [1232131321, 0, null, 1]
+2024-04-26 13:59:09,045 [DEBUG] BaseMappedStatement updating-id with statement 'UPDATE `foo` SET `id` = ? WHERE `id` = ?' and 2 args, changed 1 rows
+2024-04-26 13:59:09,045 [TRACE] BaseMappedStatement updating-id arguments: [2, 1]
+2024-04-26 13:59:09,045 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got no results
+2024-04-26 13:59:09,045 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:59:09,053 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:59:09,053 [TRACE] BaseMappedStatement query-for-id arguments: [2]
+2024-04-26 13:59:09,053 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,054 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,055 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,055 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,056 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,056 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:59:09,066 [DEBUG] StatementExecutor query of 'SELECT COUNT(*) FROM `foo`' returned 1
+2024-04-26 13:59:09,069 [INFO] SchemaUtils dropping schema 'schema'
+2024-04-26 13:59:09,071 [INFO] SchemaUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Schema "SCHEMA" not found; SQL statement:
+DROP SCHEMA `schema`  [90079-200]' for statement: DROP SCHEMA `schema` 
+2024-04-26 13:59:09,072 [INFO] SchemaUtils creating schema 'schema'
+2024-04-26 13:59:09,072 [INFO] SchemaUtils executed create schema statement changed 0 rows: CREATE SCHEMA `schema`

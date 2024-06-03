@@ -1,0 +1,417 @@
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test53655882163882734176799c291-29f9-4f60-aaed-7765ea945e90
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test53655882163882734176799c291-29f9-4f60-aaed-7765ea945e90/nifi-cert.pem and key /tmp/tls-test53655882163882734176799c291-29f9-4f60-aaed-7765ea945e90/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test53655882163882734176799c291-29f9-4f60-aaed-7765ea945e90/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for localhost 1 in /tmp/tls-test53655882163882734176799c291-29f9-4f60-aaed-7765ea945e90/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test38869353001962852106db62b42-347a-483c-9377-f19bc8e4cb4d
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test38869353001962852106db62b42-347a-483c-9377-f19bc8e4cb4d/nifi-cert.pem and key /tmp/tls-test38869353001962852106db62b42-347a-483c-9377-f19bc8e4cb4d/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using alternate name alternative1.nifi.apache.org with hostname node1.nifi.apache.org.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test38869353001962852106db62b42-347a-483c-9377-f19bc8e4cb4d/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node1.nifi.apache.org 1 in /tmp/tls-test38869353001962852106db62b42-347a-483c-9377-f19bc8e4cb4d/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using alternate name alternative2.nifi.apache.org with hostname node2.nifi.apache.org.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test38869353001962852106db62b42-347a-483c-9377-f19bc8e4cb4d/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node2.nifi.apache.org 1 in /tmp/tls-test38869353001962852106db62b42-347a-483c-9377-f19bc8e4cb4d/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+Error parsing command line. (Expected either one number or two separated by a single hyphen)
+
+usage: org.apache.nifi.toolkit.tls.TlsToolkitMain [-a <arg>] [--additionalCACertificate <arg>] [-B <arg>] [-c <arg>] [-C <arg>] [-d <arg>] [-f <arg>] [-g] [-G
+       <arg>] [-h] [-k <arg>] [-K <arg>] [-n <arg>] [--nifiDnPrefix <arg>] [--nifiDnSuffix <arg>] [-o <arg>] [-O] [-P <arg>] [-s <arg>] [-S <arg>]
+       [--splitKeystore <arg>] [--subjectAlternativeNames <arg>] [-T <arg>]
+
+Creates certificates and config files for nifi cluster.
+
+ -a,--keyAlgorithm <arg>                   Algorithm to use for generated keys. (default: RSA)
+    --additionalCACertificate <arg>        Path to additional CA certificate (used to sign toolkit CA certificate) in PEM format if necessary
+ -B,--clientCertPassword <arg>             Password for client certificate.  Must either be one value or one for each client DN. (autogenerate if not specified)
+ -c,--certificateAuthorityHostname <arg>   Hostname of NiFi Certificate Authority (default: localhost)
+ -C,--clientCertDn <arg>                   Generate client certificate suitable for use in browser with specified DN. (Can be specified multiple times.)
+ -d,--days <arg>                           Number of days issued certificate should be valid for. (default: 825)
+ -f,--nifiPropertiesFile <arg>             Base nifi.properties file to update. (Embedded file identical to the one in a default NiFi install will be used if
+                                           not specified.)
+ -g,--differentKeyAndKeystorePasswords     Use different generated password for the key and the keyStore.
+ -G,--globalPortSequence <arg>             Use sequential ports that are calculated for all hosts according to the provided hostname expressions. (Can be
+                                           specified multiple times, MUST BE SAME FROM RUN TO RUN.)
+ -h,--help                                 Print help and exit.
+ -k,--keySize <arg>                        Number of bits for generated keys. (default: 2048)
+ -K,--keyPassword <arg>                    Key password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -n,--hostnames <arg>                      Comma separated list of hostnames.
+    --nifiDnPrefix <arg>                   String to prepend to hostname(s) when determining DN. (default: CN=)
+    --nifiDnSuffix <arg>                   String to append to hostname(s) when determining DN. (default: , OU=NIFI)
+ -o,--outputDirectory <arg>                The directory to output keystores, truststore, config files. (default: ../nifi-toolkit-tls)
+ -O,--isOverwrite                          Overwrite existing host output.
+ -P,--trustStorePassword <arg>             Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -s,--signingAlgorithm <arg>               Algorithm to use for signing certificates. (default: SHA256WITHRSA)
+ -S,--keyStorePassword <arg>               Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+    --splitKeystore <arg>                  Split out a given keystore into its unencrypted key and certificates. Use -S and -K to specify the keystore and key
+                                           passwords.
+    --subjectAlternativeNames <arg>        Comma-separated list of domains to use as Subject Alternative Names in the certificate
+ -T,--keyStoreType <arg>                   The type of keyStores to generate. (default: jks)
+
+Java home: null
+NiFi Toolkit home: null
+Error parsing command line. (Unrecognized option: --unknownArgument)
+
+usage: org.apache.nifi.toolkit.tls.TlsToolkitMain [-a <arg>] [--additionalCACertificate <arg>] [-B <arg>] [-c <arg>] [-C <arg>] [-d <arg>] [-f <arg>] [-g] [-G
+       <arg>] [-h] [-k <arg>] [-K <arg>] [-n <arg>] [--nifiDnPrefix <arg>] [--nifiDnSuffix <arg>] [-o <arg>] [-O] [-P <arg>] [-s <arg>] [-S <arg>]
+       [--splitKeystore <arg>] [--subjectAlternativeNames <arg>] [-T <arg>]
+
+Creates certificates and config files for nifi cluster.
+
+ -a,--keyAlgorithm <arg>                   Algorithm to use for generated keys. (default: RSA)
+    --additionalCACertificate <arg>        Path to additional CA certificate (used to sign toolkit CA certificate) in PEM format if necessary
+ -B,--clientCertPassword <arg>             Password for client certificate.  Must either be one value or one for each client DN. (autogenerate if not specified)
+ -c,--certificateAuthorityHostname <arg>   Hostname of NiFi Certificate Authority (default: localhost)
+ -C,--clientCertDn <arg>                   Generate client certificate suitable for use in browser with specified DN. (Can be specified multiple times.)
+ -d,--days <arg>                           Number of days issued certificate should be valid for. (default: 825)
+ -f,--nifiPropertiesFile <arg>             Base nifi.properties file to update. (Embedded file identical to the one in a default NiFi install will be used if
+                                           not specified.)
+ -g,--differentKeyAndKeystorePasswords     Use different generated password for the key and the keyStore.
+ -G,--globalPortSequence <arg>             Use sequential ports that are calculated for all hosts according to the provided hostname expressions. (Can be
+                                           specified multiple times, MUST BE SAME FROM RUN TO RUN.)
+ -h,--help                                 Print help and exit.
+ -k,--keySize <arg>                        Number of bits for generated keys. (default: 2048)
+ -K,--keyPassword <arg>                    Key password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -n,--hostnames <arg>                      Comma separated list of hostnames.
+    --nifiDnPrefix <arg>                   String to prepend to hostname(s) when determining DN. (default: CN=)
+    --nifiDnSuffix <arg>                   String to append to hostname(s) when determining DN. (default: , OU=NIFI)
+ -o,--outputDirectory <arg>                The directory to output keystores, truststore, config files. (default: ../nifi-toolkit-tls)
+ -O,--isOverwrite                          Overwrite existing host output.
+ -P,--trustStorePassword <arg>             Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -s,--signingAlgorithm <arg>               Algorithm to use for signing certificates. (default: SHA256WITHRSA)
+ -S,--keyStorePassword <arg>               Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+    --splitKeystore <arg>                  Split out a given keystore into its unencrypted key and certificates. Use -S and -K to specify the keystore and key
+                                           passwords.
+    --subjectAlternativeNames <arg>        Comma-separated list of domains to use as Subject Alternative Names in the certificate
+ -T,--keyStoreType <arg>                   The type of keyStores to generate. (default: jks)
+
+Java home: null
+NiFi Toolkit home: null
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - Using src/test/resources/localhost/nifi.properties as template.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test262681777116098503512f2fdfb-c431-4096-901f-6657a9d0a0a9
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test262681777116098503512f2fdfb-c431-4096-901f-6657a9d0a0a9/nifi-cert.pem and key /tmp/tls-test262681777116098503512f2fdfb-c431-4096-901f-6657a9d0a0a9/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test262681777116098503512f2fdfb-c431-4096-901f-6657a9d0a0a9/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for localhost 1 in /tmp/tls-test262681777116098503512f2fdfb-c431-4096-901f-6657a9d0a0a9/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test74348083499254662011177a557-4f82-40b3-bff3-f2af5d8b10d2
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test74348083499254662011177a557-4f82-40b3-bff3-f2af5d8b10d2/nifi-cert.pem and key /tmp/tls-test74348083499254662011177a557-4f82-40b3-bff3-f2af5d8b10d2/nifi-key.key
+[main] WARN org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Hostname count does not match given alternate name count. Verify names in resulting certificate.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test74348083499254662011177a557-4f82-40b3-bff3-f2af5d8b10d2/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node1.nifi.apache.org 1 in /tmp/tls-test74348083499254662011177a557-4f82-40b3-bff3-f2af5d8b10d2/node1.nifi.apache.org
+[main] WARN org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Hostname count does not match given alternate name count. Verify names in resulting certificate.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test74348083499254662011177a557-4f82-40b3-bff3-f2af5d8b10d2/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node2.nifi.apache.org 1 in /tmp/tls-test74348083499254662011177a557-4f82-40b3-bff3-f2af5d8b10d2/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+usage: org.apache.nifi.toolkit.tls.TlsToolkitMain [-a <arg>] [--additionalCACertificate <arg>] [-B <arg>] [-c <arg>] [-C <arg>] [-d <arg>] [-f <arg>] [-g] [-G
+       <arg>] [-h] [-k <arg>] [-K <arg>] [-n <arg>] [--nifiDnPrefix <arg>] [--nifiDnSuffix <arg>] [-o <arg>] [-O] [-P <arg>] [-s <arg>] [-S <arg>]
+       [--splitKeystore <arg>] [--subjectAlternativeNames <arg>] [-T <arg>]
+
+Creates certificates and config files for nifi cluster.
+
+ -a,--keyAlgorithm <arg>                   Algorithm to use for generated keys. (default: RSA)
+    --additionalCACertificate <arg>        Path to additional CA certificate (used to sign toolkit CA certificate) in PEM format if necessary
+ -B,--clientCertPassword <arg>             Password for client certificate.  Must either be one value or one for each client DN. (autogenerate if not specified)
+ -c,--certificateAuthorityHostname <arg>   Hostname of NiFi Certificate Authority (default: localhost)
+ -C,--clientCertDn <arg>                   Generate client certificate suitable for use in browser with specified DN. (Can be specified multiple times.)
+ -d,--days <arg>                           Number of days issued certificate should be valid for. (default: 825)
+ -f,--nifiPropertiesFile <arg>             Base nifi.properties file to update. (Embedded file identical to the one in a default NiFi install will be used if
+                                           not specified.)
+ -g,--differentKeyAndKeystorePasswords     Use different generated password for the key and the keyStore.
+ -G,--globalPortSequence <arg>             Use sequential ports that are calculated for all hosts according to the provided hostname expressions. (Can be
+                                           specified multiple times, MUST BE SAME FROM RUN TO RUN.)
+ -h,--help                                 Print help and exit.
+ -k,--keySize <arg>                        Number of bits for generated keys. (default: 2048)
+ -K,--keyPassword <arg>                    Key password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -n,--hostnames <arg>                      Comma separated list of hostnames.
+    --nifiDnPrefix <arg>                   String to prepend to hostname(s) when determining DN. (default: CN=)
+    --nifiDnSuffix <arg>                   String to append to hostname(s) when determining DN. (default: , OU=NIFI)
+ -o,--outputDirectory <arg>                The directory to output keystores, truststore, config files. (default: ../nifi-toolkit-tls)
+ -O,--isOverwrite                          Overwrite existing host output.
+ -P,--trustStorePassword <arg>             Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -s,--signingAlgorithm <arg>               Algorithm to use for signing certificates. (default: SHA256WITHRSA)
+ -S,--keyStorePassword <arg>               Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+    --splitKeystore <arg>                  Split out a given keystore into its unencrypted key and certificates. Use -S and -K to specify the keystore and key
+                                           passwords.
+    --subjectAlternativeNames <arg>        Comma-separated list of domains to use as Subject Alternative Names in the certificate
+ -T,--keyStoreType <arg>                   The type of keyStores to generate. (default: jks)
+
+Java home: null
+NiFi Toolkit home: null
+usage: org.apache.nifi.toolkit.tls.TlsToolkitMain [-a <arg>] [--additionalCACertificate <arg>] [-B <arg>] [-c <arg>] [-C <arg>] [-d <arg>] [-f <arg>] [-g] [-G
+       <arg>] [-h] [-k <arg>] [-K <arg>] [-n <arg>] [--nifiDnPrefix <arg>] [--nifiDnSuffix <arg>] [-o <arg>] [-O] [-P <arg>] [-s <arg>] [-S <arg>]
+       [--splitKeystore <arg>] [--subjectAlternativeNames <arg>] [-T <arg>]
+
+Creates certificates and config files for nifi cluster.
+
+ -a,--keyAlgorithm <arg>                   Algorithm to use for generated keys. (default: RSA)
+    --additionalCACertificate <arg>        Path to additional CA certificate (used to sign toolkit CA certificate) in PEM format if necessary
+ -B,--clientCertPassword <arg>             Password for client certificate.  Must either be one value or one for each client DN. (autogenerate if not specified)
+ -c,--certificateAuthorityHostname <arg>   Hostname of NiFi Certificate Authority (default: localhost)
+ -C,--clientCertDn <arg>                   Generate client certificate suitable for use in browser with specified DN. (Can be specified multiple times.)
+ -d,--days <arg>                           Number of days issued certificate should be valid for. (default: 825)
+ -f,--nifiPropertiesFile <arg>             Base nifi.properties file to update. (Embedded file identical to the one in a default NiFi install will be used if
+                                           not specified.)
+ -g,--differentKeyAndKeystorePasswords     Use different generated password for the key and the keyStore.
+ -G,--globalPortSequence <arg>             Use sequential ports that are calculated for all hosts according to the provided hostname expressions. (Can be
+                                           specified multiple times, MUST BE SAME FROM RUN TO RUN.)
+ -h,--help                                 Print help and exit.
+ -k,--keySize <arg>                        Number of bits for generated keys. (default: 2048)
+ -K,--keyPassword <arg>                    Key password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -n,--hostnames <arg>                      Comma separated list of hostnames.
+    --nifiDnPrefix <arg>                   String to prepend to hostname(s) when determining DN. (default: CN=)
+    --nifiDnSuffix <arg>                   String to append to hostname(s) when determining DN. (default: , OU=NIFI)
+ -o,--outputDirectory <arg>                The directory to output keystores, truststore, config files. (default: ../nifi-toolkit-tls)
+ -O,--isOverwrite                          Overwrite existing host output.
+ -P,--trustStorePassword <arg>             Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -s,--signingAlgorithm <arg>               Algorithm to use for signing certificates. (default: SHA256WITHRSA)
+ -S,--keyStorePassword <arg>               Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+    --splitKeystore <arg>                  Split out a given keystore into its unencrypted key and certificates. Use -S and -K to specify the keystore and key
+                                           passwords.
+    --subjectAlternativeNames <arg>        Comma-separated list of domains to use as Subject Alternative Names in the certificate
+ -T,--keyStoreType <arg>                   The type of keyStores to generate. (default: jks)
+
+Java home: null
+NiFi Toolkit home: null
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test312211629786261775888aecf71-f084-48ea-8ba9-34c08b4c621b
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test312211629786261775888aecf71-f084-48ea-8ba9-34c08b4c621b/nifi-cert.pem and key /tmp/tls-test312211629786261775888aecf71-f084-48ea-8ba9-34c08b4c621b/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test312211629786261775888aecf71-f084-48ea-8ba9-34c08b4c621b/static.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for static.nifi.apache.org 1 in /tmp/tls-test312211629786261775888aecf71-f084-48ea-8ba9-34c08b4c621b/static.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test65642427679061751680aae06a9-6d7e-4108-aa8e-433ea2a7bc9e
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test65642427679061751680aae06a9-6d7e-4108-aa8e-433ea2a7bc9e/nifi-cert.pem and key /tmp/tls-test65642427679061751680aae06a9-6d7e-4108-aa8e-433ea2a7bc9e/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test65642427679061751680aae06a9-6d7e-4108-aa8e-433ea2a7bc9e/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for localhost 1 in /tmp/tls-test65642427679061751680aae06a9-6d7e-4108-aa8e-433ea2a7bc9e/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/nifi-cert.pem and key /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No hostnames specified, not generating any host certificates or configuration.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generating new client certificate /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/CN=testuser_OU=NIFI.p12
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated client certificate /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/CN=testuser_OU=NIFI.p12
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generating new client certificate /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/CN=testuser2_OU=NIFI.p12
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated client certificate /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/CN=testuser2_OU=NIFI.p12
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Verifying the certificate signature for CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Attempting to verify certificate CN=localhost,OU=NIFI signature with CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Certificate was signed by CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using existing CA certificate /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/nifi-cert.pem and key /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No hostnames specified, not generating any host certificates or configuration.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Overwriting existing client cert /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/CN=testuser2_OU=NIFI.p12
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated client certificate /tmp/tls-test7280699715553723106238e91c3-78be-4e6b-ae4b-b6ff8e970e51/CN=testuser2_OU=NIFI.p12
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi-cert.pem and key /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi1
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for nifi1 1 in /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi1
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi2
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for nifi2 1 in /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi2
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Verifying the certificate signature for CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Attempting to verify certificate CN=localhost,OU=NIFI signature with CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Certificate was signed by CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using existing CA certificate /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi-cert.pem and key /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi3
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for nifi3 1 in /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi3
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Verifying the certificate signature for CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Attempting to verify certificate CN=localhost,OU=NIFI signature with CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Certificate was signed by CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using existing CA certificate /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi-cert.pem and key /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Overwriting any existing ssl configuration in /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi3
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for nifi3 1 in /tmp/tls-test715037856249215356540027c70-6942-437c-a96b-d94398674639/nifi3
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test2708444970240271560bbb5e257-ae3d-47b0-a9e3-343e11e02fee
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test2708444970240271560bbb5e257-ae3d-47b0-a9e3-343e11e02fee/nifi-cert.pem and key /tmp/tls-test2708444970240271560bbb5e257-ae3d-47b0-a9e3-343e11e02fee/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test2708444970240271560bbb5e257-ae3d-47b0-a9e3-343e11e02fee/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for localhost 1 in /tmp/tls-test2708444970240271560bbb5e257-ae3d-47b0-a9e3-343e11e02fee/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test34740831610617483335ef2a54b-bb39-4171-a76d-842beca7336b
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test34740831610617483335ef2a54b-bb39-4171-a76d-842beca7336b/nifi-cert.pem and key /tmp/tls-test34740831610617483335ef2a54b-bb39-4171-a76d-842beca7336b/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using alternate name alternative3.nifi.apache.org with hostname node1.nifi.apache.org.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test34740831610617483335ef2a54b-bb39-4171-a76d-842beca7336b/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node1.nifi.apache.org 1 in /tmp/tls-test34740831610617483335ef2a54b-bb39-4171-a76d-842beca7336b/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using alternate name alternative4.nifi.apache.org with hostname node2.nifi.apache.org.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test34740831610617483335ef2a54b-bb39-4171-a76d-842beca7336b/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node2.nifi.apache.org 1 in /tmp/tls-test34740831610617483335ef2a54b-bb39-4171-a76d-842beca7336b/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test47218179566335450041226ab29-b5ae-4297-b735-603bce3d0ac0
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test47218179566335450041226ab29-b5ae-4297-b735-603bce3d0ac0/nifi-cert.pem and key /tmp/tls-test47218179566335450041226ab29-b5ae-4297-b735-603bce3d0ac0/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test47218179566335450041226ab29-b5ae-4297-b735-603bce3d0ac0/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for localhost 1 in /tmp/tls-test47218179566335450041226ab29-b5ae-4297-b735-603bce3d0ac0/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483/nifi-cert.pem and key /tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483/nifi
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for nifi 1 in /tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483/nifi
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Verifying the certificate signature for CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Attempting to verify certificate CN=localhost,OU=NIFI signature with CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Certificate was signed by CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using existing CA certificate /tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483/nifi-cert.pem and key /tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483/nifi-key.key
+Error generating TLS configuration. (/tmp/tls-test65174368587443438030d6a2bbe-b289-4e27-a214-cdd2946e1483/nifi exists and overwrite is not set.)
+
+usage: org.apache.nifi.toolkit.tls.TlsToolkitMain [-a <arg>] [--additionalCACertificate <arg>] [-B <arg>] [-c <arg>] [-C <arg>] [-d <arg>] [-f <arg>] [-g] [-G
+       <arg>] [-h] [-k <arg>] [-K <arg>] [-n <arg>] [--nifiDnPrefix <arg>] [--nifiDnSuffix <arg>] [-o <arg>] [-O] [-P <arg>] [-s <arg>] [-S <arg>]
+       [--splitKeystore <arg>] [--subjectAlternativeNames <arg>] [-T <arg>]
+
+Creates certificates and config files for nifi cluster.
+
+ -a,--keyAlgorithm <arg>                   Algorithm to use for generated keys. (default: RSA)
+    --additionalCACertificate <arg>        Path to additional CA certificate (used to sign toolkit CA certificate) in PEM format if necessary
+ -B,--clientCertPassword <arg>             Password for client certificate.  Must either be one value or one for each client DN. (autogenerate if not specified)
+ -c,--certificateAuthorityHostname <arg>   Hostname of NiFi Certificate Authority (default: localhost)
+ -C,--clientCertDn <arg>                   Generate client certificate suitable for use in browser with specified DN. (Can be specified multiple times.)
+ -d,--days <arg>                           Number of days issued certificate should be valid for. (default: 825)
+ -f,--nifiPropertiesFile <arg>             Base nifi.properties file to update. (Embedded file identical to the one in a default NiFi install will be used if
+                                           not specified.)
+ -g,--differentKeyAndKeystorePasswords     Use different generated password for the key and the keyStore.
+ -G,--globalPortSequence <arg>             Use sequential ports that are calculated for all hosts according to the provided hostname expressions. (Can be
+                                           specified multiple times, MUST BE SAME FROM RUN TO RUN.)
+ -h,--help                                 Print help and exit.
+ -k,--keySize <arg>                        Number of bits for generated keys. (default: 2048)
+ -K,--keyPassword <arg>                    Key password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -n,--hostnames <arg>                      Comma separated list of hostnames.
+    --nifiDnPrefix <arg>                   String to prepend to hostname(s) when determining DN. (default: CN=)
+    --nifiDnSuffix <arg>                   String to append to hostname(s) when determining DN. (default: , OU=NIFI)
+ -o,--outputDirectory <arg>                The directory to output keystores, truststore, config files. (default: ../nifi-toolkit-tls)
+ -O,--isOverwrite                          Overwrite existing host output.
+ -P,--trustStorePassword <arg>             Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -s,--signingAlgorithm <arg>               Algorithm to use for signing certificates. (default: SHA256WITHRSA)
+ -S,--keyStorePassword <arg>               Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+    --splitKeystore <arg>                  Split out a given keystore into its unencrypted key and certificates. Use -S and -K to specify the keystore and key
+                                           passwords.
+    --subjectAlternativeNames <arg>        Comma-separated list of domains to use as Subject Alternative Names in the certificate
+ -T,--keyStoreType <arg>                   The type of keyStores to generate. (default: jks)
+
+Java home: null
+NiFi Toolkit home: null
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test15103248589945336430c287772-9843-4159-9ba7-81b0c7276462
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test15103248589945336430c287772-9843-4159-9ba7-81b0c7276462/nifi-cert.pem and key /tmp/tls-test15103248589945336430c287772-9843-4159-9ba7-81b0c7276462/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using alternate name alternative2.nifi.apache.org with hostname node1.nifi.apache.org.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test15103248589945336430c287772-9843-4159-9ba7-81b0c7276462/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node1.nifi.apache.org 1 in /tmp/tls-test15103248589945336430c287772-9843-4159-9ba7-81b0c7276462/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using alternate name alternative1.nifi.apache.org with hostname node2.nifi.apache.org.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test15103248589945336430c287772-9843-4159-9ba7-81b0c7276462/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node2.nifi.apache.org 1 in /tmp/tls-test15103248589945336430c287772-9843-4159-9ba7-81b0c7276462/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test1825880238387772746651ee529-d0e9-4594-89e8-26d03031bd92
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test1825880238387772746651ee529-d0e9-4594-89e8-26d03031bd92/nifi-cert.pem and key /tmp/tls-test1825880238387772746651ee529-d0e9-4594-89e8-26d03031bd92/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test1825880238387772746651ee529-d0e9-4594-89e8-26d03031bd92/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for localhost 1 in /tmp/tls-test1825880238387772746651ee529-d0e9-4594-89e8-26d03031bd92/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test8670164037489762812f010501a-b21a-43ae-ace1-9b1ffd03ca1c
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test8670164037489762812f010501a-b21a-43ae-ace1-9b1ffd03ca1c/nifi-cert.pem and key /tmp/tls-test8670164037489762812f010501a-b21a-43ae-ace1-9b1ffd03ca1c/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test8670164037489762812f010501a-b21a-43ae-ace1-9b1ffd03ca1c/static.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for static.nifi.apache.org 1 in /tmp/tls-test8670164037489762812f010501a-b21a-43ae-ace1-9b1ffd03ca1c/static.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3/nifi-cert.pem and key /tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No hostnames specified, not generating any host certificates or configuration.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generating new client certificate /tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3/CN=testuser_OU=NIFI.p12
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated client certificate /tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3/CN=testuser_OU=NIFI.p12
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Verifying the certificate signature for CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Attempting to verify certificate CN=localhost,OU=NIFI signature with CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.util.TlsHelper - Certificate was signed by CN=localhost,OU=NIFI
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Using existing CA certificate /tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3/nifi-cert.pem and key /tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No hostnames specified, not generating any host certificates or configuration.
+Error generating TLS configuration. (/tmp/tls-test1740855241412719569b329f17b-98bd-4ae2-a54c-37d26149cde3/CN=testuser_OU=NIFI.p12 exists and overwrite is not set.)
+
+usage: org.apache.nifi.toolkit.tls.TlsToolkitMain [-a <arg>] [--additionalCACertificate <arg>] [-B <arg>] [-c <arg>] [-C <arg>] [-d <arg>] [-f <arg>] [-g] [-G
+       <arg>] [-h] [-k <arg>] [-K <arg>] [-n <arg>] [--nifiDnPrefix <arg>] [--nifiDnSuffix <arg>] [-o <arg>] [-O] [-P <arg>] [-s <arg>] [-S <arg>]
+       [--splitKeystore <arg>] [--subjectAlternativeNames <arg>] [-T <arg>]
+
+Creates certificates and config files for nifi cluster.
+
+ -a,--keyAlgorithm <arg>                   Algorithm to use for generated keys. (default: RSA)
+    --additionalCACertificate <arg>        Path to additional CA certificate (used to sign toolkit CA certificate) in PEM format if necessary
+ -B,--clientCertPassword <arg>             Password for client certificate.  Must either be one value or one for each client DN. (autogenerate if not specified)
+ -c,--certificateAuthorityHostname <arg>   Hostname of NiFi Certificate Authority (default: localhost)
+ -C,--clientCertDn <arg>                   Generate client certificate suitable for use in browser with specified DN. (Can be specified multiple times.)
+ -d,--days <arg>                           Number of days issued certificate should be valid for. (default: 825)
+ -f,--nifiPropertiesFile <arg>             Base nifi.properties file to update. (Embedded file identical to the one in a default NiFi install will be used if
+                                           not specified.)
+ -g,--differentKeyAndKeystorePasswords     Use different generated password for the key and the keyStore.
+ -G,--globalPortSequence <arg>             Use sequential ports that are calculated for all hosts according to the provided hostname expressions. (Can be
+                                           specified multiple times, MUST BE SAME FROM RUN TO RUN.)
+ -h,--help                                 Print help and exit.
+ -k,--keySize <arg>                        Number of bits for generated keys. (default: 2048)
+ -K,--keyPassword <arg>                    Key password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -n,--hostnames <arg>                      Comma separated list of hostnames.
+    --nifiDnPrefix <arg>                   String to prepend to hostname(s) when determining DN. (default: CN=)
+    --nifiDnSuffix <arg>                   String to append to hostname(s) when determining DN. (default: , OU=NIFI)
+ -o,--outputDirectory <arg>                The directory to output keystores, truststore, config files. (default: ../nifi-toolkit-tls)
+ -O,--isOverwrite                          Overwrite existing host output.
+ -P,--trustStorePassword <arg>             Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+ -s,--signingAlgorithm <arg>               Algorithm to use for signing certificates. (default: SHA256WITHRSA)
+ -S,--keyStorePassword <arg>               Keystore password to use.  Must either be one value or one for each host. (autogenerate if not specified)
+    --splitKeystore <arg>                  Split out a given keystore into its unencrypted key and certificates. Use -S and -K to specify the keystore and key
+                                           passwords.
+    --subjectAlternativeNames <arg>        Comma-separated list of domains to use as Subject Alternative Names in the certificate
+ -T,--keyStoreType <arg>                   The type of keyStores to generate. (default: jks)
+
+Java home: null
+NiFi Toolkit home: null
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test72750966788558098171309eebd-e715-45a4-ab42-fd9b34440977
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test72750966788558098171309eebd-e715-45a4-ab42-fd9b34440977/nifi-cert.pem and key /tmp/tls-test72750966788558098171309eebd-e715-45a4-ab42-fd9b34440977/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test72750966788558098171309eebd-e715-45a4-ab42-fd9b34440977/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node1.nifi.apache.org 1 in /tmp/tls-test72750966788558098171309eebd-e715-45a4-ab42-fd9b34440977/node1.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test72750966788558098171309eebd-e715-45a4-ab42-fd9b34440977/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for node2.nifi.apache.org 1 in /tmp/tls-test72750966788558098171309eebd-e715-45a4-ab42-fd9b34440977/node2.nifi.apache.org
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.commandLine.BaseTlsToolkitCommandLine - Command line argument --keyStoreType=pkcs12 only applies to keystore, recommended truststore type of JKS unaffected.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test7339996581746187080ffad3492-1d58-4335-8569-9730a4b71c8a
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test7339996581746187080ffad3492-1d58-4335-8569-9730a4b71c8a/nifi-cert.pem and key /tmp/tls-test7339996581746187080ffad3492-1d58-4335-8569-9730a4b71c8a/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test7339996581746187080ffad3492-1d58-4335-8569-9730a4b71c8a/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for localhost 1 in /tmp/tls-test7339996581746187080ffad3492-1d58-4335-8569-9730a4b71c8a/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandaloneCommandLine - No nifiPropertiesFile specified, using embedded one.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Running standalone certificate generation with output directory /tmp/tls-test20495267013741974910eb9c506-741f-4879-aac3-d729697caf98
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Generated new CA certificate /tmp/tls-test20495267013741974910eb9c506-741f-4879-aac3-d729697caf98/nifi-cert.pem and key /tmp/tls-test20495267013741974910eb9c506-741f-4879-aac3-d729697caf98/nifi-key.key
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Writing new ssl configuration to /tmp/tls-test20495267013741974910eb9c506-741f-4879-aac3-d729697caf98/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - Successfully generated TLS configuration for localhost 1 in /tmp/tls-test20495267013741974910eb9c506-741f-4879-aac3-d729697caf98/localhost
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - No clientCertDn specified, not generating any client certificates.
+[main] INFO org.apache.nifi.toolkit.tls.standalone.TlsToolkitStandalone - tls-toolkit standalone completed successfully

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.security.util.CertificateUtilsTest" time="2.037" tests="18" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter8282657183802230464.jar /home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire 2024-05-02T04-10-31_566-jvmRun1 surefire2575846242273570839tmp surefire_64322154079322125000tmp"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter8282657183802230464.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testExtractUserNameFromDN" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.004"/>
+  <testcase name="testExtractUserNameFromDN" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.001"/>
+  <testcase name="testShouldConvertAbstractX509Certificate" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.087">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate: org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test Server (7364234517162548527104)
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Abstract certificate: org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject (?)
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Converted certificate: sun.security.x509.X509CertImpl CN=NiFi Test Server, OU=Security, O=Apache, ST=CA, C=US (7364234517162548527104)
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldConvertAbstractX509Certificate" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.031">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate: org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test Server (7364234540660314603520)
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Abstract certificate: org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject (?)
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Converted certificate: sun.security.x509.X509CertImpl CN=NiFi Test Server, OU=Security, O=Apache, ST=CA, C=US (7364234540660314603520)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCommonName" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.001"/>
+  <testcase name="testGetCommonName" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.001"/>
+  <testcase name="testUniqueSerialNumbers" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="1.128">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 0 executed 108660 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 1 executed 117149 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 2 executed 102332 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 3 executed 125121 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 4 executed 136466 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 5 executed 134669 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 6 executed 116336 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 7 executed 85636 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Generated 926369 unique serial numbers
+]]></system-err>
+  </testcase>
+  <testcase name="testUniqueSerialNumbers" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="1.03">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 0 executed 141238 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 1 executed 171927 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 2 executed 156375 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 3 executed 162197 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 4 executed 130009 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 5 executed 166048 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 6 executed 133147 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - future 7 executed 157843 times
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Generated 1218784 unique serial numbers
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldGenerateSelfSignedCert" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.168"/>
+  <testcase name="testShouldGenerateSelfSignedCert" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.068"/>
+  <testcase name="testShouldConvertLegacyX509Certificate" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.066">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate: org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test Server (7364234523059538624512)
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Legacy certificate: com.sun.security.cert.internal.x509.X509V1CertImpl CN=NiFi Test Server, OU=Security, O=Apache, ST=CA, C=US (7364234523059538624512)
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Converted certificate: sun.security.x509.X509CertImpl CN=NiFi Test Server, OU=Security, O=Apache, ST=CA, C=US (7364234523059538624512)
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldConvertLegacyX509Certificate" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.109">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate: org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test Server (7364234545861519998976)
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Legacy certificate: com.sun.security.cert.internal.x509.X509V1CertImpl CN=NiFi Test Server, OU=Security, O=Apache, ST=CA, C=US (7364234545861519998976)
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Converted certificate: sun.security.x509.X509CertImpl CN=NiFi Test Server, OU=Security, O=Apache, ST=CA, C=US (7364234545861519998976)
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldExtractClientCertificatesFromSSLClientSocketWithClientAuthNeed" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.156">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected DN: CN=client.nifi.apache.org,OU=Security,O=Apache,ST=CA,C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate chain: C=US,ST=CA,O=Apache,OU=Security,CN=client.nifi.apache.org issued by C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test CA
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted client DN: CN=client.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldExtractClientCertificatesFromSSLClientSocketWithClientAuthNeed" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.096">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected DN: CN=client.nifi.apache.org,OU=Security,O=Apache,ST=CA,C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate chain: C=US,ST=CA,O=Apache,OU=Security,CN=client.nifi.apache.org issued by C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test CA
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted client DN: CN=client.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldExtractClientCertificatesFromSSLClientSocketWithClientAuthWant" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.135">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected DN: CN=client.nifi.apache.org,OU=Security,O=Apache,ST=CA,C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate chain: C=US,ST=CA,O=Apache,OU=Security,CN=client.nifi.apache.org issued by C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test CA
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted client DN: CN=client.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldExtractClientCertificatesFromSSLClientSocketWithClientAuthWant" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.176">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected DN: CN=client.nifi.apache.org,OU=Security,O=Apache,ST=CA,C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate chain: C=US,ST=CA,O=Apache,OU=Security,CN=client.nifi.apache.org issued by C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test CA
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted client DN: CN=client.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+]]></system-err>
+  </testcase>
+  <testcase name="testGetExtensionsFromCSR" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.129"/>
+  <testcase name="testGetExtensionsFromCSR" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.076"/>
+  <testcase name="testShouldGenerateIssuedCertificateWithSans" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.272">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Creating a certificate with subject: CN=localhost and SAN: [127.0.0.1, nifi.nifi.apache.org]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Created GeneralNames object: [2: 127.0.0.1, 2: nifi.nifi.apache.org]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Generated extensions object: [2.5.29.17]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Issued certificate with subject: CN=localhost and SAN: [2, 127.0.0.1],[2, nifi.nifi.apache.org]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldGenerateIssuedCertificateWithSans" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.144">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Creating a certificate with subject: CN=localhost and SAN: [127.0.0.1, nifi.nifi.apache.org]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Created GeneralNames object: [2: 127.0.0.1, 2: nifi.nifi.apache.org]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Generated extensions object: [2.5.29.17]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Issued certificate with subject: CN=localhost and SAN: [2, 127.0.0.1],[2, nifi.nifi.apache.org]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldDetectTlsErrors" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.012">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Direct results: [true, true, true, true]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Caused results: [true, true, true, true, true]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Unrelated results: [false, false, false]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldDetectTlsErrors" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.001">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Direct results: [true, true, true, true]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Caused results: [true, true, true, true, true]
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Unrelated results: [false, false, false]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldHandleFailureToExtractClientCertificatesFromSSLClientSocketWithClientAuthNeed" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.004">
+    <system-err><![CDATA[[main] ERROR org.apache.nifi.security.util.CertificateUtils - The incoming request did not contain client certificates and thus the DN cannot be extracted. Check that the other endpoint is providing a complete client certificate chain
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldHandleFailureToExtractClientCertificatesFromSSLClientSocketWithClientAuthNeed" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0">
+    <system-err><![CDATA[[main] ERROR org.apache.nifi.security.util.CertificateUtils - The incoming request did not contain client certificates and thus the DN cannot be extracted. Check that the other endpoint is providing a complete client certificate chain
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldHandleFailureToExtractClientCertificatesFromSSLClientSocketWithClientAuthWant" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.003">
+    <system-err><![CDATA[[main] ERROR org.apache.nifi.security.util.CertificateUtils - The incoming request did not contain client certificates and thus the DN cannot be extracted. Check that the other endpoint is providing a complete client certificate chain
+[main] WARN org.apache.nifi.security.util.CertificateUtils - Suppressing missing client certificate exception because client auth is set to 'want'
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted client DN: null
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldHandleFailureToExtractClientCertificatesFromSSLClientSocketWithClientAuthWant" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.001">
+    <system-err><![CDATA[[main] ERROR org.apache.nifi.security.util.CertificateUtils - The incoming request did not contain client certificates and thus the DN cannot be extracted. Check that the other endpoint is providing a complete client certificate chain
+[main] WARN org.apache.nifi.security.util.CertificateUtils - Suppressing missing client certificate exception because client auth is set to 'want'
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted client DN: null
+]]></system-err>
+  </testcase>
+  <testcase name="testIssueCert" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.202"/>
+  <testcase name="testIssueCert" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.117"/>
+  <testcase name="testShouldCompareDNs" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - DN 1 Ordered : CN=test1.nifi.apache.org, OU=Apache NiFi, O=Apache, ST=California, C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - DN 1 Reversed: C=US, ST=California, O=Apache, OU=Apache NiFi, CN=test1.nifi.apache.org
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - DN 2 Ordered : CN=test2.nifi.apache.org, OU=Apache NiFi, O=Apache, ST=California, C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - DN 2 Reversed: C=US, ST=California, O=Apache, OU=Apache NiFi, CN=test2.nifi.apache.org
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, DN 1: true
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, DN 1 (R): true
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] empty, empty: true
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] null, null: true
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, DN 2: false
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, DN 2 (R): false
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, empty: false
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldCompareDNs" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.001">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - DN 1 Ordered : CN=test1.nifi.apache.org, OU=Apache NiFi, O=Apache, ST=California, C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - DN 1 Reversed: C=US, ST=California, O=Apache, OU=Apache NiFi, CN=test1.nifi.apache.org
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - DN 2 Ordered : CN=test2.nifi.apache.org, OU=Apache NiFi, O=Apache, ST=California, C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - DN 2 Reversed: C=US, ST=California, O=Apache, OU=Apache NiFi, CN=test2.nifi.apache.org
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, DN 1: true
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, DN 1 (R): true
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] empty, empty: true
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] null, null: true
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, DN 2: false
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, DN 2 (R): false
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - [MATCHES] DN 1, empty: false
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldExtractClientCertificatesFromSSLServerSocketWithAnyClientAuth" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.347">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected DN: CN=ncm.nifi.apache.org,OU=Security,O=Apache,ST=CA,C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate chain: C=US,ST=CA,O=Apache,OU=Security,CN=ncm.nifi.apache.org issued by C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test CA
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Running test with socket ClientAuth setting: [SslContextFactory]type=Requireddescription=Requests the client certificate on handshake and rejects the connection if it is not present and valid
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted server DN: CN=ncm.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Running test with socket ClientAuth setting: [SslContextFactory]type=Wantdescription=Requests the client certificate on handshake and validates if present but does not require it
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted server DN: CN=ncm.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Running test with socket ClientAuth setting: [SslContextFactory]type=Nonedescription=Does not request the client certificate on handshake
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted server DN: CN=ncm.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldExtractClientCertificatesFromSSLServerSocketWithAnyClientAuth" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.18">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected DN: CN=ncm.nifi.apache.org,OU=Security,O=Apache,ST=CA,C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Expected certificate chain: C=US,ST=CA,O=Apache,OU=Security,CN=ncm.nifi.apache.org issued by C=US,ST=CA,O=Apache,OU=Security,CN=NiFi Test CA
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Running test with socket ClientAuth setting: [SslContextFactory]type=Requireddescription=Requests the client certificate on handshake and rejects the connection if it is not present and valid
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted server DN: CN=ncm.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Running test with socket ClientAuth setting: [SslContextFactory]type=Wantdescription=Requests the client certificate on handshake and validates if present but does not require it
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted server DN: CN=ncm.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Running test with socket ClientAuth setting: [SslContextFactory]type=Nonedescription=Does not request the client certificate on handshake
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted server DN: CN=ncm.nifi.apache.org, OU=Security, O=Apache, ST=CA, C=US
+]]></system-err>
+  </testcase>
+  <testcase name="reorderShouldPutElementsInCorrectOrder" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.001"/>
+  <testcase name="testShouldDetermineClientAuthStatusFromSocket" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.006">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Client auth (needSocket): [SslContextFactory]type=Requireddescription=Requests the client certificate on handshake and rejects the connection if it is not present and valid
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Client auth (wantSocket): [SslContextFactory]type=Wantdescription=Requests the client certificate on handshake and validates if present but does not require it
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Client auth (noneSocket): [SslContextFactory]type=Nonedescription=Does not request the client certificate on handshake
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldDetermineClientAuthStatusFromSocket" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.001">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Client auth (needSocket): [SslContextFactory]type=Requireddescription=Requests the client certificate on handshake and rejects the connection if it is not present and valid
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Client auth (wantSocket): [SslContextFactory]type=Wantdescription=Requests the client certificate on handshake and validates if present but does not require it
+[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Client auth (noneSocket): [SslContextFactory]type=Nonedescription=Does not request the client certificate on handshake
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldNotExtractClientCertificatesFromSSLClientSocketWithClientAuthNone" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted client DN: null
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldNotExtractClientCertificatesFromSSLClientSocketWithClientAuthNone" classname="org.apache.nifi.security.util.CertificateUtilsTest" time="0">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.CertificateUtilsTest - Extracted client DN: null
+]]></system-err>
+  </testcase>
+</testsuite>

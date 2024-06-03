@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.972" tests="16" errors="0" skipped="1" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter4266379316879791065.jar /home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire 2024-05-02T03-00-27_868-jvmRun1 surefire7906868428232362842tmp surefire_63625742327676259302tmp"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter4266379316879791065.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testGetCipherForDecryptShouldRequireIV" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.153">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An empty IV was provided of length 16 for encryption
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 00000000000000000000000000000000
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 1f4be3ce271146e2d4c7ba03e2174fa936ff933ae3bc52414326563361f40838 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] ERROR org.apache.nifi.security.util.crypto.BcryptCipherProvider - Encountered an error generating the Bcrypt hash
+java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getInitializedCipher(AESKeyedCipherProvider.java:128)
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getCipher(AESKeyedCipherProvider.java:60)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getInitializedCipher(BcryptCipherProvider.java:173)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.createCipherAndHandleExceptions(BcryptCipherProvider.java:91)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getCipher(BcryptCipherProvider.java:86)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getCipher(BcryptCipherProvider.java:114)
+	at org.apache.nifi.security.util.crypto.PBECipherProvider$getCipher$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:115)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(BcryptCipherProviderGroovyTest.groovy:386)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(BcryptCipherProviderGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.test.GroovyAssert$shouldFail.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:196)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:216)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest.testGetCipherForDecryptShouldRequireIV(BcryptCipherProviderGroovyTest.groovy:385)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An empty IV was provided of length 16 for encryption
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 00000000000000000000000000000000
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 641928f1459fd09e1f1f486da6ff0e6171a1f08cfe08bfec171a83280bca7bcd75874c2922bc584dcb9966bd2df8dc22 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] ERROR org.apache.nifi.security.util.crypto.BcryptCipherProvider - Encountered an error generating the Bcrypt hash
+java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getInitializedCipher(AESKeyedCipherProvider.java:128)
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getCipher(AESKeyedCipherProvider.java:60)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getInitializedCipher(BcryptCipherProvider.java:173)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.createCipherAndHandleExceptions(BcryptCipherProvider.java:91)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getCipher(BcryptCipherProvider.java:86)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getCipher(BcryptCipherProvider.java:114)
+	at org.apache.nifi.security.util.crypto.PBECipherProvider$getCipher$0.call(Unknown Source)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(BcryptCipherProviderGroovyTest.groovy:386)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(BcryptCipherProviderGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.test.GroovyAssert$shouldFail.callStatic(Unknown Source)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest.testGetCipherForDecryptShouldRequireIV(BcryptCipherProviderGroovyTest.groovy:385)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An empty IV was provided of length 16 for encryption
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 00000000000000000000000000000000
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 64bb318851d1382e284d402a787ec4f5c35cbd908cd0720e5344e01baf62dc59 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] ERROR org.apache.nifi.security.util.crypto.BcryptCipherProvider - Encountered an error generating the Bcrypt hash
+java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getInitializedCipher(AESKeyedCipherProvider.java:128)
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getCipher(AESKeyedCipherProvider.java:60)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getInitializedCipher(BcryptCipherProvider.java:173)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.createCipherAndHandleExceptions(BcryptCipherProvider.java:91)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getCipher(BcryptCipherProvider.java:86)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getCipher(BcryptCipherProvider.java:114)
+	at org.apache.nifi.security.util.crypto.PBECipherProvider$getCipher$0.call(Unknown Source)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(BcryptCipherProviderGroovyTest.groovy:386)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(BcryptCipherProviderGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.test.GroovyAssert$shouldFail.callStatic(Unknown Source)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest.testGetCipherForDecryptShouldRequireIV(BcryptCipherProviderGroovyTest.groovy:385)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An empty IV was provided of length 16 for encryption
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 00000000000000000000000000000000
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 2851b63f1e35d018972163e9673086481ce9f9e7f56704fc8bc39686721b3a71865b2adfd0266827998c51f9399be788 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] ERROR org.apache.nifi.security.util.crypto.BcryptCipherProvider - Encountered an error generating the Bcrypt hash
+java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getInitializedCipher(AESKeyedCipherProvider.java:128)
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getCipher(AESKeyedCipherProvider.java:60)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getInitializedCipher(BcryptCipherProvider.java:173)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.createCipherAndHandleExceptions(BcryptCipherProvider.java:91)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getCipher(BcryptCipherProvider.java:86)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProvider.getCipher(BcryptCipherProvider.java:114)
+	at org.apache.nifi.security.util.crypto.PBECipherProvider$getCipher$0.call(Unknown Source)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(BcryptCipherProviderGroovyTest.groovy:386)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(BcryptCipherProviderGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.test.GroovyAssert$shouldFail.callStatic(Unknown Source)
+	at org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest.testGetCipherForDecryptShouldRequireIV(BcryptCipherProviderGroovyTest.groovy:385)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+]]></system-err>
+  </testcase>
+  <testcase name="testHashPWShouldMatchTestVectors" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.154">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Generated $2a$10$fVH8e28OQRj9tqiDXs1e1uxpsjN0c7II7YPKXua2NAKYvM6iQk7dq
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 10 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Generated $2a$10$fVH8e28OQRj9tqiDXs1e1uxpsjN0c7II7YPKXua2NAKYvM6iQk7dq
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldNotAcceptInvalidKeyLengths" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.005">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length -1
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 40
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 64
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 112
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 512
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldSupportExternalCompatibility" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.201">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 10 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Full Hash: $2a$10$LBVzJoPgh.85YCvnos4BKOyYM.LRni6UbU4v/CEPBkmFIiigADJZi
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest -      Hash:                              yYM.LRni6UbU4v/CEPBkmFIiigADJZi
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest -  B64 Salt:        LBVzJoPgh.85YCvnos4BKO
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Extracted Salt:   LBVzJoPgh.85YCvnos4BKO
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Extracted Salt (hex): 3435f52ea4628c0fbb684c69aaee8331
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest -  Expected Salt (hex): 3435f52ea4628c0fbb684c69aaee8331
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - External cipher text: d232b68e7aa38242d195c54b8f360d8b8d6b7580b190ffdeef99f5fe460bd6b0 32
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Expected cipher text: d232b68e7aa38242d195c54b8f360d8b8d6b7580b190ffdeef99f5fe460bd6b0
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [SANITY] Decrypted external cipher text and generated cipher text successfully
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [SANITY] Salt from external: $2a$10$LBVzJoPgh.85YCvnos4BKO
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [SANITY] Generated hash: $2a$10$LBVzJoPgh.85YCvnos4BKOyYM.LRni6UbU4v/CEPBkmFIiigADJZi
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 10 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: This is a plaintext message.
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherWithUnlimitedStrengthShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.02">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: a64956936f35933b255b6d8a2ec2ea77
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 3589e5d4dfc3c1b39466a26d7af2d64e6e9fb6bd87e7ad9cc27bba7364e9ee2f 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: ebd7c34900449a2be16566bb063fb9ef
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: e641a77b44fa0061dc4a2b5b2570c3af1b517d8df77bf1140c08f9fb04afa1bd300e9862ffaa1a29042516a727d675b3 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: ac8fa8404f13fff1b032313e112a5bde
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: fe4ef211806cb4505934bdcf81f029aec8662c4ffff19f118e204cf8d02e5c5b 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 2376e8b900c4dc39211f6d0f1bc0279b
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: a87480cff7f352b5e7fda3c7a9cbe9c71bb23cedd32c70739d078d9db4833f501776fc427be94366661f7d380292de37 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testDefaultConstructorShouldProvideStrongWorkFactor" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0">
+    <skipped message="This test can be run on a specific machine to evaluate if the default work factor is sufficient"/>
+  </testcase>
+  <testcase name="testGetCipherShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.016">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: b2cf0d499e70b3ee389459e6ac46f7b6
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: f1e0e6d36b1355bc4dbbaeda11c87d325f093f7b5a5d9af98dcd2b3f8d55b980 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 25cd5206ec9f325edaede49179dce432
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: a11b65b2371dc95ac3b5db480ce7718f1dd037bab3e909ad21b39be1ccf03120f4acbf53fa019f66a308ee045277fa3d 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 37f95216f99cc5baa3259f46c9733d8b
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 067f4b12fbf474eaa4a96922d74d45d3f495f354ba94ee2818bf33463614d8e8 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: b3754d6d3a4e6af9f0c251bd0ac41a0f
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: ebcd2903685e6cc5eaf9327b526785e133855dc287fda78c45bf190ca4f00a15f1c8f7472fc5ddbf9c0f80f5d2ac804a 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldHandleFullSalt" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.075">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 10 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Full Hash: $2a$10$LBVzJoPgh.85YCvnos4BKOyYM.LRni6UbU4v/CEPBkmFIiigADJZi
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest -      Salt: $2a$10$LBVzJoPgh.85YCvnos4BKO
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest -      Hash:                              yYM.LRni6UbU4v/CEPBkmFIiigADJZi
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Extracted Salt:   LBVzJoPgh.85YCvnos4BKO
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Extracted Salt (hex): 3435f52ea4628c0fbb684c69aaee8331
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - External cipher text: d232b68e7aa38242d195c54b8f360d8b8d6b7580b190ffdeef99f5fe460bd6b0 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 10 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: This is a plaintext message.
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldAcceptValidKeyLengths" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.012">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 128
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: d6337a5f91888b1580147a2d30d1e6d4adc3e2b42495cb7307eb24eb49a8b062840eb264c035236e2fbddc6e54f4a63f 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 192
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 36ed8c7af95025776a922f22723e7bb916245c2a9884e234689b4944a586433f3efb59b0798c12ff8b5b1418a29db9e1 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 256
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 3dd4b033dcd0c887a8523b4449b8529c2c2c1cf066c612603c3d2b0a8640eaedb1133ebb8720c89bf1afd05a987273e4 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGenerateSaltShouldUseProvidedWorkFactor" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 11 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Salt: $2a$11$rTowjXZj1E.OqC0QXmKNVO
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldHandleUnformedSalt" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.004">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Checking salt $ab$00$acbdefghijklmnopqrstuv
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The salt must be of the format $2a$10$gUVbkVzp79H8YaCOsCVZNu. To generate a salt, use BcryptCipherProvider#generateSalt()
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Checking salt bad_salt
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The salt must be of the format $2a$10$gUVbkVzp79H8YaCOsCVZNu. To generate a salt, use BcryptCipherProvider#generateSalt()
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Checking salt $3a$11$
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The salt must be of the format $2a$10$gUVbkVzp79H8YaCOsCVZNu. To generate a salt, use BcryptCipherProvider#generateSalt()
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Checking salt x
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The salt must be of the format $2a$10$gUVbkVzp79H8YaCOsCVZNu. To generate a salt, use BcryptCipherProvider#generateSalt()
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Checking salt $2a$10$
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The salt must be of the format $2a$10$gUVbkVzp79H8YaCOsCVZNu. To generate a salt, use BcryptCipherProvider#generateSalt()
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldBeBackwardCompatibleWithFullHashKeyDerivation" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.015">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.KeyDerivationBcryptSecureHasher - Using Legacy Key Derivation on bcrypt hash including cost and salt
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: c2c4598b2655c27c99b6d9e50709dcd2
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: d0556e81004bad1e36ae8770445aef1b4344b50749a12d7b42a81ca46b9fe61d 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.KeyDerivationBcryptSecureHasher - Using Legacy Key Derivation on bcrypt hash including cost and salt
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.KeyDerivationBcryptSecureHasher - Using Legacy Key Derivation on bcrypt hash including cost and salt
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: c6c1b81fd576492b5758c605f24ebcaf
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: c2ba5a8a3741b20b74c67c2aed434924f7d3af6f6fd428f8b6bafc3a4a111fcbe3434d865a3f75dea531cbf0e493da39 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.KeyDerivationBcryptSecureHasher - Using Legacy Key Derivation on bcrypt hash including cost and salt
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.KeyDerivationBcryptSecureHasher - Using Legacy Key Derivation on bcrypt hash including cost and salt
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 5681f324a6ec566f90f0d9c93e1851f1
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: aea9ecceed122369b3876907184ebd1982eb10220f82a9a2ec00312a6b42e83b 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.KeyDerivationBcryptSecureHasher - Using Legacy Key Derivation on bcrypt hash including cost and salt
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.KeyDerivationBcryptSecureHasher - Using Legacy Key Derivation on bcrypt hash including cost and salt
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: be9481ba30f0c687698c80e5f9de055a
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: abbf7262d785730b7c9450c42ad6dba4d2c6a1fe29b007248e10c6706c1244b8eb6ad9f832fbfd6061fe9dcdb07db1a7 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.KeyDerivationBcryptSecureHasher - Using Legacy Key Derivation on bcrypt hash including cost and salt
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldHandleNullSalt" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.035">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [EXPECTED] Encrypt error: java.lang.IllegalArgumentException: The salt must be of the format $2a$10$gUVbkVzp79H8YaCOsCVZNu. To generate a salt, use BcryptCipherProvider#generateSalt()
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 737365636f7250726f466465726975716552657a69536b636f6c427463617845 32
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [EXPECTED] Decrypt error: java.lang.IllegalArgumentException: The salt must be of the format $2a$10$gUVbkVzp79H8YaCOsCVZNu. To generate a salt, use BcryptCipherProvider#generateSalt()
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldRejectEmptySalt" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The salt must be of the format $2a$10$gUVbkVzp79H8YaCOsCVZNu. To generate a salt, use BcryptCipherProvider#generateSalt()
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherWithExternalIVShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.014">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 23ac4f6ceb0de3257fa59b93824acd3e4a21e11676a2343ecee5fe82bc99274a 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 23ac4f6ceb0de3257fa59b93824acd3e4a21e11676a2343ecee5fe82bc99274a6998d85baccba71418b25cd07fca6dc1 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 8e51687932b85dac94776b73c1fd2f95fe0fb18570980e8f02401260e04cbf34 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: a51a36550afe8d6869b2244b95e8895937bc4894bf3c86b877041d81f22d9a88a334740df8ecbc927b2586d702f93653 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldUseHashOutputOnlyToDeriveKey" classname="org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest" time="0.044">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.BcryptCipherProvider - The provided work factor 4 is below the recommended minimum 12
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using fixed Bcrypt salt: $2a$04$0oHspAZ1LUK5iuniHTw/4.
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Raw hash output (60): 24326124303424306f487370415a314c554b3569756e694854772f342e64314d6330643172636a75594f74365838316434385449413137513234526d
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Key digest (64): 8f5419a1e9dcfc1909d15785e0e5d7ace8053d6a417c75fca5b7538deeb94fe065a4519a06ab9225217f63a8553b285321df91d11d2fe5a820d4720a023e9e4e
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 25701ca2db61fde7bcbd3c188945db93
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: ea6a4a36a4a0d0c69a1f9ba8f027ddc269a4d3481c990cc5d3e05e2c24158b18 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Derived key (16): 8f5419a1e9dcfc1909d15785e0e5d7ac
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Verified: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: bfae8fdaf100b1c267a9ca8dca8bb18c
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 84f661a68c3847329f379255044b3e628434f2be4c05f4b0d849902191923b33ce685410d992e887697bff1e6026025c 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Derived key (16): 8f5419a1e9dcfc1909d15785e0e5d7ac
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Verified: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: c531f53f1e5898050223d5eaef1e58fb
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: a5353969cab691a3adba71778a2af268cc68096b767723ca5d6bb2a49b10bbfb 32
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Derived key (16): 8f5419a1e9dcfc1909d15785e0e5d7ac
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Verified: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - IV: 9e237f36b2dd1c7593ea6f669dc51701
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Cipher text: 6b90dc5446b46f8f22e862734ee1cbcc0e1fe0271758225007879c5f614478e16e354a8722b955f3ab992f88b08d9678 48
+[main] WARN org.apache.nifi.security.util.crypto.BcryptSecureHasher - The provided cost factor 4 is below the recommended minimum 12.
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Derived key (16): 8f5419a1e9dcfc1909d15785e0e5d7ac
+[main] INFO org.apache.nifi.security.util.crypto.BcryptCipherProviderGroovyTest - Verified: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+</testsuite>

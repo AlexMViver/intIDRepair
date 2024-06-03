@@ -1,0 +1,36 @@
+ERROR StatusLogger Unable to locate a logging implementation, using SimpleLogger
+2024-04-26 13:32:49,054 [INFO] TableUtils dropping table 'foo'
+2024-04-26 13:32:49,187 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOO" not found; SQL statement:
+DROP TABLE `foo`  [42102-200]' for statement: DROP TABLE `foo` 
+2024-04-26 13:32:49,187 [INFO] TableUtils creating table 'foo'
+2024-04-26 13:32:49,205 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `foo` (`id` INTEGER AUTO_INCREMENT , `val` INTEGER , `equal` INTEGER , `string` VARCHAR(255) , PRIMARY KEY (`id`) ) 
+2024-04-26 13:32:49,218 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `foo` (`val` ,`equal` ,`string` ) VALUES (?,?,?)' and 3 args, changed 1 rows
+2024-04-26 13:32:49,218 [TRACE] BaseMappedStatement insert arguments: [1232131321, 0, null]
+2024-04-26 13:32:49,218 [DEBUG] BaseMappedStatement assigned id '1' from keyholder to 'id' in Foo object
+2024-04-26 13:32:49,224 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:32:49,224 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:32:49,226 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:32:49,226 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo`' with 0 args returned 1 results
+2024-04-26 13:32:49,227 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:32:49,228 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE `id` = 1' with 0 args
+2024-04-26 13:32:49,229 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE `id` = 1' with 0 args returned 1 results
+2024-04-26 13:32:49,230 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE (`id` = 1 AND `val` = 1232131321)' with 0 args
+2024-04-26 13:32:49,231 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE (`id` = 1 AND `val` = 1232131321)' with 0 args returned 1 results
+2024-04-26 13:32:49,232 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE (`id` = ? AND `val` = ?)' with 2 args
+2024-04-26 13:32:49,232 [TRACE] BaseMappedStatement prepared statement arguments: [1, 1232131321]
+2024-04-26 13:32:49,232 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE (`id` = ? AND `val` = ?)' with 2 args returned 1 results
+2024-04-26 13:32:49,233 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:32:49,233 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:32:49,233 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:32:49,233 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:32:49,235 [DEBUG] BaseMappedStatement update data with statement 'UPDATE `foo` SET `val` = ?, `equal` = ?, `string` = ? WHERE `id` = ?' and 4 args, changed 1 rows
+2024-04-26 13:32:49,236 [TRACE] BaseMappedStatement update arguments: [342342343, 0, null, 1]
+2024-04-26 13:32:49,236 [DEBUG] BaseMappedStatement refresh using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:32:49,236 [TRACE] BaseMappedStatement refresh arguments: [1]
+2024-04-26 13:32:49,238 [DEBUG] BaseMappedStatement delete data with statement 'DELETE FROM `foo` WHERE `id` = ?' and 1 args, changed 1 rows
+2024-04-26 13:32:49,238 [TRACE] BaseMappedStatement delete arguments: [1]
+2024-04-26 13:32:49,238 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got no results
+2024-04-26 13:32:49,238 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:32:49,239 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:32:49,239 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo`' with 0 args returned 0 results
+2024-04-26 13:32:49,239 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args

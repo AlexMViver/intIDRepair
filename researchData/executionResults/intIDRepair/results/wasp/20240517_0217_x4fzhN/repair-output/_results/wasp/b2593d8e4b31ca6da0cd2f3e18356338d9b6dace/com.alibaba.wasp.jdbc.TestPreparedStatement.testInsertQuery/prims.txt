@@ -1,0 +1,170 @@
+[TIME]: 0:00:00.377525
+=== SEARCH CLASSPATH ENTRY: /home/alex/Repositories/intIDRepair/toolRepos/ODRepair/experiments/_downloads/wasp
+=== com.alibaba.wasp.jdbc.TestPreparedStatement String Literals: =============
+wasp.client.retries.number
+com.alibaba.wasp.jdbc.Driver
+test
+READ_MODEL
+Insert into TEST(column1,column2,column3) values (?,?,?);
+select column1,column2,column3 from TEST where column1=? and column2=?
+column1
+column2
+column3
+select (? || ? || ?) from dual
+a
+b
+c
+ab
+create table ts(x timestamp primary key)
+create table t(x time primary key)
+create table d(x date)
+Z
+PST
+2010-03-13 18:15:00
+2010-03-13 19:15:00
+insert into ts values(?)
+insert into t values(?)
+insert into d values(?)
+select * from ts order by x
+2010-03-14 02:15:00.0
+2010-03-13 18:15:00.0
+2010-03-14 03:15:00.0
+x
+2010-03-13 19:15:00.0
+select * from t order by x
+02:15:00
+18:15:00
+03:15:00
+19:15:00
+select * from d order by x
+2010-03-14
+2010-03-13
+drop table ts
+drop table t
+drop table d
+call table(x int = (1))
+values(?, ?)
+Hello
+select * from values(?, ?), (2, 'World!')
+World!
+values 1, 2
+call 1
+: call 1
+call ?
+: call ?
+Hello World
+: call ? {1: 'Hello World'}
+CALL HASH('SHA256', STRINGTOUTF8('Password'), 1000)
+prepare test(int, int) as select ?1*?2
+execute test(3, 2)
+deallocate test
+CREATE TABLE TEST(ID INT PRIMARY KEY, DATA CLOB)
+INSERT INTO TEST VALUES(?, ?)
+SELECT * FROM TEST ORDER BY ID
+DELETE FROM TEST
+DROP TABLE TEST
+CREATE TABLE TEST(ID INT, H BINARY)
+INSERT INTO TEST VALUES(?, HASH('SHA256', STRINGTOUTF8(?), 5))
+One
+Two
+SELECT COUNT(DISTINCT H) FROM TEST
+SELECT * FROM (SELECT ? FROM DUAL)
+SELECT -?
+SELECT ?-?
+create table test(tm timestamp)
+insert into test values(current_timestamp)
+update test set tm = coalesce(?,tm)
+drop table test
+select * from table(x int = ?, name varchar = ?)
+INTEGER
+VARCHAR
+select * from table(x int = ?) order by x
+1
+2
+create table test_uuid(id uuid primary key)
+insert into test_uuid values(?)
+select * from test_uuid
+ffffffff-ffff-fffe-ffff-ffffffffffff
+java.util.UUID
+drop table test_uuid
+CREATE TABLE TEST_UUID(id UUID DEFAULT random_UUID() PRIMARY KEY)
+INSERT INTO TEST_UUID() VALUES()
+INSERT INTO TEST_UUID VALUES(random_UUID())
+DROP TABLE TEST_UUID
+CREATE TABLE TEST(C CHAR(1))
+INSERT INTO TEST VALUES(?)
+CREATE TABLE TEST(ID INT, DATA BINARY, JAVA OTHER)
+INSERT INTO TEST VALUES(?, ?, ?)
+SELECT ?
+2001-02-03 04:05:06
+SELECT ?, ?, ? FROM DUAL
+java.lang.String
+CREATE TABLE TEST3(ID INT, NAME VARCHAR(255), DATA DECIMAL(10,2))
+UPDATE TEST3 SET ID=?, NAME=?, DATA=?
+INSERT INTO TEST3 VALUES(?, ?, ?)
+java.lang.Integer
+java.math.BigDecimal
+DECIMAL
+SELECT * FROM TEST3 WHERE ID=? AND NAME LIKE ? AND ?>DATA
+DROP TABLE TEST3
+Create tables
+CREATE TABLE T_INT(ID INT PRIMARY KEY,VALUE INT)
+CREATE TABLE T_VARCHAR(ID INT PRIMARY KEY,VALUE VARCHAR(255))
+CREATE TABLE T_DECIMAL_0(ID INT PRIMARY KEY,VALUE DECIMAL(30,0))
+CREATE TABLE T_DECIMAL_10(ID INT PRIMARY KEY,VALUE DECIMAL(20,10))
+CREATE TABLE T_DATETIME(ID INT PRIMARY KEY,VALUE DATETIME)
+INSERT INTO T_INT VALUES(?,?)
+0
+-1
+8
+5
+SELECT * FROM T_INT ORDER BY ID
+3
+4
+6
+7
+9
+-4
+10
+11
+12
+13
+14
+-20
+15
+100
+16
+30000
+17
+-30000
+18
+2147483647
+19
+-2147483648
+INSERT INTO T_DECIMAL_0 VALUES(?,?)
+SELECT VALUE FROM T_DECIMAL_0 ORDER BY ID
+9223372036854775807
+-9223372036854775808
+30
+-40
+CREATE TABLE TEST(ID INT)
+INSERT INTO TEST VALUES(1)
+SELECT * FROM TEST
+UPDATE TEST SET ID = 2
+CREATE TABLE TEST(ID INT PRIMARY KEY, NAME VARCHAR(255))
+INSERT INTO TEST VALUES(1, 'Hello')
+SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? FROM TEST
+Abc
+10.2
+2001-02-03
+04:05:06
+2001-02-03 04:05:06.123456789
+2001-01-02
+3.725
+23:22:21
+12345
+2001-02-03 00:00:00
+v=
+ x=
+TEST
+==================================

@@ -1,0 +1,163 @@
+ERROR StatusLogger Unable to locate a logging implementation, using SimpleLogger
+2024-04-26 13:43:30,219 [WARNING] LoggerFactory Could not find valid log-type from system property 'com.j256.simplelogger.backend', value 'some.wrong.class'
+2024-04-26 13:43:30,254 [INFO] TableUtils dropping table 'tablename'
+2024-04-26 13:43:30,378 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TABLENAME" not found; SQL statement:
+DROP TABLE `tablename`  [42102-200]' for statement: DROP TABLE `tablename` 
+2024-04-26 13:43:30,378 [INFO] TableUtils creating table 'tablename'
+2024-04-26 13:43:30,384 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `tablename` (`column2` VARCHAR(255) , PRIMARY KEY (`column2`) ) 
+2024-04-26 13:43:30,385 [INFO] TableUtils dropping table 'privateconstructor'
+2024-04-26 13:43:30,387 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRIVATECONSTRUCTOR" not found; SQL statement:
+DROP TABLE `privateconstructor`  [42102-200]' for statement: DROP TABLE `privateconstructor` 
+2024-04-26 13:43:30,387 [INFO] TableUtils creating table 'privateconstructor'
+2024-04-26 13:43:30,388 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `privateconstructor` (`id` INTEGER , PRIMARY KEY (`id`) ) 
+2024-04-26 13:43:30,390 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `privateconstructor` (`id` ) VALUES (?)' and 1 args, changed 1 rows
+2024-04-26 13:43:30,390 [TRACE] BaseMappedStatement insert arguments: [12312321]
+2024-04-26 13:43:30,407 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `privateconstructor` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:43:30,407 [TRACE] BaseMappedStatement query-for-id arguments: [12312321]
+2024-04-26 13:43:30,409 [INFO] TableUtils dropping table 'foo'
+2024-04-26 13:43:30,411 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOO" not found; SQL statement:
+DROP TABLE `foo`  [42102-200]' for statement: DROP TABLE `foo` 
+2024-04-26 13:43:30,411 [INFO] TableUtils creating table 'foo'
+2024-04-26 13:43:30,421 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `foo` (`id` INTEGER AUTO_INCREMENT , `val` INTEGER , `equal` INTEGER , `string` VARCHAR(255) , PRIMARY KEY (`id`) ) 
+2024-04-26 13:43:30,423 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `foo` (`val` ,`equal` ,`string` ) VALUES (?,?,?)' and 3 args, changed 1 rows
+2024-04-26 13:43:30,423 [TRACE] BaseMappedStatement insert arguments: [66654654, 0, null]
+2024-04-26 13:43:30,423 [DEBUG] BaseMappedStatement assigned id '1' from keyholder to 'id' in Foo object
+2024-04-26 13:43:30,424 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:43:30,424 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:43:30,427 [DEBUG] BaseMappedStatement prepared statement 'UPDATE `foo` SET `val` = 165445654' with 0 args
+2024-04-26 13:43:30,428 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `foo` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:43:30,428 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:43:30,429 [INFO] TableUtils dropping table 'testserial'
+2024-04-26 13:43:30,431 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TESTSERIAL" not found; SQL statement:
+DROP TABLE `testserial`  [42102-200]' for statement: DROP TABLE `testserial` 
+2024-04-26 13:43:30,431 [INFO] TableUtils creating table 'testserial'
+2024-04-26 13:43:30,432 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `testserial` (`id` INTEGER AUTO_INCREMENT , `stuff` BLOB , PRIMARY KEY (`id`) ) 
+2024-04-26 13:43:30,435 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `testserial` (`stuff` ) VALUES (?)' and 1 args, changed 1 rows
+2024-04-26 13:43:30,435 [TRACE] BaseMappedStatement insert arguments: [[-84, -19, 0, 5, 116, 0, 6, 104, 106, 114, 106, 112, 101]]
+2024-04-26 13:43:30,435 [DEBUG] BaseMappedStatement assigned id '1' from keyholder to 'id' in TestSerial object
+2024-04-26 13:43:30,437 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `testserial` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:43:30,437 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+2024-04-26 13:43:30,438 [DEBUG] BaseMappedStatement prepared statement 'UPDATE `testserial` SET `stuff` = ?' with 1 args
+2024-04-26 13:43:30,438 [TRACE] BaseMappedStatement prepared statement arguments: [[-84, -19, 0, 5, 116, 0, 9, 49, 54, 53, 52, 52, 53, 54, 53, 52]]
+2024-04-26 13:43:30,439 [DEBUG] BaseMappedStatement query-for-id using 'SELECT * FROM `testserial` WHERE `id` = ?' and 1 args, got 1 result
+2024-04-26 13:43:30,439 [TRACE] BaseMappedStatement query-for-id arguments: [1]
+ERROR Log4j2LogBackendTest message
+ERROR Log4j2LogBackendTest message java.lang.Throwable: log throwable
+	at com.j256.ormlite.logger.BaseLogBackendTest.testErrorStringThrowable(BaseLogBackendTest.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at edu.illinois.cs.testrunner.execution.JUnitTestExecutor.execute(JUnitTestExecutor.java:259)
+	at edu.illinois.cs.testrunner.execution.JUnitTestExecutor.executeWithJUnit4Runner(JUnitTestExecutor.java:327)
+	at edu.illinois.cs.testrunner.execution.JUnitTestExecutor.runOrder(JUnitTestExecutor.java:49)
+	at edu.illinois.cs.testrunner.execution.Executor$.$anonfun$run$1(Executor.scala:30)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.util.Try$.apply(Try.scala:209)
+	at edu.illinois.cs.testrunner.execution.Executor$.run(Executor.scala:28)
+	at edu.illinois.cs.testrunner.execution.Executor$.main(Executor.scala:18)
+	at edu.illinois.cs.testrunner.execution.Executor.main(Executor.scala)
+
+FATAL Log4j2LogBackendTest message java.lang.Throwable: log throwable
+	at com.j256.ormlite.logger.BaseLogBackendTest.testFatalStringThrowable(BaseLogBackendTest.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at edu.illinois.cs.testrunner.execution.JUnitTestExecutor.execute(JUnitTestExecutor.java:259)
+	at edu.illinois.cs.testrunner.execution.JUnitTestExecutor.executeWithJUnit4Runner(JUnitTestExecutor.java:327)
+	at edu.illinois.cs.testrunner.execution.JUnitTestExecutor.runOrder(JUnitTestExecutor.java:49)
+	at edu.illinois.cs.testrunner.execution.Executor$.$anonfun$run$1(Executor.scala:30)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.util.Try$.apply(Try.scala:209)
+	at edu.illinois.cs.testrunner.execution.Executor$.run(Executor.scala:28)
+	at edu.illinois.cs.testrunner.execution.Executor$.main(Executor.scala:18)
+	at edu.illinois.cs.testrunner.execution.Executor.main(Executor.scala)
+
+FATAL Log4j2LogBackendTest message
+Skipping unknown value class class java.lang.Class
+Skipping unknown value class class com.j256.ormlite.field.DataType
+2024-04-26 13:43:30,449 [INFO] TableUtils dropping table 'foo'
+2024-04-26 13:43:30,450 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOO" not found; SQL statement:
+DROP TABLE `foo`  [42102-200]' for statement: DROP TABLE `foo` 
+2024-04-26 13:43:30,450 [INFO] TableUtils creating table 'foo'
+2024-04-26 13:43:30,451 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `foo` (`bigDecimal` NUMERIC ) 
+2024-04-26 13:43:30,452 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `foo` (`bigDecimal` ) VALUES (?)' and 1 args, threw exception: org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "not valid form" [22018-200]
+2024-04-26 13:43:30,452 [TRACE] BaseMappedStatement insert arguments: [not valid form]
+2024-04-26 13:43:30,452 [INFO] TableUtils dropping table 'foo'
+2024-04-26 13:43:30,454 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOO" not found; SQL statement:
+DROP TABLE `foo`  [42102-200]' for statement: DROP TABLE `foo` 
+2024-04-26 13:43:30,454 [INFO] TableUtils creating table 'foo'
+2024-04-26 13:43:30,454 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `foo` (`bigDecimal` NUMERIC ) 
+2024-04-26 13:43:30,456 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `foo` (`bigDecimal` ) VALUES (?)' and 1 args, changed 1 rows
+2024-04-26 13:43:30,456 [TRACE] BaseMappedStatement insert arguments: [1.345345435345345345345345345345345345345345346356524234234]
+2024-04-26 13:43:30,458 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:43:30,459 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo`' with 0 args returned 1 results
+2024-04-26 13:43:30,460 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE (`bigDecimal` = 1.345345435345345345345345345345345345345345346356524234234)' with 0 args
+2024-04-26 13:43:30,461 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE (`bigDecimal` = 1.345345435345345345345345345345345345345345346356524234234)' with 0 args returned 1 results
+2024-04-26 13:43:30,461 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo` WHERE (`bigDecimal` = ?)' with 1 args
+2024-04-26 13:43:30,461 [TRACE] BaseMappedStatement prepared statement arguments: [1.345345435345345345345345345345345345345345346356524234234]
+2024-04-26 13:43:30,461 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo` WHERE (`bigDecimal` = ?)' with 1 args returned 1 results
+2024-04-26 13:43:30,462 [INFO] TableUtils dropping table 'foo'
+2024-04-26 13:43:30,463 [INFO] TableUtils ignoring drop error 'org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOO" not found; SQL statement:
+DROP TABLE `foo`  [42102-200]' for statement: DROP TABLE `foo` 
+2024-04-26 13:43:30,463 [INFO] TableUtils creating table 'foo'
+2024-04-26 13:43:30,464 [INFO] TableUtils executed create table statement changed 0 rows: CREATE TABLE `foo` (`bigDecimal` NUMERIC ) 
+2024-04-26 13:43:30,464 [DEBUG] BaseMappedStatement insert data with statement 'INSERT INTO `foo` (`bigDecimal` ) VALUES (?)' and 1 args, changed 1 rows
+2024-04-26 13:43:30,464 [TRACE] BaseMappedStatement insert arguments: [null]
+2024-04-26 13:43:30,464 [DEBUG] BaseMappedStatement prepared statement 'SELECT * FROM `foo`' with 0 args
+2024-04-26 13:43:30,465 [DEBUG] StatementExecutor query of 'SELECT * FROM `foo`' with 0 args returned 1 results

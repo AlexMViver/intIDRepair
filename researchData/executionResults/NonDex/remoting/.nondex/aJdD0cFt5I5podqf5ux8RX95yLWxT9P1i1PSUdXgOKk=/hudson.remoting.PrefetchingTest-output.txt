@@ -1,0 +1,100 @@
+Starting testGetResourceAsStream
+south completed
+north completed
+Starting testGetResources
+jar:file:/tmp/remoting4500834105786915536cache/7F/CE79BB8C55572F4D2C34ABECD36F76.jar!/test/hello.txt::hello
+jar:file:/tmp/remoting4500834105786915536cache/B0/5BB4D36C30A77AAE2989D2B457E251.jar!/test/hello.txt::hello2
+
+south completed
+north completed
+Starting testInnerClass
+south completed
+north completed
+Starting testGetResource
+jar:file:/tmp/remoting1126699452015976311cache/7F/CE79BB8C55572F4D2C34ABECD36F76.jar!/test/hello.txt::hello
+south completed
+north completed
+Starting testGetResource_precache
+file:/tmp/resource-318643914493624252/test/hello.txt::hello
+south completed
+north completed
+Starting testJarLoadingTest
+abr 25, 2024 1:03:46 AM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request hudson.remoting.Request$2@52ccfb9f: hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@60f662bd:north": channel is already closed
+jar:file:/tmp/remoting5351461332793886607cache/7F/CE79BB8C55572F4D2C34ABECD36F76.jar!/test/ClassLoadingFromJarTester.class
+south completed
+north completed
+Starting testGetResources_precache
+file:/tmp/resource-6511019998089938180/test/hello.txt::hello
+file:/tmp/resource-689442886546609912/test/hello.txt::hello2
+
+south completed
+north completed
+abr 25, 2024 1:03:46 AM hudson.remoting.JarCacheSupport$DownloadRunnable run
+WARNING: Failed to resolve a jar b05bb4d36c30a77aae2989d2b457e251
+java.io.IOException: Failed to write to /tmp/remoting9018598481478427219cache/B0/5BB4D36C30A77AAE2989D2B457E251.jar
+	at hudson.remoting.FileSystemJarCache.retrieve(FileSystemJarCache.java:149)
+	at hudson.remoting.JarCacheSupport$DownloadRunnable.run(JarCacheSupport.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at hudson.remoting.AtmostOneThreadExecutor$Worker.run(AtmostOneThreadExecutor.java:118)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@3e2486f2:south": channel is already closed
+	at hudson.remoting.Request.checkIfCanBeExecutedOnChannel(Request.java:130)
+	at hudson.remoting.UserRequest.checkIfCanBeExecutedOnChannel(UserRequest.java:114)
+	at hudson.remoting.Request.call(Request.java:155)
+	at hudson.remoting.Channel.call(Channel.java:1000)
+	at hudson.remoting.RemoteInvocationHandler.invoke(RemoteInvocationHandler.java:286)
+	at com.sun.proxy.$Proxy23.writeJarTo(Unknown Source)
+	at hudson.remoting.FileSystemJarCache.retrieve(FileSystemJarCache.java:116)
+	... 5 more
+Caused by: hudson.remoting.Channel$OrderlyShutdown: Command Close created at
+	at hudson.remoting.Channel$CloseCommand.execute(Channel.java:1322)
+	at hudson.remoting.Channel$1.handle(Channel.java:607)
+	at hudson.remoting.AbstractByteArrayCommandTransport$1.handle(AbstractByteArrayCommandTransport.java:65)
+	at org.jenkinsci.remoting.nio.NioChannelHub.lambda$run$0(NioChannelHub.java:641)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:139)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	... 1 more
+Caused by: Command Close created at
+	at hudson.remoting.Command.<init>(Command.java:70)
+	at hudson.remoting.Channel$CloseCommand.<init>(Channel.java:1315)
+	at hudson.remoting.Channel$CloseCommand.<init>(Channel.java:1313)
+	at hudson.remoting.Channel.close(Channel.java:1488)
+	at hudson.remoting.Channel.close(Channel.java:1455)
+	at hudson.remoting.AbstractNioChannelRunner.stop(AbstractNioChannelRunner.java:24)
+	at hudson.remoting.RmiTestBase.tearDown(RmiTestBase.java:57)
+	at hudson.remoting.PrefetchingTest.tearDown(PrefetchingTest.java:64)
+	at junit.framework.TestCase.runBare(TestCase.java:147)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junitcore.JUnitCore.run(JUnitCore.java:55)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:137)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:107)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:83)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:75)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:157)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+

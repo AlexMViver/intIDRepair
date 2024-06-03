@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.hadoop.hive.metastore.TestHmsServerAuthorization
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 21.102 s <<< FAILURE! - in org.apache.hadoop.hive.metastore.TestHmsServerAuthorization
+org.apache.hadoop.hive.metastore.TestHmsServerAuthorization  Time elapsed: 21.096 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestHmsServerAuthorization.tearDown(TestHmsServerAuthorization.java:129)
+Caused by: javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+	at org.apache.hadoop.hive.metastore.TestHmsServerAuthorization.tearDown(TestHmsServerAuthorization.java:129)
+Caused by: java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestHmsServerAuthorization.tearDown(TestHmsServerAuthorization.java:129)
+Caused by: org.apache.derby.shared.common.error.DerbySQLIntegrityConstraintViolationException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestHmsServerAuthorization.tearDown(TestHmsServerAuthorization.java:129)
+Caused by: org.apache.derby.iapi.error.StandardException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestHmsServerAuthorization.tearDown(TestHmsServerAuthorization.java:129)
+

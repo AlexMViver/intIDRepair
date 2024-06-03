@@ -1,0 +1,555 @@
+2024-04-21 19:28:12.934  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.cloud.kubernetes.fabric8.config.ConfigMapWithPrefixTests], using SpringBootContextLoader
+2024-04-21 19:28:12.940  INFO   --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.cloud.kubernetes.fabric8.config.ConfigMapWithPrefixTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-04-21 19:28:13.139  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.spockframework.spring.SpringMockTestExecutionListener]
+2024-04-21 19:28:13.154  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@77825085, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3568f9d2, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@71c27ee8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3e7dd664, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5b1ebf56, org.springframework.test.context.support.DirtiesContextTestExecutionListener@294a6b8e, org.springframework.test.context.event.EventPublishingTestExecutionListener@4b1d6571, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1b835480, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3549bca9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4f25b795, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6fb365ed, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6e950bcf, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@16414e40, org.spockframework.spring.SpringMockTestExecutionListener@74bada02]
+Apr 21, 2024 7:28:13 PM okhttp3.mockwebserver.MockWebServer$3 execute
+INFO: MockWebServer[49143] starting to accept connections
+Apr 21, 2024 7:28:13 PM okhttp3.mockwebserver.MockWebServer$4 processOneRequest
+INFO: MockWebServer[49143] received request: POST /api/v1/namespaces/spring-k8s/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+Apr 21, 2024 7:28:13 PM okhttp3.mockwebserver.MockWebServer$4 processOneRequest
+INFO: MockWebServer[49143] received request: POST /api/v1/namespaces/spring-k8s/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+Apr 21, 2024 7:28:13 PM okhttp3.mockwebserver.MockWebServer$4 processOneRequest
+INFO: MockWebServer[49143] received request: POST /api/v1/namespaces/spring-k8s/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:14.435  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2024-04-21 19:28:15.098  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'config-map-one' in namespace 'spring-k8s'
+2024-04-21 19:28:15.101  INFO 66665 --- [127.0.0.1:52302] okhttp3.mockwebserver.MockWebServer      : MockWebServer[49143] received request: GET /api/v1/namespaces/spring-k8s/configmaps/config-map-one HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:15.104  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'config-map-two' in namespace 'spring-k8s'
+2024-04-21 19:28:15.106  INFO 66665 --- [127.0.0.1:52302] okhttp3.mockwebserver.MockWebServer      : MockWebServer[49143] received request: GET /api/v1/namespaces/spring-k8s/configmaps/config-map-two HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:15.147  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'config-map-three' in namespace 'spring-k8s'
+2024-04-21 19:28:15.149  INFO 66665 --- [127.0.0.1:52302] okhttp3.mockwebserver.MockWebServer      : MockWebServer[49143] received request: GET /api/v1/namespaces/spring-k8s/configmaps/config-map-three HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:15.192  INFO 66665 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configmap.config-map-three.spring-k8s'}, BootstrapPropertySource {name='bootstrapProperties-configmap.config-map-two.spring-k8s'}, BootstrapPropertySource {name='bootstrapProperties-configmap.config-map-one.spring-k8s'}]
+2024-04-21 19:28:15.220  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+2024-04-21 19:28:15.221  INFO 66665 --- [           main] o.s.c.k.f.c.ConfigMapWithPrefixTests     : No active profile set, falling back to default profiles: default
+2024-04-21 19:28:16.152  INFO 66665 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1367d525-e9cf-3080-b335-95bb990e6dec
+2024-04-21 19:28:16.636  INFO 66665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2024-04-21 19:28:16.649  INFO 66665 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-21 19:28:16.649  INFO 66665 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2024-04-21 19:28:16.823  INFO 66665 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-21 19:28:16.824  INFO 66665 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1598 ms
+2024-04-21 19:28:19.022  INFO 66665 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-04-21 19:28:19.191  INFO 66665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 33723 (http) with context path ''
+2024-04-21 19:28:19.206  INFO 66665 --- [           main] o.s.c.k.f.c.ConfigMapWithPrefixTests     : Started ConfigMapWithPrefixTests in 5.249 seconds (JVM running for 7.569)
+2024-04-21 19:28:19.542  INFO 66665 --- [WebServer 39901] okhttp3.mockwebserver.MockWebServer      : MockWebServer[39901] starting to accept connections
+2024-04-21 19:28:20.043  INFO 66665 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 19:28:20.044  INFO 66665 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-21 19:28:20.045  INFO 66665 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-21 19:28:20.163  INFO 66665 --- [WebServer 39901] okhttp3.mockwebserver.MockWebServer      : MockWebServer[39901] done accepting connections: Socket closed
+2024-04-21 19:28:20.181  INFO 66665 --- [WebServer 42065] okhttp3.mockwebserver.MockWebServer      : MockWebServer[42065] starting to accept connections
+2024-04-21 19:28:20.608  INFO 66665 --- [WebServer 35211] okhttp3.mockwebserver.MockWebServer      : MockWebServer[35211] starting to accept connections
+2024-04-21 19:28:20.662  INFO 66665 --- [WebServer 35211] okhttp3.mockwebserver.MockWebServer      : MockWebServer[35211] done accepting connections: Socket closed
+2024-04-21 19:28:20.667  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.cloud.kubernetes.fabric8.config.MultipleConfigMapsTests], using SpringBootContextLoader
+2024-04-21 19:28:20.668  INFO 66665 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.cloud.kubernetes.fabric8.config.MultipleConfigMapsTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-04-21 19:28:20.672  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.spockframework.spring.SpringMockTestExecutionListener]
+2024-04-21 19:28:20.674  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@332fa6ce, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2cc9a948, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6f2a1ff0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@647ce968, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2a2b3aff, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4bc9451b, org.springframework.test.context.event.EventPublishingTestExecutionListener@74a3160d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@77978658, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@498b697, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5f8da82, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6987b74e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@22e95960, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@63846fa4, org.spockframework.spring.SpringMockTestExecutionListener@206b959c]
+2024-04-21 19:28:20.676  INFO 66665 --- [WebServer 34707] okhttp3.mockwebserver.MockWebServer      : MockWebServer[34707] starting to accept connections
+2024-04-21 19:28:20.680  INFO 66665 --- [127.0.0.1:60302] okhttp3.mockwebserver.MockWebServer      : MockWebServer[34707] received request: POST /api/v1/namespaces/defnamespace/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:20.687  INFO 66665 --- [127.0.0.1:60302] okhttp3.mockwebserver.MockWebServer      : MockWebServer[34707] received request: POST /api/v1/namespaces/s2/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:20.733  INFO 66665 --- [127.0.0.1:60302] okhttp3.mockwebserver.MockWebServer      : MockWebServer[34707] received request: POST /api/v1/namespaces/othernamespace/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:20.878  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2024-04-21 19:28:20.984  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 's1' in namespace 'defnamespace'
+2024-04-21 19:28:20.986  INFO 66665 --- [127.0.0.1:60306] okhttp3.mockwebserver.MockWebServer      : MockWebServer[34707] received request: GET /api/v1/namespaces/defnamespace/configmaps/s1 HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:20.990  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'defname' in namespace 's2'
+2024-04-21 19:28:20.992  INFO 66665 --- [127.0.0.1:60306] okhttp3.mockwebserver.MockWebServer      : MockWebServer[34707] received request: GET /api/v1/namespaces/s2/configmaps/defname HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:21.033  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'othername' in namespace 'othernamespace'
+2024-04-21 19:28:21.034  INFO 66665 --- [127.0.0.1:60306] okhttp3.mockwebserver.MockWebServer      : MockWebServer[34707] received request: GET /api/v1/namespaces/othernamespace/configmaps/othername HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:21.075  INFO 66665 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configmap.othername.othernamespace'}, BootstrapPropertySource {name='bootstrapProperties-configmap.defname.s2'}, BootstrapPropertySource {name='bootstrapProperties-configmap.s1.defnamespace'}]
+2024-04-21 19:28:21.079  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+2024-04-21 19:28:21.080  INFO 66665 --- [           main] o.s.c.k.f.c.MultipleConfigMapsTests      : No active profile set, falling back to default profiles: default
+2024-04-21 19:28:21.416  INFO 66665 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=012be945-5008-354a-8a47-8e5e16a24aa5
+2024-04-21 19:28:21.557  INFO 66665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2024-04-21 19:28:21.558  INFO 66665 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-21 19:28:21.558  INFO 66665 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2024-04-21 19:28:21.570  INFO 66665 --- [           main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-04-21 19:28:21.570  INFO 66665 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 488 ms
+2024-04-21 19:28:22.359  INFO 66665 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-04-21 19:28:22.419  INFO 66665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 34345 (http) with context path ''
+2024-04-21 19:28:22.428  INFO 66665 --- [           main] o.s.c.k.f.c.MultipleConfigMapsTests      : Started MultipleConfigMapsTests in 1.649 seconds (JVM running for 10.791)
+2024-04-21 19:28:22.443  INFO 66665 --- [WebServer 52353] okhttp3.mockwebserver.MockWebServer      : MockWebServer[52353] starting to accept connections
+2024-04-21 19:28:22.451  INFO 66665 --- [o-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 19:28:22.451  INFO 66665 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-21 19:28:22.452  INFO 66665 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-21 19:28:22.519  INFO 66665 --- [WebServer 52353] okhttp3.mockwebserver.MockWebServer      : MockWebServer[52353] done accepting connections: Socket closed
+2024-04-21 19:28:22.536  INFO 66665 --- [WebServer 45925] okhttp3.mockwebserver.MockWebServer      : MockWebServer[45925] starting to accept connections
+2024-04-21 19:28:22.541  INFO 66665 --- [WebServer 46097] okhttp3.mockwebserver.MockWebServer      : MockWebServer[46097] starting to accept connections
+2024-04-21 19:28:22.543  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'my-config' in namespace 'default'
+2024-04-21 19:28:22.774  INFO 66665 --- [127.0.0.1:37180] okhttp3.mockwebserver.MockWebServer      : MockWebServer[46097] received request: GET /api/v1/namespaces/default/configmaps/my-config HTTP/1.1 and responded: HTTP/1.1 500 Server Error
+2024-04-21 19:28:22.831  WARN 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Can't read configMap with name: [my-config] in namespace: [default]. Ignoring.
+
+io.fabric8.kubernetes.client.KubernetesClientException: Failure executing: GET at: https://localhost:46097/api/v1/namespaces/default/configmaps/my-config. Message: Internal Server Error.
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.requestFailure(OperationSupport.java:694)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.requestFailure(OperationSupport.java:673)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.assertResponseCode(OperationSupport.java:626)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleResponse(OperationSupport.java:566)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleResponse(OperationSupport.java:527)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleGet(OperationSupport.java:494)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleGet(OperationSupport.java:476)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.handleGet(BaseOperation.java:788)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.getMandatory(BaseOperation.java:187)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.get(BaseOperation.java:154)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.get(BaseOperation.java:87)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigUtils.getConfigMapData(Fabric8ConfigUtils.java:118)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySource.getData(Fabric8ConfigMapPropertySource.java:79)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySource.<init>(Fabric8ConfigMapPropertySource.java:70)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocator.getMapPropertySource(Fabric8ConfigMapPropertySourceLocator.java:74)
+	at org.springframework.cloud.kubernetes.commons.config.ConfigMapPropertySourceLocator.getMapPropertySourceForSingleConfigMap(ConfigMapPropertySourceLocator.java:98)
+	at org.springframework.cloud.kubernetes.commons.config.ConfigMapPropertySourceLocator.lambda$locate$0(ConfigMapPropertySourceLocator.java:77)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.cloud.kubernetes.commons.config.ConfigMapPropertySourceLocator.locate(ConfigMapPropertySourceLocator.java:77)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocatorTests.lambda$locateShouldNotThrowExceptionOnFailureWhenFailFastIsDisabled$1(Fabric8ConfigMapPropertySourceLocatorTests.java:77)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:63)
+	at org.assertj.core.api.NotThrownAssert.isThrownBy(NotThrownAssert.java:43)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocatorTests.locateShouldNotThrowExceptionOnFailureWhenFailFastIsDisabled(Fabric8ConfigMapPropertySourceLocatorTests.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90)
+	at edu.illinois.cs.testrunner.execution.JUnit5TestExecutor.runTestsSeparately(JUnit5TestExecutor.java:40)
+	at edu.illinois.cs.testrunner.execution.Executor$.$anonfun$run$1(Executor.scala:33)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.util.Try$.apply(Try.scala:209)
+	at edu.illinois.cs.testrunner.execution.Executor$.run(Executor.scala:28)
+	at edu.illinois.cs.testrunner.execution.Executor$.main(Executor.scala:18)
+	at edu.illinois.cs.testrunner.execution.Executor.main(Executor.scala)
+
+2024-04-21 19:28:22.834  INFO 66665 --- [WebServer 46097] okhttp3.mockwebserver.MockWebServer      : MockWebServer[46097] done accepting connections: Socket closed
+2024-04-21 19:28:22.859  INFO 66665 --- [WebServer 36077] okhttp3.mockwebserver.MockWebServer      : MockWebServer[36077] starting to accept connections
+2024-04-21 19:28:22.866  INFO 66665 --- [WebServer 35501] okhttp3.mockwebserver.MockWebServer      : MockWebServer[35501] starting to accept connections
+2024-04-21 19:28:22.869  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocatorRetryTests$ConfigFailFastDisabled], using SpringBootContextLoader
+2024-04-21 19:28:22.870  INFO 66665 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocatorRetryTests$ConfigFailFastDisabled]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-04-21 19:28:22.874  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.spockframework.spring.SpringMockTestExecutionListener]
+2024-04-21 19:28:22.877  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@220e1b7b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@54fd5759, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6a358906, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@893081e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5a941fb4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@646ddc20, org.springframework.test.context.event.EventPublishingTestExecutionListener@22561412, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@32153bbe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4806fbf7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4280b20b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@50e4d8cd, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4b37d1a4, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@34114276, org.spockframework.spring.SpringMockTestExecutionListener@73c6ae15]
+2024-04-21 19:28:22.945  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2024-04-21 19:28:23.054  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'application' in namespace 'default'
+2024-04-21 19:28:23.178  INFO 66665 --- [127.0.0.1:54562] okhttp3.mockwebserver.MockWebServer      : MockWebServer[36077] received request: GET /api/v1/namespaces/default/configmaps/application HTTP/1.1 and responded: HTTP/1.1 404 Client Error
+2024-04-21 19:28:23.181  INFO 66665 --- [           main] o.s.c.k.f.config.Fabric8ConfigUtils      : config-map with name : 'application' not present in namespace : 'default'
+2024-04-21 19:28:23.181  INFO 66665 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configmap.application.default'}]
+2024-04-21 19:28:23.186  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+2024-04-21 19:28:23.187  INFO 66665 --- [           main] LocatorRetryTests$ConfigFailFastDisabled : No active profile set, falling back to default profiles: default
+2024-04-21 19:28:23.584  INFO 66665 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=94652287-2eb9-367e-b08b-eea09b3b2900
+2024-04-21 19:28:24.151  INFO 66665 --- [           main] LocatorRetryTests$ConfigFailFastDisabled : Started Fabric8ConfigMapPropertySourceLocatorRetryTests.ConfigFailFastDisabled in 1.271 seconds (JVM running for 12.515)
+2024-04-21 19:28:24.159  INFO 66665 --- [WebServer 45345] okhttp3.mockwebserver.MockWebServer      : MockWebServer[45345] starting to accept connections
+2024-04-21 19:28:24.167  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'application' in namespace 'default'
+2024-04-21 19:28:24.170  INFO 66665 --- [127.0.0.1:54562] okhttp3.mockwebserver.MockWebServer      : MockWebServer[36077] received request: GET /api/v1/namespaces/default/configmaps/application HTTP/1.1 and responded: HTTP/1.1 500 Server Error
+2024-04-21 19:28:24.170  WARN 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Can't read configMap with name: [application] in namespace: [default]. Ignoring.
+
+io.fabric8.kubernetes.client.KubernetesClientException: Failure executing: GET at: https://localhost:36077/api/v1/namespaces/default/configmaps/application. Message: Internal Server Error.
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.requestFailure(OperationSupport.java:694)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.requestFailure(OperationSupport.java:673)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.assertResponseCode(OperationSupport.java:626)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleResponse(OperationSupport.java:566)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleResponse(OperationSupport.java:527)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleGet(OperationSupport.java:494)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleGet(OperationSupport.java:476)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.handleGet(BaseOperation.java:788)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.getMandatory(BaseOperation.java:187)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.get(BaseOperation.java:154)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.get(BaseOperation.java:87)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigUtils.getConfigMapData(Fabric8ConfigUtils.java:118)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySource.getData(Fabric8ConfigMapPropertySource.java:79)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySource.<init>(Fabric8ConfigMapPropertySource.java:70)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocator.getMapPropertySource(Fabric8ConfigMapPropertySourceLocator.java:74)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocator$MockitoMock$62605675.getMapPropertySource$accessor$lJYwwgro(Unknown Source)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocator$MockitoMock$62605675$auxiliary$1yyUTarA.call(Unknown Source)
+	at org.mockito.internal.invocation.RealMethod$FromCallable$1.call(RealMethod.java:40)
+	at org.mockito.internal.invocation.RealMethod$FromBehavior.invoke(RealMethod.java:62)
+	at org.mockito.internal.invocation.InterceptedInvocation.callRealMethod(InterceptedInvocation.java:142)
+	at org.mockito.internal.stubbing.answers.CallsRealMethods.answer(CallsRealMethods.java:45)
+	at org.mockito.Answers.answer(Answers.java:90)
+	at org.mockito.internal.handler.MockHandlerImpl.handle(MockHandlerImpl.java:110)
+	at org.mockito.internal.handler.NullResultGuardian.handle(NullResultGuardian.java:29)
+	at org.mockito.internal.handler.InvocationNotifierHandler.handle(InvocationNotifierHandler.java:34)
+	at org.mockito.internal.creation.bytebuddy.MockMethodInterceptor.doIntercept(MockMethodInterceptor.java:82)
+	at org.mockito.internal.creation.bytebuddy.MockMethodInterceptor.doIntercept(MockMethodInterceptor.java:56)
+	at org.mockito.internal.creation.bytebuddy.MockMethodInterceptor$DispatcherDefaultingToRealMethod.interceptSuperCallable(MockMethodInterceptor.java:145)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocator$MockitoMock$62605675.getMapPropertySource(Unknown Source)
+	at org.springframework.cloud.kubernetes.commons.config.ConfigMapPropertySourceLocator.getMapPropertySourceForSingleConfigMap(ConfigMapPropertySourceLocator.java:98)
+	at org.springframework.cloud.kubernetes.commons.config.ConfigMapPropertySourceLocator.lambda$locate$0(ConfigMapPropertySourceLocator.java:77)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.cloud.kubernetes.commons.config.ConfigMapPropertySourceLocator.locate(ConfigMapPropertySourceLocator.java:77)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocator$MockitoMock$62605675.locate$accessor$lJYwwgro(Unknown Source)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocator$MockitoMock$62605675$auxiliary$CgagSaV0.call(Unknown Source)
+	at org.mockito.internal.invocation.RealMethod$FromCallable$1.call(RealMethod.java:40)
+	at org.mockito.internal.invocation.RealMethod$FromBehavior.invoke(RealMethod.java:62)
+	at org.mockito.internal.invocation.InterceptedInvocation.callRealMethod(InterceptedInvocation.java:142)
+	at org.mockito.internal.stubbing.answers.CallsRealMethods.answer(CallsRealMethods.java:45)
+	at org.mockito.Answers.answer(Answers.java:90)
+	at org.mockito.internal.handler.MockHandlerImpl.handle(MockHandlerImpl.java:110)
+	at org.mockito.internal.handler.NullResultGuardian.handle(NullResultGuardian.java:29)
+	at org.mockito.internal.handler.InvocationNotifierHandler.handle(InvocationNotifierHandler.java:34)
+	at org.mockito.internal.creation.bytebuddy.MockMethodInterceptor.doIntercept(MockMethodInterceptor.java:82)
+	at org.mockito.internal.creation.bytebuddy.MockMethodInterceptor.doIntercept(MockMethodInterceptor.java:56)
+	at org.mockito.internal.creation.bytebuddy.MockMethodInterceptor$DispatcherDefaultingToRealMethod.interceptSuperCallable(MockMethodInterceptor.java:145)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocator$MockitoMock$62605675.locate(Unknown Source)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocatorRetryTests$ConfigFailFastDisabled.lambda$locateShouldNotRetry$0(Fabric8ConfigMapPropertySourceLocatorRetryTests.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:72)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:59)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3195)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceLocatorRetryTests$ConfigFailFastDisabled.locateShouldNotRetry(Fabric8ConfigMapPropertySourceLocatorRetryTests.java:152)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90)
+	at edu.illinois.cs.testrunner.execution.JUnit5TestExecutor.runTestsSeparately(JUnit5TestExecutor.java:40)
+	at edu.illinois.cs.testrunner.execution.Executor$.$anonfun$run$1(Executor.scala:33)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.util.Try$.apply(Try.scala:209)
+	at edu.illinois.cs.testrunner.execution.Executor$.run(Executor.scala:28)
+	at edu.illinois.cs.testrunner.execution.Executor$.main(Executor.scala:18)
+	at edu.illinois.cs.testrunner.execution.Executor.main(Executor.scala)
+
+2024-04-21 19:28:24.185  INFO 66665 --- [WebServer 45345] okhttp3.mockwebserver.MockWebServer      : MockWebServer[45345] done accepting connections: Socket closed
+2024-04-21 19:28:24.194  INFO 66665 --- [WebServer 33497] okhttp3.mockwebserver.MockWebServer      : MockWebServer[33497] starting to accept connections
+2024-04-21 19:28:24.199  INFO 66665 --- [WebServer 52373] okhttp3.mockwebserver.MockWebServer      : MockWebServer[52373] starting to accept connections
+2024-04-21 19:28:24.206  INFO 66665 --- [WebServer 52373] okhttp3.mockwebserver.MockWebServer      : MockWebServer[52373] done accepting connections: Socket closed
+2024-04-21 19:28:24.212  INFO 66665 --- [WebServer 48155] okhttp3.mockwebserver.MockWebServer      : MockWebServer[48155] starting to accept connections
+2024-04-21 19:28:24.214  INFO 66665 --- [WebServer 53995] okhttp3.mockwebserver.MockWebServer      : MockWebServer[53995] starting to accept connections
+2024-04-21 19:28:24.221  INFO 66665 --- [127.0.0.1:44662] okhttp3.mockwebserver.MockWebServer      : MockWebServer[48155] received request: POST /api/v1/namespaces/test/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:24.221  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'single-non-standard-test' in namespace 'test'
+2024-04-21 19:28:24.223  INFO 66665 --- [127.0.0.1:44662] okhttp3.mockwebserver.MockWebServer      : MockWebServer[48155] received request: GET /api/v1/namespaces/test/configmaps/single-non-standard-test HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:24.273  INFO 66665 --- [WebServer 53995] okhttp3.mockwebserver.MockWebServer      : MockWebServer[53995] done accepting connections: Socket closed
+2024-04-21 19:28:24.281  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.cloud.kubernetes.fabric8.config.ConfigMapsWithActiveProfilesNameTests], using SpringBootContextLoader
+2024-04-21 19:28:24.282  INFO 66665 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.cloud.kubernetes.fabric8.config.ConfigMapsWithActiveProfilesNameTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-04-21 19:28:24.287  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.spockframework.spring.SpringMockTestExecutionListener]
+2024-04-21 19:28:24.288  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5980e29f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2cdd156b, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@487bc2fe, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@58038583, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6491006, org.springframework.test.context.support.DirtiesContextTestExecutionListener@42fb2be9, org.springframework.test.context.event.EventPublishingTestExecutionListener@54816d7a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@106ac5f4, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5eed2edf, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4552e288, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1a67bde5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5c648e38, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6bc8d8bd, org.spockframework.spring.SpringMockTestExecutionListener@395c21ee]
+2024-04-21 19:28:24.291  INFO 66665 --- [WebServer 39411] okhttp3.mockwebserver.MockWebServer      : MockWebServer[39411] starting to accept connections
+2024-04-21 19:28:24.296  INFO 66665 --- [127.0.0.1:37540] okhttp3.mockwebserver.MockWebServer      : MockWebServer[39411] received request: POST /api/v1/namespaces/test/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:24.302  INFO 66665 --- [127.0.0.1:37540] okhttp3.mockwebserver.MockWebServer      : MockWebServer[39411] received request: POST /api/v1/namespaces/test/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:24.396  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2024-04-21 19:28:24.482  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'configmap-with-active-profile-name-example' in namespace 'test'
+2024-04-21 19:28:24.485  INFO 66665 --- [127.0.0.1:37546] okhttp3.mockwebserver.MockWebServer      : MockWebServer[39411] received request: GET /api/v1/namespaces/test/configmaps/configmap-with-active-profile-name-example HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:24.496  INFO 66665 --- [127.0.0.1:37546] okhttp3.mockwebserver.MockWebServer      : MockWebServer[39411] received request: GET /api/v1/namespaces/test/configmaps/configmap-with-active-profile-name-example-development HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:24.538  INFO 66665 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configmap.configmap-with-active-profile-name-example.test'}]
+2024-04-21 19:28:24.544  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+2024-04-21 19:28:24.544  INFO 66665 --- [           main] .c.ConfigMapsWithActiveProfilesNameTests : The following profiles are active: development
+2024-04-21 19:28:24.786  INFO 66665 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=affffd22-e438-321b-a0d0-967c2140a2e8
+2024-04-21 19:28:24.907  INFO 66665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2024-04-21 19:28:24.908  INFO 66665 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-21 19:28:24.909  INFO 66665 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2024-04-21 19:28:24.919  INFO 66665 --- [           main] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-04-21 19:28:24.919  INFO 66665 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 373 ms
+2024-04-21 19:28:25.610  INFO 66665 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-04-21 19:28:25.675  INFO 66665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 44141 (http) with context path ''
+2024-04-21 19:28:25.706  INFO 66665 --- [           main] .c.ConfigMapsWithActiveProfilesNameTests : Started ConfigMapsWithActiveProfilesNameTests in 1.363 seconds (JVM running for 14.07)
+2024-04-21 19:28:25.724  INFO 66665 --- [WebServer 43323] okhttp3.mockwebserver.MockWebServer      : MockWebServer[43323] starting to accept connections
+2024-04-21 19:28:25.732  INFO 66665 --- [o-auto-3-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 19:28:25.732  INFO 66665 --- [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-21 19:28:25.733  INFO 66665 --- [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-21 19:28:25.753  INFO 66665 --- [WebServer 43323] okhttp3.mockwebserver.MockWebServer      : MockWebServer[43323] done accepting connections: Socket closed
+2024-04-21 19:28:25.759  INFO 66665 --- [WebServer 57797] okhttp3.mockwebserver.MockWebServer      : MockWebServer[57797] starting to accept connections
+2024-04-21 19:28:25.763  INFO 66665 --- [WebServer 40461] okhttp3.mockwebserver.MockWebServer      : MockWebServer[40461] starting to accept connections
+2024-04-21 19:28:25.764  INFO 66665 --- [           main] o.s.c.k.f.c.Fabric8SecretsPropertySource : Loading Secret with name 'my-config' or with labels [{}] in namespace 'default'
+2024-04-21 19:28:25.870  INFO 66665 --- [127.0.0.1:48586] okhttp3.mockwebserver.MockWebServer      : MockWebServer[57797] received request: GET /api/v1/namespaces/default/secrets/my-config HTTP/1.1 and responded: HTTP/1.1 500 Server Error
+2024-04-21 19:28:25.912  WARN 66665 --- [           main] o.s.c.k.f.c.Fabric8SecretsPropertySource : Can't read secret with name: [my-config] or labels [{}] in namespace: [default] (cause: Failure executing: GET at: https://localhost:57797/api/v1/namespaces/default/secrets/my-config. Message: Internal Server Error.). Ignoring
+2024-04-21 19:28:25.913  INFO 66665 --- [WebServer 40461] okhttp3.mockwebserver.MockWebServer      : MockWebServer[40461] done accepting connections: Socket closed
+2024-04-21 19:28:25.917  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.cloud.kubernetes.fabric8.config.MultipleConfigMapsTests], using SpringBootContextLoader
+2024-04-21 19:28:25.918  INFO 66665 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.cloud.kubernetes.fabric8.config.MultipleConfigMapsTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-04-21 19:28:25.921  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.spockframework.spring.SpringMockTestExecutionListener]
+2024-04-21 19:28:25.922  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@506654fa, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4468ced2, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@21f421b8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4e3bc13b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2c989d82, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2e04c89d, org.springframework.test.context.event.EventPublishingTestExecutionListener@2e7dd504, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3e5febe9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5643052d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5e0b7f58, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1e9e4468, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5fdff4f1, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@117be84a, org.spockframework.spring.SpringMockTestExecutionListener@140fa482]
+2024-04-21 19:28:25.925  INFO 66665 --- [WebServer 55125] okhttp3.mockwebserver.MockWebServer      : MockWebServer[55125] starting to accept connections
+2024-04-21 19:28:25.929  INFO 66665 --- [127.0.0.1:41500] okhttp3.mockwebserver.MockWebServer      : MockWebServer[55125] received request: POST /api/v1/namespaces/defnamespace/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:25.934  INFO 66665 --- [127.0.0.1:41500] okhttp3.mockwebserver.MockWebServer      : MockWebServer[55125] received request: POST /api/v1/namespaces/s2/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:25.979  INFO 66665 --- [127.0.0.1:41500] okhttp3.mockwebserver.MockWebServer      : MockWebServer[55125] received request: POST /api/v1/namespaces/othernamespace/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:26.025  INFO 66665 --- [WebServer 54763] okhttp3.mockwebserver.MockWebServer      : MockWebServer[54763] starting to accept connections
+2024-04-21 19:28:26.038  INFO 66665 --- [WebServer 54763] okhttp3.mockwebserver.MockWebServer      : MockWebServer[54763] done accepting connections: Socket closed
+2024-04-21 19:28:26.047  INFO 66665 --- [WebServer 41901] okhttp3.mockwebserver.MockWebServer      : MockWebServer[41901] starting to accept connections
+2024-04-21 19:28:26.049  INFO 66665 --- [WebServer 51791] okhttp3.mockwebserver.MockWebServer      : MockWebServer[51791] starting to accept connections
+2024-04-21 19:28:26.110  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2024-04-21 19:28:26.201  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'application' in namespace 'default'
+2024-04-21 19:28:26.204  INFO 66665 --- [127.0.0.1:41504] okhttp3.mockwebserver.MockWebServer      : MockWebServer[55125] received request: GET /api/v1/namespaces/default/configmaps/application HTTP/1.1 and responded: HTTP/1.1 404 Client Error
+2024-04-21 19:28:26.206  INFO 66665 --- [           main] o.s.c.k.f.config.Fabric8ConfigUtils      : config-map with name : 'application' not present in namespace : 'default'
+2024-04-21 19:28:26.206  INFO 66665 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configmap.application.default'}]
+2024-04-21 19:28:26.209  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+2024-04-21 19:28:26.209  INFO 66665 --- [           main] e.i.cs.testrunner.execution.Executor$    : No active profile set, falling back to default profiles: default
+2024-04-21 19:28:26.229  INFO 66665 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9e8f334d-ea3e-3bac-a635-d33d7314ddc7
+2024-04-21 19:28:26.234  INFO 66665 --- [           main] e.i.cs.testrunner.execution.Executor$    : Started Executor. in 0.183 seconds (JVM running for 14.598)
+2024-04-21 19:28:26.238  INFO 66665 --- [WebServer 51791] okhttp3.mockwebserver.MockWebServer      : MockWebServer[51791] done accepting connections: Socket closed
+2024-04-21 19:28:26.242  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.cloud.kubernetes.fabric8.config.CoreTestClientViaSystemProperties], using SpringBootContextLoader
+2024-04-21 19:28:26.243  INFO 66665 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.cloud.kubernetes.fabric8.config.CoreTestClientViaSystemProperties]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-04-21 19:28:26.244  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.spockframework.spring.SpringMockTestExecutionListener]
+2024-04-21 19:28:26.246  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7a285418, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@79e33802, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@74471600, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1cc878e6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@247877f3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@44bb6856, org.springframework.test.context.event.EventPublishingTestExecutionListener@80081d7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@57d0c779, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3070f59f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2f16c21f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2314f013, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@72ae1007, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4545cfc0, org.spockframework.spring.SpringMockTestExecutionListener@5cdafb4d]
+2024-04-21 19:28:26.334  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2024-04-21 19:28:26.408  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+2024-04-21 19:28:26.408  INFO 66665 --- [           main] .k.f.c.CoreTestClientViaSystemProperties : No active profile set, falling back to default profiles: default
+2024-04-21 19:28:26.831  INFO 66665 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=84b71cfc-8942-3f46-b1ff-f22a03fbdcf2
+2024-04-21 19:28:27.379  WARN 66665 --- [           main] i.f.kubernetes.client.internal.SSLUtils  : SSL handshake failed. Falling back to insecure connection.
+2024-04-21 19:28:27.380  WARN 66665 --- [           main] i.f.kubernetes.client.internal.SSLUtils  : SSL handshake failed. Falling back to insecure connection.
+2024-04-21 19:28:27.653  INFO 66665 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-04-21 19:28:27.696  INFO 66665 --- [           main] .k.f.c.CoreTestClientViaSystemProperties : Started CoreTestClientViaSystemProperties in 1.443 seconds (JVM running for 16.06)
+2024-04-21 19:28:27.722  INFO 66665 --- [WebServer 45449] okhttp3.mockwebserver.MockWebServer      : MockWebServer[45449] starting to accept connections
+2024-04-21 19:28:27.727  INFO 66665 --- [WebServer 42631] okhttp3.mockwebserver.MockWebServer      : MockWebServer[42631] starting to accept connections
+2024-04-21 19:28:27.728  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'configmap' in namespace 'some-namespace'
+2024-04-21 19:28:27.729  WARN 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Can't read configMap with name: [configmap] in namespace: [some-namespace]. Ignoring.
+
+java.lang.NullPointerException: null
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigUtils.getConfigMapData(Fabric8ConfigUtils.java:118)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySource.getData(Fabric8ConfigMapPropertySource.java:79)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySource.<init>(Fabric8ConfigMapPropertySource.java:63)
+	at org.springframework.cloud.kubernetes.fabric8.config.Fabric8ConfigMapPropertySourceTests.anotherDeprecatedConstructorWithClientNamespaceMustNotFail(Fabric8ConfigMapPropertySourceTests.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90)
+	at edu.illinois.cs.testrunner.execution.JUnit5TestExecutor.runTestsSeparately(JUnit5TestExecutor.java:40)
+	at edu.illinois.cs.testrunner.execution.Executor$.$anonfun$run$1(Executor.scala:33)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.util.Try$.apply(Try.scala:209)
+	at edu.illinois.cs.testrunner.execution.Executor$.run(Executor.scala:28)
+	at edu.illinois.cs.testrunner.execution.Executor$.main(Executor.scala:18)
+	at edu.illinois.cs.testrunner.execution.Executor.main(Executor.scala)
+
+2024-04-21 19:28:27.729  INFO 66665 --- [WebServer 42631] okhttp3.mockwebserver.MockWebServer      : MockWebServer[42631] done accepting connections: Socket closed
+2024-04-21 19:28:27.733  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springframework.cloud.kubernetes.fabric8.config.ConfigMapsTests], using SpringBootContextLoader
+2024-04-21 19:28:27.734  INFO 66665 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [org.springframework.cloud.kubernetes.fabric8.config.ConfigMapsTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-04-21 19:28:27.737  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.spockframework.spring.SpringMockTestExecutionListener]
+2024-04-21 19:28:27.738  INFO 66665 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@77d0a492, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2f46bc25, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@72bef795, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1f4d9c7f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6dcb4f30, org.springframework.test.context.support.DirtiesContextTestExecutionListener@77f66138, org.springframework.test.context.event.EventPublishingTestExecutionListener@7271320c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@12ce659, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@36299b83, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7212d3df, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@9886ec3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6ff05f85, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@15ff247b, org.spockframework.spring.SpringMockTestExecutionListener@71979130]
+2024-04-21 19:28:27.740  INFO 66665 --- [WebServer 46269] okhttp3.mockwebserver.MockWebServer      : MockWebServer[46269] starting to accept connections
+2024-04-21 19:28:27.743  INFO 66665 --- [127.0.0.1:40944] okhttp3.mockwebserver.MockWebServer      : MockWebServer[46269] received request: POST /api/v1/namespaces/test/configmaps HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:27.790  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2024-04-21 19:28:27.870  INFO 66665 --- [           main] s.c.k.f.c.Fabric8ConfigMapPropertySource : Loading ConfigMap with name 'configmap-example' in namespace 'test'
+2024-04-21 19:28:27.872  INFO 66665 --- [127.0.0.1:40952] okhttp3.mockwebserver.MockWebServer      : MockWebServer[46269] received request: GET /api/v1/namespaces/test/configmaps/configmap-example HTTP/1.1 and responded: HTTP/1.1 200 OK
+2024-04-21 19:28:27.875  INFO 66665 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configmap.configmap-example.test'}]
+2024-04-21 19:28:27.878  WARN 66665 --- [           main] ubernetesProfileEnvironmentPostProcessor : Not running inside kubernetes. Skipping 'kubernetes' profile activation.
+2024-04-21 19:28:27.879  INFO 66665 --- [           main] o.s.c.k.fabric8.config.ConfigMapsTests   : No active profile set, falling back to default profiles: default
+2024-04-21 19:28:28.122  INFO 66665 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=affffd22-e438-321b-a0d0-967c2140a2e8
+2024-04-21 19:28:28.226  INFO 66665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2024-04-21 19:28:28.226  INFO 66665 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-21 19:28:28.227  INFO 66665 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2024-04-21 19:28:28.239  INFO 66665 --- [           main] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-04-21 19:28:28.239  INFO 66665 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 359 ms
+2024-04-21 19:28:28.800  INFO 66665 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-04-21 19:28:28.838  INFO 66665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 42001 (http) with context path ''
+2024-04-21 19:28:28.844  INFO 66665 --- [           main] o.s.c.k.fabric8.config.ConfigMapsTests   : Started ConfigMapsTests in 1.099 seconds (JVM running for 17.208)
+2024-04-21 19:28:28.857  INFO 66665 --- [WebServer 33765] okhttp3.mockwebserver.MockWebServer      : MockWebServer[33765] starting to accept connections
+2024-04-21 19:28:28.859  INFO 66665 --- [WebServer 33765] okhttp3.mockwebserver.MockWebServer      : MockWebServer[33765] done accepting connections: Socket closed

@@ -1,0 +1,123 @@
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1 opening connection to ZooKeeper with ensemble (localhost:53718)
+24/04/23 19:47:19 INFO zookeeper.RecoverableZooKeeper: The identifier of this process is 95757@Lenovo-Bot
+24/04/23 19:47:19 INFO server.NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:56494
+24/04/23 19:47:19 INFO persistence.FileTxnLog: Creating new log file: log.1
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0000 connected
+24/04/23 19:47:19 INFO fserver.EntityGroup: creating EntityGroup TestOpenEntityGroupHandler Table == CREATE TABLE TestOpenEntityGroupHandler { 
+  REQUIRED INT32 column1 COLUMNFAMILY d;
+  REQUIRED INT64 column2 COLUMNFAMILY d;
+  REQUIRED STRING column3 COLUMNFAMILY d;
+  OPTIONAL FLOAT column4 COLUMNFAMILY d;
+  OPTIONAL DOUBLE column5 COLUMNFAMILY d;
+  OPTIONAL DATETIME column6 COLUMNFAMILY d;
+  REPEATED PROTOBUF column7 COLUMNFAMILY d;
+  OPTIONAL STRING column8 COLUMNFAMILY d;
+} 
+PRIMARY KEY(column1),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(column1);
+ Table name == TestOpenEntityGroupHandler
+24/04/23 19:47:19 DEBUG fserver.MetricsEntityGroupSourceImpl: Creating new MetricsEntityGroupSourceImpl for table TestOpenEntityGroupHandler 72d46fecb5c5080e30c0cdb8be8d0947
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Instantiated TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 ERROR server.NIOServerCnxnFactory: Thread Thread[Thread-63,5,main] died
+java.lang.NullPointerException
+	at com.alibaba.wasp.fserver.EntityGroup.run(EntityGroup.java:1264)
+	at java.lang.Thread.run(Thread.java:750)
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0000 Attempting to transition node 72d46fecb5c5080e30c0cdb8be8d0947 from M_ZK_ENTITYGROUP_OFFLINE to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0000 Unable to get data of znode /wasp/unassigned/72d46fecb5c5080e30c0cdb8be8d0947 because node does not exist (not necessarily an error)
+24/04/23 19:47:19 WARN handler.OpenEntityGroupHandler: Failed transition from OFFLINE to OPENING for entityGroup=72d46fecb5c5080e30c0cdb8be8d0947
+24/04/23 19:47:19 WARN handler.OpenEntityGroupHandler: EntityGroup was hijacked? It no longer exists, encodedName=72d46fecb5c5080e30c0cdb8be8d0947
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0000 Creating unassigned node for 72d46fecb5c5080e30c0cdb8be8d0947 in OFFLINE state
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0000 Attempting to transition node 72d46fecb5c5080e30c0cdb8be8d0947 from M_ZK_ENTITYGROUP_OFFLINE to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0000 Retrieved 117 byte(s) of data from znode /wasp/unassigned/72d46fecb5c5080e30c0cdb8be8d0947; data=entityGroup=TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947., state=M_ZK_ENTITYGROUP_OFFLINE, servername=MockServer,123,-1, createTime=1713898039745, payload.length=0
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0000 Received ZooKeeper Event, type=NodeDataChanged, state=SyncConnected, path=/wasp/unassigned/72d46fecb5c5080e30c0cdb8be8d0947
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0000 Successfully transitioned node 72d46fecb5c5080e30c0cdb8be8d0947 from M_ZK_ENTITYGROUP_OFFLINE to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 INFO fserver.EntityGroup: EntityGroup.openEntityGroup EntityGroup name ==TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Opening EntityGroup: {NAME => 'TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.', STARTKEY => '\x00\x00\x00\x00', ENDKEY => '\x00\x00\x00\x01', ENCODED => 72d46fecb5c5080e30c0cdb8be8d0947,}
+24/04/23 19:47:19 DEBUG fserver.MetricsEntityGroupSourceImpl: Creating new MetricsEntityGroupSourceImpl for table TestOpenEntityGroupHandler 72d46fecb5c5080e30c0cdb8be8d0947
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Instantiated TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 ERROR server.NIOServerCnxnFactory: Thread Thread[Thread-66,5,main] died
+java.lang.NullPointerException
+	at com.alibaba.wasp.fserver.EntityGroup.run(EntityGroup.java:1264)
+	at java.lang.Thread.run(Thread.java:750)
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0000 Attempting to transition node 72d46fecb5c5080e30c0cdb8be8d0947 from FSERVER_ZK_ENTITYGROUP_OPENING to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0000 Unable to get data of znode /wasp/unassigned/72d46fecb5c5080e30c0cdb8be8d0947 because node does not exist (not necessarily an error)
+24/04/23 19:47:19 WARN handler.OpenEntityGroupHandler: Failed refreshing OPENING; entityGroup=72d46fecb5c5080e30c0cdb8be8d0947, context=post_entitygroup_open
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Closing TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Updates disabled for entityGroup TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 INFO fserver.EntityGroup: Running commit transaction of TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947. before close
+24/04/23 19:47:19 INFO fserver.EntityGroup: Closed TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 INFO handler.OpenEntityGroupHandler: Opening of entityGroup {NAME => 'TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.', STARTKEY => '\x00\x00\x00\x00', ENDKEY => '\x00\x00\x00\x01', ENCODED => 72d46fecb5c5080e30c0cdb8be8d0947,} failed, marking as FAILED_OPEN in ZK
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0000 Attempting to transition node 72d46fecb5c5080e30c0cdb8be8d0947 from FSERVER_ZK_ENTITYGROUP_OPENING to FSERVER_ZK_ENTITYGROUP_FAILED_OPEN
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0000 Unable to get data of znode /wasp/unassigned/72d46fecb5c5080e30c0cdb8be8d0947 because node does not exist (not necessarily an error)
+24/04/23 19:47:19 WARN handler.OpenEntityGroupHandler: Unable to mark entityGroup {NAME => 'TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.', STARTKEY => '\x00\x00\x00\x00', ENDKEY => '\x00\x00\x00\x01', ENCODED => 72d46fecb5c5080e30c0cdb8be8d0947,} as FAILED_OPEN. It's likely that the master already timed out this open attempt, and thus another RS already has the entityGroup.
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Closing TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Updates disabled for entityGroup TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 INFO fserver.EntityGroup: Running commit transaction of TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947. before close
+24/04/23 19:47:19 INFO fserver.EntityGroup: Closed TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039728.72d46fecb5c5080e30c0cdb8be8d0947.
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1 opening connection to ZooKeeper with ensemble (localhost:53718)
+24/04/23 19:47:19 INFO zookeeper.RecoverableZooKeeper: The identifier of this process is 95757@Lenovo-Bot
+24/04/23 19:47:19 INFO server.NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:56500
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0001 connected
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0001 Creating unassigned node for d4deebfad45585734296a170ddd9fba3 in OFFLINE state
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0001 Attempting to transition node d4deebfad45585734296a170ddd9fba3 from M_ZK_ENTITYGROUP_OFFLINE to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0001 Retrieved 117 byte(s) of data from znode /wasp/unassigned/d4deebfad45585734296a170ddd9fba3; data=entityGroup=TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039754.d4deebfad45585734296a170ddd9fba3., state=M_ZK_ENTITYGROUP_OFFLINE, servername=MockServer,123,-1, createTime=1713898039759, payload.length=0
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0001 Received ZooKeeper Event, type=NodeDataChanged, state=SyncConnected, path=/wasp/unassigned/d4deebfad45585734296a170ddd9fba3
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0001 Successfully transitioned node d4deebfad45585734296a170ddd9fba3 from M_ZK_ENTITYGROUP_OFFLINE to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 INFO handler.OpenEntityGroupHandler: Opening of entityGroup {NAME => 'TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039754.d4deebfad45585734296a170ddd9fba3.', STARTKEY => '\x00\x00\x00\x00', ENDKEY => '\x00\x00\x00\x01', ENCODED => d4deebfad45585734296a170ddd9fba3,} failed, marking as FAILED_OPEN in ZK
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0001 Attempting to transition node d4deebfad45585734296a170ddd9fba3 from FSERVER_ZK_ENTITYGROUP_OPENING to FSERVER_ZK_ENTITYGROUP_FAILED_OPEN
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0001 Retrieved 117 byte(s) of data from znode /wasp/unassigned/d4deebfad45585734296a170ddd9fba3; data=entityGroup=TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039754.d4deebfad45585734296a170ddd9fba3., state=FSERVER_ZK_ENTITYGROUP_OPENING, servername=MockServer,123,-1, createTime=1713898039762, payload.length=0
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0001 Successfully transitioned node d4deebfad45585734296a170ddd9fba3 from FSERVER_ZK_ENTITYGROUP_OPENING to FSERVER_ZK_ENTITYGROUP_FAILED_OPEN
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0001 Retrieved 117 byte(s) of data from znode /wasp/unassigned/d4deebfad45585734296a170ddd9fba3 and set watcher; entityGroup=TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039754.d4deebfad45585734296a170ddd9fba3., state=FSERVER_ZK_ENTITYGROUP_FAILED_OPEN, servername=MockServer,123,-1, createTime=1713898039764, payload.length=0
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1 opening connection to ZooKeeper with ensemble (localhost:53718)
+24/04/23 19:47:19 INFO zookeeper.RecoverableZooKeeper: The identifier of this process is 95757@Lenovo-Bot
+24/04/23 19:47:19 INFO server.NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:56504
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1 Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0002 connected
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0002 Creating unassigned node for b2456ab4a20c7988fdf1dc14b72290bc in OFFLINE state
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0002 Attempting to transition node b2456ab4a20c7988fdf1dc14b72290bc from M_ZK_ENTITYGROUP_OFFLINE to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0002 Retrieved 117 byte(s) of data from znode /wasp/unassigned/b2456ab4a20c7988fdf1dc14b72290bc; data=entityGroup=TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc., state=M_ZK_ENTITYGROUP_OFFLINE, servername=MockServer,123,-1, createTime=1713898039771, payload.length=0
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0002 Received ZooKeeper Event, type=NodeDataChanged, state=SyncConnected, path=/wasp/unassigned/b2456ab4a20c7988fdf1dc14b72290bc
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0002 Successfully transitioned node b2456ab4a20c7988fdf1dc14b72290bc from M_ZK_ENTITYGROUP_OFFLINE to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 INFO fserver.EntityGroup: EntityGroup.openEntityGroup EntityGroup name ==TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc.
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Opening EntityGroup: {NAME => 'TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc.', STARTKEY => '\x00\x00\x00\x00', ENDKEY => '\x00\x00\x00\x01', ENCODED => b2456ab4a20c7988fdf1dc14b72290bc,}
+24/04/23 19:47:19 DEBUG fserver.MetricsEntityGroupSourceImpl: Creating new MetricsEntityGroupSourceImpl for table TestOpenEntityGroupHandler b2456ab4a20c7988fdf1dc14b72290bc
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Instantiated TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc.
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0002 Attempting to transition node b2456ab4a20c7988fdf1dc14b72290bc from FSERVER_ZK_ENTITYGROUP_OPENING to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 ERROR server.NIOServerCnxnFactory: Thread Thread[Thread-69,5,main] died
+java.lang.NullPointerException
+	at com.alibaba.wasp.fserver.EntityGroup.run(EntityGroup.java:1264)
+	at java.lang.Thread.run(Thread.java:750)
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0002 Retrieved 117 byte(s) of data from znode /wasp/unassigned/b2456ab4a20c7988fdf1dc14b72290bc; data=entityGroup=TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc., state=FSERVER_ZK_ENTITYGROUP_OPENING, servername=MockServer,123,-1, createTime=1713898039774, payload.length=0
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0002 Successfully transitioned node b2456ab4a20c7988fdf1dc14b72290bc from FSERVER_ZK_ENTITYGROUP_OPENING to FSERVER_ZK_ENTITYGROUP_OPENING
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Closing TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc.
+24/04/23 19:47:19 DEBUG fserver.EntityGroup: Updates disabled for entityGroup TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc.
+24/04/23 19:47:19 INFO fserver.EntityGroup: Running commit transaction of TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc. before close
+24/04/23 19:47:19 INFO fserver.EntityGroup: Closed TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc.
+24/04/23 19:47:19 INFO handler.OpenEntityGroupHandler: Opening of entityGroup {NAME => 'TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc.', STARTKEY => '\x00\x00\x00\x00', ENDKEY => '\x00\x00\x00\x01', ENCODED => b2456ab4a20c7988fdf1dc14b72290bc,} failed, marking as FAILED_OPEN in ZK
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0002 Attempting to transition node b2456ab4a20c7988fdf1dc14b72290bc from FSERVER_ZK_ENTITYGROUP_OPENING to FSERVER_ZK_ENTITYGROUP_FAILED_OPEN
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0002 Retrieved 117 byte(s) of data from znode /wasp/unassigned/b2456ab4a20c7988fdf1dc14b72290bc; data=entityGroup=TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc., state=FSERVER_ZK_ENTITYGROUP_OPENING, servername=MockServer,123,-1, createTime=1713898039777, payload.length=0
+24/04/23 19:47:19 DEBUG zookeeper.ZKAssign: MockServer,123,-1-0xff8f0c48a9ae0002 Successfully transitioned node b2456ab4a20c7988fdf1dc14b72290bc from FSERVER_ZK_ENTITYGROUP_OPENING to FSERVER_ZK_ENTITYGROUP_FAILED_OPEN
+24/04/23 19:47:19 DEBUG zookeeper.ZKUtil: MockServer,123,-1-0xff8f0c48a9ae0002 Retrieved 117 byte(s) of data from znode /wasp/unassigned/b2456ab4a20c7988fdf1dc14b72290bc and set watcher; entityGroup=TestOpenEntityGroupHandler,\x00\x00\x00\x00,1713898039766.b2456ab4a20c7988fdf1dc14b72290bc., state=FSERVER_ZK_ENTITYGROUP_FAILED_OPEN, servername=MockServer,123,-1, createTime=1713898039779, payload.length=0
+24/04/23 19:47:19 INFO server.NIOServerCnxnFactory: NIOServerCnxn factory exited run method
+24/04/23 19:47:19 INFO server.SessionTrackerImpl: Shutting down
+24/04/23 19:47:19 INFO server.SyncRequestProcessor: Shutting down
+24/04/23 19:47:19 INFO server.SyncRequestProcessor: SyncRequestProcessor exited!
+24/04/23 19:47:19 INFO server.FinalRequestProcessor: shutdown of request processor complete
+24/04/23 19:47:19 INFO wasp.WaspTestingUtility: Starting up minicluster with 1 master(s) and 3 fserver(s) 
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a87f0001 Received ZooKeeper Event, type=None, state=Disconnected, path=null
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a87f0000 Received ZooKeeper Event, type=None, state=Disconnected, path=null
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a87f0001 Received Disconnected from ZooKeeper, ignoring
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a87f0000 Received Disconnected from ZooKeeper, ignoring
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0000 Received ZooKeeper Event, type=None, state=Disconnected, path=null
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0000 Received Disconnected from ZooKeeper, ignoring
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0002 Received ZooKeeper Event, type=None, state=Disconnected, path=null
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0002 Received Disconnected from ZooKeeper, ignoring
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0001 Received ZooKeeper Event, type=None, state=Disconnected, path=null
+24/04/23 19:47:19 DEBUG zookeeper.ZooKeeperWatcher: MockServer,123,-1-0xff8f0c48a9ae0001 Received Disconnected from ZooKeeper, ignoring
+Starting DataNode 0 with dfs.data.dir: /home/alex/Repositories/wasp/target/test-data/b385cced-db38-4712-a9f0-026e12e6ddc2/dfscluster_239ae2e9-38ee-4624-9dae-23c4fa21dcab/dfs/data/data1,/home/alex/Repositories/wasp/target/test-data/b385cced-db38-4712-a9f0-026e12e6ddc2/dfscluster_239ae2e9-38ee-4624-9dae-23c4fa21dcab/dfs/data/data2
+24/04/23 19:47:19 ERROR datanode.DataNode: All directories in dfs.data.dir are invalid.
+24/04/23 19:47:19 INFO wasp.WaspTestingUtility: Shutting down mini wasp cluster
+24/04/23 19:47:19 INFO wasp.WaspTestingUtility: Minicluster is down

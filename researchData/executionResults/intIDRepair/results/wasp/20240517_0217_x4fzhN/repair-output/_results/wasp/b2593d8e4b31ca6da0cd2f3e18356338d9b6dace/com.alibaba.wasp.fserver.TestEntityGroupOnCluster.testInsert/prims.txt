@@ -1,0 +1,36 @@
+[TIME]: 0:00:00.408915
+=== SEARCH CLASSPATH ENTRY: /home/alex/Repositories/intIDRepair/toolRepos/ODRepair/experiments/_downloads/wasp
+=== com.alibaba.wasp.fserver.TestEntityGroupOnCluster String Literals: =============
+Before setUpBeforeClass
+After setUpBeforeClass
+Before testInsert
+Insert into User(user_id,name,value) values(1,'binlijin', 9999999999);
+Insert into User(user_id,name,value) values(2,'binlijin', 9.9);
+Insert into User(user_id,name,value) values(3,'binlijin', 99999999.99);
+Insert into Photo(user_id,photo_id,time,full_url) values(1,1000,10000,'dads1');
+Insert into Photo(user_id,photo_id,time,full_url) values(1,2000,20000,'dads2');
+Insert into Photo(user_id,photo_id,time,full_url,tag) values(1,3000,30000,'dads3','daizhiyuan');
+UPDATE Photo SET full_url = 'hhh' WHERE user_id = 1 and photo_id=1000;
+UPDATE Photo SET time = 10001 WHERE user_id = 1 and photo_id=1000;
+DELETE FROM Photo WHERE user_id = 1 and photo_id=1000;
+Select user_id,name,value from User where user_id=1;
+Select user_id,name,value from User where user_id=2;
+Select user_id,name,value from User where user_id=3;
+Select user_id,photo_id,time,full_url from Photo where user_id=1 and photo_id=1000;
+Select user_id,photo_id,time,full_url from Photo where user_id=1 and time=20000;
+Select user_id,photo_id,time,full_url,tag from Photo where tag='daizhiyuan';
+Select user_id,photo_id,time,full_url from Photo where user_id=1 and time=10001;
+Execute 
+ DeletePlan is 
+Plan is 
+GetAction 
+Result 
+Column:
+ , value:
+Why?(
+:
+)
+After testInsert
+ ScanAction 
+ StringBytesPair 
+==================================

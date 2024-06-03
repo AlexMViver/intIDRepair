@@ -1,0 +1,99 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.hadoop.hive.metastore.TestPartitionManagement
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 8, Errors: 9, Skipped: 0, Time elapsed: 255.25 s <<< FAILURE! - in org.apache.hadoop.hive.metastore.TestPartitionManagement
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testNoPartitionDiscoveryForReplTable  Time elapsed: 26.546 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:100)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryTablePattern  Time elapsed: 14.554 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<3>
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryTablePattern(TestPartitionManagement.java:432)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testNoPartitionRetentionForReplTarget  Time elapsed: 52.147 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:100)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryDBPattern  Time elapsed: 22.179 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<3>
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryDBPattern(TestPartitionManagement.java:383)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryDBPattern  Time elapsed: 22.179 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:100)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionRetention  Time elapsed: 22.081 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<3>
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionRetention(TestPartitionManagement.java:537)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionRetention  Time elapsed: 22.081 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:100)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryNonDefaultCatalog  Time elapsed: 22.07 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<3>
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryNonDefaultCatalog(TestPartitionManagement.java:344)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryNonDefaultCatalog  Time elapsed: 22.071 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (3).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:93)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryTransactionalTable  Time elapsed: 22.04 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<3>
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryTransactionalTable(TestPartitionManagement.java:468)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryTransactionalTable  Time elapsed: 22.04 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:100)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryDisabledByDefault  Time elapsed: 21.931 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:100)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoverySkipInvalidPath  Time elapsed: 21.867 s  <<< FAILURE!
+java.lang.AssertionError: expected:<4> but was:<3>
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoverySkipInvalidPath(TestPartitionManagement.java:590)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoverySkipInvalidPath  Time elapsed: 21.867 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:100)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryEnabledBothTableTypes  Time elapsed: 21.903 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<3>
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryEnabledBothTableTypes(TestPartitionManagement.java:270)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionDiscoveryEnabledBothTableTypes  Time elapsed: 21.903 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (2).  The statement has been rolled back.
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.tearDown(TestPartitionManagement.java:100)
+
+org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionExprFilter  Time elapsed: 7.925 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<3>
+	at org.apache.hadoop.hive.metastore.TestPartitionManagement.testPartitionExprFilter(TestPartitionManagement.java:720)
+

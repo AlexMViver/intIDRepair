@@ -1,0 +1,45 @@
+STATUS: CLEANER DOES NOT FIX
+MODIFIED: N/A
+MODIFIED FILE: N/A
+CLEANER: com.alibaba.wasp.fserver.TestEntityGroupInfo.testContainsRange
+CLEANER FILE: /home/alex/Repositories/wasp/src/test/java/com/alibaba/wasp/fserver/TestEntityGroupInfo.java
+POLLUTER: com.alibaba.wasp.fserver.TestEntityGroupInfo.testComparator
+POLLUTER FILE: /home/alex/Repositories/wasp/src/test/java/com/alibaba/wasp/fserver/TestEntityGroupInfo.java
+ORIGINAL CLEANER SIZE: 16
+NEW CLEANER SIZE: 16
+ELAPSED TIME: 0.0
+==========================
+@@ -0,0 +0,33 @@
++ {
++     {
++     }
++     {
++     }
++     FTable table = new FTable();
++     table.setTableName("testtable");
++     EntityGroupInfo egi = new EntityGroupInfo(Bytes.toBytes(table.getTableName()), Bytes.toBytes("a"), Bytes.toBytes("g"));
++     // Single row range at start of entityGroup
++     assertTrue(egi.containsRange(Bytes.toBytes("a"), Bytes.toBytes("a")));
++     // Fully contained range
++     assertTrue(egi.containsRange(Bytes.toBytes("b"), Bytes.toBytes("c")));
++     // Range overlapping start of entityGroup
++     assertTrue(egi.containsRange(Bytes.toBytes("a"), Bytes.toBytes("c")));
++     // Fully contained single-row range
++     assertTrue(egi.containsRange(Bytes.toBytes("c"), Bytes.toBytes("c")));
++     // Range that overlaps end key and hence doesn't fit
++     assertFalse(egi.containsRange(Bytes.toBytes("a"), Bytes.toBytes("g")));
++     // Single row range on end key
++     assertFalse(egi.containsRange(Bytes.toBytes("g"), Bytes.toBytes("g")));
++     // Single row range entirely outside
++     assertFalse(egi.containsRange(Bytes.toBytes("z"), Bytes.toBytes("z")));
++     // Degenerate range
++     try {
++         egi.containsRange(Bytes.toBytes("z"), Bytes.toBytes("a"));
++         fail("Invalid range did not throw IAE");
++     } catch (IllegalArgumentException iae) {
++     }
++     {
++     }
++     {
++     }
++ }

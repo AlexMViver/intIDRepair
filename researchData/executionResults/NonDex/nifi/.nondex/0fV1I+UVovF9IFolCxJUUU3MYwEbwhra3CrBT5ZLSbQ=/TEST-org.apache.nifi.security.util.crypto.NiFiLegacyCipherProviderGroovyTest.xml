@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest" time="0.146" tests="6" errors="0" skipped="1" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="nondexStart" value="0"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="nondexPrintstack" value="false"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter7479839884695289743.jar /home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire 2024-04-23T18-28-02_696-jvmRun1 surefire1250316220140015404tmp surefire_253210710469498413815tmp"/>
+    <property name="nondexLogging" value="CONFIG"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="nondexExecid" value="0fV1I+UVovF9IFolCxJUUU3MYwEbwhra3CrBT5ZLSbQ="/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="nondexEnd" value="9223372036854775807"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="nondexFilter" value=".*"/>
+    <property name="nondexSeed" value="933178"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter7479839884695289743.jar"/>
+    <property name="sun.boot.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/.nondex/nondex-instr.jar:/home/alex/.m2/repository/edu/illinois/nondex-common/2.1.7/nondex-common-2.1.7.jar:/home/alex/.m2/repository/edu/illinois/nondex-annotations/2.1.7/nondex-annotations-2.1.7.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="nondexDir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/.nondex"/>
+    <property name="nondexJarDir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/.nondex"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="nondexMode" value="FULL"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testGetCipherShouldSupportLegacyCode" classname="org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest" time="0.061">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5AND128BITAES-CBC-OPENSSL
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt c15d54634a717bce361173c3fb41c410 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: d01959a210587c898955106b4c5f5147887644a6231eba56c2d359a09fd7aa84 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5ANDDES
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 37ffd18e6474f3d7 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 33388c54f54536f32fe4703e2d81b3deb76ce58e9b6ffe58ba0fc7fa87618606 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5ANDRC2
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 3e84cdac2b5fd084 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: b7640468cf8f45bbb771da7638ea764611eda1a9724b73d8c893055d3927fee7 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA1ANDRC2
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt ff818aec88ca017e (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: ed0c73c2b88c0087e273bdc886201f374badb4b6e8bf1ce312b0e484262a4094 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA1ANDDES
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 2a74878edcc4ffaf (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 2ada025d8cd5d52674cb11dce67a2d086389757246c2c0b51485847f1e5d5d80 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 043eef4e65d05101f109fd1a7a79e70a (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: f06f3774d0ae09a80e735df1f3cf4965d8047e2db85110931a2a7cbae2a7b277 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND40BITRC2-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt e144c3b7488c2f26 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: e3a44f7fbd9ca5afd2abc6683af04361a09388eab3d535042a014a33329ded9f 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITRC2-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 6e9fa02b348239fc (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 40d46db512a00b3c17bdd2c12e5b1aad71c77713e7bdecf72c6fc1d2a0da5d7a 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND40BITRC4
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 560830625ead5172 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: bb7d93287cec16057a32e6a7ef660f906d2c9925e7142ae6df199d8f 28
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITRC4
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt f611a3f3cefdb3d2 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 8ec45a92f379ae0142e197ee4ea53980a65202d21d17f0fc89b70b08 28
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA256AND128BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 61a2e36c4cb2423d764eda5f449f8921 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: b760feb2c0e8ec8e17d00dbd9b2551d1795998d5c01e006568c601afa6a014ec 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND2-KEYTRIPLEDES-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt ab7deef85ef0acf9 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 49630f3f441b530a2a755ec8d363edf673d4965cb73aabefca36d1623aad5f39 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND3-KEYTRIPLEDES-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 8c21e00ea65807a1 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 8ffd6c35dea758ddba7ef76c42be0f2c8c414a0bb91d617fce613004d58f10c1 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAANDTWOFISH-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 2399ed56bc97974f4157ddf34455e649 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: b856d1dc842293f988da0fbc0eedc8fd70f9806ff1c48a0d6d0724ada0856b13 32
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherWithUnlimitedStrengthShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest" time="0.037">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5AND128BITAES-CBC-OPENSSL
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt e0c5f358f52b5c3981025d12f974b476 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: e37ad7d397649ca35d731f9005dfc0e96e1fd254817d11ceb7120f1d411d97c1 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5AND192BITAES-CBC-OPENSSL
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 4bf0093a748b2b95968432c1f0ec5a82 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 035590e503b5c6ab202057cc0f9c8fd7130b0dad41adab03508e4ea3cf8c607b 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5AND256BITAES-CBC-OPENSSL
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 07b7eacc3133faea2b6a816362e5030c (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 41a25f087ee4be13d6a2fcc293ae861641986b232936ba41790e4420fbe261db 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5ANDDES
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 0d7ab45b0793688c (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: c085dc6595f81098540078aa05899c3dac1b0c90eb7f5a25c108ba32ce41e530 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5ANDRC2
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 2ee777324fe8459b (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 67bc717ece49a02e6c17399019b08b2fd9680ae276d976aad6579bd09d2eef1a 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA1ANDRC2
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt cdc05b8c3cb86c2c (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: b1cfeb405417fc302578d887095bc1e58a8623b74dee27a28d80c056f21225bd 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA1ANDDES
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 29370ce5d6c0921b (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 2f2da0f5c07729d5965f3f0325133434e2fd9ce0227262083552df977ba8d4f2 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 39feac27a0bb6c5c0eaf4611050ee1a9 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 7f605ad1bf1b8673522cd15a18068c7873d59860c1647ee9df4a50ba9923a569 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND192BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 4e786e8e4f09b74bc6d72f296bd232b9 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: cc730dc531bd9838a557f65bd3ec2be50da9e6036c608dfbe5b0e6c436d14974 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND256BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt edcbd10064315efd78d5b32f9016325b (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 7bb13ba58b4ddcf77ee9f641fdbf6db46bafb733e74170cdc8f67c9429b59ebc 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND40BITRC2-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt ab3bd71fc70c3ce6 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 9ceb3791a62191d8554e46def523837d27793077ddb088a5d2eebc690f9a6d6e 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITRC2-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 71a7fddf7a4a1610 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: bb5eadf9690858b93ca7f981009d54bc528bc1cbedf2c6643fb459f2f6efe0e5 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND40BITRC4
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt df968f28425fe7a9 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 379f73e2dbeaa0514ecbd63dc0b6ee5cf9ba9b2dfc51f14907f766b0 28
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITRC4
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 97e5937e4e1066ee (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: f5d19d164ef8d608ca75d0cec3e1e718657b25e22ca4913f06d40798 28
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA256AND128BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt deb85f31304caa5c965b3e6d550eb6e4 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: e961da1122b70b89e20d3dcf6b52da8a64de3ad50ed1bed9e6a0facea4a078f3 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA256AND192BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt b78828f239e9a0c2669756cb792626e0 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: bf5a9e7d3014844a347b751f4b8e1cb206dee32b2e8ab1651648daf7321d09fd 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA256AND256BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 69ae994be975b57487f242b824cb23f8 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: f44ac83b9141c4952606bd6b3545c4fef85ef85e3b2518f8234fa55acc48ea79 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND2-KEYTRIPLEDES-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt e8671efc72adb0d9 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 7bb2372a44f1ae9b969863c52102c3683d6625e74bcc7304a2ddb4e234d01172 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND3-KEYTRIPLEDES-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 651c389df70bf6b1 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 008f4a3c80db7ad0db712e2bd337a2f21edae9f2b45297256f987fedf38f339b 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAANDTWOFISH-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt d81cdcfff5319390cb1440b0f74a88dd (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 4ef5297759263da40d59724a732e093459c5b5cbbcbd344c9e7b3a725e6e8ab5 32
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherWithoutSaltShouldSupportLegacyCode" classname="org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest" time="0.022">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5AND128BITAES-CBC-OPENSSL
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: b29275ae7f922502db83b1d1481274e4968562614236068154cb3f8a8535ef43 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5ANDDES
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 9bfccd12e615fbd8fddb97079d871aa2da57947df6ae3f567598af5b0224037a 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5ANDRC2
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 9438426d7406a7924c170f5f46899cbf9537fdf8da488dda856995c59b794294 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA1ANDRC2
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: f125b3e44d52f6de912a5751e83925c450ba2705158a95f6460939cf80f1afe7 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA1ANDDES
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: f162ad673ec43f24b3272bc2d37757e1ef80167ce76e611c374194d6a2cc2adf 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 58914107a592186a2397643c13cce17fad69110343252c5f873eaf739128d9e8 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND40BITRC2-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: d73a888b83d6c26c8be6cc9cba0162a37799cd3147299724a1c350da7d190924 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITRC2-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: b9da62e30531556f9c2fbcba2b78c3e17973253bb96ce9d358af723825287ecd 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND40BITRC4
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: bd33da32fa5689232f115824753a01cecd4eafda8d4472e0180df20d 28
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITRC4
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 26b98ca6599319387ef636aef6f9b249f7fffc414a28264982d88faf 28
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA256AND128BITAES-CBC-BC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 7660f73f0a670e36864ea9a4740662e44fc0992be09a284de74cd41ccbce9b6a 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND2-KEYTRIPLEDES-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: ce6b9b5cc554409b7574a6f4e10b5b53cab1f436ba4d3b1af7299a4c5909069b 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND3-KEYTRIPLEDES-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: d3e41c3241ff7a0c238a7d73317a8a7b0ad1664855df1e722c5e6b89682c3cc4 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAANDTWOFISH-CBC
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 4ca0e3f6e62cbc0f1ea7f00c2659b524ba3c357b5ad03f23a400ff83b4a57453 32
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest" time="0.006">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5AND128BITAES-CBC-OPENSSL
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt c2db3d5925961710160ee7399fbe7293 (16)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: eb11d5a11bb286a71352b4052012297bc5a5eee0609eaecfc513c4d0f1b54373 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5ANDDES
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 421b9474265afda5 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 2c802c75266690db28b7a45ab7629a4fa3ca59230ae3260f221b4dd63a60085f 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHMD5ANDRC2
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 6b7da43c8bd6ad59 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: e80cea746a408fcd3dbae8810d601084056d10051949fdd09b77974b1905ffc1 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA1ANDRC2
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt 04f8b23fa43b94d0 (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: c47e76d8601a3c96a8c3697e7bd4422f969ef01ea50f45bd91ffdde7bdcca331 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA1ANDDES
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Generated salt a7a3f59f0f68112a (8)
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 74ccd17dc288df294da30ef2532f17921233f9eea9c25d7b97a27e8e9fabadfd 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITAES-CBC-BC
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND40BITRC2-CBC
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITRC2-CBC
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND40BITRC4
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND128BITRC4
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHA256AND128BITAES-CBC-BC
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND2-KEYTRIPLEDES-CBC
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAAND3-KEYTRIPLEDES-CBC
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Using algorithm: PBEWITHSHAANDTWOFISH-CBC
+[main] WARN org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - This test is skipped because the password length exceeds the undocumented limit BouncyCastle imposes on a JVM with limited strength crypto policies
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldDetermineDependenceOnUnlimitedStrengthCrypto" classname="org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest" time="0">
+    <skipped message="System property [legacyCipherTest] does not exist ==&gt; Only needed once to determine max supported password lengths"/>
+  </testcase>
+  <testcase name="testGetCipherShouldIgnoreKeyLength" classname="org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Cipher text: 4b47f5f25c4f90db7b609e2d3afa0b6fcee3eb0aa7719ef71c295f9cf54d5033 32
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Decrypting with 'requested' key length: -1
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Decrypting with 'requested' key length: 40
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Decrypting with 'requested' key length: 64
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Decrypting with 'requested' key length: 128
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Decrypting with 'requested' key length: 192
+[main] INFO org.apache.nifi.security.util.crypto.NiFiLegacyCipherProviderGroovyTest - Decrypting with 'requested' key length: 256
+]]></system-err>
+  </testcase>
+</testsuite>

@@ -1,0 +1,323 @@
+DEBUG StatusLogger Unable to retrieve provider from ClassLoader sun.misc.Launcher$AppClassLoader@330bedb4
+ java.util.ServiceConfigurationError: org.apache.logging.log4j.spi.Provider: Provider org.apache.logging.log4j.core.impl.Log4jProvider not a subtype
+	at java.util.ServiceLoader.fail(ServiceLoader.java:239)
+	at java.util.ServiceLoader.access$300(ServiceLoader.java:185)
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:376)
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:404)
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480)
+	at org.apache.logging.log4j.util.ProviderUtil.loadProviders(ProviderUtil.java:109)
+	at org.apache.logging.log4j.util.ProviderUtil.<init>(ProviderUtil.java:68)
+	at org.apache.logging.log4j.util.ProviderUtil.lazyInit(ProviderUtil.java:150)
+	at org.apache.logging.log4j.util.ProviderUtil.hasProviders(ProviderUtil.java:134)
+	at org.apache.logging.log4j.LogManager.<clinit>(LogManager.java:89)
+	at org.apache.logging.log4j.spi.AbstractLoggerAdapter.getContext(AbstractLoggerAdapter.java:138)
+	at org.apache.logging.slf4j.Log4jLoggerFactory.getContext(Log4jLoggerFactory.java:45)
+	at org.apache.logging.log4j.spi.AbstractLoggerAdapter.getLogger(AbstractLoggerAdapter.java:48)
+	at org.apache.logging.slf4j.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:30)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:363)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:388)
+	at org.apache.hadoop.conf.Configuration.<clinit>(Configuration.java:227)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at javassist.runtime.Desc.getClassObject(Desc.java:42)
+	at javassist.runtime.Desc.getClassType(Desc.java:151)
+	at javassist.runtime.Desc.getType(Desc.java:121)
+	at javassist.runtime.Desc.getType(Desc.java:77)
+	at org.apache.hadoop.hive.registry.impl.TestZookeeperUtils.setup(TestZookeeperUtils.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.internal.runners.MethodRoadie.runBefores(MethodRoadie.java:133)
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:96)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:310)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:298)
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87)
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:218)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:160)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:134)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:136)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:117)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:57)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:377)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:138)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:465)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
+DEBUG StatusLogger Using ShutdownCallbackRegistry class org.apache.logging.log4j.core.util.DefaultShutdownCallbackRegistry
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Took 0,260286 seconds to load 241 plugins from org.powermock.core.classloader.javassist.JavassistMockClassLoader@429bd883
+DEBUG StatusLogger PluginManager 'Converter' found 46 plugins
+DEBUG StatusLogger Starting OutputStreamManager SYSTEM_OUT.false.false-1
+DEBUG StatusLogger Starting LoggerContext[name=429bd883, org.apache.logging.log4j.core.LoggerContext@7308ffff]...
+DEBUG StatusLogger Reconfiguration started for context[name=429bd883] at URI null (org.apache.logging.log4j.core.LoggerContext@7308ffff) with optional ClassLoader: null
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger PluginManager 'ConfigurationFactory' found 6 plugins
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Missing dependencies for Yaml support, ConfigurationFactory org.apache.logging.log4j.core.config.yaml.YamlConfigurationFactory is inactive
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Using configurationFactory org.apache.logging.log4j.core.config.ConfigurationFactory$Factory@45d64d27
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Apache Log4j Core 2.13.2 initializing configuration org.apache.logging.log4j.core.config.properties.PropertiesConfiguration@73a19967
+ScriptEngineManager providers.next(): javax.script.ScriptEngineFactory: Provider jdk.nashorn.api.scripting.NashornScriptEngineFactory not a subtype
+DEBUG StatusLogger Installed 0 script engines
+INFO StatusLogger Scanning for classes in '/home/alex/Repositories/hive/common/target/classes/org/apache/hadoop/hive/ql/log' matching criteria annotated with @Plugin
+DEBUG StatusLogger Checking to see if class org.apache.hadoop.hive.ql.log.PerfLogger matches criteria annotated with @Plugin
+DEBUG StatusLogger Took 0,003845 seconds to load 0 plugins from package org.apache.hadoop.hive.ql.log
+DEBUG StatusLogger PluginManager 'Core' found 124 plugins
+DEBUG StatusLogger PluginManager 'Level' found 0 plugins
+DEBUG StatusLogger Building Plugin[name=property, class=org.apache.logging.log4j.core.config.Property].
+TRACE StatusLogger TypeConverterRegistry initializing.
+DEBUG StatusLogger PluginManager 'TypeConverter' found 26 plugins
+DEBUG StatusLogger createProperty(name="hive.log.file", value="hive.log")
+DEBUG StatusLogger Building Plugin[name=property, class=org.apache.logging.log4j.core.config.Property].
+DEBUG StatusLogger createProperty(name="hive.log.dir", value="/home/alex/Repositories/hive/llap-client/target/tmp/log")
+DEBUG StatusLogger Building Plugin[name=property, class=org.apache.logging.log4j.core.config.Property].
+DEBUG StatusLogger createProperty(name="hive.root.logger", value="DRFA")
+DEBUG StatusLogger Building Plugin[name=property, class=org.apache.logging.log4j.core.config.Property].
+DEBUG StatusLogger createProperty(name="hive.log.level", value="DEBUG")
+DEBUG StatusLogger Building Plugin[name=property, class=org.apache.logging.log4j.core.config.Property].
+DEBUG StatusLogger createProperty(name="hive.test.console.log.level", value="INFO")
+DEBUG StatusLogger Building Plugin[name=properties, class=org.apache.logging.log4j.core.config.PropertiesPlugin].
+DEBUG StatusLogger configureSubstitutor(={hive.log.file=hive.log, hive.log.dir=/home/alex/Repositories/hive/llap-client/target/tmp/log, hive.root.logger=DRFA, hive.log.level=DEBUG, hive.test.console.log.level=INFO}, Configuration(HiveLog4j2Test))
+DEBUG StatusLogger PluginManager 'Lookup' found 17 plugins
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.hadoop.ipc", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.hadoop.security", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.hadoop.hdfs", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.hadoop.hdfs.server", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.hadoop.metrics2", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.mortbay", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.hadoop.yarn", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.hadoop.yarn.server", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.tez", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="ERROR", name="org.apache.hadoop.conf.Configuration", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.zookeeper", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.zookeeper.server.ServerCnxn", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.zookeeper.server.NIOServerCnxn", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.zookeeper.ClientCnxn", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.zookeeper.ClientCnxnSocket", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.zookeeper.ClientCnxnSocketNIO", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="ERROR", name="DataNucleus", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="ERROR", name="Datastore", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="ERROR", name="JPOX", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.hadoop.hive.ql.exec.Operator", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.hadoop.hive.serde2.lazy", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.hadoop.hive.metastore.ObjectStore", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.calcite.plan.RelOptPlanner", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="com.amazonaws", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="INFO", name="org.apache.http", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.apache.thrift", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="org.eclipse.jetty", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="WARN", name="BlockStateChange", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+DEBUG StatusLogger createLogger(additivity="true", level="DEBUG", name="org.apache.hadoop.hive.ql.optimizer.SharedWorkOptimizer", includeLocation="null", ={}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+DEBUG StatusLogger createAppenderRef(ref="console", level="INFO", Filter=null)
+DEBUG StatusLogger Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+DEBUG StatusLogger createAppenderRef(ref="DRFA", level="null", Filter=null)
+DEBUG StatusLogger Building Plugin[name=root, class=org.apache.logging.log4j.core.config.LoggerConfig$RootLogger].
+DEBUG StatusLogger createLogger(additivity="null", level="DEBUG", includeLocation="null", ={console, DRFA}, ={}, Configuration(HiveLog4j2Test), Filter=null)
+DEBUG StatusLogger Building Plugin[name=loggers, class=org.apache.logging.log4j.core.config.LoggersPlugin].
+DEBUG StatusLogger createLoggers(={org.apache.hadoop.ipc, org.apache.hadoop.security, org.apache.hadoop.hdfs, org.apache.hadoop.hdfs.server, org.apache.hadoop.metrics2, org.mortbay, org.apache.hadoop.yarn, org.apache.hadoop.yarn.server, org.apache.tez, org.apache.hadoop.conf.Configuration, org.apache.zookeeper, org.apache.zookeeper.server.ServerCnxn, org.apache.zookeeper.server.NIOServerCnxn, org.apache.zookeeper.ClientCnxn, org.apache.zookeeper.ClientCnxnSocket, org.apache.zookeeper.ClientCnxnSocketNIO, DataNucleus, Datastore, JPOX, org.apache.hadoop.hive.ql.exec.Operator, org.apache.hadoop.hive.serde2.lazy, org.apache.hadoop.hive.metastore.ObjectStore, org.apache.calcite.plan.RelOptPlanner, com.amazonaws, org.apache.http, org.apache.thrift, org.eclipse.jetty, BlockStateChange, org.apache.hadoop.hive.ql.optimizer.SharedWorkOptimizer, root})
+DEBUG StatusLogger Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+DEBUG StatusLogger PatternLayout$Builder(disableAnsi="null", charset="null", alwaysWriteExceptions="null", noConsoleNoAnsi="null", PatternSelector=null, Configuration(HiveLog4j2Test), footer="null", Replace=null, pattern="%d{ISO8601} %5p [%t] %c{2}: %m%n", header="null")
+DEBUG StatusLogger PluginManager 'Converter' found 46 plugins
+DEBUG StatusLogger Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.ConsoleAppender].
+DEBUG StatusLogger ConsoleAppender$Builder(target="SYSTEM_ERR", direct="null", follow="null", bufferedIo="null", immediateFlush="null", bufferSize="null", ignoreExceptions="null", Configuration(HiveLog4j2Test), name="console", PatternLayout(%d{ISO8601} %5p [%t] %c{2}: %m%n), Filter=null, ={})
+DEBUG StatusLogger Starting OutputStreamManager SYSTEM_ERR.false.false
+DEBUG StatusLogger Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+DEBUG StatusLogger PatternLayout$Builder(Configuration(HiveLog4j2Test), pattern="%d{ISO8601} %5p [%t] %c{2}: %m%n", header="null", footer="null", noConsoleNoAnsi="null", Replace=null, disableAnsi="null", alwaysWriteExceptions="null", PatternSelector=null, charset="null")
+DEBUG StatusLogger Building Plugin[name=TimeBasedTriggeringPolicy, class=org.apache.logging.log4j.core.appender.rolling.TimeBasedTriggeringPolicy].
+DEBUG StatusLogger TimeBasedTriggeringPolicy$Builder(maxRandomDelay="null", modulate="true", interval="1")
+DEBUG StatusLogger Building Plugin[name=Policies, class=org.apache.logging.log4j.core.appender.rolling.CompositeTriggeringPolicy].
+DEBUG StatusLogger createPolicy(={TimeBasedTriggeringPolicy(nextRolloverMillis=0, interval=1, modulate=true)})
+DEBUG StatusLogger Building Plugin[name=DefaultRolloverStrategy, class=org.apache.logging.log4j.core.appender.rolling.DefaultRolloverStrategy].
+DEBUG StatusLogger DefaultRolloverStrategy$Builder(Configuration(HiveLog4j2Test), min="null", fileIndex="null", tempCompressedFilePattern="null", max="30", compressionLevel="null", ={}, stopCustomActionsOnError="null")
+DEBUG StatusLogger Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.RollingRandomAccessFileAppender].
+DEBUG StatusLogger RollingRandomAccessFileAppender$Builder(fileName="/home/alex/Repositories/hive/llap-client/target/tmp/log/hive.log", DefaultRolloverStrategy(DefaultRolloverStrategy(min=1, max=30, useMax=true)), fileGroup="null", append="null", filePattern="/home/alex/Repositories/hive/llap-client/target/tmp/log/hive.log.%d{yyyy-MM-dd}", filePermissions="null", fileOwner="null", advertiseURI="null", advertise="null", Policies(CompositeTriggeringPolicy(policies=[TimeBasedTriggeringPolicy(nextRolloverMillis=0, interval=1, modulate=true)])), immediateFlush="null", bufferSize="null", bufferedIo="null", Configuration(HiveLog4j2Test), ignoreExceptions="null", name="DRFA", PatternLayout(%d{ISO8601} %5p [%t] %c{2}: %m%n), Filter=null, ={})
+TRACE StatusLogger RandomAccessFile /home/alex/Repositories/hive/llap-client/target/tmp/log/hive.log seek to 309751
+DEBUG StatusLogger Starting RollingRandomAccessFileManager /home/alex/Repositories/hive/llap-client/target/tmp/log/hive.log
+DEBUG StatusLogger PluginManager 'FileConverter' found 2 plugins
+DEBUG StatusLogger Setting prev file time to 2024-04-23T14:42:44.946-0700
+DEBUG StatusLogger Initializing triggering policy CompositeTriggeringPolicy(policies=[TimeBasedTriggeringPolicy(nextRolloverMillis=0, interval=1, modulate=true)])
+DEBUG StatusLogger Initializing triggering policy TimeBasedTriggeringPolicy(nextRolloverMillis=0, interval=1, modulate=true)
+TRACE StatusLogger PatternProcessor.getNextTime returning 2024/04/24-00:00:00.000, nextFileTime=2024/04/23-00:00:00.000, prevFileTime=1969/12/31-16:00:00.000, current=2024/04/23-14:42:48.259, freq=DAILY
+TRACE StatusLogger PatternProcessor.getNextTime returning 2024/04/24-00:00:00.000, nextFileTime=2024/04/23-00:00:00.000, prevFileTime=2024/04/23-00:00:00.000, current=2024/04/23-14:42:48.260, freq=DAILY
+DEBUG StatusLogger Building Plugin[name=appenders, class=org.apache.logging.log4j.core.config.AppendersPlugin].
+DEBUG StatusLogger createAppenders(={console, DRFA})
+DEBUG StatusLogger Configuration org.apache.logging.log4j.core.config.properties.PropertiesConfiguration@73a19967 initialized
+DEBUG StatusLogger Starting configuration org.apache.logging.log4j.core.config.properties.PropertiesConfiguration@73a19967
+DEBUG StatusLogger Started configuration org.apache.logging.log4j.core.config.properties.PropertiesConfiguration@73a19967 OK.
+TRACE StatusLogger Stopping org.apache.logging.log4j.core.config.DefaultConfiguration@7051777c...
+TRACE StatusLogger DefaultConfiguration notified 1 ReliabilityStrategies that config will be stopped.
+TRACE StatusLogger DefaultConfiguration stopping root LoggerConfig.
+TRACE StatusLogger DefaultConfiguration notifying ReliabilityStrategies that appenders will be stopped.
+TRACE StatusLogger DefaultConfiguration stopping remaining Appenders.
+DEBUG StatusLogger Shutting down OutputStreamManager SYSTEM_OUT.false.false-1
+DEBUG StatusLogger OutputStream closed
+DEBUG StatusLogger Shut down OutputStreamManager SYSTEM_OUT.false.false-1, all resources released: true
+DEBUG StatusLogger Appender DefaultConsole-1 stopped with status true
+TRACE StatusLogger DefaultConfiguration stopped 1 remaining Appenders.
+TRACE StatusLogger DefaultConfiguration cleaning Appenders from 1 LoggerConfigs.
+DEBUG StatusLogger Stopped org.apache.logging.log4j.core.config.DefaultConfiguration@7051777c OK
+TRACE StatusLogger Reregistering MBeans after reconfigure. Selector=org.apache.logging.log4j.core.selector.ClassLoaderContextSelector@61c42416
+TRACE StatusLogger Reregistering context (1/1): '429bd883' org.apache.logging.log4j.core.LoggerContext@7308ffff
+ERROR StatusLogger Could not reconfigure JMX
+ java.lang.LinkageError: loader constraint violation: loader (instance of org/powermock/core/classloader/javassist/JavassistMockClassLoader) previously initiated loading for a different type with name "javax/management/MBeanServer"
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at org.powermock.core.classloader.javassist.JavassistMockClassLoader.loadUnmockedClass(JavassistMockClassLoader.java:90)
+	at org.powermock.core.classloader.MockClassLoader.loadClassByThisClassLoader(MockClassLoader.java:104)
+	at org.powermock.core.classloader.DeferSupportingClassLoader.loadClass1(DeferSupportingClassLoader.java:147)
+	at org.powermock.core.classloader.DeferSupportingClassLoader.loadClass(DeferSupportingClassLoader.java:98)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at org.apache.logging.log4j.core.jmx.Server.unregisterAllMatching(Server.java:337)
+	at org.apache.logging.log4j.core.jmx.Server.unregisterLoggerContext(Server.java:261)
+	at org.apache.logging.log4j.core.jmx.Server.reregisterMBeansAfterReconfigure(Server.java:165)
+	at org.apache.logging.log4j.core.jmx.Server.reregisterMBeansAfterReconfigure(Server.java:141)
+	at org.apache.logging.log4j.core.LoggerContext.setConfiguration(LoggerContext.java:629)
+	at org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:691)
+	at org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:708)
+	at org.apache.logging.log4j.core.LoggerContext.start(LoggerContext.java:263)
+	at org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:153)
+	at org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:45)
+	at org.apache.logging.log4j.LogManager.getContext(LogManager.java:194)
+	at org.apache.logging.log4j.spi.AbstractLoggerAdapter.getContext(AbstractLoggerAdapter.java:138)
+	at org.apache.logging.slf4j.Log4jLoggerFactory.getContext(Log4jLoggerFactory.java:45)
+	at org.apache.logging.log4j.spi.AbstractLoggerAdapter.getLogger(AbstractLoggerAdapter.java:48)
+	at org.apache.logging.slf4j.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:30)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:363)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:388)
+	at org.apache.hadoop.conf.Configuration.<clinit>(Configuration.java:227)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at javassist.runtime.Desc.getClassObject(Desc.java:42)
+	at javassist.runtime.Desc.getClassType(Desc.java:151)
+	at javassist.runtime.Desc.getType(Desc.java:121)
+	at javassist.runtime.Desc.getType(Desc.java:77)
+	at org.apache.hadoop.hive.registry.impl.TestZookeeperUtils.setup(TestZookeeperUtils.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.internal.runners.MethodRoadie.runBefores(MethodRoadie.java:133)
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:96)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:310)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:298)
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87)
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:218)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:160)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:134)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:136)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:117)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:57)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:377)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:138)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:465)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
+TRACE StatusLogger Using default SystemClock for timestamps.
+DEBUG StatusLogger org.apache.logging.log4j.core.util.SystemClock does not support precise timestamps.
+DEBUG StatusLogger Unable to access Context Data Providers org.apache.logging.log4j.core.util.ContextDataProvider: Provider org.apache.logging.log4j.core.impl.ThreadContextDataProvider not a subtype
+TRACE StatusLogger Using DummyNanoClock for nanosecond timestamps.
+DEBUG StatusLogger Reconfiguration complete for context[name=429bd883] at URI /home/alex/Repositories/hive/llap-client/target/testconf/hive-log4j2.properties (org.apache.logging.log4j.core.LoggerContext@7308ffff) with optional ClassLoader: null
+DEBUG StatusLogger Shutdown hook enabled. Registering a new one.
+DEBUG StatusLogger LoggerContext[name=429bd883, org.apache.logging.log4j.core.LoggerContext@7308ffff] started OK.
+2024-04-23T14:42:50,067  INFO [main] conf.HiveConf: Found configuration file file:/home/alex/Repositories/hive/llap-client/target/testconf/hive-site.xml
+DEBUG StatusLogger AsyncLogger.ThreadNameStrategy=UNCACHED (user specified null, default is UNCACHED)
+TRACE StatusLogger Using default SystemClock for timestamps.
+DEBUG StatusLogger org.apache.logging.log4j.core.util.SystemClock does not support precise timestamps.

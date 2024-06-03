@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.remote.client.PeerSelectorTest" time="33.873" tests="22" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="nondexStart" value="0"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar:/home/alex/.m2/repository/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.jar:/home/alex/.m2/repository/org/objenesis/objenesis/2.1/objenesis-2.1.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.44.v20210927/jetty-util-ajax-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/littleshoot/littleproxy/1.1.2/littleproxy-1.1.2.jar:/home/alex/.m2/repository/com/google/guava/guava/20.0/guava-20.0.jar:/home/alex/.m2/repository/io/netty/netty-all/4.0.44.Final/netty-all-4.0.44.Final.jar:/home/alex/.m2/repository/com/barchart/udt/barchart-udt-bundle/2.3.0/barchart-udt-bundle-2.3.0.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="nondexPrintstack" value="false"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/surefire/surefirebooter5958664244010686917.jar /home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/surefire 2024-04-23T18-28-02_696-jvmRun1 surefire2745254515205702927tmp surefire_1034788053459324000194tmp"/>
+    <property name="nondexLogging" value="CONFIG"/>
+    <property name="org.slf4j.simpleLogger.log.org.apache.nifi.remote.protocol.http.HttpClientTransaction" value="INFO"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar:/home/alex/.m2/repository/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.jar:/home/alex/.m2/repository/org/objenesis/objenesis/2.1/objenesis-2.1.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.44.v20210927/jetty-util-ajax-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/littleshoot/littleproxy/1.1.2/littleproxy-1.1.2.jar:/home/alex/.m2/repository/com/google/guava/guava/20.0/guava-20.0.jar:/home/alex/.m2/repository/io/netty/netty-all/4.0.44.Final/netty-all-4.0.44.Final.jar:/home/alex/.m2/repository/com/barchart/udt/barchart-udt-bundle/2.3.0/barchart-udt-bundle-2.3.0.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="nondexExecid" value="SAenJtRDwJvY1MwXG+kSPYqYiw5Cc5qUtFxwkCfMp00="/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client"/>
+    <property name="file.separator" value="/"/>
+    <property name="nondexEnd" value="9223372036854775807"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="nondexFilter" value=".*"/>
+    <property name="nondexSeed" value="1016066"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/surefire/surefirebooter5958664244010686917.jar"/>
+    <property name="sun.boot.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/.nondex/nondex-instr.jar:/home/alex/.m2/repository/edu/illinois/nondex-common/2.1.7/nondex-common-2.1.7.jar:/home/alex/.m2/repository/edu/illinois/nondex-annotations/2.1.7/nondex-annotations-2.1.7.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="sun.nio.ch.bugLevel" value=""/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="nondexDir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/.nondex"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="nondexJarDir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/.nondex"/>
+    <property name="jetty.git.hash" value="8da83308eeca865e495e53ef315a249d63ba9332"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="nondexMode" value="FULL"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testGetAvailablePeerStatusShouldHandleMultiplePenalizedPeers" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="1.063">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (penalized peers): [node1.nifi:25, node2.nifi:25, node3.nifi:25, node4.nifi:25]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (10000): [node1.nifi:0, node2.nifi:5061, node3.nifi:0, node4.nifi:4939]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node2.nifi:5061, node3.nifi:0, node4.nifi:4939]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node2.nifi: 50.0%, node3.nifi: 0.0%, node4.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (5061) | Min: node1.nifi (0)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetAvailablePeerStatusShouldHandleMultiplePenalizedPeers" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.57">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (penalized peers): [node1.nifi:25, node2.nifi:25, node3.nifi:25, node4.nifi:25]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (10000): [node1.nifi:0, node2.nifi:4961, node3.nifi:0, node4.nifi:5039]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node2.nifi:4961, node3.nifi:0, node4.nifi:5039]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node2.nifi: 50.0%, node3.nifi: 0.0%, node4.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node4.nifi (5039) | Min: node1.nifi (0)
+]]></system-err>
+  </testcase>
+  <testcase name="testInitializationShouldRestorePeerStatusFileCache" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.04">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.FilePeerPersistence - Restored peer statuses from FilePeerPersistence [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=1], PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=1], PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=1]]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 4 peers to query: [PeerDescription[hostname=node3.nifi, port=-1, secure=false], PeerDescription[hostname=localhost, port=-1, secure=false], PeerDescription[hostname=node1.nifi, port=-1, secure=false], PeerDescription[hostname=node2.nifi, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testInitializationShouldRestorePeerStatusFileCache" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.001">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.FilePeerPersistence - Restored peer statuses from FilePeerPersistence [PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=1], PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=1], PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=1]]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 4 peers to query: [PeerDescription[hostname=node1.nifi, port=-1, secure=false], PeerDescription[hostname=node2.nifi, port=-1, secure=false], PeerDescription[hostname=localhost, port=-1, secure=false], PeerDescription[hostname=node3.nifi, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testPeerQueueShouldGetMaxConsecutiveElements" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.083"/>
+  <testcase name="testPeerQueueShouldGetMaxConsecutiveElements" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.002"/>
+  <testcase name="testGetNextPeerShouldRepeatPeersOnUnbalancedCluster" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="37.11">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 50/50): [node1.nifi:50, node2.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 100 ff 50/50
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 50/50: [node1.nifi:50.0, node2.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:5041, node2.nifi:4959]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 50.0%, node2.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (5041) | Min: node2.nifi (4959)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 100 ff 50/50
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 50/50: [node1.nifi:50.0, node2.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:4891, node2.nifi:5109]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 50.0%, node2.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (5109) | Min: node1.nifi (4891)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 75/25): [node1.nifi:75, node2.nifi:25]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 100 ff 75/25
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 75/25: [node1.nifi:25.0, node2.nifi:75.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2514, node2.nifi:7486]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 25.0%, node2.nifi: 75.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (7486) | Min: node1.nifi (2514)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 100 ff 75/25
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 75/25: [node1.nifi:75.0, node2.nifi:25.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:7477, node2.nifi:2523]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 75.0%, node2.nifi: 25.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (7477) | Min: node2.nifi (2523)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 50/50/0): [node1.nifi:50, node2.nifi:50, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 100 ff 50/50/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 50/50/0: [node1.nifi:25.0, node2.nifi:25.0, node3.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2519, node2.nifi:2426, node3.nifi:5055]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 25.0%, node2.nifi: 25.0%, node3.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (5055) | Min: node2.nifi (2426)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 100 ff 50/50/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 50/50/0: [node1.nifi:50.0, node2.nifi:50.0, node3.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:4979, node2.nifi:5021, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 50.0%, node2.nifi: 50.0%, node3.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (5021) | Min: node3.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 800/200/0): [node1.nifi:800, node2.nifi:200, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 1000 ff 800/200/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 800/200/0: [node1.nifi:9.99, node2.nifi:40.0, node3.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:954, node2.nifi:3986, node3.nifi:5060]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 9.99%, node2.nifi: 40.0%, node3.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (5060) | Min: node1.nifi (954)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 1000 ff 800/200/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 800/200/0: [node1.nifi:80.0, node2.nifi:20.0, node3.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:8058, node2.nifi:1942, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 80.0%, node2.nifi: 20.0%, node3.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (8058) | Min: node3.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (10 ff 8/2/0): [node1.nifi:8, node2.nifi:2, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 10 ff 8/2/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 10 ff 8/2/0: [node1.nifi:9.99, node2.nifi:40.0, node3.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:1022, node2.nifi:3986, node3.nifi:4992]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 9.99%, node2.nifi: 40.0%, node3.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (4992) | Min: node1.nifi (1022)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 10 ff 8/2/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 10 ff 8/2/0: [node1.nifi:80.0, node2.nifi:20.0, node3.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:8009, node2.nifi:1991, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 80.0%, node2.nifi: 20.0%, node3.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (8009) | Min: node3.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (200 ff 66x3/0): [node1.nifi:66, node2.nifi:66, node3.nifi:66, node4.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 200 ff 66x3/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 200 ff 66x3/0: [node1.nifi:22.22, node2.nifi:22.22, node3.nifi:22.22, node4.nifi:33.33]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2224, node2.nifi:2250, node3.nifi:2099, node4.nifi:3427]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 22.22%, node2.nifi: 22.22%, node3.nifi: 22.22%, node4.nifi: 33.33%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node4.nifi (3427) | Min: node3.nifi (2099)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 200 ff 66x3/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 200 ff 66x3/0: [node1.nifi:33.33, node2.nifi:33.33, node3.nifi:33.33, node4.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:3290, node2.nifi:3400, node3.nifi:3310, node4.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 33.33%, node2.nifi: 33.33%, node3.nifi: 33.33%, node4.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (3400) | Min: node4.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 0/250x4): [node1.nifi:0, node2.nifi:250, node3.nifi:250, node4.nifi:250, node5.nifi:250]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 1000 ff 0/250x4
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 0/250x4: [node1.nifi:25.0, node2.nifi:18.75, node3.nifi:18.75, node4.nifi:18.75, node5.nifi:18.75]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2542, node2.nifi:1824, node3.nifi:1860, node4.nifi:1876, node5.nifi:1898]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 25.0%, node2.nifi: 18.75%, node3.nifi: 18.75%, node4.nifi: 18.75%, node5.nifi: 18.75%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (2542) | Min: node2.nifi (1824)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 1000 ff 0/250x4
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 0/250x4: [node1.nifi:0.0, node2.nifi:25.0, node3.nifi:25.0, node4.nifi:25.0, node5.nifi:25.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node2.nifi:2464, node3.nifi:2520, node4.nifi:2522, node5.nifi:2494]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node2.nifi: 25.0%, node3.nifi: 25.0%, node4.nifi: 25.0%, node5.nifi: 25.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node4.nifi (2522) | Min: node1.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 0/111x9): [node1.nifi:0, node2.nifi:111, node3.nifi:111, node4.nifi:111, node5.nifi:111, node6.nifi:111, node7.nifi:111, node8.nifi:111, node9.nifi:111, node10.nifi:111]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 1000 ff 0/111x9
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 0/111x9: [node1.nifi:11.11, node2.nifi:9.87, node3.nifi:9.87, node4.nifi:9.87, node5.nifi:9.87, node6.nifi:9.87, node7.nifi:9.87, node8.nifi:9.87, node9.nifi:9.87, node10.nifi:9.87]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:1080, node10.nifi:1004, node2.nifi:995, node3.nifi:953, node4.nifi:929, node5.nifi:992, node6.nifi:1013, node7.nifi:1049, node8.nifi:973, node9.nifi:1012]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 11.11%, node10.nifi: 9.87%, node2.nifi: 9.87%, node3.nifi: 9.87%, node4.nifi: 9.87%, node5.nifi: 9.87%, node6.nifi: 9.87%, node7.nifi: 9.87%, node8.nifi: 9.87%, node9.nifi: 9.87%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (1080) | Min: node4.nifi (929)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 1000 ff 0/111x9
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 0/111x9: [node1.nifi:0.0, node2.nifi:11.11, node3.nifi:11.11, node4.nifi:11.11, node5.nifi:11.11, node6.nifi:11.11, node7.nifi:11.11, node8.nifi:11.11, node9.nifi:11.11, node10.nifi:11.11]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node10.nifi:1136, node2.nifi:1135, node3.nifi:1102, node4.nifi:1196, node5.nifi:1105, node6.nifi:1089, node7.nifi:1097, node8.nifi:1057, node9.nifi:1083]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node10.nifi: 11.11%, node2.nifi: 11.11%, node3.nifi: 11.11%, node4.nifi: 11.11%, node5.nifi: 11.11%, node6.nifi: 11.11%, node7.nifi: 11.11%, node8.nifi: 11.11%, node9.nifi: 11.11%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node4.nifi (1196) | Min: node1.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (legacy 1024/10240/4096x3): [node1.nifi:1024, node2.nifi:10240, node3.nifi:4096, node4.nifi:4096, node5.nifi:4096]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario legacy 1024/10240/4096x3
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for legacy 1024/10240/4096x3: [node1.nifi:23.91, node2.nifi:14.13, node3.nifi:20.65, node4.nifi:20.65, node5.nifi:20.65]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2343, node2.nifi:1393, node3.nifi:2066, node4.nifi:2103, node5.nifi:2095]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 23.91%, node2.nifi: 14.13%, node3.nifi: 20.65%, node4.nifi: 20.65%, node5.nifi: 20.65%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (2343) | Min: node2.nifi (1393)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario legacy 1024/10240/4096x3
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for legacy 1024/10240/4096x3: [node1.nifi:4.34, node2.nifi:43.47, node3.nifi:17.39, node4.nifi:17.39, node5.nifi:17.39]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:413, node2.nifi:4355, node3.nifi:1706, node4.nifi:1801, node5.nifi:1725]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 4.34%, node2.nifi: 43.47%, node3.nifi: 17.39%, node4.nifi: 17.39%, node5.nifi: 17.39%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (4355) | Min: node1.nifi (413)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (legacy 50k/500): [node1.nifi:50000, node2.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario legacy 50k/500
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for legacy 50k/500: [node1.nifi:0.09, node2.nifi:99.9]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:5, node2.nifi:9995]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.09%, node2.nifi: 99.9%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (9995) | Min: node1.nifi (5)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario legacy 50k/500
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for legacy 50k/500: [node1.nifi:99.9, node2.nifi:0.09]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:9990, node2.nifi:10]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 99.9%, node2.nifi: 0.09%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (9990) | Min: node2.nifi (10)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNextPeerShouldRepeatPeersOnUnbalancedCluster" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="27.914">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 50/50): [node1.nifi:50, node2.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 100 ff 50/50
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 50/50: [node1.nifi:50.0, node2.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:4955, node2.nifi:5045]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 50.0%, node2.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (5045) | Min: node1.nifi (4955)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 100 ff 50/50
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 50/50: [node1.nifi:50.0, node2.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:5011, node2.nifi:4989]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 50.0%, node2.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (5011) | Min: node2.nifi (4989)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 75/25): [node1.nifi:75, node2.nifi:25]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 100 ff 75/25
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 75/25: [node1.nifi:25.0, node2.nifi:75.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2491, node2.nifi:7509]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 25.0%, node2.nifi: 75.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (7509) | Min: node1.nifi (2491)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 100 ff 75/25
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 75/25: [node1.nifi:75.0, node2.nifi:25.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:7527, node2.nifi:2473]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 75.0%, node2.nifi: 25.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (7527) | Min: node2.nifi (2473)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 50/50/0): [node1.nifi:50, node2.nifi:50, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 100 ff 50/50/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 50/50/0: [node1.nifi:25.0, node2.nifi:25.0, node3.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2513, node2.nifi:2465, node3.nifi:5022]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 25.0%, node2.nifi: 25.0%, node3.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (5022) | Min: node2.nifi (2465)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 100 ff 50/50/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 50/50/0: [node1.nifi:50.0, node2.nifi:50.0, node3.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:5036, node2.nifi:4964, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 50.0%, node2.nifi: 50.0%, node3.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (5036) | Min: node3.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 800/200/0): [node1.nifi:800, node2.nifi:200, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 1000 ff 800/200/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 800/200/0: [node1.nifi:9.99, node2.nifi:40.0, node3.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:1004, node2.nifi:3978, node3.nifi:5018]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 9.99%, node2.nifi: 40.0%, node3.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (5018) | Min: node1.nifi (1004)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 1000 ff 800/200/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 800/200/0: [node1.nifi:80.0, node2.nifi:20.0, node3.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:8010, node2.nifi:1990, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 80.0%, node2.nifi: 20.0%, node3.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (8010) | Min: node3.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (10 ff 8/2/0): [node1.nifi:8, node2.nifi:2, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 10 ff 8/2/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 10 ff 8/2/0: [node1.nifi:9.99, node2.nifi:40.0, node3.nifi:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:1019, node2.nifi:3974, node3.nifi:5007]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 9.99%, node2.nifi: 40.0%, node3.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (5007) | Min: node1.nifi (1019)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 10 ff 8/2/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 10 ff 8/2/0: [node1.nifi:80.0, node2.nifi:20.0, node3.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:8043, node2.nifi:1957, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 80.0%, node2.nifi: 20.0%, node3.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (8043) | Min: node3.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (200 ff 66x3/0): [node1.nifi:66, node2.nifi:66, node3.nifi:66, node4.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 200 ff 66x3/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 200 ff 66x3/0: [node1.nifi:22.22, node2.nifi:22.22, node3.nifi:22.22, node4.nifi:33.33]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2238, node2.nifi:2173, node3.nifi:2215, node4.nifi:3374]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 22.22%, node2.nifi: 22.22%, node3.nifi: 22.22%, node4.nifi: 33.33%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node4.nifi (3374) | Min: node2.nifi (2173)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 200 ff 66x3/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 200 ff 66x3/0: [node1.nifi:33.33, node2.nifi:33.33, node3.nifi:33.33, node4.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:3395, node2.nifi:3259, node3.nifi:3346, node4.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 33.33%, node2.nifi: 33.33%, node3.nifi: 33.33%, node4.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (3395) | Min: node4.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 0/250x4): [node1.nifi:0, node2.nifi:250, node3.nifi:250, node4.nifi:250, node5.nifi:250]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 1000 ff 0/250x4
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 0/250x4: [node1.nifi:25.0, node2.nifi:18.75, node3.nifi:18.75, node4.nifi:18.75, node5.nifi:18.75]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2476, node2.nifi:1995, node3.nifi:1869, node4.nifi:1845, node5.nifi:1815]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 25.0%, node2.nifi: 18.75%, node3.nifi: 18.75%, node4.nifi: 18.75%, node5.nifi: 18.75%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (2476) | Min: node5.nifi (1815)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 1000 ff 0/250x4
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 0/250x4: [node1.nifi:0.0, node2.nifi:25.0, node3.nifi:25.0, node4.nifi:25.0, node5.nifi:25.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node2.nifi:2502, node3.nifi:2572, node4.nifi:2515, node5.nifi:2411]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node2.nifi: 25.0%, node3.nifi: 25.0%, node4.nifi: 25.0%, node5.nifi: 25.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (2572) | Min: node1.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 0/111x9): [node1.nifi:0, node2.nifi:111, node3.nifi:111, node4.nifi:111, node5.nifi:111, node6.nifi:111, node7.nifi:111, node8.nifi:111, node9.nifi:111, node10.nifi:111]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario 1000 ff 0/111x9
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 0/111x9: [node1.nifi:11.11, node2.nifi:9.87, node3.nifi:9.87, node4.nifi:9.87, node5.nifi:9.87, node6.nifi:9.87, node7.nifi:9.87, node8.nifi:9.87, node9.nifi:9.87, node10.nifi:9.87]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:1099, node10.nifi:965, node2.nifi:960, node3.nifi:976, node4.nifi:992, node5.nifi:1015, node6.nifi:1010, node7.nifi:972, node8.nifi:987, node9.nifi:1024]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 11.11%, node10.nifi: 9.87%, node2.nifi: 9.87%, node3.nifi: 9.87%, node4.nifi: 9.87%, node5.nifi: 9.87%, node6.nifi: 9.87%, node7.nifi: 9.87%, node8.nifi: 9.87%, node9.nifi: 9.87%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (1099) | Min: node2.nifi (960)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario 1000 ff 0/111x9
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 1000 ff 0/111x9: [node1.nifi:0.0, node2.nifi:11.11, node3.nifi:11.11, node4.nifi:11.11, node5.nifi:11.11, node6.nifi:11.11, node7.nifi:11.11, node8.nifi:11.11, node9.nifi:11.11, node10.nifi:11.11]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node10.nifi:1159, node2.nifi:1099, node3.nifi:1081, node4.nifi:1055, node5.nifi:1157, node6.nifi:1102, node7.nifi:1074, node8.nifi:1103, node9.nifi:1170]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node10.nifi: 11.11%, node2.nifi: 11.11%, node3.nifi: 11.11%, node4.nifi: 11.11%, node5.nifi: 11.11%, node6.nifi: 11.11%, node7.nifi: 11.11%, node8.nifi: 11.11%, node9.nifi: 11.11%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node9.nifi (1170) | Min: node1.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (legacy 1024/10240/4096x3): [node1.nifi:1024, node2.nifi:10240, node3.nifi:4096, node4.nifi:4096, node5.nifi:4096]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario legacy 1024/10240/4096x3
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for legacy 1024/10240/4096x3: [node1.nifi:23.91, node2.nifi:14.13, node3.nifi:20.65, node4.nifi:20.65, node5.nifi:20.65]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2398, node2.nifi:1434, node3.nifi:2043, node4.nifi:2083, node5.nifi:2042]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 23.91%, node2.nifi: 14.13%, node3.nifi: 20.65%, node4.nifi: 20.65%, node5.nifi: 20.65%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (2398) | Min: node2.nifi (1434)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario legacy 1024/10240/4096x3
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for legacy 1024/10240/4096x3: [node1.nifi:4.34, node2.nifi:43.47, node3.nifi:17.39, node4.nifi:17.39, node5.nifi:17.39]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:427, node2.nifi:4426, node3.nifi:1709, node4.nifi:1696, node5.nifi:1742]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 4.34%, node2.nifi: 43.47%, node3.nifi: 17.39%, node4.nifi: 17.39%, node5.nifi: 17.39%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (4426) | Min: node1.nifi (427)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (legacy 50k/500): [node1.nifi:50000, node2.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND in scenario legacy 50k/500
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for legacy 50k/500: [node1.nifi:0.09, node2.nifi:99.9]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:4, node2.nifi:9996]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.09%, node2.nifi: 99.9%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (9996) | Min: node1.nifi (4)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE in scenario legacy 50k/500
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for legacy 50k/500: [node1.nifi:99.9, node2.nifi:0.09]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:9994, node2.nifi:6]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 99.9%, node2.nifi: 0.09%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (9994) | Min: node2.nifi (6)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNextPeerShouldRepeatPeersOnSingleValidDestination" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.049">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (single node): [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for SEND in scenario single node
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for single node: [node1.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node1.nifi (100)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for RECEIVE in scenario single node
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for single node: [node1.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node1.nifi (100)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (single empty node): [node1.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for SEND in scenario single empty node
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for single empty node: [node1.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node1.nifi (100)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for RECEIVE in scenario single empty node
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for single empty node: [node1.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node1.nifi (100)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 100/0): [node1.nifi:100, node2.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for SEND in scenario 100 ff 100/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 100/0: [node1.nifi:0.0, node2.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node2.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node2.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (100) | Min: node1.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for RECEIVE in scenario 100 ff 100/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 100/0: [node1.nifi:100.0, node2.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100, node2.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%, node2.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node2.nifi (0)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNextPeerShouldRepeatPeersOnSingleValidDestination" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.033">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (single node): [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for SEND in scenario single node
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for single node: [node1.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node1.nifi (100)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for RECEIVE in scenario single node
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for single node: [node1.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node1.nifi (100)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (single empty node): [node1.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for SEND in scenario single empty node
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for single empty node: [node1.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node1.nifi (100)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for RECEIVE in scenario single empty node
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for single empty node: [node1.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node1.nifi (100)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 100/0): [node1.nifi:100, node2.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for SEND in scenario 100 ff 100/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 100/0: [node1.nifi:0.0, node2.nifi:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node2.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node2.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (100) | Min: node1.nifi (0)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 100 peers for RECEIVE in scenario 100 ff 100/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected percentages for 100 ff 100/0: [node1.nifi:100.0, node2.nifi:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:100, node2.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 100.0%, node2.nifi: 0.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (100) | Min: node2.nifi (0)
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldFetchRemotePeerStatuses" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 3 peer statuses: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0], PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0], PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldFetchRemotePeerStatuses" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 3 peer statuses: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0], PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0], PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]]
+]]></system-err>
+  </testcase>
+  <testcase name="testGetAvailablePeerStatusShouldHandlePenalizedPeers" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.008">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (penalized peer): [node1.nifi:10, node2.nifi:90]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (100): [node1.nifi:0, node2.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node2.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node2.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (100) | Min: node1.nifi (0)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetAvailablePeerStatusShouldHandlePenalizedPeers" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.001">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (penalized peer): [node1.nifi:10, node2.nifi:90]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (100): [node1.nifi:0, node2.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:0, node2.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 0.0%, node2.nifi: 100.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node2.nifi (100) | Min: node1.nifi (0)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetPeersToQueryShouldBeEmpty" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 1 peers to query: [PeerDescription[hostname=localhost, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testGetPeersToQueryShouldBeEmpty" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 1 peers to query: [PeerDescription[hostname=localhost, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testGetPeersToQueryShouldBeIdempotent" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.006">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 4 peers to query: [PeerDescription[hostname=node3.nifi, port=-1, secure=false], PeerDescription[hostname=localhost, port=-1, secure=false], PeerDescription[hostname=node2.nifi, port=-1, secure=false], PeerDescription[hostname=node1.nifi, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testGetPeersToQueryShouldBeIdempotent" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.002">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 4 peers to query: [PeerDescription[hostname=node2.nifi, port=-1, secure=false], PeerDescription[hostname=node1.nifi, port=-1, secure=false], PeerDescription[hostname=localhost, port=-1, secure=false], PeerDescription[hostname=node3.nifi, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testGetAvailablePeerStatusShouldHandleEdgeCase" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.746">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (edge case cluster): [node1.nifi:2, node2.nifi:1, node3.nifi:1]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (10000): [node1.nifi:4994, node2.nifi:2523, node3.nifi:2483]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:4994, node2.nifi:2523, node3.nifi:2483]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 50.0%, node2.nifi: 25.0%, node3.nifi: 25.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (4994) | Min: node3.nifi (2483)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetAvailablePeerStatusShouldHandleEdgeCase" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.504">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (edge case cluster): [node1.nifi:2, node2.nifi:1, node3.nifi:1]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (10000): [node1.nifi:5053, node2.nifi:2436, node3.nifi:2511]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:5053, node2.nifi:2436, node3.nifi:2511]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 50.0%, node2.nifi: 25.0%, node3.nifi: 25.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (5053) | Min: node2.nifi (2436)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNextPeerShouldNotRepeatPeersOnBalancedCluster" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="3.423">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 100x10): [node1.nifi:100, node2.nifi:100, node3.nifi:100, node4.nifi:100, node5.nifi:100, node6.nifi:100, node7.nifi:100, node8.nifi:100, node9.nifi:100, node10.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:968, node10.nifi:1050, node2.nifi:1016, node3.nifi:1032, node4.nifi:989, node5.nifi:1015, node6.nifi:942, node7.nifi:977, node8.nifi:992, node9.nifi:1019]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 10.0%, node10.nifi: 10.0%, node2.nifi: 10.0%, node3.nifi: 10.0%, node4.nifi: 10.0%, node5.nifi: 10.0%, node6.nifi: 10.0%, node7.nifi: 10.0%, node8.nifi: 10.0%, node9.nifi: 10.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node10.nifi (1050) | Min: node6.nifi (942)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:1003, node10.nifi:1051, node2.nifi:974, node3.nifi:973, node4.nifi:1026, node5.nifi:1019, node6.nifi:995, node7.nifi:968, node8.nifi:1000, node9.nifi:991]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 10.0%, node10.nifi: 10.0%, node2.nifi: 10.0%, node3.nifi: 10.0%, node4.nifi: 10.0%, node5.nifi: 10.0%, node6.nifi: 10.0%, node7.nifi: 10.0%, node8.nifi: 10.0%, node9.nifi: 10.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node10.nifi (1051) | Min: node7.nifi (968)
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNextPeerShouldNotRepeatPeersOnBalancedCluster" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="2.425">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 100x10): [node1.nifi:100, node2.nifi:100, node3.nifi:100, node4.nifi:100, node5.nifi:100, node6.nifi:100, node7.nifi:100, node8.nifi:100, node9.nifi:100, node10.nifi:100]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:971, node10.nifi:987, node2.nifi:978, node3.nifi:1019, node4.nifi:1015, node5.nifi:981, node6.nifi:988, node7.nifi:1066, node8.nifi:999, node9.nifi:996]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 10.0%, node10.nifi: 10.0%, node2.nifi: 10.0%, node3.nifi: 10.0%, node4.nifi: 10.0%, node5.nifi: 10.0%, node6.nifi: 10.0%, node7.nifi: 10.0%, node8.nifi: 10.0%, node9.nifi: 10.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node7.nifi (1066) | Min: node1.nifi (971)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:1021, node10.nifi:972, node2.nifi:1030, node3.nifi:1025, node4.nifi:980, node5.nifi:989, node6.nifi:992, node7.nifi:992, node8.nifi:1032, node9.nifi:967]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 10.0%, node10.nifi: 10.0%, node2.nifi: 10.0%, node3.nifi: 10.0%, node4.nifi: 10.0%, node5.nifi: 10.0%, node6.nifi: 10.0%, node7.nifi: 10.0%, node8.nifi: 10.0%, node9.nifi: 10.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node8.nifi (1032) | Min: node9.nifi (967)
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldBuildWeightedPeerMapForSend" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.005">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map: [node1.nifi:20, node2.nifi:30, node3.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Weighted peer map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=20]:40.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=30]:35.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=50]:25.0]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldBuildWeightedPeerMapForSend" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map: [node1.nifi:20, node2.nifi:30, node3.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Weighted peer map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=20]:40.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=30]:35.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=50]:25.0]
+]]></system-err>
+  </testcase>
+  <testcase name="testInitializationShouldIgnoreCacheWithWrongTransportProtocol" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.FilePeerPersistence - Discard stored peer statuses in FilePeerPersistence because remote instance URIs are not stored
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 1 peers to query: [PeerDescription[hostname=localhost, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testInitializationShouldIgnoreCacheWithWrongTransportProtocol" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.FilePeerPersistence - Discard stored peer statuses in FilePeerPersistence because remote instance URIs are not stored
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 1 peers to query: [PeerDescription[hostname=localhost, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldBuildWeightedPeerMapForReceive" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map: [node3.nifi:50, node2.nifi:30, node1.nifi:20]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Weighted peer map: [PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=50]:50.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=30]:30.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=20]:20.0]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldBuildWeightedPeerMapForReceive" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.001">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map: [node3.nifi:50, node2.nifi:30, node1.nifi:20]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Weighted peer map: [PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=50]:50.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=30]:30.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=20]:20.0]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldCalculateNormalizedWeight" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.058">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 3 node scenario for 100 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 3 node scenario for 1000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 3 node scenario for 10000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 5 node scenario for 100 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 5 node scenario for 1000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 5 node scenario for 10000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 7 node scenario for 100 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 7 node scenario for 1000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 7 node scenario for 10000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 3 nodes with 100 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 3 nodes with 1000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 3 nodes with 10000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 5 nodes with 100 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 5 nodes with 1000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 5 nodes with 10000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 7 nodes with 100 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 7 nodes with 1000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 7 nodes with 10000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldCalculateNormalizedWeight" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.016">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 3 node scenario for 100 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 3 node scenario for 1000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 3 node scenario for 10000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 5 node scenario for 100 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 5 node scenario for 1000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 5 node scenario for 10000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 7 node scenario for 100 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 7 node scenario for 1000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running 7 node scenario for 10000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 3 nodes with 100 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 3 nodes with 1000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 3 nodes with 10000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 5 nodes with 100 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 5 nodes with 1000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 5 nodes with 10000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 7 nodes with 100 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 7 nodes with 1000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Results for 7 nodes with 10000 flowfiles: 
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -      Count      Send   Receive
+]]></system-err>
+  </testcase>
+  <testcase name="testRefreshShouldHandleExceptions" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.011">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group localhost:-1
+[main] ERROR org.apache.nifi.remote.client.PeerSelector - Failed to persist list of peers due to java.io.IOException: Custom error message 3; if restarted and the nodes specified at the remote instance are down, may be unable to transfer data until communications with those nodes are restored
+[main] ERROR org.apache.nifi.remote.client.PeerSelector - 
+java.io.IOException: Custom error message 3
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:257)
+	at org.apache.nifi.remote.client.PeerSelectorTest$_generateException_closure50.doCall(PeerSelectorTest.groovy:870)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:421)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.times(DefaultGroovyMethods.java:15622)
+	at org.codehaus.groovy.runtime.dgm$714.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:244)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:115)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:127)
+	at org.apache.nifi.remote.client.PeerSelectorTest.generateException(PeerSelectorTest.groovy:869)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:351)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:64)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:156)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at org.apache.nifi.remote.client.PeerSelectorTest$_testRefreshShouldHandleExceptions_closure52.doCall(PeerSelectorTest.groovy:887)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at org.codehaus.groovy.runtime.ConvertedMap.invokeCustom(ConvertedMap.java:54)
+	at org.codehaus.groovy.runtime.ConversionHandler.invoke(ConversionHandler.java:122)
+	at com.sun.proxy.$Proxy42.save(Unknown Source)
+	at org.apache.nifi.remote.client.PeerSelector.persistPeerStatuses(PeerSelector.java:543)
+	at org.apache.nifi.remote.client.PeerSelector.refreshPeerStatusCache(PeerSelector.java:568)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:211)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:115)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:119)
+	at org.apache.nifi.remote.client.PeerSelectorTest.testRefreshShouldHandleExceptions(PeerSelectorTest.groovy:894)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+Caused by: java.io.IOException: Custom error message 2
+	... 132 more
+Caused by: java.io.IOException: Custom error message 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	... 125 more
+Caused by: java.io.IOException: Custom error message
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at org.apache.nifi.remote.client.PeerSelectorTest.generateException(PeerSelectorTest.groovy:868)
+	... 105 more
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+]]></system-err>
+  </testcase>
+  <testcase name="testRefreshShouldHandleExceptions" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.002">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group localhost:-1
+[main] ERROR org.apache.nifi.remote.client.PeerSelector - Failed to persist list of peers due to java.io.IOException: Custom error message 3; if restarted and the nodes specified at the remote instance are down, may be unable to transfer data until communications with those nodes are restored
+[main] ERROR org.apache.nifi.remote.client.PeerSelector - 
+java.io.IOException: Custom error message 3
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:257)
+	at org.apache.nifi.remote.client.PeerSelectorTest$_generateException_closure50.doCall(PeerSelectorTest.groovy:870)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:421)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.times(DefaultGroovyMethods.java:15622)
+	at org.codehaus.groovy.runtime.dgm$714.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:244)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:127)
+	at org.apache.nifi.remote.client.PeerSelectorTest.generateException(PeerSelectorTest.groovy:869)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:351)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:64)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at org.apache.nifi.remote.client.PeerSelectorTest$_testRefreshShouldHandleExceptions_closure52.doCall(PeerSelectorTest.groovy:887)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at org.codehaus.groovy.runtime.ConvertedMap.invokeCustom(ConvertedMap.java:54)
+	at org.codehaus.groovy.runtime.ConversionHandler.invoke(ConversionHandler.java:122)
+	at com.sun.proxy.$Proxy42.save(Unknown Source)
+	at org.apache.nifi.remote.client.PeerSelector.persistPeerStatuses(PeerSelector.java:543)
+	at org.apache.nifi.remote.client.PeerSelector.refreshPeerStatusCache(PeerSelector.java:568)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:211)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:119)
+	at org.apache.nifi.remote.client.PeerSelectorTest.testRefreshShouldHandleExceptions(PeerSelectorTest.groovy:894)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+Caused by: java.io.IOException: Custom error message 2
+	... 100 more
+Caused by: java.io.IOException: Custom error message 1
+	... 100 more
+Caused by: java.io.IOException: Custom error message
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at org.apache.nifi.remote.client.PeerSelectorTest.generateException(PeerSelectorTest.groovy:868)
+	... 75 more
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldFetchRemotePeerStatusesInFailureScenario" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.027">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 1 - PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 2 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 2 fetchRemotePeerStatus for PeerDescription[hostname=node2.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: org.apache.nifi.remote.util.PeerStatusCache@66434cc8[Timestamp=1713893893042,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=1,Peer statuses=[PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 1 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 2 - PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 3 fetchRemotePeerStatus for PeerDescription[hostname=node2.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 3 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893893048,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=1,Peer statuses=[PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 1 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 3 - PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 4 fetchRemotePeerStatus for PeerDescription[hostname=node2.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 4 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group node2.nifi:-1,node1.nifi:-1
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893893052,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=0,Peer statuses=[]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 4 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group node1.nifi:-1
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893893052,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=0,Peer statuses=[]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 4 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group node1.nifi:-1
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893893052,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=0,Peer statuses=[]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Available peers collection is empty; no peer available
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 4 - null
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 5 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893893058,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=1,Peer statuses=[PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 1 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 5 - PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldFetchRemotePeerStatusesInFailureScenario" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 1 - PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 2 fetchRemotePeerStatus for PeerDescription[hostname=node2.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 2 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893949310,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=1,Peer statuses=[PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 1 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 2 - PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 3 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 3 fetchRemotePeerStatus for PeerDescription[hostname=node2.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893949311,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=1,Peer statuses=[PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 1 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 3 - PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 4 fetchRemotePeerStatus for PeerDescription[hostname=node2.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 4 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group node2.nifi:-1,node1.nifi:-1
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893949311,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=0,Peer statuses=[]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 4 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group node1.nifi:-1
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893949312,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=0,Peer statuses=[]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 4 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group node1.nifi:-1
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893949312,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=0,Peer statuses=[]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Available peers collection is empty; no peer available
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 4 - null
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Scenario 5 fetchRemotePeerStatus for PeerDescription[hostname=node1.nifi, port=-1, secure=false]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - [MOCK] Persisting PeerStatusCache: PeerStatusCache[Timestamp=1713893949312,Remote instance URIs=http://node1.nifi:8443/nifi-api,http://node2.nifi:8443/nifi-api,Transport protocol=HTTP,Peer status count=1,Peer statuses=[PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 1 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Attempt 5 - PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldCalculateNormalizedWeightForSingleRemote" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.006">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running single node scenario for 100 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running single node scenario for 1000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running single node scenario for 10000 total flowfiles
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldCalculateNormalizedWeightForSingleRemote" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running single node scenario for 100 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running single node scenario for 1000 total flowfiles
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Running single node scenario for 10000 total flowfiles
+]]></system-err>
+  </testcase>
+  <testcase name="testCreateDestinationMapForSendShouldBeNormalized" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.074">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 100/0/0): [node1.nifi:100, node2.nifi:0, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 100 ff 100/0/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]:50.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]:50.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=100]:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 100 ff 100/0/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=100]:100.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]:0.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 50/50/0): [node1.nifi:50, node2.nifi:50, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 100 ff 50/50/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=50]:25.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=50]:25.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 100 ff 50/50/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=50]:50.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]:0.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=50]:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 100/0): [node1.nifi:100, node2.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 100 ff 100/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=100]:0.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 100 ff 100/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]:0.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=100]:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 200/300/500): [node1.nifi:200, node2.nifi:300, node3.nifi:500]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 1000 ff 200/300/500
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=300]:35.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=500]:25.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=200]:40.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 1000 ff 200/300/500
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=500]:50.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=300]:30.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=200]:20.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 333/333/334): [node1.nifi:333, node2.nifi:333, node3.nifi:334]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 1000 ff 333/333/334
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=333]:33.35, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=334]:33.29, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=333]:33.35]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 1000 ff 333/333/334
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=333]:33.3, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=334]:33.39, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=333]:33.3]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 0/250x4): [node1.nifi:0, node2.nifi:250, node3.nifi:250, node4.nifi:250, node5.nifi:250]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 1000 ff 0/250x4
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]:25.0, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=250]:18.75, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=250]:18.75, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=250]:18.75, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=250]:18.75]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 1000 ff 0/250x4
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]:0.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=250]:25.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=250]:25.0, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=250]:25.0, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=250]:25.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 142x7): [node1.nifi:142, node2.nifi:142, node3.nifi:142, node4.nifi:142, node5.nifi:142, node6.nifi:142, node7.nifi:142]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 1000 ff 142x7
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node6.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node7.nifi,port=-1,secure=false,flowFileCount=142]:14.28]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 1000 ff 142x7
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node6.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node7.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=142]:14.28]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (200 ff 151/1x49): [node1.nifi:151, node2.nifi:1, node3.nifi:1, node4.nifi:1, node5.nifi:1, node6.nifi:1, node7.nifi:1, node8.nifi:1, node9.nifi:1, node10.nifi:1, node11.nifi:1, node12.nifi:1, node13.nifi:1, node14.nifi:1, node15.nifi:1, node16.nifi:1, node17.nifi:1, node18.nifi:1, node19.nifi:1, node20.nifi:1, node21.nifi:1, node22.nifi:1, node23.nifi:1, node24.nifi:1, node25.nifi:1, node26.nifi:1, node27.nifi:1, node28.nifi:1, node29.nifi:1, node30.nifi:1, node31.nifi:1, node32.nifi:1, node33.nifi:1, node34.nifi:1, node35.nifi:1, node36.nifi:1, node37.nifi:1, node38.nifi:1, node39.nifi:1, node40.nifi:1, node41.nifi:1, node42.nifi:1, node43.nifi:1, node44.nifi:1, node45.nifi:1, node46.nifi:1, node47.nifi:1, node48.nifi:1, node49.nifi:1, node50.nifi:1]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 200 ff 151/1x49
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node10.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node49.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node8.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node16.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node14.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node7.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node45.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node44.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node36.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node6.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node24.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node29.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node13.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node32.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node26.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node38.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node21.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node48.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node50.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node37.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node17.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node27.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node25.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node22.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node46.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node40.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node12.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node31.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node30.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node28.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node35.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node11.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=151]:0.5, PeerStatus[hostname=node39.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node41.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node15.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node34.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node18.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node42.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node43.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node47.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node19.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node33.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node20.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node23.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node9.nifi,port=-1,secure=false,flowFileCount=1]:2.03]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 200 ff 151/1x49
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node28.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node33.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node44.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node21.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node7.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=151]:75.5, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node30.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node36.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node34.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node22.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node29.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node31.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node45.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node27.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node40.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node16.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node9.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node11.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node12.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node6.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node26.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node41.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node48.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node50.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node20.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node14.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node8.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node18.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node37.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node42.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node13.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node49.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node17.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node38.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node24.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node19.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node35.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node43.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node15.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node25.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node10.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node46.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node32.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node39.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node23.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node47.nifi,port=-1,secure=false,flowFileCount=1]:0.5]
+]]></system-err>
+  </testcase>
+  <testcase name="testCreateDestinationMapForSendShouldBeNormalized" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.03">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 100/0/0): [node1.nifi:100, node2.nifi:0, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 100 ff 100/0/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=100]:0.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]:50.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 100 ff 100/0/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]:0.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=100]:100.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 50/50/0): [node1.nifi:50, node2.nifi:50, node3.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 100 ff 50/50/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=50]:25.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=50]:25.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]:50.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 100 ff 50/50/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=50]:50.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=50]:50.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=0]:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 100/0): [node1.nifi:100, node2.nifi:0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 100 ff 100/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=100]:0.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]:100.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 100 ff 100/0
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=100]:100.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=0]:0.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 200/300/500): [node1.nifi:200, node2.nifi:300, node3.nifi:500]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 1000 ff 200/300/500
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=300]:35.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=500]:25.0, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=200]:40.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 1000 ff 200/300/500
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=200]:20.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=500]:50.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=300]:30.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 333/333/334): [node1.nifi:333, node2.nifi:333, node3.nifi:334]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 1000 ff 333/333/334
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=333]:33.35, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=333]:33.35, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=334]:33.29]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 1000 ff 333/333/334
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=333]:33.3, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=333]:33.3, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=334]:33.39]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 0/250x4): [node1.nifi:0, node2.nifi:250, node3.nifi:250, node4.nifi:250, node5.nifi:250]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 1000 ff 0/250x4
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=250]:18.75, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=250]:18.75, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=250]:18.75, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=250]:18.75, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]:25.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 1000 ff 0/250x4
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=0]:0.0, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=250]:25.0, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=250]:25.0, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=250]:25.0, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=250]:25.0]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (1000 ff 142x7): [node1.nifi:142, node2.nifi:142, node3.nifi:142, node4.nifi:142, node5.nifi:142, node6.nifi:142, node7.nifi:142]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 1000 ff 142x7
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node6.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node7.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=142]:14.28]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 1000 ff 142x7
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node6.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node7.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=142]:14.28, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=142]:14.28]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (200 ff 151/1x49): [node1.nifi:151, node2.nifi:1, node3.nifi:1, node4.nifi:1, node5.nifi:1, node6.nifi:1, node7.nifi:1, node8.nifi:1, node9.nifi:1, node10.nifi:1, node11.nifi:1, node12.nifi:1, node13.nifi:1, node14.nifi:1, node15.nifi:1, node16.nifi:1, node17.nifi:1, node18.nifi:1, node19.nifi:1, node20.nifi:1, node21.nifi:1, node22.nifi:1, node23.nifi:1, node24.nifi:1, node25.nifi:1, node26.nifi:1, node27.nifi:1, node28.nifi:1, node29.nifi:1, node30.nifi:1, node31.nifi:1, node32.nifi:1, node33.nifi:1, node34.nifi:1, node35.nifi:1, node36.nifi:1, node37.nifi:1, node38.nifi:1, node39.nifi:1, node40.nifi:1, node41.nifi:1, node42.nifi:1, node43.nifi:1, node44.nifi:1, node45.nifi:1, node46.nifi:1, node47.nifi:1, node48.nifi:1, node49.nifi:1, node50.nifi:1]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for SEND in scenario 200 ff 151/1x49
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node36.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node39.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=151]:0.5, PeerStatus[hostname=node28.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node6.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node7.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node23.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node31.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node9.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node45.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node8.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node43.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node20.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node32.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node35.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node38.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node18.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node41.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node26.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node40.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node46.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node50.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node11.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node24.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node42.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node12.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node14.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node22.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node48.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node34.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node17.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node44.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node10.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node47.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node27.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node13.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node37.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node49.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node16.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node29.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node21.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node33.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node15.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node25.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node30.nifi,port=-1,secure=false,flowFileCount=1]:2.03, PeerStatus[hostname=node19.nifi,port=-1,secure=false,flowFileCount=1]:2.03]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieving peers for RECEIVE in scenario 200 ff 151/1x49
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Destination map: [PeerStatus[hostname=node45.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node44.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node39.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node8.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node28.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node9.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node50.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node47.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node15.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node48.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node42.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node24.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node4.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=151]:75.5, PeerStatus[hostname=node11.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node43.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node21.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node37.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node40.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node35.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node41.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node13.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node20.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node18.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node17.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node29.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node10.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node31.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node19.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node14.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node26.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node6.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node33.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node23.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node46.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node27.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node34.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node32.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node7.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node22.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node16.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node38.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node30.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node5.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node25.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node12.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node36.nifi,port=-1,secure=false,flowFileCount=1]:0.5, PeerStatus[hostname=node49.nifi,port=-1,secure=false,flowFileCount=1]:0.5]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldGetNextPeer" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="3.33">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 20/30/50): [node1.nifi:20, node2.nifi:30, node3.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (10000): [node1.nifi:3937, node2.nifi:3556, node3.nifi:2507]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:3937, node2.nifi:3556, node3.nifi:2507]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 40.0%, node2.nifi: 35.0%, node3.nifi: 25.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (3937) | Min: node3.nifi (2507)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 20/30/50): [node1.nifi:20, node2.nifi:30, node3.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (10000): [node1.nifi:2032, node2.nifi:3021, node3.nifi:4947]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2032, node2.nifi:3021, node3.nifi:4947]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 20.0%, node2.nifi: 30.0%, node3.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (4947) | Min: node1.nifi (2032)
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldGetNextPeer" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="2.357">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for SEND
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 20/30/50): [node1.nifi:20, node2.nifi:30, node3.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (10000): [node1.nifi:3976, node2.nifi:3582, node3.nifi:2442]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:3976, node2.nifi:3582, node3.nifi:2442]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 40.0%, node2.nifi: 35.0%, node3.nifi: 25.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node1.nifi (3976) | Min: node3.nifi (2442)
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Selecting 10000 peers for RECEIVE
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Using cluster map (100 ff 20/30/50): [node1.nifi:20, node2.nifi:30, node3.nifi:50]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Peer frequency results (10000): [node1.nifi:2009, node2.nifi:3024, node3.nifi:4967]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest -   Actual results: [node1.nifi:2009, node2.nifi:3024, node3.nifi:4967]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Expected results: [node1.nifi: 20.0%, node2.nifi: 30.0%, node3.nifi: 50.0%]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Max: node3.nifi (4967) | Min: node1.nifi (2009)
+]]></system-err>
+  </testcase>
+  <testcase name="testRefreshShouldHandleExpiredPeerStatusFileCache" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.009">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.FilePeerPersistence - Restored peer statuses from FilePeerPersistence [PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=1], PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=1], PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=1]]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 4 peers to query: [PeerDescription[hostname=node2.nifi, port=-1, secure=false], PeerDescription[hostname=node1.nifi, port=-1, secure=false], PeerDescription[hostname=localhost, port=-1, secure=false], PeerDescription[hostname=node3.nifi, port=-1, secure=false]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group node2.nifi:-1,localhost:-1,node1.nifi:-1,node3.nifi:-1
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - After cache expiration, retrieved 1 peers to query: [PeerDescription[hostname=localhost, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testRefreshShouldHandleExpiredPeerStatusFileCache" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.002">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.FilePeerPersistence - Restored peer statuses from FilePeerPersistence [PeerStatus[hostname=node1.nifi,port=-1,secure=false,flowFileCount=1], PeerStatus[hostname=node2.nifi,port=-1,secure=false,flowFileCount=1], PeerStatus[hostname=node3.nifi,port=-1,secure=false,flowFileCount=1]]
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 4 peers to query: [PeerDescription[hostname=node2.nifi, port=-1, secure=false], PeerDescription[hostname=node1.nifi, port=-1, secure=false], PeerDescription[hostname=node3.nifi, port=-1, secure=false], PeerDescription[hostname=localhost, port=-1, secure=false]]
+[main] INFO org.apache.nifi.remote.client.PeerSelector - No peers were retrieved from the remote group node2.nifi:-1,localhost:-1,node1.nifi:-1,node3.nifi:-1
+[main] INFO org.apache.nifi.remote.client.PeerSelector - Successfully refreshed peer status cache; remote group consists of 0 peers
+[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - After cache expiration, retrieved 1 peers to query: [PeerDescription[hostname=localhost, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldGetPeersToQuery" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.002">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 4 peers to query: [PeerDescription[hostname=node2.nifi, port=-1, secure=false], PeerDescription[hostname=localhost, port=-1, secure=false], PeerDescription[hostname=node1.nifi, port=-1, secure=false], PeerDescription[hostname=node3.nifi, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldGetPeersToQuery" classname="org.apache.nifi.remote.client.PeerSelectorTest" time="0.001">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.remote.client.PeerSelectorTest - Retrieved 4 peers to query: [PeerDescription[hostname=node2.nifi, port=-1, secure=false], PeerDescription[hostname=node1.nifi, port=-1, secure=false], PeerDescription[hostname=localhost, port=-1, secure=false], PeerDescription[hostname=node3.nifi, port=-1, secure=false]]
+]]></system-err>
+  </testcase>
+</testsuite>

@@ -1,0 +1,26 @@
+Find all failures in output folder
+
+find . -type f -name "failures" -exec cat {} + > combined_failures.txt
+
+Remove all #
+
+sed -i 's/#/./g' combined_failures.txt
+awk '!a[$0]++' combined_failures.txt > combined_failures_uniq.txt
+
+Remove malformed results
+
+grep "\." combined_failures_uniq.txt > combined_failures_filtered.csv
+
+Count tests in common between file and dataset:
+
+All
+
+awk -F ',' 'NR==FNR{a[$1]; next} $4 in a' combined_failures_filtered.csv /home/alex/Desktop/dataset/Original/Tests.csv | wc -l
+
+OD
+
+awk -F ',' 'NR==FNR{a[$1]; next} $4 in a' combined_failures_filtered.csv /home/alex/Desktop/dataset/Original/Tests_OD_only.csv | wc -l
+
+NOD
+
+awk -F ',' 'NR==FNR{a[$1]; next} $4 in a' combined_failures_filtered.csv /home/alex/Desktop/dataset/Original/Tests_NOD_only.csv | wc -l

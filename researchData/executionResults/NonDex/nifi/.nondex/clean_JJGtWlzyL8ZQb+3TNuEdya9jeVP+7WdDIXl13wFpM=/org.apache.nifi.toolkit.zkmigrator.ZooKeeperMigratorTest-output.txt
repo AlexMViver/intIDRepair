@@ -1,0 +1,611 @@
+The option 'k' was specified but an option from this group has already been selected: 'a'
+
+usage: org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorMain [-a <username:password> | -k <jaas-filename>] [-f <filename>] [-h] [--ignore-source]  -r | -s
+       [--use-existing-acl] -z <zookeeper-endpoint>
+
+A tool for importing and exporting data from ZooKeeper.
+
+ -a,--auth <username:password>      username and password for the given ZooKeeper path
+ -f,--file <filename>               file to be used for ZooKeeper data
+ -h,--help                          display help/usage info
+    --ignore-source                 ignores the source ZooKeeper endpoint specified in the exported data
+ -k,--krb-conf <jaas-filename>      JAAS file containing Kerberos config
+ -r,--receive                       receives data from zookeeper and writes to the given filename or standard output
+ -s,--send                          sends data to zookeeper read from the given filename or standard input
+    --use-existing-acl              allow write of existing acl data to destination
+ -z,--zookeeper <zookeeper-endpoint>ZooKeeper endpoint string (ex. host:port/path)
+
+Java home: null
+NiFi Toolkit home: null
+[Thread-2] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:42145
+[Thread-2] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-2] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-2] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:zookeeper.version=3.5.6-c11b7e26bc554b8523dc929761dd28808913f091, built on 10/08/2019 20:18 GMT
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:host.name=Lenovo-Bot
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.version=1.8.0_402
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.vendor=Private Build
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.class.path=/home/alex/Repositories/nifi/nifi-toolkit/nifi-toolkit-zookeeper-migrator/target/test-classes:/home/alex/Repositories/nifi/nifi-toolkit/nifi-toolkit-zookeeper-migrator/target/classes:/home/alex/.m2/repository/commons-cli/commons-cli/1.4/commons-cli-1.4.jar:/home/alex/.m2/repository/com/google/guava/guava/28.0-jre/guava-28.0-jre.jar:/home/alex/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/alex/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/alex/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/alex/.m2/repository/org/checkerframework/checker-qual/2.8.1/checker-qual-2.8.1.jar:/home/alex/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.2/error_prone_annotations-2.3.2.jar:/home/alex/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/alex/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/apache/zookeeper/zookeeper/3.5.6/zookeeper-3.5.6.jar:/home/alex/.m2/repository/org/apache/zookeeper/zookeeper-jute/3.5.6/zookeeper-jute-3.5.6.jar:/home/alex/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/home/alex/.m2/repository/io/netty/netty-handler/4.1.42.Final/netty-handler-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-common/4.1.42.Final/netty-common-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-buffer/4.1.42.Final/netty-buffer-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport/4.1.42.Final/netty-transport-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-resolver/4.1.42.Final/netty-resolver-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-codec/4.1.42.Final/netty-codec-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport-native-epoll/4.1.42.Final/netty-transport-native-epoll-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.42.Final/netty-transport-native-unix-common-4.1.42.Final.jar:/home/alex/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-ant/2.5.14/groovy-ant-2.5.14.jar:/home/alex/.m2/repository/org/apache/ant/ant/1.9.15/ant-1.9.15.jar:/home/alex/.m2/repository/org/apache/ant/ant-junit/1.9.15/ant-junit-1.9.15.jar:/home/alex/.m2/repository/org/apache/ant/ant-launcher/1.9.15/ant-launcher-1.9.15.jar:/home/alex/.m2/repository/org/apache/ant/ant-antlr/1.9.15/ant-antlr-1.9.15.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-cli-commons/2.5.14/groovy-cli-commons-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-cli-picocli/2.5.14/groovy-cli-picocli-2.5.14.jar:/home/alex/.m2/repository/info/picocli/picocli/4.3.2/picocli-4.3.2.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-console/2.5.14/groovy-console-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-datetime/2.5.14/groovy-datetime-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-docgenerator/2.5.14/groovy-docgenerator-2.5.14.jar:/home/alex/.m2/repository/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-groovydoc/2.5.14/groovy-groovydoc-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-groovysh/2.5.14/groovy-groovysh-2.5.14.jar:/home/alex/.m2/repository/jline/jline/2.14.6/jline-2.14.6.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-jmx/2.5.14/groovy-jmx-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-json/2.5.14/groovy-json-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-jsr223/2.5.14/groovy-jsr223-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-macro/2.5.14/groovy-macro-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-nio/2.5.14/groovy-nio-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-servlet/2.5.14/groovy-servlet-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-sql/2.5.14/groovy-sql-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-swing/2.5.14/groovy-swing-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-templates/2.5.14/groovy-templates-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test-junit5/2.5.14/groovy-test-junit5-2.5.14.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-launcher/1.7.2/junit-platform-launcher-1.7.2.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-testng/2.5.14/groovy-testng-2.5.14.jar:/home/alex/.m2/repository/org/testng/testng/6.13.1/testng-6.13.1.jar:/home/alex/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-xml/2.5.14/groovy-xml-2.5.14.jar:/home/alex/.m2/repository/org/spockframework/spock-core/1.3-groovy-2.5/spock-core-1.3-groovy-2.5.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/apache/curator/curator-test/5.2.0/curator-test-5.2.0.jar:/home/alex/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.5/metrics-core-3.2.5.jar:/home/alex/.m2/repository/org/xerial/snappy/snappy-java/1.1.7/snappy-java-1.1.7.jar:/home/alex/.m2/repository/org/apache/curator/curator-client/5.2.0/curator-client-5.2.0.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.io.tmpdir=/tmp
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.compiler=<NA>
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.name=Linux
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.arch=amd64
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.version=6.5.0-28-generic
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.name=alex
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.home=/home/alex
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.dir=/home/alex/Repositories/nifi/nifi-toolkit/nifi-toolkit-zookeeper-migrator
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.memory.free=194MB
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.memory.max=910MB
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.memory.total=240MB
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-2] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-2] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-2] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-2] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:42145
+[Thread-2] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-2] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894344733-0/version-2/snapshot.0
+[Thread-2] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894344733-0/version-2/snapshot.0
+[Thread-2] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.5.6-c11b7e26bc554b8523dc929761dd28808913f091, built on 10/08/2019 20:18 GMT
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:host.name=Lenovo-Bot
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.8.0_402
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Private Build
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=/home/alex/Repositories/nifi/nifi-toolkit/nifi-toolkit-zookeeper-migrator/target/test-classes:/home/alex/Repositories/nifi/nifi-toolkit/nifi-toolkit-zookeeper-migrator/target/classes:/home/alex/.m2/repository/commons-cli/commons-cli/1.4/commons-cli-1.4.jar:/home/alex/.m2/repository/com/google/guava/guava/28.0-jre/guava-28.0-jre.jar:/home/alex/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/alex/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/alex/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/alex/.m2/repository/org/checkerframework/checker-qual/2.8.1/checker-qual-2.8.1.jar:/home/alex/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.2/error_prone_annotations-2.3.2.jar:/home/alex/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/alex/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/apache/zookeeper/zookeeper/3.5.6/zookeeper-3.5.6.jar:/home/alex/.m2/repository/org/apache/zookeeper/zookeeper-jute/3.5.6/zookeeper-jute-3.5.6.jar:/home/alex/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/home/alex/.m2/repository/io/netty/netty-handler/4.1.42.Final/netty-handler-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-common/4.1.42.Final/netty-common-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-buffer/4.1.42.Final/netty-buffer-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport/4.1.42.Final/netty-transport-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-resolver/4.1.42.Final/netty-resolver-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-codec/4.1.42.Final/netty-codec-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport-native-epoll/4.1.42.Final/netty-transport-native-epoll-4.1.42.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.42.Final/netty-transport-native-unix-common-4.1.42.Final.jar:/home/alex/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-ant/2.5.14/groovy-ant-2.5.14.jar:/home/alex/.m2/repository/org/apache/ant/ant/1.9.15/ant-1.9.15.jar:/home/alex/.m2/repository/org/apache/ant/ant-junit/1.9.15/ant-junit-1.9.15.jar:/home/alex/.m2/repository/org/apache/ant/ant-launcher/1.9.15/ant-launcher-1.9.15.jar:/home/alex/.m2/repository/org/apache/ant/ant-antlr/1.9.15/ant-antlr-1.9.15.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-cli-commons/2.5.14/groovy-cli-commons-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-cli-picocli/2.5.14/groovy-cli-picocli-2.5.14.jar:/home/alex/.m2/repository/info/picocli/picocli/4.3.2/picocli-4.3.2.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-console/2.5.14/groovy-console-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-datetime/2.5.14/groovy-datetime-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-docgenerator/2.5.14/groovy-docgenerator-2.5.14.jar:/home/alex/.m2/repository/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-groovydoc/2.5.14/groovy-groovydoc-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-groovysh/2.5.14/groovy-groovysh-2.5.14.jar:/home/alex/.m2/repository/jline/jline/2.14.6/jline-2.14.6.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-jmx/2.5.14/groovy-jmx-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-json/2.5.14/groovy-json-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-jsr223/2.5.14/groovy-jsr223-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-macro/2.5.14/groovy-macro-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-nio/2.5.14/groovy-nio-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-servlet/2.5.14/groovy-servlet-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-sql/2.5.14/groovy-sql-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-swing/2.5.14/groovy-swing-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-templates/2.5.14/groovy-templates-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test-junit5/2.5.14/groovy-test-junit5-2.5.14.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-launcher/1.7.2/junit-platform-launcher-1.7.2.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-testng/2.5.14/groovy-testng-2.5.14.jar:/home/alex/.m2/repository/org/testng/testng/6.13.1/testng-6.13.1.jar:/home/alex/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-xml/2.5.14/groovy-xml-2.5.14.jar:/home/alex/.m2/repository/org/spockframework/spock-core/1.3-groovy-2.5/spock-core-1.3-groovy-2.5.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/apache/curator/curator-test/5.2.0/curator-test-5.2.0.jar:/home/alex/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.5/metrics-core-3.2.5.jar:/home/alex/.m2/repository/org/xerial/snappy/snappy-java/1.1.7/snappy-java-1.1.7.jar:/home/alex/.m2/repository/org/apache/curator/curator-client/5.2.0/curator-client-5.2.0.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=/tmp
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:os.name=Linux
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.5.0-28-generic
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:user.name=alex
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:user.home=/home/alex
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:user.dir=/home/alex/Repositories/nifi/nifi-toolkit/nifi-toolkit-zookeeper-migrator
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:os.memory.free=184MB
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:os.memory.max=910MB
+[main] INFO org.apache.zookeeper.ZooKeeper - Client environment:os.memory.total=240MB
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:42145 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_2_closure1@20c0a64d
+[main] INFO org.apache.zookeeper.common.X509Util - Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:42145)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:42145. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:42145)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:34808, server: localhost/127.0.0.1:42145
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:42145)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:42145, sessionid = 0x10003d9415e0000, negotiated timeout = 3000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:42145/nifi/components sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@25aca718
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:42145)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:42145. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:42145)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:34820, server: localhost/127.0.0.1:42145
+[main-SendThread(127.0.0.1:42145)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:42145, sessionid = 0x10003d9415e0001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Retrieving data from source ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:42145/nifi/components, servers=[127.0.0.1:42145], path=/nifi/components}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 5 nodes read from ZooKeeperEndpointConfig{connectString=127.0.0.1:42145/nifi/components, servers=[127.0.0.1:42145], path=/nifi/components}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9415e0001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9415e0001
+[Thread-4] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:35647
+[Thread-4] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-4] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-4] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-4] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-4] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-4] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-4] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-4] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-4] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:35647
+[Thread-4] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-4] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894345201-0/version-2/snapshot.0
+[Thread-4] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894345201-0/version-2/snapshot.0
+[Thread-4] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:35647 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_3_closure2@2807bdeb
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:35647. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:35050, server: localhost/127.0.0.1:35647
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:35647 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@5f6722d3
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:35647. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:35054, server: localhost/127.0.0.1:35647
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:35647, sessionid = 0x10003d942c90000, negotiated timeout = 3000
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:35647, sessionid = 0x10003d942c90001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /newParent, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d942c90001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d942c90001
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:35647/newParent sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@5911e990
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:35647. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:35056, server: localhost/127.0.0.1:35647
+[main-SendThread(127.0.0.1:35647)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:35647, sessionid = 0x10003d942c90002, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Source data was obtained from ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:62295/nifi/components, servers=[127.0.0.1:62295], path=/nifi/components}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=97372916257193984} to DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=97372916257193984}
+[ForkJoinPool.commonPool-worker-3] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-4] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-6] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-3] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /1, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-4] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /3, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /2, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /1/a, acls: [31,s{'world,'anyone}
+], createMode: EPHEMERAL
+[ForkJoinPool.commonPool-worker-6] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:35647/newParent, servers=[127.0.0.1:35647], path=/newParent}
+[ForkJoinPool.commonPool-worker-4] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:35647/newParent, servers=[127.0.0.1:35647], path=/newParent}
+[ForkJoinPool.commonPool-worker-5] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:35647/newParent, servers=[127.0.0.1:35647], path=/newParent}
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:35647/newParent, servers=[127.0.0.1:35647], path=/newParent}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=97372916257193984} in ZooKeeperEndpointConfig{connectString=127.0.0.1:35647/newParent, servers=[127.0.0.1:35647], path=/newParent}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 5 nodes transferred to ZooKeeperEndpointConfig{connectString=127.0.0.1:35647/newParent, servers=[127.0.0.1:35647], path=/newParent}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d942c90002 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d942c90002
+[Thread-6] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:45167
+[Thread-6] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-6] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-6] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-6] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-6] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-6] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-6] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-6] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-6] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:45167
+[Thread-6] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-6] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894345457-0/version-2/snapshot.0
+[Thread-6] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894345457-0/version-2/snapshot.0
+[Thread-6] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:45167 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_4_closure4@13518f37
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:45167. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:56622, server: localhost/127.0.0.1:45167
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:45167 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@56303b57
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:45167. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:56630, server: localhost/127.0.0.1:45167
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:45167, sessionid = 0x10003d943c80000, negotiated timeout = 3000
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:45167, sessionid = 0x10003d943c80001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /newParent, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /newParent/node, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d943c80001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d943c80001
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:45167/newParent/node sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@8692d67
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:45167. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:56632, server: localhost/127.0.0.1:45167
+[main-SendThread(127.0.0.1:45167)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:45167, sessionid = 0x10003d943c80002, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Source data was obtained from ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:62295/nifi/components, servers=[127.0.0.1:62295], path=/nifi/components}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=97372916257193984} to DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=97372916257193984}
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-5] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-6] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-4] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /1, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-5] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /3, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-6] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /2, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /1/a, acls: [31,s{'world,'anyone}
+], createMode: EPHEMERAL
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:45167/newParent/node, servers=[127.0.0.1:45167], path=/newParent/node}
+[ForkJoinPool.commonPool-worker-5] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:45167/newParent/node, servers=[127.0.0.1:45167], path=/newParent/node}
+[ForkJoinPool.commonPool-worker-4] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:45167/newParent/node, servers=[127.0.0.1:45167], path=/newParent/node}
+[ForkJoinPool.commonPool-worker-7] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:45167/newParent/node, servers=[127.0.0.1:45167], path=/newParent/node}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=97372916257193984} in ZooKeeperEndpointConfig{connectString=127.0.0.1:45167/newParent/node, servers=[127.0.0.1:45167], path=/newParent/node}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 5 nodes transferred to ZooKeeperEndpointConfig{connectString=127.0.0.1:45167/newParent/node, servers=[127.0.0.1:45167], path=/newParent/node}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d943c80002 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d943c80002
+[Thread-8] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:45071
+[Thread-8] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-8] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-8] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-8] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-8] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-8] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-8] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-8] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-8] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:45071
+[Thread-8] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-8] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894345728-0/version-2/snapshot.0
+[Thread-8] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894345728-0/version-2/snapshot.0
+[Thread-8] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:45071 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_5_closure6@753432a2
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:45071)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:45071. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:45071)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:49552, server: localhost/127.0.0.1:45071
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:45071)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:45071, sessionid = 0x10003d944db0000, negotiated timeout = 3000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:45071/ sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@101639ae
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:45071)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:45071. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:45071)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:49554, server: localhost/127.0.0.1:45071
+[main-SendThread(127.0.0.1:45071)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:45071, sessionid = 0x10003d944db0001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Retrieving data from source ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:45071/, servers=[127.0.0.1:45071], path=/}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 5 nodes read from ZooKeeperEndpointConfig{connectString=127.0.0.1:45071/, servers=[127.0.0.1:45071], path=/}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d944db0001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d944db0001
+[Thread-10] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:46285
+[Thread-10] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-10] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-10] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-10] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-10] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-10] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-10] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-10] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-10] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:46285
+[Thread-10] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-10] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894345894-0/version-2/snapshot.0
+[Thread-10] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894345894-0/version-2/snapshot.0
+[Thread-10] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:46285 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_6_closure7@44040454
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:46285)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:46285. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:46285)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:56770, server: localhost/127.0.0.1:46285
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:46285)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:46285, sessionid = 0x10003d945810000, negotiated timeout = 3000
+[NIOWorkerThread-3] INFO org.apache.zookeeper.server.ZooKeeperServer - got auth packet /127.0.0.1:56770
+[NIOWorkerThread-3] INFO org.apache.zookeeper.server.ZooKeeperServer - auth success /127.0.0.1:56770
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:46285/nifi sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@7e5d9a50
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:46285)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:46285. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:46285)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:56778, server: localhost/127.0.0.1:46285
+[main-SendThread(127.0.0.1:46285)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:46285, sessionid = 0x10003d945810001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Retrieving data from source ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:46285/nifi, servers=[127.0.0.1:46285], path=/nifi}
+[NIOWorkerThread-8] INFO org.apache.zookeeper.server.ZooKeeperServer - got auth packet /127.0.0.1:56778
+[NIOWorkerThread-8] INFO org.apache.zookeeper.server.ZooKeeperServer - auth success /127.0.0.1:56778
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 1 node read from ZooKeeperEndpointConfig{connectString=127.0.0.1:46285/nifi, servers=[127.0.0.1:46285], path=/nifi}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d945810001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d945810001
+[Thread-12] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:37285
+[Thread-12] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-12] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-12] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-12] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-12] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-12] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-12] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-12] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-12] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:37285
+[Thread-12] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-12] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894346054-0/version-2/snapshot.0
+[Thread-12] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894346054-0/version-2/snapshot.0
+[Thread-12] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:37285 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_7_closure8@fcb4004
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:37285. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:37564, server: localhost/127.0.0.1:37285
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:37285 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@784c3487
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:37285. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:37580, server: localhost/127.0.0.1:37285
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:37285, sessionid = 0x10003d946220000, negotiated timeout = 3000
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:37285, sessionid = 0x10003d946220001, negotiated timeout = 3000
+[NIOWorkerThread-5] INFO org.apache.zookeeper.server.ZooKeeperServer - got auth packet /127.0.0.1:37564
+[NIOWorkerThread-5] INFO org.apache.zookeeper.server.ZooKeeperServer - auth success /127.0.0.1:37564
+[NIOWorkerThread-6] INFO org.apache.zookeeper.server.ZooKeeperServer - got auth packet /127.0.0.1:37580
+[NIOWorkerThread-6] INFO org.apache.zookeeper.server.ZooKeeperServer - auth success /127.0.0.1:37580
+[NIOWorkerThread-7] INFO org.apache.zookeeper.server.ZooKeeperServer - got auth packet /127.0.0.1:37564
+[NIOWorkerThread-7] INFO org.apache.zookeeper.server.ZooKeeperServer - auth success /127.0.0.1:37564
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /newParent, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d946220001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d946220001
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:37285/newParent sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@40dff0b7
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:37285. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:37596, server: localhost/127.0.0.1:37285
+[main-SendThread(127.0.0.1:37285)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:37285, sessionid = 0x10003d946220002, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Source data was obtained from ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:62317/nifi, servers=[127.0.0.1:62317], path=/nifi}
+[NIOWorkerThread-14] INFO org.apache.zookeeper.server.ZooKeeperServer - got auth packet /127.0.0.1:37596
+[NIOWorkerThread-14] INFO org.apache.zookeeper.server.ZooKeeperServer - auth success /127.0.0.1:37596
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/, acls=[31,s{'digest,'nifi:RuSeH3tpzgba3p9WrG/UpiSIsGg=}
+], ephemeralOwner=0} to DataStatAclNode{path=/, acls=[31,s{'auth,'}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/, acls=[31,s{'auth,'}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:37285/newParent, servers=[127.0.0.1:37285], path=/newParent}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 1 node transferred to ZooKeeperEndpointConfig{connectString=127.0.0.1:37285/newParent, servers=[127.0.0.1:37285], path=/newParent}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d946220002 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d946220002
+[Thread-14] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:34231
+[Thread-14] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-14] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-14] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-14] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-14] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-14] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-14] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-14] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-14] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:34231
+[Thread-14] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-14] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894346321-0/version-2/snapshot.0
+[Thread-14] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894346321-0/version-2/snapshot.0
+[Thread-14] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:34231 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_8_closure10@2d36e77e
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:34231. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52474, server: localhost/127.0.0.1:34231
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:34231 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@302a07d
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:34231. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52490, server: localhost/127.0.0.1:34231
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:34231, sessionid = 0x10003d9472d0000, negotiated timeout = 3000
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:34231, sessionid = 0x10003d9472d0001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /nifi-open, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9472d0001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9472d0001
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:34231/nifi-open sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@8c11eee
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:34231. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52502, server: localhost/127.0.0.1:34231
+[main-SendThread(127.0.0.1:34231)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:34231, sessionid = 0x10003d9472d0002, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Source data was obtained from ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:62317/nifi, servers=[127.0.0.1:62317], path=/nifi}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/, acls=[31,s{'digest,'nifi:RuSeH3tpzgba3p9WrG/UpiSIsGg=}
+], ephemeralOwner=0} to DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:34231/nifi-open, servers=[127.0.0.1:34231], path=/nifi-open}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 1 node transferred to ZooKeeperEndpointConfig{connectString=127.0.0.1:34231/nifi-open, servers=[127.0.0.1:34231], path=/nifi-open}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9472d0002 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9472d0002
+[Thread-16] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:40027
+[Thread-16] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-16] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-16] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-16] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-16] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-16] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-16] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-16] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-16] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:40027
+[Thread-16] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-16] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894346592-0/version-2/snapshot.0
+[Thread-16] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894346592-0/version-2/snapshot.0
+[Thread-16] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:40027 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_9_closure12@4cf8b2dc
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:40027. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:40684, server: localhost/127.0.0.1:40027
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:40027, sessionid = 0x10003d9483b0000, negotiated timeout = 3000
+[NIOWorkerThread-3] INFO org.apache.zookeeper.server.ZooKeeperServer - got auth packet /127.0.0.1:40684
+[NIOWorkerThread-3] INFO org.apache.zookeeper.server.ZooKeeperServer - auth success /127.0.0.1:40684
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:40027 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@7c1e2a2d
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:40027. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:40692, server: localhost/127.0.0.1:40027
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:40027, sessionid = 0x10003d9483b0001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /nifi, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9483b0001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9483b0001
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:40027/nifi sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@52d645b1
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:40027. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:40708, server: localhost/127.0.0.1:40027
+[main-SendThread(127.0.0.1:40027)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:40027, sessionid = 0x10003d9483b0002, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Source data was obtained from ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:62317/nifi, servers=[127.0.0.1:62317], path=/nifi}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/, acls=[31,s{'digest,'nifi:RuSeH3tpzgba3p9WrG/UpiSIsGg=}
+], ephemeralOwner=0} to DataStatAclNode{path=/, acls=[31,s{'digest,'nifi:RuSeH3tpzgba3p9WrG/UpiSIsGg=}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/, acls=[31,s{'digest,'nifi:RuSeH3tpzgba3p9WrG/UpiSIsGg=}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:40027/nifi, servers=[127.0.0.1:40027], path=/nifi}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 1 node transferred to ZooKeeperEndpointConfig{connectString=127.0.0.1:40027/nifi, servers=[127.0.0.1:40027], path=/nifi}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9483b0002 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9483b0002
+[Thread-18] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:36083
+[Thread-18] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-18] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-18] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-18] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-18] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-18] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-18] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-18] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-18] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:36083
+[Thread-18] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-18] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894346917-0/version-2/snapshot.0
+[Thread-18] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894346917-0/version-2/snapshot.0
+[Thread-18] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:36083 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigratorTest$__spock_feature_0_11_closure14@23d1e5d0
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:36083. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52886, server: localhost/127.0.0.1:36083
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:36083, sessionid = 0x10003d9498f0000, negotiated timeout = 3000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:36083/nifi/components sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@3fb6cf60
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:36083. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52892, server: localhost/127.0.0.1:36083
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:36083, sessionid = 0x10003d9498f0001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Retrieving data from source ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 5 nodes read from ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9498f0001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9498f0001
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:36083 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@57ac5227
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:36083. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52894, server: localhost/127.0.0.1:36083
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:36083, sessionid = 0x10003d9498f0002, negotiated timeout = 3000
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9498f0002 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9498f0002
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:36083/nifi/components sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@e98770d
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:36083. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52896, server: localhost/127.0.0.1:36083
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:36083, sessionid = 0x10003d9498f0003, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Source data was obtained from ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:36083 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@62f68dff
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:36083. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52906, server: localhost/127.0.0.1:36083
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:36083, sessionid = 0x10003d9498f0004, negotiated timeout = 3000
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9498f0004 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9498f0004
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:36083/nifi/components sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@13f17eb4
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:36083. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:52918, server: localhost/127.0.0.1:36083
+[main-SendThread(127.0.0.1:36083)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:36083, sessionid = 0x10003d9498f0005, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Source data was obtained from ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[ForkJoinPool.commonPool-worker-7] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-3] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-6] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=72061825814822912} to DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=72061825814822912}
+[ForkJoinPool.commonPool-worker-7] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/3, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[ForkJoinPool.commonPool-worker-3] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/2, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[ForkJoinPool.commonPool-worker-6] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/1, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/1/a, acls=[31,s{'world,'anyone}
+], ephemeralOwner=72061825814822912} in ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 5 nodes transferred to ZooKeeperEndpointConfig{connectString=127.0.0.1:36083/nifi/components, servers=[127.0.0.1:36083], path=/nifi/components}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d9498f0005 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d9498f0005
+[Thread-20] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0/0.0.0.0:37163
+[Thread-20] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+[Thread-20] INFO org.apache.curator.test.TestingZooKeeperMain - Starting server
+[Thread-20] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+[Thread-20] INFO org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 1000
+[Thread-20] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 1000
+[Thread-20] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 20000
+[Thread-20] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+[Thread-20] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 16 worker threads, and 64 kB direct buffers.
+[Thread-20] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:37163
+[Thread-20] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+[Thread-20] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894347471-0/version-2/snapshot.0
+[Thread-20] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /tmp/1713894347471-0/version-2/snapshot.0
+[Thread-20] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:37163 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@7ec3394b
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:37163. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:36886, server: localhost/127.0.0.1:37163
+[SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:37163, sessionid = 0x10003d94baa0000, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Retrieving data from source ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:37163, servers=[127.0.0.1:37163], path=/}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 4 nodes read from ZooKeeperEndpointConfig{connectString=127.0.0.1:37163, servers=[127.0.0.1:37163], path=/}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d94baa0000 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d94baa0000
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:37163 sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@5644dc81
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:37163. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:36896, server: localhost/127.0.0.1:37163
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:37163, sessionid = 0x10003d94baa0001, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /new-path, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d94baa0001 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d94baa0001
+[main] INFO org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=127.0.0.1:37163/new-path sessionTimeout=3000 watcher=org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator$$Lambda$226/1866229258@278bb07e
+[main] INFO org.apache.zookeeper.ClientCnxnSocket - jute.maxbuffer value is 4194304 Bytes
+[main] INFO org.apache.zookeeper.ClientCnxn - zookeeper.request.timeout value is 0. feature enabled=
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Opening socket connection to server localhost/127.0.0.1:37163. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Socket connection established, initiating session, client: /127.0.0.1:36902, server: localhost/127.0.0.1:37163
+[main-SendThread(127.0.0.1:37163)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server localhost/127.0.0.1:37163, sessionid = 0x10003d94baa0002, negotiated timeout = 3000
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - Source data was obtained from ZooKeeper: ZooKeeperEndpointConfig{connectString=127.0.0.1:37163, servers=[127.0.0.1:37163], path=/}
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/zookeeper, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/zookeeper, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-3] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/zookeeper/quota, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/zookeeper/quota, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/zookeeper/config, acls=[1,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/zookeeper/config, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-6] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transformed original node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} to DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0}
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /zookeeper, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-7] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /zookeeper/quota, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - created node at /zookeeper/config, acls: [31,s{'world,'anyone}
+], createMode: PERSISTENT
+[ForkJoinPool.commonPool-worker-1] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/zookeeper, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:37163/new-path, servers=[127.0.0.1:37163], path=/new-path}
+[ForkJoinPool.commonPool-worker-6] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:37163/new-path, servers=[127.0.0.1:37163], path=/new-path}
+[ForkJoinPool.commonPool-worker-4] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/zookeeper/quota, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:37163/new-path, servers=[127.0.0.1:37163], path=/new-path}
+[ForkJoinPool.commonPool-worker-2] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - transferred node DataStatAclNode{path=/zookeeper/config, acls=[31,s{'world,'anyone}
+], ephemeralOwner=0} in ZooKeeperEndpointConfig{connectString=127.0.0.1:37163/new-path, servers=[127.0.0.1:37163], path=/new-path}
+[main] INFO org.apache.nifi.toolkit.zkmigrator.ZooKeeperMigrator - 4 nodes transferred to ZooKeeperEndpointConfig{connectString=127.0.0.1:37163/new-path, servers=[127.0.0.1:37163], path=/new-path}
+[main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10003d94baa0002 closed
+[main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10003d94baa0002

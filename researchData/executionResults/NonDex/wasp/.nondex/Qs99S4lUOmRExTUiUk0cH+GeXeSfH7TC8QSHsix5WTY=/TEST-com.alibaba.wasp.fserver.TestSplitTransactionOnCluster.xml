@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="0" name="com.alibaba.wasp.fserver.TestSplitTransactionOnCluster" time="206,061.737" errors="1" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="user.country.format" value="PT"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/alex/Repositories/wasp"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/alex/Repositories/wasp"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="alex"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher nondex:nondex"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="user.language.format" value="pt"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="Description" name="com.alibaba.wasp.fserver.TestSplitTransactionOnCluster" time="206,061.737">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.apache.hadoop.hdfs.MiniDFSCluster.startDataNodes(MiniDFSCluster.java:422)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.&lt;init&gt;(MiniDFSCluster.java:280)
+	at org.apache.hadoop.hbase.HBaseTestingUtility.startMiniDFSCluster(HBaseTestingUtility.java:451)
+	at org.apache.hadoop.hbase.HBaseTestingUtility.startMiniCluster(HBaseTestingUtility.java:619)
+	at org.apache.hadoop.hbase.HBaseTestingUtility.startMiniCluster(HBaseTestingUtility.java:575)
+	at com.alibaba.wasp.WaspTestingUtility.startMiniCluster(WaspTestingUtility.java:172)
+	at com.alibaba.wasp.WaspTestingUtility.startMiniCluster(WaspTestingUtility.java:144)
+	at com.alibaba.wasp.fserver.TestSplitTransactionOnCluster.before(TestSplitTransactionOnCluster.java:95)
+</error>
+    <system-out>Starting DataNode 0 with dfs.data.dir: /home/alex/Repositories/wasp/target/test-data/b58af809-bd5d-4046-97c5-d9f71e0b66ee/dfscluster_91749f78-957d-4971-8c4b-974babd0c455/dfs/data/data1,/home/alex/Repositories/wasp/target/test-data/b58af809-bd5d-4046-97c5-d9f71e0b66ee/dfscluster_91749f78-957d-4971-8c4b-974babd0c455/dfs/data/data2
+</system-out>
+    <system-err>24/04/23 19:46:52 INFO wasp.WaspTestingUtility: Starting up minicluster with 1 master(s) and 5 fserver(s) 
+24/04/23 19:46:52 INFO hbase.HBaseTestingUtility: Starting up minicluster with 1 master(s) and 5 regionserver(s) and 5 datanode(s)
+24/04/23 19:46:52 INFO util.GSet: VM type       = 64-bit
+24/04/23 19:46:52 INFO util.GSet: 2% max memory = 36.41 MB
+24/04/23 19:46:52 INFO util.GSet: capacity      = 2^22 = 4194304 entries
+24/04/23 19:46:52 INFO util.GSet: recommended=4194304, actual=4194304
+24/04/23 19:46:52 INFO namenode.FSNamesystem: fsOwner=alex
+24/04/23 19:46:52 INFO namenode.FSNamesystem: supergroup=supergroup
+24/04/23 19:46:52 INFO namenode.FSNamesystem: isPermissionEnabled=true
+24/04/23 19:46:52 INFO namenode.FSNamesystem: dfs.block.invalidate.limit=100
+24/04/23 19:46:52 INFO namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+24/04/23 19:46:52 INFO namenode.NameNode: Caching file names occuring more than 10 times 
+24/04/23 19:46:52 INFO common.Storage: Image file of size 110 saved in 0 seconds.
+24/04/23 19:46:52 INFO common.Storage: Storage directory /home/alex/Repositories/wasp/target/test-data/b58af809-bd5d-4046-97c5-d9f71e0b66ee/dfscluster_91749f78-957d-4971-8c4b-974babd0c455/dfs/name1 has been successfully formatted.
+24/04/23 19:46:52 INFO common.Storage: Image file of size 110 saved in 0 seconds.
+24/04/23 19:46:52 INFO common.Storage: Storage directory /home/alex/Repositories/wasp/target/test-data/b58af809-bd5d-4046-97c5-d9f71e0b66ee/dfscluster_91749f78-957d-4971-8c4b-974babd0c455/dfs/name2 has been successfully formatted.
+24/04/23 19:46:52 WARN impl.MetricsSystemImpl: Metrics system not started: Cannot locate configuration: tried hadoop-metrics2-namenode.properties, hadoop-metrics2.properties
+24/04/23 19:46:52 INFO util.GSet: VM type       = 64-bit
+24/04/23 19:46:52 INFO util.GSet: 2% max memory = 36.41 MB
+24/04/23 19:46:52 INFO util.GSet: capacity      = 2^22 = 4194304 entries
+24/04/23 19:46:52 INFO util.GSet: recommended=4194304, actual=4194304
+24/04/23 19:46:52 INFO namenode.FSNamesystem: fsOwner=alex
+24/04/23 19:46:52 INFO namenode.FSNamesystem: supergroup=supergroup
+24/04/23 19:46:52 INFO namenode.FSNamesystem: isPermissionEnabled=true
+24/04/23 19:46:52 INFO namenode.FSNamesystem: dfs.block.invalidate.limit=100
+24/04/23 19:46:52 INFO namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+24/04/23 19:46:52 INFO namenode.FSNamesystem: Registered FSNamesystemStateMBean and NameNodeMXBean
+24/04/23 19:46:52 INFO namenode.NameNode: Caching file names occuring more than 10 times 
+24/04/23 19:46:52 INFO common.Storage: Number of files = 1
+24/04/23 19:46:52 INFO common.Storage: Number of files under construction = 0
+24/04/23 19:46:52 INFO common.Storage: Image file of size 110 loaded in 0 seconds.
+24/04/23 19:46:52 INFO common.Storage: Edits file /home/alex/Repositories/wasp/target/test-data/b58af809-bd5d-4046-97c5-d9f71e0b66ee/dfscluster_91749f78-957d-4971-8c4b-974babd0c455/dfs/name1/current/edits of size 4 edits # 0 loaded in 0 seconds.
+24/04/23 19:46:52 INFO common.Storage: Image file of size 110 saved in 0 seconds.
+24/04/23 19:46:52 INFO common.Storage: Image file of size 110 saved in 0 seconds.
+24/04/23 19:46:52 INFO common.Storage: Image file of size 110 saved in 0 seconds.
+24/04/23 19:46:52 INFO common.Storage: Image file of size 110 saved in 0 seconds.
+24/04/23 19:46:52 INFO namenode.NameCache: initialized with 0 entries 0 lookups
+24/04/23 19:46:52 INFO namenode.FSNamesystem: Finished loading FSImage in 63 msecs
+24/04/23 19:46:52 INFO namenode.FSNamesystem: Total number of blocks = 0
+24/04/23 19:46:52 INFO namenode.FSNamesystem: Number of invalid blocks = 0
+24/04/23 19:46:52 INFO namenode.FSNamesystem: Number of under-replicated blocks = 0
+24/04/23 19:46:52 INFO namenode.FSNamesystem: Number of  over-replicated blocks = 0
+24/04/23 19:46:52 INFO hdfs.StateChange: STATE* Safe mode termination scan for invalid, over- and under-replicated blocks completed in 9 msec
+24/04/23 19:46:52 INFO hdfs.StateChange: STATE* Leaving safe mode after 0 secs.
+24/04/23 19:46:52 INFO hdfs.StateChange: STATE* Network topology has 0 racks and 0 datanodes
+24/04/23 19:46:52 INFO hdfs.StateChange: STATE* UnderReplicatedBlocks has 0 blocks
+24/04/23 19:46:52 INFO util.HostsFileReader: Refreshing hosts (include/exclude) list
+24/04/23 19:46:52 INFO namenode.FSNamesystem: ReplicateQueue QueueProcessingStatistics: First cycle completed 0 blocks in 0 msec
+24/04/23 19:46:52 INFO namenode.FSNamesystem: ReplicateQueue QueueProcessingStatistics: Queue flush completed 0 blocks in 0 msec processing time, 0 msec clock time, 1 cycles
+24/04/23 19:46:52 INFO namenode.FSNamesystem: InvalidateQueue QueueProcessingStatistics: First cycle completed 0 blocks in 0 msec
+24/04/23 19:46:52 INFO namenode.FSNamesystem: InvalidateQueue QueueProcessingStatistics: Queue flush completed 0 blocks in 0 msec processing time, 0 msec clock time, 1 cycles
+24/04/23 19:46:52 INFO ipc.Server: Starting SocketReader
+24/04/23 19:46:52 INFO namenode.NameNode: Namenode up at: localhost/127.0.0.1:43763
+24/04/23 19:46:52 INFO mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+24/04/23 19:46:52 INFO http.HttpServer: Added global filtersafety (class=org.apache.hadoop.http.HttpServer$QuotingInputFilter)
+24/04/23 19:46:52 INFO http.HttpServer: dfs.webhdfs.enabled = false
+24/04/23 19:46:52 INFO http.HttpServer: Port returned by webServer.getConnectors()[0].getLocalPort() before open() is -1. Opening the listener on 0
+24/04/23 19:46:52 INFO http.HttpServer: listener.getLocalPort() returned 38669 webServer.getConnectors()[0].getLocalPort() returned 38669
+24/04/23 19:46:52 INFO http.HttpServer: Jetty bound to port 38669
+24/04/23 19:46:52 INFO mortbay.log: jetty-6.1.26
+24/04/23 19:46:52 INFO mortbay.log: Extract jar:file:/home/alex/.m2/repository/org/apache/hadoop/hadoop-core/1.0.4/hadoop-core-1.0.4.jar!/webapps/hdfs to /tmp/Jetty_localhost_38669_hdfs____ptziqm/webapp
+24/04/23 19:46:52 INFO mortbay.log: Started SelectChannelConnector@localhost:38669
+24/04/23 19:46:52 INFO namenode.NameNode: Web-server up at: localhost:38669
+24/04/23 19:46:52 INFO ipc.Server: IPC Server Responder: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server listener on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 0 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 1 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 2 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 3 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 4 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 6 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 7 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 5 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 9 on 43763: starting
+24/04/23 19:46:52 INFO ipc.Server: IPC Server handler 8 on 43763: starting
+24/04/23 19:46:52 WARN impl.MetricsSystemImpl: Metrics system not started: Cannot locate configuration: tried hadoop-metrics2-datanode.properties, hadoop-metrics2.properties
+24/04/23 19:46:52 WARN util.MBeans: Hadoop:service=DataNode,name=MetricsSystem,sub=Control
+javax.management.InstanceAlreadyExistsException: MXBean already registered with name Hadoop:service=NameNode,name=MetricsSystem,sub=Control
+	at com.sun.jmx.mbeanserver.MXBeanLookup.addReference(MXBeanLookup.java:151)
+	at com.sun.jmx.mbeanserver.MXBeanSupport.register(MXBeanSupport.java:160)
+	at com.sun.jmx.mbeanserver.MBeanSupport.preRegister2(MBeanSupport.java:173)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:930)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.hadoop.metrics2.util.MBeans.register(MBeans.java:56)
+	at org.apache.hadoop.metrics2.impl.MetricsSystemImpl.initSystemMBean(MetricsSystemImpl.java:500)
+	at org.apache.hadoop.metrics2.impl.MetricsSystemImpl.init(MetricsSystemImpl.java:140)
+	at org.apache.hadoop.metrics2.lib.DefaultMetricsSystem.init(DefaultMetricsSystem.java:40)
+	at org.apache.hadoop.metrics2.lib.DefaultMetricsSystem.initialize(DefaultMetricsSystem.java:50)
+	at org.apache.hadoop.hdfs.server.datanode.DataNode.instantiateDataNode(DataNode.java:1520)
+	at org.apache.hadoop.hdfs.server.datanode.DataNode.instantiateDataNode(DataNode.java:1496)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.startDataNodes(MiniDFSCluster.java:417)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.&lt;init&gt;(MiniDFSCluster.java:280)
+	at org.apache.hadoop.hbase.HBaseTestingUtility.startMiniDFSCluster(HBaseTestingUtility.java:451)
+	at org.apache.hadoop.hbase.HBaseTestingUtility.startMiniCluster(HBaseTestingUtility.java:619)
+	at org.apache.hadoop.hbase.HBaseTestingUtility.startMiniCluster(HBaseTestingUtility.java:575)
+	at com.alibaba.wasp.WaspTestingUtility.startMiniCluster(WaspTestingUtility.java:172)
+	at com.alibaba.wasp.WaspTestingUtility.startMiniCluster(WaspTestingUtility.java:144)
+	at com.alibaba.wasp.fserver.TestSplitTransactionOnCluster.before(TestSplitTransactionOnCluster.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:24)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createReqestAndRun(JUnitCoreWrapper.java:139)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:111)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:84)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:158)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+24/04/23 19:46:52 WARN datanode.DataNode: Invalid directory in dfs.data.dir: Incorrect permission for /home/alex/Repositories/wasp/target/test-data/b58af809-bd5d-4046-97c5-d9f71e0b66ee/dfscluster_91749f78-957d-4971-8c4b-974babd0c455/dfs/data/data1, expected: rwxr-xr-x, while actual: rwxrwxr-x
+24/04/23 19:46:52 WARN datanode.DataNode: Invalid directory in dfs.data.dir: Incorrect permission for /home/alex/Repositories/wasp/target/test-data/b58af809-bd5d-4046-97c5-d9f71e0b66ee/dfscluster_91749f78-957d-4971-8c4b-974babd0c455/dfs/data/data2, expected: rwxr-xr-x, while actual: rwxrwxr-x
+24/04/23 19:46:52 ERROR datanode.DataNode: All directories in dfs.data.dir are invalid.
+24/04/23 19:46:52 INFO wasp.WaspTestingUtility: Shutting down mini wasp cluster
+24/04/23 19:46:52 INFO hbase.HBaseTestingUtility: Shutting down minicluster
+24/04/23 19:46:52 INFO hbase.HBaseTestingUtility: Minicluster is down
+24/04/23 19:46:52 INFO wasp.WaspTestingUtility: Minicluster is down
+</system-err>
+  </testcase>
+</testsuite>

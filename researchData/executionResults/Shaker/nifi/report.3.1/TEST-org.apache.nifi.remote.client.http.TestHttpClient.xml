@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.remote.client.http.TestHttpClient" time="20.318" tests="32" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar:/home/alex/.m2/repository/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.jar:/home/alex/.m2/repository/org/objenesis/objenesis/2.1/objenesis-2.1.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.44.v20210927/jetty-util-ajax-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/littleshoot/littleproxy/1.1.2/littleproxy-1.1.2.jar:/home/alex/.m2/repository/com/google/guava/guava/20.0/guava-20.0.jar:/home/alex/.m2/repository/io/netty/netty-all/4.0.44.Final/netty-all-4.0.44.Final.jar:/home/alex/.m2/repository/com/barchart/udt/barchart-udt-bundle/2.3.0/barchart-udt-bundle-2.3.0.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/surefire/surefirebooter894414981648165880.jar /home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/surefire 2024-05-02T04-10-31_566-jvmRun1 surefire5561587194325169837tmp surefire_264706026441022795411tmp"/>
+    <property name="org.slf4j.simpleLogger.log.org.apache.nifi.remote.protocol.http.HttpClientTransaction" value="INFO"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar:/home/alex/.m2/repository/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.jar:/home/alex/.m2/repository/org/objenesis/objenesis/2.1/objenesis-2.1.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.44.v20210927/jetty-util-ajax-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/littleshoot/littleproxy/1.1.2/littleproxy-1.1.2.jar:/home/alex/.m2/repository/com/google/guava/guava/20.0/guava-20.0.jar:/home/alex/.m2/repository/io/netty/netty-all/4.0.44.Final/netty-all-4.0.44.Final.jar:/home/alex/.m2/repository/com/barchart/udt/barchart-udt-bundle/2.3.0/barchart-udt-bundle-2.3.0.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/surefire/surefirebooter894414981648165880.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="sun.nio.ch.bugLevel" value=""/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="jetty.git.hash" value="8da83308eeca865e495e53ef315a249d63ba9332"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testSendSuccessWithProxyAuth" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.517">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.util.log - Logging initialized @4033ms to org.eclipse.jetty.util.log.Slf4jLog
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - SSL Connector: ServerConnector@4096aa05{SSL, (ssl, http/1.1)}{0.0.0.0:0} - STOPPED
++~ Server@6dfcffb5{STOPPED}[9.4.44.v20210927] - STOPPED
++~ QueuedThreadPool[qtp345986913]@149f5761{STOPPED,8<=0<=50,i=0,r=-1,q=0}[NO_TRY] - STOPPED
++? ScheduledExecutorScheduler@184fb68d{STOPPED} - STOPPED
++- org.eclipse.jetty.io.ArrayByteBufferPool@71d8cfe7
++? SslConnectionFactory@9d3c67{SSL->http/1.1} - STOPPED
+|  +? Server@23592946[provider=null,keyStore=file:///tmp/TemporaryKeyStore-1843843846917418451.p12,trustStore=null] - STOPPED
+|     +> trustAll=false
+|     +> Protocol Selections
+|     |  +> Enabled size=2
+|     |  |  +> TLSv1.2
+|     |  |  +> TLSv1.3
+|     |  +> Disabled size=4
+|     |     +> SSLv2Hello - ConfigExcluded:'SSLv2Hello' JVM:disabled
+|     |     +> SSLv3 - ConfigExcluded:'SSLv3' JVM:disabled
+|     |     +> TLSv1 - JVM:disabled
+|     |     +> TLSv1.1 - JVM:disabled
+|     +> Cipher Suite Selections
+|        +> Enabled size=27
+|        |  +> TLS_AES_128_GCM_SHA256
+|        |  +> TLS_AES_256_GCM_SHA384
+|        |  +> TLS_DHE_DSS_WITH_AES_128_CBC_SHA256
+|        |  +> TLS_DHE_DSS_WITH_AES_128_GCM_SHA256
+|        |  +> TLS_DHE_DSS_WITH_AES_256_CBC_SHA256
+|        |  +> TLS_DHE_DSS_WITH_AES_256_GCM_SHA384
+|        |  +> TLS_DHE_RSA_WITH_AES_128_CBC_SHA256
+|        |  +> TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+|        |  +> TLS_DHE_RSA_WITH_AES_256_CBC_SHA256
+|        |  +> TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+|        |  +> TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+|        |  +> TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+|        |  +> TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+|        |  +> TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+|        |  +> TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+|        |  +> TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+|        |  +> TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+|        |  +> TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+|        |  +> TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256
+|        |  +> TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256
+|        |  +> TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384
+|        |  +> TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384
+|        |  +> TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256
+|        |  +> TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256
+|        |  +> TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384
+|        |  +> TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384
+|        |  +> TLS_EMPTY_RENEGOTIATION_INFO_SCSV
+|        +> Disabled size=18
+|           +> TLS_DHE_DSS_WITH_AES_128_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_DHE_DSS_WITH_AES_256_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_DHE_RSA_WITH_AES_128_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_DHE_RSA_WITH_AES_256_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_ECDH_RSA_WITH_AES_128_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_ECDH_RSA_WITH_AES_256_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$'
+|           +> TLS_RSA_WITH_AES_128_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$', ConfigExcluded:'^TLS_RSA_.*$'
+|           +> TLS_RSA_WITH_AES_128_CBC_SHA256 - ConfigExcluded:'^TLS_RSA_.*$'
+|           +> TLS_RSA_WITH_AES_128_GCM_SHA256 - ConfigExcluded:'^TLS_RSA_.*$'
+|           +> TLS_RSA_WITH_AES_256_CBC_SHA - ConfigExcluded:'^.*_(MD5|SHA|SHA1)$', ConfigExcluded:'^TLS_RSA_.*$'
+|           +> TLS_RSA_WITH_AES_256_CBC_SHA256 - ConfigExcluded:'^TLS_RSA_.*$'
+|           +> TLS_RSA_WITH_AES_256_GCM_SHA384 - ConfigExcluded:'^TLS_RSA_.*$'
++? HttpConnectionFactory@6c806c8b[HTTP/1.1] - STOPPED
+|  +- HttpConfiguration@11b377c5{32768/8192,8192/8192,https://:0,[SecureRequestCustomizer@7bca6fac]}
+|     +> customizers size=1
+|     |  +> SecureRequestCustomizer@7bca6fac
+|     +> formEncodedMethods size=2
+|     |  +> POST
+|     |  +> PUT
+|     +> outputBufferSize=32768
+|     +> outputAggregationSize=8192
+|     +> requestHeaderSize=8192
+|     +> responseHeaderSize=8192
+|     +> headerCacheSize=1024
+|     +> secureScheme=https
+|     +> securePort=0
+|     +> idleTimeout=-1
+|     +> blockingTimeout=-1
+|     +> sendDateHeader=true
+|     +> sendServerVersion=true
+|     +> sendXPoweredBy=false
+|     +> delayDispatchUntilContent=true
+|     +> persistentConnectionsEnabled=true
+|     +> maxErrorDispatches=10
+|     +> minRequestDataRate=0
+|     +> minResponseDataRate=0
+|     +> cookieCompliance=RFC6265
+|     +> setRequestCookieCompliance=RFC6265
+|     +> notifyRemoteAsyncErrors=true
+|     +> relativeRedirectAllowed=false
++= SelectorManager@ServerConnector@4096aa05{SSL, (ssl, http/1.1)}{0.0.0.0:0} - STOPPED
+key: +- bean, += managed, +~ unmanaged, +? auto, +: iterable, +] array, +@ map, +> undefined
+[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@2c6ee758{/nifi-api,null,AVAILABLE}
+[main] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@640dc4c6{/wrong/nifi-api,null,AVAILABLE}
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@7f5eae0f{HTTP/1.1, (http/1.1)}{0.0.0.0:44111}
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@4096aa05{SSL, (ssl, http/1.1)}{0.0.0.0:44617}
+[main] INFO org.eclipse.jetty.server.Server - Started @5092ms
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Starting server on port 44111 for HTTP, and 44617 for HTTPS
+[main] INFO org.littleshoot.proxy.impl.DefaultHttpProxyServer - Starting proxy at address: /127.0.0.1:38065
+[main] INFO org.littleshoot.proxy.impl.DefaultHttpProxyServer - Proxy listening with TCP transport
+[main] INFO org.littleshoot.proxy.impl.DefaultHttpProxyServer - Proxy started at address: /127.0.0.1:38065
+[main] INFO org.littleshoot.proxy.impl.DefaultHttpProxyServer - Starting proxy at address: /127.0.0.1:38991
+[main] INFO org.littleshoot.proxy.impl.DefaultHttpProxyServer - Proxy listening with TCP transport
+[main] INFO org.littleshoot.proxy.impl.DefaultHttpProxyServer - Proxy started at address: /127.0.0.1:38991
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 0: 121 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 1: 242 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 2: 363 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 3: 484 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 4: 605 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 5: 726 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 6: 847 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 7: 968 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 8: 1089 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 9: 1210 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10: 1331 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 11: 1452 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 12: 1573 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 13: 1694 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 14: 1815 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 15: 1936 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 16: 2057 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 17: 2178 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 18: 2299 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 19: 2420 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1ec4636e
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@60c73c35
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5aa591a4
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5a61dd0d
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@67031a3c
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@3e7cb47d
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@48a23aa7
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1c7f0f0b
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@63522442
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@38d6bb09
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@61f8d9b6
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@51b95d5
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@7719d100
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@7a1a2219
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5d087185
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@464f2cc
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@3d4ca291
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@16ed45cb
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@8778aca
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@2b26fb9a
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveSuccess" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.016">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveSuccessHTTPSWithProxyAuth" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.713">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testSendSuccessHTTPS" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.565">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 0: 121 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 1: 242 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 2: 363 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 3: 484 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 4: 605 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 5: 726 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 6: 847 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 7: 968 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 8: 1089 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 9: 1210 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10: 1331 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 11: 1452 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 12: 1573 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 13: 1694 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 14: 1815 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 15: 1936 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 16: 2057 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 17: 2178 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 18: 2299 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 19: 2420 bytes have been written.
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@599bb6d3
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1ee52606
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@3defad4c
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6f29f759
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6b00e941
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5ce23731
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1ca7642c
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@3c94cbde
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@503277ec
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1da49964
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@3a0508f8
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@20d5ee5d
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@639b60bc
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5a4dba12
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@489d2b6b
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@47358323
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@7f1395f9
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@48393d23
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@695e813c
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@2992baf
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendUnknownPort" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.007">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveTimeout" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="1.01">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveSuccessWithProxyAuth" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.02">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveSuccessHTTPS" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.527">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveSlowClientSuccess" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="1.515">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testSendSuccessWithProxy" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.027">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 0: 121 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 1: 242 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 2: 363 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 3: 484 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 4: 605 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 5: 726 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 6: 847 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 7: 968 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 8: 1089 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 9: 1210 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10: 1331 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 11: 1452 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 12: 1573 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 13: 1694 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 14: 1815 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 15: 1936 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 16: 2057 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 17: 2178 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 18: 2299 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 19: 2420 bytes have been written.
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@7989cf57
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@227fe800
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1879e0a
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5aa35152
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6d67ce26
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@30850462
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@dcfbbb6
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@4d26529c
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1ee3a3e0
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@65d124a
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@763f0b3c
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@97205d5
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@a8d4bb8
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@64acd7e1
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6a4456a3
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@7301ba93
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1331ffc0
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@11203198
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@59198c51
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@273260c3
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-50] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveSuccessCompressed" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.012">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveSuccessHTTPSWithProxy" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.572">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testSendLargeFileHTTPWithProxyAuth" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.032">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10092 bytes have been written.
+[qtp345986913-49] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@568f042
+[qtp345986913-49] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-49] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendLargeFileHTTPWithProxy" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.022">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10092 bytes have been written.
+[qtp345986913-49] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6bf4ad26
+[qtp345986913-49] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-49] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveUnknownPort" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.006">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+]]></system-err>
+  </testcase>
+  <testcase name="testWrongPath" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.006">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to parse Json. The specified URL http://127.0.1.1:44111/wrong/nifi-api is not a proper remote NiFi endpoint for Site-to-Site communication. requestedUrl=http://127.0.1.1:44111/wrong/nifi-api/site-to-site, response=<p class="message-pane-content">You may have mistyped...</p>
+[main] WARN org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to get controller from http://127.0.1.1:44111/wrong due to java.io.IOException: Failed to parse Json. The specified URL http://127.0.1.1:44111/wrong/nifi-api is not a proper remote NiFi endpoint for Site-to-Site communication.
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: Failed to parse Json. The specified URL http://127.0.1.1:44111/wrong/nifi-api is not a proper remote NiFi endpoint for Site-to-Site communication.
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Available peers collection is empty; no peer available
+[main] INFO org.apache.nifi.remote.client.http.HttpClient - Couldn't find a valid peer to communicate with.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendLargeFileHTTPS" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.56">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to parse Json. The specified URL http://127.0.1.1:44111/wrong/nifi-api is not a proper remote NiFi endpoint for Site-to-Site communication. requestedUrl=http://127.0.1.1:44111/wrong/nifi-api/site-to-site, response=<p class="message-pane-content">You may have mistyped...</p>
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to get controller from http://127.0.1.1:44111/wrong due to java.io.IOException: Failed to parse Json. The specified URL http://127.0.1.1:44111/wrong/nifi-api is not a proper remote NiFi endpoint for Site-to-Site communication.
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: Failed to parse Json. The specified URL http://127.0.1.1:44111/wrong/nifi-api is not a proper remote NiFi endpoint for Site-to-Site communication.
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10092 bytes have been written.
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@25895129
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendLargeFileHTTPSWithProxy" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.582">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10092 bytes have been written.
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1dc03e0
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testNoAvailablePeer" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.004">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Could not communicate with localhost:44111 to determine which node(s) exist in the remote NiFi instance, due to java.io.IOException: Could not get any peer to communicate with. http://localhost:44111/nifi-api returned zero peers.
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Could not communicate with localhost:44111 to determine which node(s) exist in the remote NiFi instance, due to java.io.IOException: Could not get any peer to communicate with. http://localhost:44111/nifi-api returned zero peers.
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: Unable to retrieve nodes from remote instance
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: Unable to retrieve nodes from remote instance
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Available peers collection is empty; no peer available
+[main] INFO org.apache.nifi.remote.client.http.HttpClient - Couldn't find a valid peer to communicate with.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendTimeoutAfterDataExchange" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.529">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 0 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 10 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 20 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 30 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 40 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 50 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 60 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 70 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 80 packets...
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - Sent 90 packets...
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[I/O dispatcher 57] ERROR org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to send data to http://localhost:44111/nifi-api/data-transfer/input-ports/input-timeout-data-ex-id/transactions/transaction-id/flow-files due to org.apache.http.ConnectionClosedException: Connection closed unexpectedly
+org.apache.http.ConnectionClosedException: Connection closed unexpectedly
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.closed(HttpAsyncRequestExecutor.java:140)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onClosed(InternalIODispatch.java:71)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onClosed(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.disconnected(AbstractIODispatch.java:100)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.sessionClosed(BaseIOReactor.java:279)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processClosedSessions(AbstractIOReactor.java:440)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:283)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:750)
+]]></system-err>
+  </testcase>
+  <testcase name="testSendLargeFileHTTP" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.016">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10092 bytes have been written.
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@36c56ca1
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-46] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendAccessDeniedHTTPS" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.527">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.http.HttpClient - Penalizing a peer Peer[url=https://localhost:44617/nifi-api] due to org.apache.nifi.remote.exception.HandshakeException: Unable to perform the desired action due to insufficient permissions. Contact the system administrator.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendProxyAuthFailed" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.003">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.client.PeerSelector - Could not communicate with localhost:44111 to determine which node(s) exist in the remote NiFi instance, due to org.apache.nifi.remote.util.SiteToSiteRestApiClient$HttpGetFailedException: response code 407:Proxy Authentication Required with explanation: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Could not communicate with localhost:44111 to determine which node(s) exist in the remote NiFi instance, due to org.apache.nifi.remote.util.SiteToSiteRestApiClient$HttpGetFailedException: response code 407:Proxy Authentication Required with explanation: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: Unable to retrieve nodes from remote instance
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: Unable to retrieve nodes from remote instance
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Available peers collection is empty; no peer available
+[main] INFO org.apache.nifi.remote.client.http.HttpClient - Couldn't find a valid peer to communicate with.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendLargeFileHTTPSWithProxyAuth" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.552">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10092 bytes have been written.
+[qtp345986913-15] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6e20d1bd
+[qtp345986913-15] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-15] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveSuccessWithProxy" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.015">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testSendSuccess" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.014">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 0: 121 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 1: 242 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 2: 363 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 3: 484 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 4: 605 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 5: 726 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 6: 847 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 7: 968 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 8: 1089 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 9: 1210 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10: 1331 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 11: 1452 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 12: 1573 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 13: 1694 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 14: 1815 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 15: 1936 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 16: 2057 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 17: 2178 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 18: 2299 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 19: 2420 bytes have been written.
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@7e04983c
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@7904506d
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1ed0b6e
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@b706ffe
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@51efd3d4
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@a3366bc
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@63ecaaef
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6b6b36f3
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@44352939
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@55a2b185
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@531fd20c
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6171aa32
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@c602bc4
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@4c0e8d54
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@612ca96b
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@d60bf46
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@d38b25
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@380fd246
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@3c6c43dd
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@34fe5199
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-20] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendSlowClientSuccess" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.164">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 121 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 242 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 363 bytes have been written.
+[qtp345986913-17] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1dc5cbe2
+[qtp345986913-17] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-17] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@2aab04fc
+[qtp345986913-17] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-17] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@16bf3a32
+[qtp345986913-17] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-17] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testUnknownClusterUrl" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.01">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to get controller from http://127.0.1.1:44111/unknown due to org.apache.nifi.remote.util.SiteToSiteRestApiClient$HttpGetFailedException: response code 404:Not Found with explanation: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: response code 404:Not Found with explanation: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Available peers collection is empty; no peer available
+[main] INFO org.apache.nifi.remote.client.http.HttpClient - Couldn't find a valid peer to communicate with.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendSuccessCompressed" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.016">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to get controller from http://127.0.1.1:44111/unknown due to org.apache.nifi.remote.util.SiteToSiteRestApiClient$HttpGetFailedException: response code 404:Not Found with explanation: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: response code 404:Not Found with explanation: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 0: 90 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 1: 180 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 2: 270 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 3: 360 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 4: 450 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 5: 540 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 6: 630 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 7: 720 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 8: 810 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@637ac2a8
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 9: 900 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10: 990 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@443ab91b
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 11: 1080 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 12: 1170 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 13: 1260 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 14: 1350 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@468a4078
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 15: 1440 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5e3a1da9
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6be0eb44
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 16: 1530 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@7a837542
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 17: 1620 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6e1e63ea
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 18: 1710 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@60c7fcd5
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 19: 1800 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@c119142
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6dd9cce7
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@70c5f385
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@2f3b881c
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@2fa08738
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@cbdd8df
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@53bb5b16
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@20b34215
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@b81987c
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6918d2f3
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@60f2572d
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5aeb02cc
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendSuccessMultipleUrls" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="0.016">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to get controller from http://localhost:9999 due to org.apache.http.conn.HttpHostConnectException: Connect to localhost:9999 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to get controller from http://localhost:9999 due to org.apache.http.conn.HttpHostConnectException: Connect to localhost:9999 [localhost/127.0.0.1] failed: Connection refused (Connection refused)
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 0: 121 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 1: 242 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 2: 363 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 3: 484 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 4: 605 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 5: 726 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 6: 847 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 7: 968 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 8: 1089 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 9: 1210 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 10: 1331 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 11: 1452 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 12: 1573 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 13: 1694 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 14: 1815 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 15: 1936 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 16: 2057 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 17: 2178 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 18: 2299 bytes have been written.
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - 19: 2420 bytes have been written.
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5d2e3395
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@720eed89
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@3797da
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@2c80872
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@2ed62125
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@2bb1f3d3
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@17842838
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@554d3922
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@4a8de5a7
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6e86a84e
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5875884e
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@64cd2e4b
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@41485fa8
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@1ad74b17
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6e1487fb
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@63a65304
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@6010e5c7
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@403f8521
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@a5ef982
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@5bb1b5be
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+[qtp345986913-16] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+]]></system-err>
+  </testcase>
+  <testcase name="testSendTimeout" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="1.011">
+    <system-err><![CDATA[[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[I/O dispatcher 121] ERROR org.apache.nifi.remote.util.SiteToSiteRestApiClient - Failed to send data to http://localhost:44111/nifi-api/data-transfer/input-ports/input-timeout-id/transactions/transaction-id/flow-files due to org.apache.http.ConnectionClosedException: Connection closed unexpectedly
+org.apache.http.ConnectionClosedException: Connection closed unexpectedly
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.closed(HttpAsyncRequestExecutor.java:140)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onClosed(InternalIODispatch.java:71)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onClosed(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.disconnected(AbstractIODispatch.java:100)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.sessionClosed(BaseIOReactor.java:279)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processClosedSessions(AbstractIOReactor.java:440)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:283)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:750)
+[qtp345986913-48] INFO org.apache.nifi.remote.client.http.TestHttpClient - received org.apache.nifi.remote.util.StandardDataPacket@32a9b27b
+[qtp345986913-48] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from client., {Client attr 2=Client attr 2 value, Client attr 1=Client attr 1 value}
+]]></system-err>
+  </testcase>
+  <testcase name="testReceiveTimeoutAfterDataExchange" classname="org.apache.nifi.remote.client.http.TestHttpClient" time="5.013">
+    <system-err><![CDATA[[qtp345986913-48] INFO org.apache.nifi.remote.client.http.TestHttpClient - finish receiving data packets.
+[Http Site-to-Site PeerSelector] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] WARN org.apache.nifi.remote.client.PeerSelector - Unable to refresh remote group peers due to: null
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - received: Example contents from server., {Server attr 1=Server attr 1 value, Server attr 2=Server attr 2 value}
+[main] INFO org.apache.nifi.remote.client.http.TestHttpClient - An exception was thrown as expected.
+java.lang.IllegalStateException: Cannot confirm Transaction because state is ERROR; Transaction can only be confirmed when state is DATA_EXCHANGED
+	at org.apache.nifi.remote.AbstractTransaction.confirm(AbstractTransaction.java:192)
+	at org.apache.nifi.remote.client.http.TestHttpClient.confirmShouldFail(TestHttpClient.java:1114)
+	at org.apache.nifi.remote.client.http.TestHttpClient.testReceiveTimeoutAfterDataExchange(TestHttpClient.java:1356)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+]]></system-err>
+  </testcase>
+</testsuite>

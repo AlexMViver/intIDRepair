@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.393" tests="15" errors="0" skipped="1" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="nondexStart" value="0"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="nondexPrintstack" value="false"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="nondexLogging" value="CONFIG"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter1890260413296693594.jar /home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire 2024-04-23T18-28-02_696-jvmRun1 surefire7456348825184891021tmp surefire_241287820524294704043tmp"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="nondexExecid" value="clean_UmAlWTrG1YyhTHcOPEcCyl+STqKJtNZ6ZeIXO6XVmpI="/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="file.separator" value="/"/>
+    <property name="nondexEnd" value="9223372036854775807"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="nondexFilter" value=".*"/>
+    <property name="nondexSeed" value="933178"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter1890260413296693594.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="nondexDir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/.nondex"/>
+    <property name="nondexJarDir" value=".nondex"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="nondexMode" value="FULL"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testGetCipherForDecryptShouldRequireIV" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.066">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: e89b66df13040d0a764faeebff7b2a6db0677864a98031b821874a4be328700d 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: e89b66df13040d0a764faeebff7b2a6db0677864a98031b821874a4be328700d0e450fcbad80d412afda478379c65d7f 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 518a06d5333704d09b41e7ebb83d32373e214a3bf950046fd865da133bf1cb6f 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 00099204276bb1cb24b2ba5fbd989bb32fb57eff06a32ee8f863add10146d14026f5eb5e3c98becf82336d1beaa2e849 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldResolveDefaultPRF" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.015">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using sha768
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - Could not resolve PRF sha768. Using default PRF SHA-512 instead
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Resolved PRF to SHA-512
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: e89b66df13040d0a764faeebff7b2a6db0677864a98031b821874a4be328700d0e450fcbad80d412afda478379c65d7f 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldNotAcceptInvalidKeyLengths" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.004">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length -1
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 40
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 64
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 112
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 512
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldSupportExternalCompatibility" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.014">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 92edbabae06add6275a1d64815755a9ba52afc96e2c1a316d3abbe1826e96f6c 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: This is a plaintext message.
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherWithUnlimitedStrengthShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.046">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 627ec13533d85334378ff4dc71509319
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: bf82b08b5eff6c17b7c214d49b4622bc6ef5019c1fee959492161663dec03b83 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: eaa86a45b1afcfc3f04fa21945e4fa4e
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 8f42f4573a744967b7e66ef132e0a878a76dc1408d0f62b64b2216caecb4f1840f423c32404b1fd6825a5de4f90a7343 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: eeb646b8b6e50751631cb6aedc1bd845
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: b49de0e8f80fe32a598dc636ec267ab9e4f9416581dc80d8aeb636a7b93a91ed 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 3f350a5aeb13a7f41a2c77bf4fbabd1d
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 566e719c5fb2c80e20650b998bf28d861f9eb3ee98f796ece8134c7b9639724ae194e7bebdfe3a987e58772a691e8363 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldResolveVariousPRFs" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.1">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using SHA-1
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Resolved PRF to SHA-1
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - SHA-1 is a deprecated cryptographic hash function and should not be used
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - SHA-1 is a deprecated cryptographic hash function and should not be used
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 49ee8ed17613c140db8b15bbbb6ce6574cdd558f3d6e0c1afd9d1fe12e1590b0201c9c2be2c0c002ba70379c5b9fdeba 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - SHA-1 is a deprecated cryptographic hash function and should not be used
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - SHA-1 is a deprecated cryptographic hash function and should not be used
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using MD5
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Resolved PRF to MD5
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - MD5 is a deprecated cryptographic hash function and should not be used
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - MD5 is a deprecated cryptographic hash function and should not be used
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: ea482028ce5115532ce9078e6d09512089ead9bf5095463177e5dcd1ec4832791b95f3c2176c1c73f843e684d20ccde1 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - MD5 is a deprecated cryptographic hash function and should not be used
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - MD5 is a deprecated cryptographic hash function and should not be used
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using SHA-256
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Resolved PRF to SHA-256
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 550238397201c8fc70a554e6ccba710a66a07cc7193ba0988f6fa250c3cb7f0837324e5120d30c0c73ee77c69abc8434 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using SHA-384
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Resolved PRF to SHA-384
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 21bacf3954fde3195a1f0e6a30d7b1eb59732b4c6c0e110708b534f88bd20048ef39d5399a4943c4349703e7fa9be34a 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using SHA-512
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Resolved PRF to SHA-512
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: e89b66df13040d0a764faeebff7b2a6db0677864a98031b821874a4be328700d0e450fcbad80d412afda478379c65d7f 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.026">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: e8342bc1a17c16cd3c476f746dce2ef1
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: cb42d88c22c2e5b3b0f00eaaab6dce2667ea11943a663ef54420a001b72d4849 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 755ff6dfd586eebd9e613e5777a11b47
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 093e88014b1e4168f1e1b253c85325697c18267da281b97beab850cc72f4eae83c5eeb75222c4b1f7dd5efd8bc487b49 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 58d03456f6be3d6cb31fa1b2f88090f1
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 5c607e8037da3dea00eb3fae3bcb9e56b36208b5ee27026be6f718d5b214570f 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01ea3203681842a7ac063731e83d0301
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 1370ef0723a658a1c161ae0174e3ab289f3c1a30e68abea1a66dc6b0ac798179d18545a6483589e587901b8e9e81f4b0 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldRejectEmptyPRF" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.002">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using PRF 
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldAcceptValidKeyLengths" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.012">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 128
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: e89b66df13040d0a764faeebff7b2a6db0677864a98031b821874a4be328700d0e450fcbad80d412afda478379c65d7f 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 192
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 93addc0eea1603b4334086c186bdc7c61c4b88393cf246b877f124cc77475c9ba3ecac4e1dfa8ef1a799741ca2b5a3ae 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 256
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 81fd2d586ccf8d424f75049e57df7dbd964d4424747385cd366c5fcadd459e051c8edac20199a6ffd22b00f895c4e947 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldRejectInvalidIV" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.055">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV:  0
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 00 1
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 1 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 1 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 0000 2
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 2 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 2 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 000000 3
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 3 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 3 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 00000000 4
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 4 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 4 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 0000000000 5
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 5 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 5 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 000000000000 6
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 6 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 6 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 00000000000000 7
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 7 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 7 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 0000000000000000 8
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 8 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 8 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 000000000000000000 9
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 9 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 9 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 00000000000000000000 10
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 10 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 10 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 0000000000000000000000 11
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 11 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 11 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 000000000000000000000000 12
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 12 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 12 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 00000000000000000000000000 13
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 13 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 13 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 0000000000000000000000000000 14
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 14 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 14 bytes for decryption but should be 16 bytes
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 000000000000000000000000000000 15
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 15 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 15 bytes for decryption but should be 16 bytes
+]]></system-err>
+  </testcase>
+  <testcase name="testGenerateSaltShouldProvideValidSalt" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.003">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Checking salt b08efe222b9e893184787d556a1a7069
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherWithExternalIVShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.013">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: e89b66df13040d0a764faeebff7b2a6db0677864a98031b821874a4be328700d 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: e89b66df13040d0a764faeebff7b2a6db0677864a98031b821874a4be328700d0e450fcbad80d412afda478379c65d7f 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 518a06d5333704d09b41e7ebb83d32373e214a3bf950046fd865da133bf1cb6f 32
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Cipher text: 00099204276bb1cb24b2ba5fbd989bb32fb57eff06a32ee8f863add10146d14026f5eb5e3c98becf82336d1beaa2e849 48
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldHandleDifferentPRFs" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.012">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+[main] WARN org.apache.nifi.security.util.crypto.PBKDF2SecureHasher - The provided iteration count 1000 is below the recommended minimum 160000.
+]]></system-err>
+  </testcase>
+  <testcase name="testDefaultConstructorShouldProvideStrongIterationCount" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0">
+    <skipped message="System property [nifi.test.unstable] does not exist"/>
+  </testcase>
+  <testcase name="testGetCipherShouldRejectInvalidSalt" classname="org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest" time="0.007">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.PBKDF2CipherProvider - The provided iteration count 1000 is below the recommended minimum 160000
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Checking salt pbkdf2
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Checking salt $3a$11$
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Checking salt x
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Checking salt $2a$10$
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Checking salt 
+[main] INFO org.apache.nifi.security.util.crypto.PBKDF2CipherProviderGroovyTest - Checking salt null
+]]></system-err>
+  </testcase>
+</testsuite>

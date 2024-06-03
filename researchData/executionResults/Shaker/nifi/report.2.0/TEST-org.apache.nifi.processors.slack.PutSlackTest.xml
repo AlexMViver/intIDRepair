@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.processors.slack.PutSlackTest" time="0.585" tests="14" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors/target/classes:/home/alex/.m2/repository/javax/json/javax.json-api/1.0/javax.json-api-1.0.jar:/home/alex/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.7/httpclient-4.5.7.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar:/home/alex/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpmime/4.5.7/httpmime-4.5.7.jar:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-mock/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-nar-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-authorization/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-client/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-security-utils/target/classes:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar:/home/alex/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.33/jersey-media-json-jackson-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.33/jersey-entity-filtering-2.33.jar:/home/alex/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.11.3/jackson-module-jaxb-annotations-2.11.3.jar:/home/alex/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/home/alex/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.33/jersey-hk2-2.33.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar:/home/alex/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar:/home/alex/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/alex/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.33/jersey-media-multipart-2.33.jar:/home/alex/.m2/repository/org/jvnet/mimepull/mimepull/1.9.13/mimepull-1.9.13.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-data-provenance-utils/target/classes:/home/alex/.m2/repository/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.44.v20210927/jetty-util-ajax-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-bundle/nifi-ssl-context-service/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-service-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-web-test-utils/target/classes:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors/target/surefire/surefirebooter3280475261630760090.jar /home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors/target/surefire 2024-05-02T02-13-54_999-jvmRun1 surefire7849252955594534524tmp surefire_1335585541310620959621tmp"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors/target/classes:/home/alex/.m2/repository/javax/json/javax.json-api/1.0/javax.json-api-1.0.jar:/home/alex/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.7/httpclient-4.5.7.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar:/home/alex/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpmime/4.5.7/httpmime-4.5.7.jar:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-mock/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-nar-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-authorization/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-client/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-security-utils/target/classes:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar:/home/alex/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.33/jersey-media-json-jackson-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.33/jersey-entity-filtering-2.33.jar:/home/alex/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.11.3/jackson-module-jaxb-annotations-2.11.3.jar:/home/alex/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/home/alex/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.33/jersey-hk2-2.33.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar:/home/alex/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar:/home/alex/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/alex/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.33/jersey-media-multipart-2.33.jar:/home/alex/.m2/repository/org/jvnet/mimepull/mimepull/1.9.13/mimepull-1.9.13.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-data-provenance-utils/target/classes:/home/alex/.m2/repository/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.44.v20210927/jetty-util-ajax-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-bundle/nifi-ssl-context-service/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-service-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-web-test-utils/target/classes:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors/target/surefire/surefirebooter3280475261630760090.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="jetty.git.hash" value="8da83308eeca865e495e53ef315a249d63ba9332"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-slack-bundle/nifi-slack-processors"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testBlankText" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.205">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.util.log - Logging initialized @738ms to org.eclipse.jetty.util.log.Slf4jLog
+[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@7d8995e{HTTP/1.1, (http/1.1)}{0.0.0.0:33579}
+[main] INFO org.eclipse.jetty.server.Server - Started @827ms
+]]></system-err>
+  </testcase>
+  <testcase name="testInvalidDynamicProperties" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.086">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@385e9564{HTTP/1.1, (http/1.1)}{0.0.0.0:39093}
+[main] INFO org.eclipse.jetty.server.Server - Started @929ms
+[pool-2-thread-1] ERROR org.apache.nifi.processors.slack.PutSlack - [PutSlack[id=8b78baba-1310-42c1-8241-733d8ca15e3e]] Failed to parse JSON
+javax.json.stream.JsonParsingException: Unexpected char 97 at (line no=1, column no=7, offset=6)
+	at org.glassfish.json.JsonTokenizer.unexpectedChar(JsonTokenizer.java:532)
+	at org.glassfish.json.JsonTokenizer.nextToken(JsonTokenizer.java:415)
+	at org.glassfish.json.JsonParserImpl$ObjectContext.getNextEvent(JsonParserImpl.java:261)
+	at org.glassfish.json.JsonParserImpl$StateIterator.next(JsonParserImpl.java:172)
+	at org.glassfish.json.JsonParserImpl.next(JsonParserImpl.java:149)
+	at org.glassfish.json.JsonReaderImpl.readObject(JsonReaderImpl.java:177)
+	at org.glassfish.json.JsonReaderImpl.readObject(JsonReaderImpl.java:103)
+	at org.apache.nifi.processors.slack.PutSlack.onTrigger(PutSlack.java:246)
+	at org.apache.nifi.processor.AbstractProcessor.onTrigger(AbstractProcessor.java:27)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+]]></system-err>
+  </testcase>
+  <testcase name="testSimplePutWithAttributes" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.096">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@e4487af{HTTP/1.1, (http/1.1)}{0.0.0.0:36289}
+[main] INFO org.eclipse.jetty.server.Server - Started @961ms
+[pool-3-thread-1] INFO org.apache.nifi.processors.slack.PutSlack - PutSlack[id=72b09268-e41e-46f2-aacd-ef38ef01148a] Successfully posted message to Slack
+]]></system-err>
+  </testcase>
+  <testcase name="testSimplePut" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.009">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@38e79ae3{HTTP/1.1, (http/1.1)}{0.0.0.0:42393}
+[main] INFO org.eclipse.jetty.server.Server - Started @1058ms
+[pool-4-thread-1] INFO org.apache.nifi.processors.slack.PutSlack - PutSlack[id=3c8d74b7-6976-487a-94cc-9cd73f20e037] Successfully posted message to Slack
+]]></system-err>
+  </testcase>
+  <testcase name="testBlankTextViaExpression" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.067">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@15ca7889{HTTP/1.1, (http/1.1)}{0.0.0.0:45427}
+[main] INFO org.eclipse.jetty.server.Server - Started @1067ms
+[pool-5-thread-1] ERROR org.apache.nifi.processors.slack.PutSlack - PutSlack[id=df4528e3-3763-4651-82ad-82aa1127c297] FlowFile should have non-empty webhook-text
+]]></system-err>
+  </testcase>
+  <testcase name="testInvalidChannel" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.006">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@2cdd0d4b{HTTP/1.1, (http/1.1)}{0.0.0.0:42227}
+[main] INFO org.eclipse.jetty.server.Server - Started @1134ms
+[pool-6-thread-1] ERROR org.apache.nifi.processors.slack.PutSlack - PutSlack[id=6d009b2d-285c-4fc6-920a-17ac3e56b908] Invalid channel 'invalid': Channel must begin with '#' or '@'
+]]></system-err>
+  </testcase>
+  <testcase name="testInvalidIconUrl" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.005">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@5136d012{HTTP/1.1, (http/1.1)}{0.0.0.0:36975}
+[main] INFO org.eclipse.jetty.server.Server - Started @1140ms
+]]></system-err>
+  </testcase>
+  <testcase name="testValidDynamicPropertiesWithExpressionLanguage" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.009">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@482bce4f{HTTP/1.1, (http/1.1)}{0.0.0.0:38023}
+[main] INFO org.eclipse.jetty.server.Server - Started @1145ms
+[pool-7-thread-1] INFO org.apache.nifi.processors.slack.PutSlack - PutSlack[id=ddd5b60d-66dc-43de-a6ff-96620f864bbc] Successfully posted message to Slack
+]]></system-err>
+  </testcase>
+  <testcase name="testSimplePutWithAttributesIconURL" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.007">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@6b8ca3c8{HTTP/1.1, (http/1.1)}{0.0.0.0:33831}
+[main] INFO org.eclipse.jetty.server.Server - Started @1155ms
+[pool-8-thread-1] INFO org.apache.nifi.processors.slack.PutSlack - PutSlack[id=3c22e607-5bdf-4e5e-895b-419bf92d5d15] Successfully posted message to Slack
+]]></system-err>
+  </testcase>
+  <testcase name="testInvalidIconEmoji" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.048">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@74455848{HTTP/1.1, (http/1.1)}{0.0.0.0:34155}
+[main] INFO org.eclipse.jetty.server.Server - Started @1207ms
+]]></system-err>
+  </testcase>
+  <testcase name="testGetPropertyDescriptors" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.003">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@2bfc268b{HTTP/1.1, (http/1.1)}{0.0.0.0:41377}
+[main] INFO org.eclipse.jetty.server.Server - Started @1211ms
+]]></system-err>
+  </testcase>
+  <testcase name="testInvalidDynamicPropertiesWithExpressionLanguage" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.008">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@51dcb805{HTTP/1.1, (http/1.1)}{0.0.0.0:34269}
+[main] INFO org.eclipse.jetty.server.Server - Started @1216ms
+[pool-9-thread-1] ERROR org.apache.nifi.processors.slack.PutSlack - [PutSlack[id=fd8a757a-ca95-4944-b707-1a87d94468bf]] Failed to parse JSON
+javax.json.stream.JsonParsingException: Unexpected char 98 at (line no=1, column no=11, offset=10)
+	at org.glassfish.json.JsonTokenizer.unexpectedChar(JsonTokenizer.java:532)
+	at org.glassfish.json.JsonTokenizer.nextToken(JsonTokenizer.java:415)
+	at org.glassfish.json.JsonParserImpl$ObjectContext.getNextEvent(JsonParserImpl.java:255)
+	at org.glassfish.json.JsonParserImpl$StateIterator.next(JsonParserImpl.java:172)
+	at org.glassfish.json.JsonParserImpl.next(JsonParserImpl.java:149)
+	at org.glassfish.json.JsonReaderImpl.readObject(JsonReaderImpl.java:177)
+	at org.glassfish.json.JsonReaderImpl.readObject(JsonReaderImpl.java:103)
+	at org.apache.nifi.processors.slack.PutSlack.onTrigger(PutSlack.java:246)
+	at org.apache.nifi.processor.AbstractProcessor.onTrigger(AbstractProcessor.java:27)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+]]></system-err>
+  </testcase>
+  <testcase name="testValidDynamicProperties" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.006">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@5f9b2141{HTTP/1.1, (http/1.1)}{0.0.0.0:38639}
+[main] INFO org.eclipse.jetty.server.Server - Started @1224ms
+[pool-10-thread-1] INFO org.apache.nifi.processors.slack.PutSlack - PutSlack[id=ba37a2ae-f563-4fbc-a281-5bce0b4a20fa] Successfully posted message to Slack
+]]></system-err>
+  </testcase>
+  <testcase name="testSimplePutWithEL" classname="org.apache.nifi.processors.slack.PutSlackTest" time="0.007">
+    <system-err><![CDATA[[main] INFO org.eclipse.jetty.server.Server - jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-8u402-ga-2ubuntu1~22.04-b06
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@29d89d5d{HTTP/1.1, (http/1.1)}{0.0.0.0:35493}
+[main] INFO org.eclipse.jetty.server.Server - Started @1231ms
+[pool-11-thread-1] INFO org.apache.nifi.processors.slack.PutSlack - PutSlack[id=2d648922-b818-4914-8be5-bc1cfe8d70bb] Successfully posted message to Slack
+]]></system-err>
+  </testcase>
+</testsuite>

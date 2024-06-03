@@ -1,0 +1,151 @@
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:08 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:08 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+2013-04-13 04:04:239
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:08 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:08 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL SELECT user_id,name from User where user_id=1 limit 1;
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL TableSource User
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem user_id
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem name
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL:Select columns [user_id, name]
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL:where user_id = 1
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: ActionInfo TYPE: null
+1 Filter Field:
+	Field user_id  Type EQUAL Value 1
+	
+
+
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: GET  \x00\x00\x00\x00\x00\x00\x00\x01 from User
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: QueryPlan LocalQueryPlan [scanAction=null, getAction=GetAction [readerMode=INCONSISTENT, tableName=User, primayKey=[0, 0, 0, 0, 0, 0, 0, 1], columns=[ColumnAction [tableName=User, familyName=d, columnName=user_id, value=null, isIndex=false], ColumnAction [tableName=User, familyName=d, columnName=name, value=null, isIndex=false]]], fetchRows=0]
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL SELECT user_id,photo_id,full_url,thumbnail_url from Photo where user_id=99999999999 and photo_id=0.1;
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL TableSource Photo
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem user_id
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem photo_id
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem full_url
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem thumbnail_url
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL:Select columns [user_id, photo_id, full_url, thumbnail_url]
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL:where user_id = 99999999999 AND photo_id = 0.1
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: ActionInfo TYPE: null
+2 Filter Field:
+	Field user_id  Type EQUAL Value 99999999999
+	Field photo_id  Type EQUAL Value 0.1
+	
+
+
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: GET  \x00\x00\x00\x17Hv\xE7\xFF\x00\x00\x00\x00\x00 from Photo
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: QueryPlan LocalQueryPlan [scanAction=null, getAction=GetAction [readerMode=INCONSISTENT, tableName=Photo, primayKey=[0, 0, 0, 23, 72, 118, -25, -1, 0, 0, 0, 0, 0], columns=[ColumnAction [tableName=Photo, familyName=cf, columnName=user_id, value=null, isIndex=false], ColumnAction [tableName=Photo, familyName=d, columnName=photo_id, value=null, isIndex=false], ColumnAction [tableName=Photo, familyName=d, columnName=full_url, value=null, isIndex=false], ColumnAction [tableName=Photo, familyName=d, columnName=thumbnail_url, value=null, isIndex=false]]], fetchRows=0]
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL SELECT * from User where user_id=1;
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL TableSource User
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem user_id
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem name
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem value
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL:Select columns [*]
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL:where user_id = 1
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: ActionInfo TYPE: null
+1 Filter Field:
+	Field user_id  Type EQUAL Value 1
+	
+
+
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: GET  \x00\x00\x00\x00\x00\x00\x00\x01 from User
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: QueryPlan LocalQueryPlan [scanAction=null, getAction=GetAction [readerMode=INCONSISTENT, tableName=User, primayKey=[0, 0, 0, 0, 0, 0, 0, 1], columns=[ColumnAction [tableName=User, familyName=d, columnName=user_id, value=null, isIndex=false], ColumnAction [tableName=User, familyName=d, columnName=name, value=null, isIndex=false], ColumnAction [tableName=User, familyName=d, columnName=value, value=null, isIndex=false]]], fetchRows=0]
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL SELECT * from User where user_id=1 for update ;
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL TableSource User
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem user_id
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem name
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser:  SQLSelectItem value
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL:Select columns [*]
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: SELECT SQL:where user_id = 1
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: ActionInfo TYPE: null
+1 Filter Field:
+	Field user_id  Type EQUAL Value 1
+	
+
+
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: GET  \x00\x00\x00\x00\x00\x00\x00\x01 from User
+24/04/23 19:47:08 DEBUG druid.DruidDQLParser: QueryPlan LocalQueryPlan [scanAction=null, getAction=GetAction [readerMode=INCONSISTENT, tableName=User, primayKey=[0, 0, 0, 0, 0, 0, 0, 1], columns=[ColumnAction [tableName=User, familyName=d, columnName=user_id, value=null, isIndex=false], ColumnAction [tableName=User, familyName=d, columnName=name, value=null, isIndex=false], ColumnAction [tableName=User, familyName=d, columnName=value, value=null, isIndex=false]]], fetchRows=0]
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:08 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:08 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:08 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+--------------------------------------------
+SELECT			SELECT
+STAR			*
+FROM			FROM
+IDENTIFIER		T
+WHERE			WHERE
+IDENTIFIER		F1
+EQ			=
+QUES			?
+ORDER			ORDER
+BY			BY
+IDENTIFIER		F2
+EOF			null
+--------------------------------------------

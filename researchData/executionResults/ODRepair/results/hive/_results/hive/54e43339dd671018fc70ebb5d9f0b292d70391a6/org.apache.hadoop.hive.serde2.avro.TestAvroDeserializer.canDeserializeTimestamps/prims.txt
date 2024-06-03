@@ -1,0 +1,294 @@
+[TIME]: 0:00:01.100803
+=== SEARCH CLASSPATH ENTRY: /home/alex/Repositories/ODRepair/experiments/_downloads/hive
+=== org.apache.hadoop.hive.serde2.avro.TestAvroDeserializer String Literals: =============
+{
+  "type": "record", 
+  "name": "nullTest",
+  "fields" : [
+    {"name": "isANull", "type": "null"}
+  ]
+}
+isANull
+{
+  "namespace": "testing",
+  "name": "oneMap",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aMap",
+      "type":{"type":"map",
+      "values":"long"}
+	}
+  ]
+}
+one
+two
+three
+aMap
+record = 
+amap
+{
+  "namespace": "testing",
+  "name": "oneArray",
+  "type": "record",
+  "fields": [
+    {
+      "name":"anArray",
+      "type":{"type":"array",
+      "items":"string"}
+	}
+  ]
+}
+Eccleston
+Tennant
+Smith
+anArray
+Array-backed record = 
+aRecord
+int1
+boolean1
+long1
+theRecordObject = 
+arecord
+{
+  "namespace": "testing.test.mctesty",
+  "name": "oneRecord",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aRecord",
+      "type":{"type":"record",
+              "name":"recordWithinARecord",
+              "fields": [
+                 {
+                  "name":"int1",
+                  "type":"int"
+                },
+                {
+                  "name":"boolean1",
+                  "type":"boolean"
+                },
+                {
+                  "name":"long1",
+                  "type":"long"
+                }
+      ]}
+    }
+  ]
+}
+["null", {
+  "namespace": "testing.test.mctesty",
+  "name": "oneRecord",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aRecord",
+      "type":{"type":"record",
+              "name":"recordWithinARecord",
+              "fields": [
+                 {
+                  "name":"int1",
+                  "type":"int"
+                },
+                {
+                  "name":"boolean1",
+                  "type":"boolean"
+                },
+                {
+                  "name":"long1",
+                  "type":"long"
+                }
+      ]}
+    }
+  ]
+}]
+{
+  "namespace": "test.a.rossa",
+  "name": "oneUnion",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aUnion",
+      "type":["string"]
+    }
+  ]
+}
+aUnion
+this is a string
+timestampField
+timestamp
+{
+  "type": "record", 
+  "name": "timestampTest",
+  "fields" : [
+    {"name":"timestampField",      "type":"long",          "logicalType":"timestamp-millis"}  ]
+}
+2019-01-01 19:00:00.999
+2019-01-01 16:00:00.999
+{
+  "namespace": "test.a.rossa",
+  "name": "oneUnion",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aUnion",
+      "type":["int", "string"]
+    }
+  ]
+}
+{
+  "namespace": "test.a.rossa",
+  "name": "oneUnion",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aUnion",
+      "type":["null", "int", "string"]
+    }
+  ]
+}
+{
+  "namespace": "test.a.rossa",
+  "name": "oneUnion",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aUnion",
+      "type":["float","int"]
+    }
+  ]
+}
+{
+  "namespace": "test.a.rossa",
+  "name": "oneUnion",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aUnion",
+      "type":["int","float","long"]
+    }
+  ]
+}
+aunion
+{
+  "type": "record",
+  "name": "r1",
+  "fields": [
+    {
+      "name": "int_field",
+      "type": "int"
+    }
+  ]
+}
+{
+  "type": "record",
+  "name": "r1",
+  "fields": [
+    {
+      "name": "int_field",
+      "type": "int"
+    },
+    {
+      "name": "dec_field",
+      "type": [
+        "null",
+        {
+          "type": "bytes",
+          "logicalType": "decimal",
+          "precision": 5,
+          "scale": 4
+        }
+      ],
+      "default": null
+    }
+  ]
+}
+int_field
+{
+  "namespace": "clever.namespace.name.in.space",
+  "name": "oneEnum",
+  "type": "record",
+  "fields": [
+   {
+      "name":"baddies",
+      "type":{"type":"enum","name":"villains", "symbols": ["DALEKS", "CYBERMEN", "SLITHEEN", "JAGRAFESS"]}
+      
+      
+    }
+  ]
+}
+baddies
+DALEKS
+{
+  "namespace": "ecapseman",
+  "name": "oneFixed",
+  "type": "record",
+  "fields": [
+   {
+      "name":"hash",
+      "type":{"type": "fixed", "name": "MD5", "size": 16}
+    }
+  ]
+}
+ANANCIENTBLUEBOX
+hash
+{
+  "type": "record", 
+  "name": "bytesTest",
+  "fields" : [
+    {"name":"bytesField", "type":"bytes"}
+  ]
+}
+bytesField
+{
+  "type": "record", 
+  "name": "nullableUnionTest",
+  "fields" : [
+    {"name":"nullableString", "type":["null", "string"]}
+  ]
+}
+nullableString
+{
+  "namespace": "clever.namespace.name.in.space",
+  "name": "nullableUnionTest",
+  "type": "record",
+  "fields": [
+   {
+      "name":"nullableEnum",
+      "type": ["null", {"type":"enum","name":"villains", "symbols": ["DALEKS", "CYBERMEN", "SLITHEEN", "JAGRAFESS"]}]
+      
+      
+    }
+  ]
+}
+nullableEnum
+CYBERMEN
+{
+  "namespace": "testing",
+  "name": "mapWithNullableUnionTest",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aMap",
+      "type":{"type":"map",
+      "values":["null","long"]}
+	}
+  ]
+}
+mu
+{
+  "namespace": "testing",
+  "name": "oneMap",
+  "type": "record",
+  "fields": [
+    {
+      "name":"aMap",
+      "type":{"type":"map",
+      "avro.java.string":"String",
+      "values":"long"}
+	}
+  ]
+}
+Testing
+meaningless
+==================================

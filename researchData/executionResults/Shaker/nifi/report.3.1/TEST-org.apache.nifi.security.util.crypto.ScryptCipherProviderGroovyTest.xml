@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.346" tests="23" errors="0" skipped="1" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter8282657183802230464.jar /home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire 2024-05-02T04-10-31_566-jvmRun1 surefire2575846242273570839tmp surefire_64322154079322125000tmp"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/test-classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.32/jcl-over-slf4j-1.7.32.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/surefire/surefirebooter8282657183802230464.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testGetCipherForDecryptShouldRequireIV" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.01">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An empty IV was provided of length 16 for encryption
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 00000000000000000000000000000000
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 3789f4e28be99dfa299cf328da5ceb31bcb5163abf9494c19e45f41c0290fe20 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] ERROR org.apache.nifi.security.util.crypto.ScryptCipherProvider - Encountered an error generating the Scrypt hash
+java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getInitializedCipher(AESKeyedCipherProvider.java:128)
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getCipher(AESKeyedCipherProvider.java:60)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getInitializedCipher(ScryptCipherProvider.java:209)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getCipher(ScryptCipherProvider.java:133)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getCipher(ScryptCipherProvider.java:161)
+	at org.apache.nifi.security.util.crypto.PBECipherProvider$getCipher$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:115)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(ScryptCipherProviderGroovyTest.groovy:370)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(ScryptCipherProviderGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.test.GroovyAssert$shouldFail.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:196)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:216)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest.testGetCipherForDecryptShouldRequireIV(ScryptCipherProviderGroovyTest.groovy:369)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An empty IV was provided of length 16 for encryption
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 00000000000000000000000000000000
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: efa922cd4eab3455d2feedef86af06c0ca5da63c7c322e5c7e6debbc52d1da0daf42472f4c63e06980dec87a73319444 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] ERROR org.apache.nifi.security.util.crypto.ScryptCipherProvider - Encountered an error generating the Scrypt hash
+java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getInitializedCipher(AESKeyedCipherProvider.java:128)
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getCipher(AESKeyedCipherProvider.java:60)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getInitializedCipher(ScryptCipherProvider.java:209)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getCipher(ScryptCipherProvider.java:133)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getCipher(ScryptCipherProvider.java:161)
+	at org.apache.nifi.security.util.crypto.PBECipherProvider$getCipher$0.call(Unknown Source)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(ScryptCipherProviderGroovyTest.groovy:370)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(ScryptCipherProviderGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.test.GroovyAssert$shouldFail.callStatic(Unknown Source)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest.testGetCipherForDecryptShouldRequireIV(ScryptCipherProviderGroovyTest.groovy:369)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An empty IV was provided of length 16 for encryption
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 00000000000000000000000000000000
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 281a48d16d1dc4a3c6cd74d31395abf8524f5016dbdcc03f228611e9f4b0d430 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] ERROR org.apache.nifi.security.util.crypto.ScryptCipherProvider - Encountered an error generating the Scrypt hash
+java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getInitializedCipher(AESKeyedCipherProvider.java:128)
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getCipher(AESKeyedCipherProvider.java:60)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getInitializedCipher(ScryptCipherProvider.java:209)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getCipher(ScryptCipherProvider.java:133)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getCipher(ScryptCipherProvider.java:161)
+	at org.apache.nifi.security.util.crypto.PBECipherProvider$getCipher$0.call(Unknown Source)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(ScryptCipherProviderGroovyTest.groovy:370)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(ScryptCipherProviderGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.test.GroovyAssert$shouldFail.callStatic(Unknown Source)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest.testGetCipherForDecryptShouldRequireIV(ScryptCipherProviderGroovyTest.groovy:369)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An empty IV was provided of length 16 for encryption
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 00000000000000000000000000000000
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: a60b0d9cdb3aed56a1d745297775c7aba624ec0ad3346c3cbcb25dfc154132bf15415a6d3996a0d95ac88e3a5777f151 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for decryption but should be 16 bytes
+[main] ERROR org.apache.nifi.security.util.crypto.ScryptCipherProvider - Encountered an error generating the Scrypt hash
+java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getInitializedCipher(AESKeyedCipherProvider.java:128)
+	at org.apache.nifi.security.util.crypto.AESKeyedCipherProvider.getCipher(AESKeyedCipherProvider.java:60)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getInitializedCipher(ScryptCipherProvider.java:209)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getCipher(ScryptCipherProvider.java:133)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProvider.getCipher(ScryptCipherProvider.java:161)
+	at org.apache.nifi.security.util.crypto.PBECipherProvider$getCipher$0.call(Unknown Source)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(ScryptCipherProviderGroovyTest.groovy:370)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest$_testGetCipherForDecryptShouldRequireIV_closure7.doCall(ScryptCipherProviderGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.test.GroovyAssert$shouldFail.callStatic(Unknown Source)
+	at org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest.testGetCipherForDecryptShouldRequireIV(ScryptCipherProviderGroovyTest.groovy:369)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: Cannot decrypt without a valid IV
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldValidateScryptCipherProviderPBoundary" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 64 is below the recommended minimum 16384
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldNotAcceptInvalidKeyLengths" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.004">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length -1
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: -1 is not a valid key length for AES
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 40
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: 40 is not a valid key length for AES
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 64
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: 64 is not a valid key length for AES
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 112
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: 112 is not a valid key length for AES
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 512
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: 512 is not a valid key length for AES
+]]></system-err>
+  </testcase>
+  <testcase name="testScryptShouldSupportExternalCompatibility" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.293">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Expected salt: f5b8056ea6e66edb8d013ac432aba24a
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [SANITY] Ruby cipher text: 604188bf8e9137bc1b24a0ab01973024bc5935e9ae5fedf617bdca028c63c261
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [SANITY] Using key: a8efbc0a709d3f89b6bb35b05fc8edf5
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [SANITY] Using IV:  76a00f00878b8c3db314ae67804c00a1
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [SANITY] Created cipher text: 604188bf8e9137bc1b24a0ab01973024bc5935e9ae5fedf617bdca028c63c261
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [SANITY] Decrypted generated cipher text successfully
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [SANITY] Decrypted external cipher text successfully
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Full Hash: 400$8$24$f5b8056ea6e66edb8d013ac432aba24a$a8efbc0a709d3f89b6bb35b05fc8edf5
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - N: Hex 400 -> 1024
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - r: Hex 8 -> 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - p: Hex 24 -> 36
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Salt: f5b8056ea6e66edb8d013ac432aba24a
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Hash: a8efbc0a709d3f89b6bb35b05fc8edf5
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Formed Java-style salt: $s0$a0824$9bgFbqbmbtuNATrEMquiSg
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Converted hash from hex a8efbc0a709d3f89b6bb35b05fc8edf5 to Base64 qO+8CnCdP4m2uzWwX8jt9Q
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - External cipher text: 604188bf8e9137bc1b24a0ab01973024bc5935e9ae5fedf617bdca028c63c261 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 1024 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: This is a plaintext message.
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldNotAcceptInvalidSalts" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.002">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Checking salt bad_sal
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AbstractSecureHasher - The provided dynamic salt length 7 is below the recommended minimum 16
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The raw salt must be greater than or equal to 8 bytes
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Checking salt $3a$11$
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AbstractSecureHasher - The provided dynamic salt length 7 is below the recommended minimum 16
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The raw salt must be greater than or equal to 8 bytes
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Checking salt x
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AbstractSecureHasher - The provided dynamic salt length 1 is below the recommended minimum 16
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The raw salt must be greater than or equal to 8 bytes
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Checking salt $2a$10$
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AbstractSecureHasher - The provided dynamic salt length 7 is below the recommended minimum 16
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The raw salt must be greater than or equal to 8 bytes
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherWithUnlimitedStrengthShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.002">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: a06e06577cd204b6ee8f71c072e91933
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 877a8ad224c79fbf4ced0d33c8cb2cb5cbbd5156591646a30cc89011f5f291ef 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: f3b185a5ec15d14c0646478111f4d597
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: ab4bd8e0bcaf43be3992d2b37b5a984adeb99138341e6178030861a3a9bb33e7a34b1fe0a911bd275419f75d95f4d786 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: b23a0809e56f36f43c0a22ad1228f677
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 3ca4d9d7f0e4e0a2a6309ac8943b4d3285e250cf0746e654fdd10eab58a8e73e 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 1742ab29b7c040c7373e2d4a73001404
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 20ece12ab02a1296874ae783c917fa19d3da9b58514c31523a6f29c604649a71029b30ba91262156dbe8abf2a2ea56f2 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testScryptShouldNotAcceptInvalidPassword" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldCatchInvalidP" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 64 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided parallelization factor 0 is below the recommended minimum 1
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - Based on the provided block size 8, the provided parallelization factor 0 is out of bounds
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: Invalid p value exceeds p boundary
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldCatchInvalidR" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 64 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 0 is below the recommended minimum 8
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided parallelization factor 0 is below the recommended minimum 1
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 0 must be greater than 0
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: Invalid r value; must be greater than 0
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldAcceptFormattedSaltWithPlus" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Is Scrypt salt: true
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 22bead2a5780aa178749b6f9fc83af71
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 019e01dbbaf9f3eeef915d8581fd0423e324dbcf5309c9a8256f94df56dc40d9 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: dee986edbad77ce9d7852877759e7376
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 7ca3ddbdc045451e03b74e3094209eec2ee588db6a8967f28887f32ee812fe3ed8c3ef678cb74f6e9d7bf6ad26931cde 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: c51d037f951470bc31833bbd47c15d07
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 315707e3da96c78c8f6cb20533e55acd83e377dd65873038a9726beac8e43e42 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 755637ee92509754e26ddba0f716cdca
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 031b8fbfef3dbcb90fa66920aeae34de5824c79359ebd6126c480f6b09844d140f564f59ea68d01d269174c6218826b1 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldVerifyRValue" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldHandleUnformattedSalts" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.002">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Checking salt $ab$00$acbdefghijklmnopqrstuv
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Checking salt $4$1$1$0123456789abcdef
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Checking salt $400$1$1$abcdefghijklmnopqrstuv
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldAcceptValidKeyLengths" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.002">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 128
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: d315dca103c5e9b285898db75cef7ac23353d36f827cfd87e437d0660492bcbe012b771f584901538d004cfab00ce18c 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 192
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 6ac7ad69e8397d8c7edbc7f638c23b4a0ad627a81281f3ec50d919b6141c5c161a0cf0286dc945d9798f0a8acc50efc0 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding with key length 256
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 993399f758f7ee35656148a8356926883fe6c2eb5cf1c171d05a1fc7fc1ae85a73eca74fb9b1632002edca169940dc2a 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldHandleSaltWithoutParameters" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProvider - Treating as raw salt bytes
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Expected salt: $s0$20101$HDLEKZFnaXwQCASDlfCsQQ
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - An IV was provided of length 0 bytes for encryption but should be 16 bytes
+[main] WARN org.apache.nifi.security.util.crypto.AESKeyedCipherProvider - Generating new IV. The value can be obtained in the calling code by invoking 'cipher.getIV()';
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 38bf6cab18ab60165a30116a8f69cdc0
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: ca191d2bed5890d45dc6f06c14c683ab1a8b80bb7a7f192a9eae89780d0419cc3bf7506c201004d49dd162688534b8af 48
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Manually derived key bytes: 7d10d9130208e0cc853995c104c01d59
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldFailPBoundary" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.002">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - For r 8, p is false
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - For r 128, p is false
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - For r 4096, p is false
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCipherShouldRejectEmptySalt" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - [EXPECTED] java.lang.IllegalArgumentException: The salt cannot be empty. To generate a salt, use ScryptCipherProvider#generateSalt()
+]]></system-err>
+  </testcase>
+  <testcase name="testDefaultConstructorShouldProvideStrongParameters" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0">
+    <skipped message="System property [nifi.test.unstable] does not exist ==&gt; This test can be run on a specific machine to evaluate if the default parameters are sufficient"/>
+  </testcase>
+  <testcase name="testGetCipherWithExternalIVShouldBeInternallyConsistent" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.003">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: a6d1df37a0e8e08e4e60dba302611a769b3b41778d48de520706dbd00db01d6d 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CBC/PKCS7Padding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: a6d1df37a0e8e08e4e60dba302611a769b3b41778d48de520706dbd00db01d6dac3c9d4779c7ec518121e03184c9c414 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/CTR/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: c20b889b10ac224ecdb110e7e773d823d7f778cfa0570c0134028714de1cf614 32
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using algorithm: AES/GCM/NoPadding
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - IV: 01010101010101010101010101010101
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Cipher text: 831b40fbf99da103eba21ccb7995a5ca578a8ffc8c5cd433df59effdfa25cf353779962e39ea10eee824a5948e9b3fe3 48
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided r size 1 * 128 B is below the recommended minimum 8.
+[main] WARN org.apache.nifi.security.util.crypto.ScryptSecureHasher - The provided iteration count N 4 is below the recommended minimum 16384.
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Recovered: ExactBlockSizeRequiredForProcess
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldVerifyPBoundary" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldParseSalt" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Using salt: $s0$a0824$9bgFbqbmbtuNATrEMquiSg
+]]></system-err>
+  </testcase>
+  <testcase name="testGenerateSaltShouldUseProvidedParameters" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0.001">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 8 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 2 is below the recommended minimum 8
+[main] INFO org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest - Salt: $s0$30202$sT6RwWcopmcKK2wKsgbCDw
+]]></system-err>
+  </testcase>
+  <testcase name="testShouldFailRValue" classname="org.apache.nifi.security.util.crypto.ScryptCipherProviderGroovyTest" time="0">
+    <system-err><![CDATA[[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided iteration count 4 is below the recommended minimum 16384
+[main] WARN org.apache.nifi.security.util.crypto.ScryptCipherProvider - The provided block size 1 is below the recommended minimum 8
+]]></system-err>
+  </testcase>
+</testsuite>

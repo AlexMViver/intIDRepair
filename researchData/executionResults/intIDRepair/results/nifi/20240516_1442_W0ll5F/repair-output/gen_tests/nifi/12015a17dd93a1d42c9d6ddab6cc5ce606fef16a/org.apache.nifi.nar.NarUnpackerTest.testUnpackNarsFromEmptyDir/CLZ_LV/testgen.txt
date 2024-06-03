@@ -1,0 +1,133 @@
+[TIME]: 0:00:08.661508
+Randoop for Java version "4.2.6, local changes, branch master, commit 5beca45, 2021-05-03".
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/tmp/jars/slf4j-simple-1.7.32.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/tmp/jars/log4j-slf4j-impl-2.14.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/tmp/jars/logback-classic-1.2.6.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/tmp/jars/log4j-slf4j-impl-2.13.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
+[main] INFO org.apache.sshd.common.util.security.bouncycastle.BouncyCastleSecurityProviderRegistrar - getOrCreateProvider(BC) created instance of org.bouncycastle.jce.provider.BouncyCastleProvider
+[main] INFO org.apache.sshd.common.util.security.eddsa.EdDSASecurityProviderRegistrar - getOrCreateProvider(EdDSA) created instance of net.i2p.crypto.eddsa.EdDSASecurityProvider
+[main] WARN org.apache.sshd.common.io.DefaultIoServiceFactoryFactory - Exception while instantiating factory from ServiceLoader
+java.util.ServiceConfigurationError: org.apache.sshd.common.io.IoServiceFactoryFactory: Provider org.apache.sshd.common.io.mina.MinaServiceFactoryFactory could not be instantiated
+	at java.util.ServiceLoader.fail(ServiceLoader.java:232)
+	at java.util.ServiceLoader.access$100(ServiceLoader.java:185)
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:384)
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:404)
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480)
+	at org.apache.sshd.common.io.DefaultIoServiceFactoryFactory.tryLoad(DefaultIoServiceFactoryFactory.java:116)
+	at org.apache.sshd.common.io.DefaultIoServiceFactoryFactory.newInstance(DefaultIoServiceFactoryFactory.java:93)
+	at org.apache.sshd.common.io.DefaultIoServiceFactoryFactory.getIoServiceProvider(DefaultIoServiceFactoryFactory.java:65)
+	at org.apache.sshd.common.io.DefaultIoServiceFactoryFactory.create(DefaultIoServiceFactoryFactory.java:52)
+	at org.apache.sshd.common.helpers.AbstractFactoryManager.getIoServiceFactory(AbstractFactoryManager.java:113)
+	at org.apache.sshd.client.SshClient.createConnector(SshClient.java:812)
+	at org.apache.sshd.client.SshClient.start(SshClient.java:457)
+	at org.apache.sshd.sftp.client.fs.SftpFileSystemProvider.<init>(SftpFileSystemProvider.java:166)
+	at org.apache.sshd.sftp.client.fs.SftpFileSystemProvider.<init>(SftpFileSystemProvider.java:156)
+	at org.apache.sshd.sftp.client.fs.SftpFileSystemProvider.<init>(SftpFileSystemProvider.java:152)
+	at org.apache.sshd.sftp.client.fs.SftpFileSystemProvider.<init>(SftpFileSystemProvider.java:139)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at java.lang.Class.newInstance(Class.java:442)
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:380)
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:404)
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480)
+	at java.nio.file.spi.FileSystemProvider.loadInstalledProviders(FileSystemProvider.java:119)
+	at java.nio.file.spi.FileSystemProvider.access$000(FileSystemProvider.java:77)
+	at java.nio.file.spi.FileSystemProvider$1.run(FileSystemProvider.java:169)
+	at java.nio.file.spi.FileSystemProvider$1.run(FileSystemProvider.java:166)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.nio.file.spi.FileSystemProvider.installedProviders(FileSystemProvider.java:166)
+	at java.nio.file.FileSystems.newFileSystem(FileSystems.java:324)
+	at java.nio.file.FileSystems.newFileSystem(FileSystems.java:276)
+	at randoop.main.GenTests.getResourceDirectoryPath(GenTests.java:1315)
+	at randoop.main.GenTests.getJDKSpecificationFiles(GenTests.java:1284)
+	at randoop.main.GenTests.handle(GenTests.java:304)
+	at randoop.main.Main.nonStaticMain(Main.java:71)
+	at randoop.main.Main.main(Main.java:31)
+Caused by: java.lang.NoSuchMethodError: org.apache.sshd.common.io.AbstractIoServiceFactoryFactory.<init>(Ljava/util/concurrent/ExecutorService;Z)V
+	at org.apache.sshd.common.io.mina.MinaServiceFactoryFactory.<init>(MinaServiceFactoryFactory.java:44)
+	at org.apache.sshd.common.io.mina.MinaServiceFactoryFactory.<init>(MinaServiceFactoryFactory.java:31)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at java.lang.Class.newInstance(Class.java:442)
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:380)
+	... 34 more
+[main] INFO org.apache.sshd.common.io.DefaultIoServiceFactoryFactory - Using Nio2ServiceFactoryFactory
+
+Will try to generate tests for 0 classes.
+You provided no methods to test, so no tests for them can be generated.
+
+Additional diagnostis appear below.
+Model with hashcode 1439693138:
+  classTypes = [java.lang.Object]
+  inputTypes = []
+  coveredClassesGoal = []
+  classLiteralMap = {}
+  annotatedTestValues = []
+  contracts = ContractSet[size=12]
+    arity 1: [randoop.contract.EqualsReflexive@660591fb, randoop.contract.EqualsToNullRetFalse@4a55a6e8, randoop.contract.EqualsReturnsNormally@8c46918, randoop.contract.CompareToReflexive@226b143b, randoop.contract.SizeToArrayLength@682bd3c4]
+    arity 2: [randoop.contract.EqualsSymmetric@f2e4acf, randoop.contract.EqualsHashcode@24097e9b, randoop.contract.CompareToAntiSymmetric@5eb97ced, randoop.contract.CompareToEquals@68ba310d]
+    arity 3: [randoop.contract.EqualsTransitive@153f66e7, randoop.contract.CompareToSubs@7aad3f7d, randoop.contract.CompareToTransitive@6f667ad1]
+  omitMethods = [
+    \bensuresCapacity\b
+    ^\Qcom.google.common.collect.Iterators.cycle(
+    ^\Qorg.apache.commons.math4.genetics.GeneticAlgorithm.getRandomGenerator()\E$
+    ^\Qorg.apache.commons.math4.util.FastMath.random()\E$
+    ^\Qjava.util.Date.<init>()\E$
+    ^\Qorg.joda.time.DateTime.now()\E$
+    ^\Qorg.joda.time.LocalDate.<init>\E$
+    ^\Qnew org.joda.time.Partial.<init>()\E$
+    ^\Qjava.io.File.list()\E$
+    ^\Qjava.io.File.list(java.io.FilenameFilter)\E$
+    ^\Qjava.io.File.listFiles()\E$
+    ^\Qjava.io.File.listFiles(java.io.FileFilter)\E$
+    ^\Qjava.io.File.listFiles(java.io.FilenameFilter)\E$
+    ^\Qjava.io.File.listRoots()\E$
+    ^\Qjava.lang.Class.getSigners()\E$
+    ^\Qjava.lang.Object.hashCode()\E$
+    ^\Qjava.lang.String.hashCode()\E$
+    ^\Qjava.lang.System.clearProperty(java.lang.String)\E$
+    ^\Qjava.lang.System.console()\E$
+    ^\Qjava.lang.System.currentTimeMillis()\E$
+    ^\Qjava.lang.System.getProperties()\E$
+    ^\Qjava.lang.System.getProperty(java.lang.String)\E$
+    ^\Qjava.lang.System.getProperty(java.lang.String, java.lang.String)\E$
+    ^\Qjava.lang.System.getSecurityManager()\E$
+    ^\Qjava.lang.System.getenv()\E$
+    ^\Qjava.lang.System.getenv(java.lang.String)\E$
+    ^\Qjava.lang.System.identityHashCode(java.lang.Object)\E$
+    ^\Qjava.lang.System.inheritedChannel()\E$
+    ^\Qjava.lang.System.mapLibraryName(java.lang.String)\E$
+    ^\Qjava.lang.System.nanoTime()\E$
+    ^\Qjava.lang.System.setProperty(java.lang.String, java.lang.String)\E$
+    ^\Qjava.lang.reflect.Method.hashCode()\E$
+    ^\Qjava.text.BreakIterator.getAvailableLocales()\E$
+    ^\Qjava.util.AbstractList.hashCode()\E$
+    ^\Qjava.util.AbstractSet.hashCode()\E$
+    ^\Qjava.util.Arrays.deepHashCode(java.lang.Object[])\E$
+    ^\Qjava.util.Arrays.hashCode(boolean[])\E$
+    ^\Qjava.util.Arrays.hashCode(byte[])\E$
+    ^\Qjava.util.Arrays.hashCode(char[])\E$
+    ^\Qjava.util.Arrays.hashCode(double[])\E$
+    ^\Qjava.util.Arrays.hashCode(float[])\E$
+    ^\Qjava.util.Arrays.hashCode(int[])\E$
+    ^\Qjava.util.Arrays.hashCode(java.lang.Object[])\E$
+    ^\Qjava.util.Arrays.hashCode(long[])\E$
+    ^\Qjava.util.Arrays.hashCode(short[])\E$
+    ^\Qjava.util.Collection.hashCode()\E$
+    ^\Qjava.util.Collections.shuffle(java.util.List)\E$
+    ^\Qjava.util.Comparator.compare(java.lang.Object, java.lang.Object)\E$
+    ^\Qjava.util.List.hashCode()\E$
+    ^\Qjava.util.Random.<init>()\E$
+    ^\Qjava.util.Set.hashCode()\E$
+  ]
+Operations: (1)
+  java.lang.Object.<init> : () -> java.lang.Object
+
+There are no methods for Randoop to test.  See diagnostics above.  Exiting.

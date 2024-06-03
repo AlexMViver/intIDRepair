@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="3.727" tests="19" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-processor-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-socket-ssl/target/classes:/home/alex/.m2/repository/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-event-transport/target/classes:/home/alex/.m2/repository/io/netty/netty-handler/4.1.69.Final/netty-handler-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-common/4.1.69.Final/netty-common-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-resolver/4.1.69.Final/netty-resolver-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-buffer/4.1.69.Final/netty-buffer-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport/4.1.69.Final/netty-transport-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-codec/4.1.69.Final/netty-codec-4.1.69.Final.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kerberos/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kerberos-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-dbcp-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive-services-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-kerberos-credentials-service-api/target/classes:/home/alex/.m2/repository/org/codehaus/groovy/groovy-all/2.4.21/groovy-all-2.4.21.jar:/home/alex/.m2/repository/org/apache/hive/hive-jdbc/1.1.1/hive-jdbc-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-common/1.1.1/hive-common-1.1.1.jar:/home/alex/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/alex/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/alex/.m2/repository/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/home/alex/.m2/repository/org/apache/ant/ant/1.9.1/ant-1.9.1.jar:/home/alex/.m2/repository/org/apache/ant/ant-launcher/1.9.1/ant-launcher-1.9.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-service/1.1.1/hive-service-1.1.1.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar:/home/alex/.m2/repository/net/sf/jpam/jpam/1.1/jpam-1.1.jar:/home/alex/.m2/repository/org/eclipse/jetty/aggregate/jetty-all/7.6.0.v20120127/jetty-all-7.6.0.v20120127.jar:/home/alex/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar:/home/alex/.m2/repository/javax/mail/mail/1.4.1/mail-1.4.1.jar:/home/alex/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-jaspic_1.0_spec/1.0/geronimo-jaspic_1.0_spec-1.0.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-annotation_1.0_spec/1.1.1/geronimo-annotation_1.0_spec-1.1.1.jar:/home/alex/.m2/repository/asm/asm-commons/3.1/asm-commons-3.1.jar:/home/alex/.m2/repository/asm/asm-tree/3.1/asm-tree-3.1.jar:/home/alex/.m2/repository/asm/asm/3.1/asm-3.1.jar:/home/alex/.m2/repository/org/apache/thrift/libfb303/0.9.2/libfb303-0.9.2.jar:/home/alex/.m2/repository/org/apache/hive/hive-serde/1.1.1/hive-serde-1.1.1.jar:/home/alex/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar:/home/alex/.m2/repository/org/apache/avro/avro/1.7.5/avro-1.7.5.jar:/home/alex/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/home/alex/.m2/repository/org/xerial/snappy/snappy-java/1.0.5/snappy-java-1.0.5.jar:/home/alex/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar:/home/alex/.m2/repository/com/twitter/parquet-hadoop-bundle/1.6.0rc3/parquet-hadoop-bundle-1.6.0rc3.jar:/home/alex/.m2/repository/org/apache/hive/hive-metastore/1.1.1/hive-metastore-1.1.1.jar:/home/alex/.m2/repository/com/jolbox/bonecp/0.8.0.RELEASE/bonecp-0.8.0.RELEASE.jar:/home/alex/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar:/home/alex/.m2/repository/org/datanucleus/datanucleus-api-jdo/3.2.6/datanucleus-api-jdo-3.2.6.jar:/home/alex/.m2/repository/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar:/home/alex/.m2/repository/org/datanucleus/datanucleus-rdbms/3.2.9/datanucleus-rdbms-3.2.9.jar:/home/alex/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/home/alex/.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/home/alex/.m2/repository/javax/jdo/jdo-api/3.0.1/jdo-api-3.0.1.jar:/home/alex/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar:/home/alex/.m2/repository/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar:/home/alex/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/alex/.m2/repository/org/apache/hive/hive-shims/1.1.1/hive-shims-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/shims/hive-shims-common/1.1.1/hive-shims-common-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/shims/hive-shims-0.20S/1.1.1/hive-shims-0.20S-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/shims/hive-shims-0.23/1.1.1/hive-shims-0.23-1.1.1.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-server-resourcemanager/2.6.0/hadoop-yarn-server-resourcemanager-2.6.0.jar:/home/alex/.m2/repository/com/google/inject/extensions/guice-servlet/3.0/guice-servlet-3.0.jar:/home/alex/.m2/repository/com/google/inject/guice/3.0/guice-3.0.jar:/home/alex/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/home/alex/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/alex/.m2/repository/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.jar:/home/alex/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/home/alex/.m2/repository/com/sun/jersey/contribs/jersey-guice/1.9/jersey-guice-1.9.jar:/home/alex/.m2/repository/com/sun/jersey/jersey-server/1.9/jersey-server-1.9.jar:/home/alex/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-server-applicationhistoryservice/2.6.0/hadoop-yarn-server-applicationhistoryservice-2.6.0.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-server-web-proxy/2.6.0/hadoop-yarn-server-web-proxy-2.6.0.jar:/home/alex/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar:/home/alex/.m2/repository/org/apache/hive/shims/hive-shims-scheduler/1.1.1/hive-shims-scheduler-1.1.1.jar:/home/alex/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.2.5/httpcore-4.2.5.jar:/home/alex/.m2/repository/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar:/home/alex/.m2/repository/org/apache/zookeeper/zookeeper/3.4.14/zookeeper-3.4.14.jar:/home/alex/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar:/home/alex/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/home/alex/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/home/alex/.m2/repository/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.jar:/home/alex/.m2/repository/org/apache/curator/curator-framework/2.6.0/curator-framework-2.6.0.jar:/home/alex/.m2/repository/org/apache/curator/curator-client/2.6.0/curator-client-2.6.0.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/apache/hive/hcatalog/hive-hcatalog-streaming/1.1.1/hive-hcatalog-streaming-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-exec/1.1.1/hive-exec-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-ant/1.1.1/hive-ant-1.1.1.jar:/home/alex/.m2/repository/org/apache/velocity/velocity/1.5/velocity-1.5.jar:/home/alex/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/alex/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/alex/.m2/repository/org/antlr/ST4/4.0.4/ST4-4.0.4.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-core/1.27.0/calcite-core-1.27.0.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-linq4j/1.27.0/calcite-linq4j-1.27.0.jar:/home/alex/.m2/repository/com/esri/geometry/esri-geometry-api/2.2.0/esri-geometry-api-2.2.0.jar:/home/alex/.m2/repository/com/google/errorprone/error_prone_annotations/2.5.1/error_prone_annotations-2.5.1.jar:/home/alex/.m2/repository/org/apache/calcite/avatica/avatica-core/1.18.0/avatica-core-1.18.0.jar:/home/alex/.m2/repository/org/apache/calcite/avatica/avatica-metrics/1.18.0/avatica-metrics-1.18.0.jar:/home/alex/.m2/repository/org/checkerframework/checker-qual/3.10.0/checker-qual-3.10.0.jar:/home/alex/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0/jackson-dataformat-yaml-2.10.0.jar:/home/alex/.m2/repository/org/yaml/snakeyaml/1.29/snakeyaml-1.29.jar:/home/alex/.m2/repository/com/google/uzaygezen/uzaygezen-core/0.2/uzaygezen-core-0.2.jar:/home/alex/.m2/repository/com/yahoo/datasketches/sketches-core/0.9.0/sketches-core-0.9.0.jar:/home/alex/.m2/repository/com/yahoo/datasketches/memory/0.9.0/memory-0.9.0.jar:/home/alex/.m2/repository/net/hydromatic/aggdesigner-algorithm/6.0/aggdesigner-algorithm-6.0.jar:/home/alex/.m2/repository/org/codehaus/janino/commons-compiler/3.0.11/commons-compiler-3.0.11.jar:/home/alex/.m2/repository/org/codehaus/janino/janino/3.0.11/janino-3.0.11.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-avatica/1.6.0/calcite-avatica-1.6.0.jar:/home/alex/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-cli/1.1.1/hive-cli-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/hcatalog/hive-hcatalog-core/1.1.1/hive-hcatalog-core-1.1.1.jar:/home/alex/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.2/jackson-mapper-asl-1.9.2.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-client/2.6.2/hadoop-client-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-common/2.6.2/hadoop-common-2.6.2.jar:/home/alex/.m2/repository/org/apache/commons/commons-math3/3.1.1/commons-math3-3.1.1.jar:/home/alex/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/alex/.m2/repository/commons-net/commons-net/3.1/commons-net-3.1.jar:/home/alex/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/home/alex/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/home/alex/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar:/home/alex/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/home/alex/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/home/alex/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/home/alex/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-auth/2.6.2/hadoop-auth-2.6.2.jar:/home/alex/.m2/repository/org/apache/directory/server/apacheds-kerberos-codec/2.0.0-M15/apacheds-kerberos-codec-2.0.0-M15.jar:/home/alex/.m2/repository/org/apache/directory/server/apacheds-i18n/2.0.0-M15/apacheds-i18n-2.0.0-M15.jar:/home/alex/.m2/repository/org/apache/directory/api/api-asn1-api/1.0.0-M20/api-asn1-api-1.0.0-M20.jar:/home/alex/.m2/repository/org/apache/directory/api/api-util/1.0.0-M20/api-util-1.0.0-M20.jar:/home/alex/.m2/repository/org/apache/curator/curator-recipes/2.6.0/curator-recipes-2.6.0.jar:/home/alex/.m2/repository/org/htrace/htrace-core/3.0.4/htrace-core-3.0.4.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-hdfs/2.6.2/hadoop-hdfs-2.6.2.jar:/home/alex/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/home/alex/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar:/home/alex/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-app/2.6.2/hadoop-mapreduce-client-app-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-common/2.6.2/hadoop-mapreduce-client-common-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-client/2.6.2/hadoop-yarn-client-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-server-common/2.6.2/hadoop-yarn-server-common-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.6.2/hadoop-mapreduce-client-shuffle-2.6.2.jar:/home/alex/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-api/2.6.2/hadoop-yarn-api-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-core/2.6.2/hadoop-mapreduce-client-core-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-common/2.6.2/hadoop-yarn-common-2.6.2.jar:/home/alex/.m2/repository/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2.jar:/home/alex/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/home/alex/.m2/repository/com/sun/jersey/jersey-core/1.9/jersey-core-1.9.jar:/home/alex/.m2/repository/com/sun/jersey/jersey-client/1.9/jersey-client-1.9.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.6.2/hadoop-mapreduce-client-jobclient-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-annotations/2.6.2/hadoop-annotations-2.6.2.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-hadoop-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-hadoop-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-avro-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-standard-record-utils/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-csv/1.8/commons-csv-1.8.jar:/home/alex/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.1/caffeine-2.8.1.jar:/home/alex/.m2/repository/com/github/stephenc/findbugs/findbugs-annotations/1.3.9-1/findbugs-annotations-1.3.9-1.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/apache/commons/commons-dbcp2/2.7.0/commons-dbcp2-2.7.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-pool2/2.7.0/commons-pool2-2.7.0.jar:/home/alex/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.32/log4j-over-slf4j-1.7.32.jar:/home/alex/Repositories/nifi/nifi-mock/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-nar-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-authorization/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-client/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-security-utils/target/classes:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar:/home/alex/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.33/jersey-media-json-jackson-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.33/jersey-entity-filtering-2.33.jar:/home/alex/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.11.3/jackson-module-jaxb-annotations-2.11.3.jar:/home/alex/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/home/alex/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.33/jersey-hk2-2.33.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar:/home/alex/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar:/home/alex/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/alex/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.33/jersey-media-multipart-2.33.jar:/home/alex/.m2/repository/org/jvnet/mimepull/mimepull/1.9.13/mimepull-1.9.13.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-data-provenance-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-mock-record-utils/target/classes:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors/target/surefire/surefirebooter1496531528169742717.jar /home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors/target/surefire 2024-05-02T03-47-00_422-jvmRun1 surefire9220994307886238278tmp surefire_1288348014460517153152tmp"/>
+    <property name="org.slf4j.simpleLogger.log.nifi.io.nio" value="debug"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-processor-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-socket-ssl/target/classes:/home/alex/.m2/repository/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-event-transport/target/classes:/home/alex/.m2/repository/io/netty/netty-handler/4.1.69.Final/netty-handler-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-common/4.1.69.Final/netty-common-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-resolver/4.1.69.Final/netty-resolver-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-buffer/4.1.69.Final/netty-buffer-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport/4.1.69.Final/netty-transport-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-codec/4.1.69.Final/netty-codec-4.1.69.Final.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kerberos/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kerberos-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-dbcp-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive-services-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-kerberos-credentials-service-api/target/classes:/home/alex/.m2/repository/org/codehaus/groovy/groovy-all/2.4.21/groovy-all-2.4.21.jar:/home/alex/.m2/repository/org/apache/hive/hive-jdbc/1.1.1/hive-jdbc-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-common/1.1.1/hive-common-1.1.1.jar:/home/alex/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/alex/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/alex/.m2/repository/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/home/alex/.m2/repository/org/apache/ant/ant/1.9.1/ant-1.9.1.jar:/home/alex/.m2/repository/org/apache/ant/ant-launcher/1.9.1/ant-launcher-1.9.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-service/1.1.1/hive-service-1.1.1.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar:/home/alex/.m2/repository/net/sf/jpam/jpam/1.1/jpam-1.1.jar:/home/alex/.m2/repository/org/eclipse/jetty/aggregate/jetty-all/7.6.0.v20120127/jetty-all-7.6.0.v20120127.jar:/home/alex/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar:/home/alex/.m2/repository/javax/mail/mail/1.4.1/mail-1.4.1.jar:/home/alex/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-jaspic_1.0_spec/1.0/geronimo-jaspic_1.0_spec-1.0.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-annotation_1.0_spec/1.1.1/geronimo-annotation_1.0_spec-1.1.1.jar:/home/alex/.m2/repository/asm/asm-commons/3.1/asm-commons-3.1.jar:/home/alex/.m2/repository/asm/asm-tree/3.1/asm-tree-3.1.jar:/home/alex/.m2/repository/asm/asm/3.1/asm-3.1.jar:/home/alex/.m2/repository/org/apache/thrift/libfb303/0.9.2/libfb303-0.9.2.jar:/home/alex/.m2/repository/org/apache/hive/hive-serde/1.1.1/hive-serde-1.1.1.jar:/home/alex/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar:/home/alex/.m2/repository/org/apache/avro/avro/1.7.5/avro-1.7.5.jar:/home/alex/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/home/alex/.m2/repository/org/xerial/snappy/snappy-java/1.0.5/snappy-java-1.0.5.jar:/home/alex/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar:/home/alex/.m2/repository/com/twitter/parquet-hadoop-bundle/1.6.0rc3/parquet-hadoop-bundle-1.6.0rc3.jar:/home/alex/.m2/repository/org/apache/hive/hive-metastore/1.1.1/hive-metastore-1.1.1.jar:/home/alex/.m2/repository/com/jolbox/bonecp/0.8.0.RELEASE/bonecp-0.8.0.RELEASE.jar:/home/alex/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar:/home/alex/.m2/repository/org/datanucleus/datanucleus-api-jdo/3.2.6/datanucleus-api-jdo-3.2.6.jar:/home/alex/.m2/repository/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar:/home/alex/.m2/repository/org/datanucleus/datanucleus-rdbms/3.2.9/datanucleus-rdbms-3.2.9.jar:/home/alex/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/home/alex/.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/home/alex/.m2/repository/javax/jdo/jdo-api/3.0.1/jdo-api-3.0.1.jar:/home/alex/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar:/home/alex/.m2/repository/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar:/home/alex/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/alex/.m2/repository/org/apache/hive/hive-shims/1.1.1/hive-shims-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/shims/hive-shims-common/1.1.1/hive-shims-common-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/shims/hive-shims-0.20S/1.1.1/hive-shims-0.20S-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/shims/hive-shims-0.23/1.1.1/hive-shims-0.23-1.1.1.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-server-resourcemanager/2.6.0/hadoop-yarn-server-resourcemanager-2.6.0.jar:/home/alex/.m2/repository/com/google/inject/extensions/guice-servlet/3.0/guice-servlet-3.0.jar:/home/alex/.m2/repository/com/google/inject/guice/3.0/guice-3.0.jar:/home/alex/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/home/alex/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/alex/.m2/repository/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.jar:/home/alex/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/home/alex/.m2/repository/com/sun/jersey/contribs/jersey-guice/1.9/jersey-guice-1.9.jar:/home/alex/.m2/repository/com/sun/jersey/jersey-server/1.9/jersey-server-1.9.jar:/home/alex/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-server-applicationhistoryservice/2.6.0/hadoop-yarn-server-applicationhistoryservice-2.6.0.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-server-web-proxy/2.6.0/hadoop-yarn-server-web-proxy-2.6.0.jar:/home/alex/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar:/home/alex/.m2/repository/org/apache/hive/shims/hive-shims-scheduler/1.1.1/hive-shims-scheduler-1.1.1.jar:/home/alex/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.2.5/httpcore-4.2.5.jar:/home/alex/.m2/repository/org/apache/thrift/libthrift/0.9.2/libthrift-0.9.2.jar:/home/alex/.m2/repository/org/apache/zookeeper/zookeeper/3.4.14/zookeeper-3.4.14.jar:/home/alex/.m2/repository/com/github/spotbugs/spotbugs-annotations/3.1.9/spotbugs-annotations-3.1.9.jar:/home/alex/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/home/alex/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/home/alex/.m2/repository/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.jar:/home/alex/.m2/repository/org/apache/curator/curator-framework/2.6.0/curator-framework-2.6.0.jar:/home/alex/.m2/repository/org/apache/curator/curator-client/2.6.0/curator-client-2.6.0.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/apache/hive/hcatalog/hive-hcatalog-streaming/1.1.1/hive-hcatalog-streaming-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-exec/1.1.1/hive-exec-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-ant/1.1.1/hive-ant-1.1.1.jar:/home/alex/.m2/repository/org/apache/velocity/velocity/1.5/velocity-1.5.jar:/home/alex/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/alex/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/alex/.m2/repository/org/antlr/ST4/4.0.4/ST4-4.0.4.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-core/1.27.0/calcite-core-1.27.0.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-linq4j/1.27.0/calcite-linq4j-1.27.0.jar:/home/alex/.m2/repository/com/esri/geometry/esri-geometry-api/2.2.0/esri-geometry-api-2.2.0.jar:/home/alex/.m2/repository/com/google/errorprone/error_prone_annotations/2.5.1/error_prone_annotations-2.5.1.jar:/home/alex/.m2/repository/org/apache/calcite/avatica/avatica-core/1.18.0/avatica-core-1.18.0.jar:/home/alex/.m2/repository/org/apache/calcite/avatica/avatica-metrics/1.18.0/avatica-metrics-1.18.0.jar:/home/alex/.m2/repository/org/checkerframework/checker-qual/3.10.0/checker-qual-3.10.0.jar:/home/alex/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0/jackson-dataformat-yaml-2.10.0.jar:/home/alex/.m2/repository/org/yaml/snakeyaml/1.29/snakeyaml-1.29.jar:/home/alex/.m2/repository/com/google/uzaygezen/uzaygezen-core/0.2/uzaygezen-core-0.2.jar:/home/alex/.m2/repository/com/yahoo/datasketches/sketches-core/0.9.0/sketches-core-0.9.0.jar:/home/alex/.m2/repository/com/yahoo/datasketches/memory/0.9.0/memory-0.9.0.jar:/home/alex/.m2/repository/net/hydromatic/aggdesigner-algorithm/6.0/aggdesigner-algorithm-6.0.jar:/home/alex/.m2/repository/org/codehaus/janino/commons-compiler/3.0.11/commons-compiler-3.0.11.jar:/home/alex/.m2/repository/org/codehaus/janino/janino/3.0.11/janino-3.0.11.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-avatica/1.6.0/calcite-avatica-1.6.0.jar:/home/alex/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/home/alex/.m2/repository/org/apache/hive/hive-cli/1.1.1/hive-cli-1.1.1.jar:/home/alex/.m2/repository/org/apache/hive/hcatalog/hive-hcatalog-core/1.1.1/hive-hcatalog-core-1.1.1.jar:/home/alex/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.2/jackson-mapper-asl-1.9.2.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.2/jackson-core-asl-1.9.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-client/2.6.2/hadoop-client-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-common/2.6.2/hadoop-common-2.6.2.jar:/home/alex/.m2/repository/org/apache/commons/commons-math3/3.1.1/commons-math3-3.1.1.jar:/home/alex/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/alex/.m2/repository/commons-net/commons-net/3.1/commons-net-3.1.jar:/home/alex/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/home/alex/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/home/alex/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar:/home/alex/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/home/alex/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/home/alex/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/home/alex/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-auth/2.6.2/hadoop-auth-2.6.2.jar:/home/alex/.m2/repository/org/apache/directory/server/apacheds-kerberos-codec/2.0.0-M15/apacheds-kerberos-codec-2.0.0-M15.jar:/home/alex/.m2/repository/org/apache/directory/server/apacheds-i18n/2.0.0-M15/apacheds-i18n-2.0.0-M15.jar:/home/alex/.m2/repository/org/apache/directory/api/api-asn1-api/1.0.0-M20/api-asn1-api-1.0.0-M20.jar:/home/alex/.m2/repository/org/apache/directory/api/api-util/1.0.0-M20/api-util-1.0.0-M20.jar:/home/alex/.m2/repository/org/apache/curator/curator-recipes/2.6.0/curator-recipes-2.6.0.jar:/home/alex/.m2/repository/org/htrace/htrace-core/3.0.4/htrace-core-3.0.4.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-hdfs/2.6.2/hadoop-hdfs-2.6.2.jar:/home/alex/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar:/home/alex/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar:/home/alex/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-app/2.6.2/hadoop-mapreduce-client-app-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-common/2.6.2/hadoop-mapreduce-client-common-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-client/2.6.2/hadoop-yarn-client-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-server-common/2.6.2/hadoop-yarn-server-common-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.6.2/hadoop-mapreduce-client-shuffle-2.6.2.jar:/home/alex/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-api/2.6.2/hadoop-yarn-api-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-core/2.6.2/hadoop-mapreduce-client-core-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-yarn-common/2.6.2/hadoop-yarn-common-2.6.2.jar:/home/alex/.m2/repository/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2.jar:/home/alex/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/home/alex/.m2/repository/com/sun/jersey/jersey-core/1.9/jersey-core-1.9.jar:/home/alex/.m2/repository/com/sun/jersey/jersey-client/1.9/jersey-client-1.9.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.6.2/hadoop-mapreduce-client-jobclient-2.6.2.jar:/home/alex/.m2/repository/org/apache/hadoop/hadoop-annotations/2.6.2/hadoop-annotations-2.6.2.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-hadoop-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-hadoop-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-avro-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-standard-record-utils/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-csv/1.8/commons-csv-1.8.jar:/home/alex/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.1/caffeine-2.8.1.jar:/home/alex/.m2/repository/com/github/stephenc/findbugs/findbugs-annotations/1.3.9-1/findbugs-annotations-1.3.9-1.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/apache/commons/commons-dbcp2/2.7.0/commons-dbcp2-2.7.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-pool2/2.7.0/commons-pool2-2.7.0.jar:/home/alex/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.32/log4j-over-slf4j-1.7.32.jar:/home/alex/Repositories/nifi/nifi-mock/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-nar-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-authorization/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-client/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-security-utils/target/classes:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar:/home/alex/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.33/jersey-media-json-jackson-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.33/jersey-entity-filtering-2.33.jar:/home/alex/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.11.3/jackson-module-jaxb-annotations-2.11.3.jar:/home/alex/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/home/alex/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.33/jersey-hk2-2.33.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar:/home/alex/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar:/home/alex/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/alex/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.33/jersey-media-multipart-2.33.jar:/home/alex/.m2/repository/org/jvnet/mimepull/mimepull/1.9.13/mimepull-1.9.13.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-data-provenance-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-mock-record-utils/target/classes:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="java.security.krb5.conf" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors/src/test/resources/krb5.conf"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="derby.stream.error.file" value="target/derby.log"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="org.slf4j.simpleLogger.showDateTime" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors/target/surefire/surefirebooter1496531528169742717.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="org.slf4j.simpleLogger.log.nifi.processors.hive.TestSelectHive_1_1QL" value="debug"/>
+    <property name="java.security.krb5.realm" value="nifi.com"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="org.slf4j.simpleLogger.log.nifi.processors.hive.SelectHive_1_1QL" value="debug"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-hive-bundle/nifi-hive_1_1-processors"/>
+    <property name="java.security.krb5.kdc" value="nifi.kdc"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testParametrizedQuery" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.723">
+    <system-err><![CDATA[[pool-21-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE WHERE id = x
+[pool-21-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-21-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=8b3c4768-703a-44b8-aedf-5e1572918a2e] FlowFile[1,99416692455886.mockFlowFile.0.avro,395B] contains 1 Avro records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testMaxRowsPerFlowFileAvro" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.352">
+    <system-err><![CDATA[[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[0,99417165167564.mockFlowFile.0.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[1,99417165167564.mockFlowFile.1.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[2,99417165167564.mockFlowFile.2.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[3,99417165167564.mockFlowFile.3.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[4,99417165167564.mockFlowFile.4.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[5,99417165167564.mockFlowFile.5.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[6,99417165167564.mockFlowFile.6.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[7,99417165167564.mockFlowFile.7.avro,796B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[8,99417165167564.mockFlowFile.8.avro,797B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[9,99417165167564.mockFlowFile.9.avro,797B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[10,99417165167564.mockFlowFile.10.avro,797B] contains 9 Avro records; transferring to 'success'
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-22-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-22-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=4cb2f46d-a8c0-4d58-9bc0-d2086a7ddb13] FlowFile[11,99417165167564.mockFlowFile.11.avro,396B] contains 1 Avro records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="invokeOnTriggerExceptionInPostQueriesWithIncomingFlows" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.237">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-23-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-23-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-23-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=164d09e6-9798-47ad-8158-12fd9050b0dc] FlowFile[1,99417446834405.mockFlowFile.0.csv,2253B] contains 90 CSV records; transferring to 'success'
+[pool-23-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=164d09e6-9798-47ad-8158-12fd9050b0dc] Issue processing SQL select exception from persons due to java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8..: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.executeConfigStatements(SelectHive_1_1QL.java:532)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:484)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X01: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatementOrSearchCondition(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 16 more
+[pool-23-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=164d09e6-9798-47ad-8158-12fd9050b0dc] Unable to execute HiveQL select query select exception from persons for FlowFile[0,99417446834405.mockFlowFile,5B] due to java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.; routing to failure: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.executeConfigStatements(SelectHive_1_1QL.java:532)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:484)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X01: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatementOrSearchCondition(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 16 more
+]]></system-err>
+  </testcase>
+  <testcase name="invokeOnTriggerWithValidPreQieries" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.222">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-24-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-24-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-24-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=12169999-69bc-4d24-bb54-3c5311260e06] FlowFile[0,99417690431631.mockFlowFile.0.csv,2253B] contains 90 CSV records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testNoIncomingConnection" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.308">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-25-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-25-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-25-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=be54cd4e-3f6c-48b9-9c6d-bc50700d4cdb] FlowFile[0,99417998720789.mockFlowFile.0.avro,2104B] contains 90 Avro records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithSqlException" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.016">
+    <system-err><![CDATA[[pool-26-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=3c4ef1dc-37f0-4fa6-ae52-5510c53a6d87] Issue processing SQL SELECT val1 FROM TEST_NO_ROWS due to java.sql.SQLSyntaxErrorException: Column 'VAL1' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'VAL1' is not a column in the target table..: java.sql.SQLSyntaxErrorException: Column 'VAL1' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'VAL1' is not a column in the target table.
+java.sql.SQLSyntaxErrorException: Column 'VAL1' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'VAL1' is not a column in the target table.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.executeQuery(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:378)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X04: Column 'VAL1' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'VAL1' is not a column in the target table.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ColumnReference.bindExpression(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ColumnReference.bindExpression(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ResultColumn.bindExpression(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ResultColumnList.bindExpressions(Unknown Source)
+	at org.apache.derby.impl.sql.compile.SelectNode.bindExpressions(Unknown Source)
+	at org.apache.derby.impl.sql.compile.DMLStatementNode.bindExpressions(Unknown Source)
+	at org.apache.derby.impl.sql.compile.DMLStatementNode.bind(Unknown Source)
+	at org.apache.derby.impl.sql.compile.CursorNode.bindStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 15 more
+[pool-26-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=3c4ef1dc-37f0-4fa6-ae52-5510c53a6d87] Unable to execute HiveQL select query SELECT val1 FROM TEST_NO_ROWS due to java.sql.SQLSyntaxErrorException: Column 'VAL1' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'VAL1' is not a column in the target table.; routing to failure: java.sql.SQLSyntaxErrorException: Column 'VAL1' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'VAL1' is not a column in the target table.
+java.sql.SQLSyntaxErrorException: Column 'VAL1' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'VAL1' is not a column in the target table.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.executeQuery(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:378)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X04: Column 'VAL1' is either not in any table in the FROM list or appears within a join specification and is outside the scope of the join specification or appears in a HAVING clause and is not in the GROUP BY list. If this is a CREATE or ALTER TABLE  statement then 'VAL1' is not a column in the target table.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ColumnReference.bindExpression(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ColumnReference.bindExpression(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ResultColumn.bindExpression(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ResultColumnList.bindExpressions(Unknown Source)
+	at org.apache.derby.impl.sql.compile.SelectNode.bindExpressions(Unknown Source)
+	at org.apache.derby.impl.sql.compile.DMLStatementNode.bindExpressions(Unknown Source)
+	at org.apache.derby.impl.sql.compile.DMLStatementNode.bind(Unknown Source)
+	at org.apache.derby.impl.sql.compile.CursorNode.bindStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 15 more
+]]></system-err>
+  </testcase>
+  <testcase name="testMaxRowsPerFlowFileWithMaxFragments" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.215">
+    <system-err><![CDATA[[pool-27-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-27-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-27-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=e3cdb6bf-5fb3-4f8e-ae47-363a5284deb8] FlowFile[0,99418229993068.mockFlowFile.0.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-27-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-27-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-27-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=e3cdb6bf-5fb3-4f8e-ae47-363a5284deb8] FlowFile[1,99418229993068.mockFlowFile.1.avro,788B] contains 9 Avro records; transferring to 'success'
+[pool-27-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-27-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-27-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=e3cdb6bf-5fb3-4f8e-ae47-363a5284deb8] FlowFile[2,99418229993068.mockFlowFile.2.avro,788B] contains 9 Avro records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="invokeOnTriggerWithCsv" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.18">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-28-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-28-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-28-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=141a8f1b-1484-428b-8cca-48bd9e4e80af] FlowFile[0,99418411518388.mockFlowFile.0.csv,2253B] contains 90 CSV records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="invokeOnTriggerWithAvro" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.172">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-29-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-29-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-29-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=aa1e5d11-ba16-4af1-8a14-645d09baa38c] FlowFile[0,99418583239480.mockFlowFile.0.avro,2104B] contains 90 Avro records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="invokeOnTriggerWithValidPostQieries" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.179">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-30-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-30-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-30-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=b28ee949-d01f-46e7-9d62-2d65f245bd69] FlowFile[0,99418760160920.mockFlowFile.0.csv,2253B] contains 90 CSV records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="invokeOnTriggerExceptionInPostQueriesNoIncomingFlows" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.183">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-31-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-31-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-31-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=ccc67c61-5b99-47ea-97cf-e9284ff9c8bd] FlowFile[0,99418943513403.mockFlowFile.0.csv,2253B] contains 90 CSV records; transferring to 'success'
+[pool-31-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=ccc67c61-5b99-47ea-97cf-e9284ff9c8bd] Issue processing SQL select exception from persons due to java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8..: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.executeConfigStatements(SelectHive_1_1QL.java:532)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:484)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X01: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatementOrSearchCondition(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 16 more
+[pool-31-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=ccc67c61-5b99-47ea-97cf-e9284ff9c8bd] Unable to execute HiveQL select query select exception from persons due to java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.; routing to failure: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.executeConfigStatements(SelectHive_1_1QL.java:532)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:484)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X01: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatementOrSearchCondition(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 16 more
+]]></system-err>
+  </testcase>
+  <testcase name="invokeOnTriggerWithValidPrePostQieries" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.183">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-32-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-32-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-32-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=1d496a9b-e211-48e9-841f-7c31ad7b3730] FlowFile[0,99419127585772.mockFlowFile.0.csv,2253B] contains 90 CSV records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testNoTimeLimit" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.159">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-33-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: select   PER.ID as PersonId, PER.NAME as PersonName, PER.CODE as PersonCode from persons PER where PER.ID > 10
+[pool-33-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-33-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=de4ac218-0287-44a8-a96b-db48358730d5] FlowFile[1,99419284662641.mockFlowFile.0.avro,2104B] contains 90 Avro records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithBadSQL" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.021">
+    <system-err><![CDATA[[pool-34-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=afaff187-affa-4577-a136-4023d69a6862] Issue processing SQL create table TEST_NO_ROWS (id integer) due to java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'..: java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.executeStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement.executeStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement.executeQuery(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:378)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR X0Y32: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.catalog.DataDictionaryImpl.duplicateDescriptorException(Unknown Source)
+	at org.apache.derby.impl.sql.catalog.DataDictionaryImpl.addDescriptor(Unknown Source)
+	at org.apache.derby.impl.sql.execute.CreateTableConstantAction.executeConstantAction(Unknown Source)
+	at org.apache.derby.impl.sql.execute.MiscResultSet.open(Unknown Source)
+	at org.apache.derby.impl.sql.GenericPreparedStatement.executeStmt(Unknown Source)
+	at org.apache.derby.impl.sql.GenericPreparedStatement.execute(Unknown Source)
+	... 16 more
+[pool-34-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=afaff187-affa-4577-a136-4023d69a6862] Unable to execute HiveQL select query create table TEST_NO_ROWS (id integer) for FlowFile[0,99419292381278.mockFlowFile,38B] due to java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.; routing to failure: java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.executeStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement.executeStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement.executeQuery(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:378)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR X0Y32: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.catalog.DataDictionaryImpl.duplicateDescriptorException(Unknown Source)
+	at org.apache.derby.impl.sql.catalog.DataDictionaryImpl.addDescriptor(Unknown Source)
+	at org.apache.derby.impl.sql.execute.CreateTableConstantAction.executeConstantAction(Unknown Source)
+	at org.apache.derby.impl.sql.execute.MiscResultSet.open(Unknown Source)
+	at org.apache.derby.impl.sql.GenericPreparedStatement.executeStmt(Unknown Source)
+	at org.apache.derby.impl.sql.GenericPreparedStatement.execute(Unknown Source)
+	... 16 more
+[pool-35-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=afaff187-affa-4577-a136-4023d69a6862] Issue processing SQL create table TEST_NO_ROWS (id integer) due to java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'..: java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.executeStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.executeQuery(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:378)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR X0Y32: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.catalog.DataDictionaryImpl.duplicateDescriptorException(Unknown Source)
+	at org.apache.derby.impl.sql.catalog.DataDictionaryImpl.addDescriptor(Unknown Source)
+	at org.apache.derby.impl.sql.execute.CreateTableConstantAction.executeConstantAction(Unknown Source)
+	at org.apache.derby.impl.sql.execute.MiscResultSet.open(Unknown Source)
+	at org.apache.derby.impl.sql.GenericPreparedStatement.executeStmt(Unknown Source)
+	at org.apache.derby.impl.sql.GenericPreparedStatement.execute(Unknown Source)
+	... 16 more
+[pool-35-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=afaff187-affa-4577-a136-4023d69a6862] Unable to execute HiveQL select query create table TEST_NO_ROWS (id integer) due to java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.; routing to failure: java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+java.sql.SQLException: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.executeStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.executeQuery(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:378)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR X0Y32: Table/View 'TEST_NO_ROWS' already exists in Schema 'APP'.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.catalog.DataDictionaryImpl.duplicateDescriptorException(Unknown Source)
+	at org.apache.derby.impl.sql.catalog.DataDictionaryImpl.addDescriptor(Unknown Source)
+	at org.apache.derby.impl.sql.execute.CreateTableConstantAction.executeConstantAction(Unknown Source)
+	at org.apache.derby.impl.sql.execute.MiscResultSet.open(Unknown Source)
+	at org.apache.derby.impl.sql.GenericPreparedStatement.executeStmt(Unknown Source)
+	at org.apache.derby.impl.sql.GenericPreparedStatement.execute(Unknown Source)
+	... 16 more
+]]></system-err>
+  </testcase>
+  <testcase name="invokeOnTriggerExceptionInPreQueriesNoIncomingFlows" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.167">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-36-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=fceffa71-27f8-4879-8b6f-4772b03de19b] Issue processing SQL select exception from persons due to java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8..: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.executeConfigStatements(SelectHive_1_1QL.java:532)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:342)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X01: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatementOrSearchCondition(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 16 more
+[pool-36-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=fceffa71-27f8-4879-8b6f-4772b03de19b] Unable to execute HiveQL select query select exception from persons due to java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.; routing to failure: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.executeConfigStatements(SelectHive_1_1QL.java:532)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:342)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X01: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatementOrSearchCondition(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 16 more
+]]></system-err>
+  </testcase>
+  <testcase name="testIncomingConnectionWithNoFlowFile" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.002"/>
+  <testcase name="invokeOnTriggerExceptionInPreQueriesWithIncomingFlows" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.172">
+    <system-err><![CDATA[[main] INFO org.apache.nifi.processors.hive.TestSelectHive_1_1QL - test data loaded
+[pool-38-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=d7a9fb00-5fd7-46f0-8515-741155754685] Issue processing SQL select exception from persons due to java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8..: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.executeConfigStatements(SelectHive_1_1QL.java:532)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:342)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X01: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatementOrSearchCondition(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 16 more
+[pool-38-thread-1] ERROR org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=d7a9fb00-5fd7-46f0-8515-741155754685] Unable to execute HiveQL select query select exception from persons for FlowFile[0,99419650384037.mockFlowFile,5B] due to java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.; routing to failure: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+java.sql.SQLSyntaxErrorException: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedStatement.execute(Unknown Source)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.executeConfigStatements(SelectHive_1_1QL.java:532)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:342)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.lambda$onTrigger$0(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:120)
+	at org.apache.nifi.processor.util.pattern.PartialFunctions.onTrigger(PartialFunctions.java:112)
+	at org.apache.nifi.processors.hive.SelectHive_1_1QL.onTrigger(SelectHive_1_1QL.java:285)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: ERROR 42X01: Syntax error: Encountered "exception" at line 1, column 8.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatementOrSearchCondition(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 16 more
+]]></system-err>
+  </testcase>
+  <testcase name="testMaxRowsPerFlowFileCSV" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.201">
+    <system-err><![CDATA[[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[1,99419845126498.mockFlowFile.0.csv,428B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[2,99419845126498.mockFlowFile.1.csv,436B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[3,99419845126498.mockFlowFile.2.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[4,99419845126498.mockFlowFile.3.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[5,99419845126498.mockFlowFile.4.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[6,99419845126498.mockFlowFile.5.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[7,99419845126498.mockFlowFile.6.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[8,99419845126498.mockFlowFile.7.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[9,99419845126498.mockFlowFile.8.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[10,99419845126498.mockFlowFile.9.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[11,99419845126498.mockFlowFile.10.csv,437B] contains 9 CSV records; transferring to 'success'
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_QUERY_DB_TABLE
+[pool-39-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-39-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=36209001-0af2-467c-9cfe-d3abe5d91a3e] FlowFile[12,99419845126498.mockFlowFile.11.csv,77B] contains 1 CSV records; transferring to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithNullIntColumn" classname="org.apache.nifi.processors.hive.TestSelectHive_1_1QL" time="0.03">
+    <system-err><![CDATA[[pool-40-thread-1] INFO hive.ql.parse.ParseDriver - Parsing command: SELECT * FROM TEST_NULL_INT
+[pool-40-thread-1] INFO hive.ql.parse.ParseDriver - Parse Completed
+[pool-40-thread-1] INFO org.apache.nifi.processors.hive.SelectHive_1_1QL - SelectHive_1_1QL[id=48342ca0-aaa3-4231-8ae4-d35b2072072d] FlowFile[0,99419884950269.mockFlowFile.0.avro,262B] contains 2 Avro records; transferring to 'success'
+]]></system-err>
+  </testcase>
+</testsuite>

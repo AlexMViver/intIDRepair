@@ -1,0 +1,563 @@
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL DROP TABLE Photo;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: DropTablePlan DropTablePlan [tableNames=[Photo], ifExists=false]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL DROP TABLE IF EXISTS Photo, User;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: DropTablePlan DropTablePlan [tableNames=[Photo, User], ifExists=false]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL SHOW INDEXES IN Photo;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: ShowIndexesPlan ShowIndexesPlan [tableName = Photo]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL SHOW INDEXES FROM Photo;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: ShowIndexesPlan ShowIndexesPlan [tableName = Photo]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL DESCRIBE Photo;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: DescTablePlan DescTablePlan 
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL TRUNCATE TABLE Photo;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: TruncateTablePlan TruncateTablePlan [tableNames=[Photo]]
+24/04/23 19:47:21 INFO druid.TestDruidDDLParser: TruncateTablePlan [tableNames=[Photo]]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE index PhotosByTime on Photo(user_id,time);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: Create Index SQL IndexName PhotosByTime
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: Create Index SQL TableName Photo
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateIndexPlan CreateIndexPlan [index=com.alibaba.wasp.meta.Index@78e16155]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL DROP INDEX PhotosByTime ON Photo;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: DropIndexPlan DropIndexPlan [indexName=PhotosByTime, tableName=Photo]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE index PhotosByTime on Photo(user_id,time);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: Create Index SQL IndexName PhotosByTime
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: Create Index SQL TableName Photo
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateIndexPlan CreateIndexPlan [index=com.alibaba.wasp.meta.Index@3f3c966c]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE index PhotosByTag on Photo(tag);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: Create Index SQL IndexName PhotosByTag
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: Create Index SQL TableName Photo
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateIndexPlan CreateIndexPlan [index=com.alibaba.wasp.meta.Index@11ee02f8]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+
+CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  REQUIRED INT64 time COLUMNFAMILY d;
+  REQUIRED STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  REPEATED STRING tag COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User2 {Required Int64 user_id; Required String name; }  primary key(user_id),  entity group root,  entity group key(user_id),  partition by range('aaa', 'zzz', 10); 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User2 { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=[[B@1c05a54d, [B@65ef722a, [B@5fd9b663, [B@214894fc, [B@10567255, [B@e362c57, [B@1c4ee95c, [B@79c4715d, [B@5aa360ea]]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL SHOW TABLES
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: ShowTablesPlan ShowTablesPlan 
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL SHOW TABLES LIKE 'pattern'
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: ShowTablesPlan ShowTablesPlan 
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL SHOW CREATE TABLE Photo
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: ShowTablesPlan ShowTablesPlan 
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE User { Required Int64 user_id; Required String name; Optional DOUBLE value; }  primary key(user_id),  entity group root, entity group key(user_id);
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE User { 
+  REQUIRED INT64 user_id COLUMNFAMILY d;
+  REQUIRED STRING name COLUMNFAMILY d;
+  OPTIONAL DOUBLE value COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id),
+ENTITY GROUP ROOT,
+ENTITY GROUP KEY(user_id);
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL CREATE TABLE Photo { Required Int64 user_id columnfamily cf comment 'aaa';  Required Int32 photo_id comment 'child primary key';  Optional Int64 time; Optional String full_url;  Optional String thumbnail_url; Optional string tag; Optional DATETIME date; Optional Int32 int32Type; }  primary key(user_id,photo_id),  in table User,  Entity Group Key(user_id) references User; 
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: CreateTablePlan CreateTablePlan [table=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, splitKeys=null]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL ALTER TABLE Photo ADD COLUMN dummy1 int32 FIRST
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: AlterTablePlan AlterTablePlan [oldTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, newTable=CREATE TABLE Photo { 
+  OPTIONAL INT32 dummy1 COLUMNFAMILY d;
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL ALTER TABLE Photo ADD COLUMN DateOfBirth string
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: AlterTablePlan AlterTablePlan [oldTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, newTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+  OPTIONAL STRING DateOfBirth COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL ALTER TABLE Photo ADD COLUMN DateOfBirth string columnfamily cf comment 'aaa'
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: AlterTablePlan AlterTablePlan [oldTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, newTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+  OPTIONAL STRING DateOfBirth COLUMNFAMILY cf;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL ALTER TABLE Photo ADD COLUMN dummy2 int32 AFTER thumbnail_url
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: AlterTablePlan AlterTablePlan [oldTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, newTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL INT32 dummy2 COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL ALTER TABLE Photo CHANGE COLUMN thumbnail_url thumbnail_url INT32
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: AlterTablePlan AlterTablePlan [oldTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, newTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL INT32 thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL ALTER TABLE Photo CHANGE thumbnail_url thumbnail_url INT32
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: AlterTablePlan AlterTablePlan [oldTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, newTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL INT32 thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL ALTER TABLE Photo CHANGE thumbnail_url rename_url INT64;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: AlterTablePlan AlterTablePlan [oldTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, newTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL INT64 rename_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+]
+24/04/23 19:47:21 DEBUG druid.DruidParser: Parsing SQL ALTER TABLE Photo DROP COLUMN full_url, DROP COLUMN thumbnail_url;
+24/04/23 19:47:21 DEBUG druid.DruidDDLParser: AlterTablePlan AlterTablePlan [oldTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING full_url COLUMNFAMILY d;
+  OPTIONAL STRING thumbnail_url COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+, newTable=CREATE TABLE Photo { 
+  REQUIRED INT64 user_id COLUMNFAMILY cf;
+  REQUIRED INT32 photo_id COLUMNFAMILY d;
+  OPTIONAL INT64 time COLUMNFAMILY d;
+  OPTIONAL STRING tag COLUMNFAMILY d;
+  OPTIONAL DATETIME date COLUMNFAMILY d;
+  OPTIONAL INT32 int32Type COLUMNFAMILY d;
+} 
+PRIMARY KEY(user_id, photo_id, ),
+ IN TABLE User,
+ ENTITY GROUP KEY(user_id) REFERENCES User;
+]

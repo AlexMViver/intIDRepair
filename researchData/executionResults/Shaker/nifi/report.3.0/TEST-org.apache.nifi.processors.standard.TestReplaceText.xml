@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.processors.standard.TestReplaceText" time="0.177" tests="99" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/target/classes:/home/alex/.m2/repository/org/apache/ftpserver/ftpserver-core/1.1.1/ftpserver-core-1.1.1.jar:/home/alex/.m2/repository/org/apache/ftpserver/ftplet-api/1.1.1/ftplet-api-1.1.1.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-processor-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-socket-ssl/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-event-transport/target/classes:/home/alex/.m2/repository/io/netty/netty-handler/4.1.69.Final/netty-handler-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-common/4.1.69.Final/netty-common-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-resolver/4.1.69.Final/netty-resolver-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport/4.1.69.Final/netty-transport-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-codec/4.1.69.Final/netty-codec-4.1.69.Final.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-syslog-utils/target/classes:/home/alex/.m2/repository/com/github/palindromicity/simple-syslog-5424/0.0.16/simple-syslog-5424-0.0.16.jar:/home/alex/.m2/repository/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record-path/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.1/caffeine-2.8.1.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-service-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-lookup-service-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-flowfile-packager/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-client-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-http-context-map-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-proxy-configuration-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-sink-api/target/classes:/home/alex/.m2/repository/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/home/alex/.m2/repository/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpg-jdk15on/1.69/bcpg-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/com/hierynomus/sshj/0.32.0/sshj-0.32.0.jar:/home/alex/.m2/repository/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar:/home/alex/.m2/repository/com/hierynomus/asn-one/0.6.0/asn-one-0.6.0.jar:/home/alex/.m2/repository/net/i2p/crypto/eddsa/0.3.0/eddsa-0.3.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.44.v20210927/jetty-util-ajax-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/alex/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/alex/.m2/repository/jakarta/activation/jakarta.activation-api/2.0.1/jakarta.activation-api-2.0.1.jar:/home/alex/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/alex/.m2/repository/jakarta/mail/jakarta.mail-api/2.0.1/jakarta.mail-api-2.0.1.jar:/home/alex/.m2/repository/com/sun/mail/jakarta.mail/2.0.1/jakarta.mail-2.0.1.jar:/home/alex/.m2/repository/com/github/jponge/lzma-java/1.3/lzma-java-1.3.jar:/home/alex/.m2/repository/org/tukaani/xz/1.8/xz-1.8.jar:/home/alex/.m2/repository/net/sf/saxon/Saxon-HE/10.6/Saxon-HE-10.6.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-socket-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-logging-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-load-distribution-service-api/target/classes:/home/alex/.m2/repository/javax/jms/javax.jms-api/2.0.1/javax.jms-api-2.0.1.jar:/home/alex/.m2/repository/org/apache/activemq/activemq-client/5.15.15/activemq-client-5.15.15.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1.jar:/home/alex/.m2/repository/org/fusesource/hawtbuf/hawtbuf/1.11/hawtbuf-1.11.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-j2ee-management_1.1_spec/1.0.1/geronimo-j2ee-management_1.1_spec-1.0.1.jar:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/.m2/repository/org/apache/tika/tika-core/1.26/tika-core-1.26.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-avro-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-standard-record-utils/target/classes:/home/alex/.m2/repository/org/apache/avro/avro/1.8.1/avro-1.8.1.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/home/alex/.m2/repository/com/thoughtworks/paranamer/paranamer/2.7/paranamer-2.7.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-dbcp-service-api/target/classes:/home/alex/.m2/repository/com/squareup/okhttp3/okhttp/4.9.2/okhttp-4.9.2.jar:/home/alex/.m2/repository/com/squareup/okio/okio/2.8.0/okio-2.8.0.jar:/home/alex/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0.jar:/home/alex/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10.jar:/home/alex/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/home/alex/.m2/repository/io/github/rburgst/okhttp-digest/2.5/okhttp-digest-2.5.jar:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/com/google/guava/guava/28.0-jre/guava-28.0-jre.jar:/home/alex/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/alex/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/alex/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/alex/.m2/repository/org/checkerframework/checker-qual/2.8.1/checker-qual-2.8.1.jar:/home/alex/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.2/error_prone_annotations-2.3.2.jar:/home/alex/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/alex/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/home/alex/Repositories/nifi/nifi-mock/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-nar-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-authorization/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-client/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-security-utils/target/classes:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar:/home/alex/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.33/jersey-media-json-jackson-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.33/jersey-entity-filtering-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.33/jersey-hk2-2.33.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar:/home/alex/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar:/home/alex/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/alex/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.33/jersey-media-multipart-2.33.jar:/home/alex/.m2/repository/org/jvnet/mimepull/mimepull/1.9.13/mimepull-1.9.13.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-data-provenance-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/nifi-distributed-cache-client-service/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/nifi-distributed-cache-protocol/target/classes:/home/alex/.m2/repository/io/netty/netty-buffer/4.1.69.Final/netty-buffer-4.1.69.Final.jar:/home/alex/.m2/repository/com/google/http-client/google-http-client/1.28.0/google-http-client-1.28.0.jar:/home/alex/.m2/repository/io/opencensus/opencensus-api/0.18.0/opencensus-api-0.18.0.jar:/home/alex/.m2/repository/io/grpc/grpc-context/1.14.0/grpc-context-1.14.0.jar:/home/alex/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.18.0/opencensus-contrib-http-util-0.18.0.jar:/home/alex/.m2/repository/org/apache/activemq/activemq-broker/5.15.14/activemq-broker-5.15.14.jar:/home/alex/.m2/repository/org/apache/activemq/activemq-openwire-legacy/5.15.14/activemq-openwire-legacy-5.15.14.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-bundle/nifi-ssl-context-service/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-standard-prioritizers/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-mock-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-csv/1.8/commons-csv-1.8.jar:/home/alex/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.12.3/jackson-dataformat-csv-2.12.3.jar:/home/alex/.m2/repository/net/java/dev/stax-utils/stax-utils/20070216/stax-utils-20070216.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-lookup-services-bundle/nifi-lookup-services/target/classes:/home/alex/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/home/alex/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/alex/.m2/repository/com/maxmind/geoip2/geoip2/2.12.0/geoip2-2.12.0.jar:/home/alex/.m2/repository/com/maxmind/db/maxmind-db/1.2.2/maxmind-db-1.2.2.jar:/home/alex/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar:/home/alex/.m2/repository/org/xerial/snappy/snappy-java/1.1.7.3/snappy-java-1.1.7.3.jar:/home/alex/.m2/repository/net/lingala/zip4j/zip4j/2.8.0/zip4j-2.8.0.jar:/home/alex/.m2/repository/com/h2database/h2/1.4.187/h2-1.4.187.jar:/home/alex/.m2/repository/org/mockftpserver/MockFtpServer/2.7.1/MockFtpServer-2.7.1.jar:/home/alex/.m2/repository/org/apache/sshd/sshd-core/1.7.0/sshd-core-1.7.0.jar:/home/alex/.m2/repository/com/bazaarvoice/jolt/jolt-core/0.1.1/jolt-core-0.1.1.jar:/home/alex/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/home/alex/.m2/repository/com/bazaarvoice/jolt/json-utils/0.1.1/json-utils-0.1.1.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-utils/target/classes:/home/alex/.m2/repository/net/sf/supercsv/super-csv/2.4.0/super-csv-2.4.0.jar:/home/alex/.m2/repository/com/fluenda/parcefone/2.1.0/parcefone-2.1.0.jar:/home/alex/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/home/alex/.m2/repository/javax/el/javax.el-api/3.0.0/javax.el-api-3.0.0.jar:/home/alex/.m2/repository/com/github/wnameless/json/json-flattener/0.12.0/json-flattener-0.12.0.jar:/home/alex/.m2/repository/com/github/wnameless/json/json-base/2.0.0/json-base-2.0.0.jar:/home/alex/.m2/repository/org/apache/bval/bval-jsr/1.1.2/bval-jsr-1.1.2.jar:/home/alex/.m2/repository/org/apache/bval/bval-core/1.1.2/bval-core-1.1.2.jar:/home/alex/.m2/repository/io/krakens/java-grok/0.1.9/java-grok-0.1.9.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-core/1.27.0/calcite-core-1.27.0.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-linq4j/1.27.0/calcite-linq4j-1.27.0.jar:/home/alex/.m2/repository/com/esri/geometry/esri-geometry-api/2.2.0/esri-geometry-api-2.2.0.jar:/home/alex/.m2/repository/org/apache/calcite/avatica/avatica-core/1.18.0/avatica-core-1.18.0.jar:/home/alex/.m2/repository/org/apache/calcite/avatica/avatica-metrics/1.18.0/avatica-metrics-1.18.0.jar:/home/alex/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0/jackson-dataformat-yaml-2.10.0.jar:/home/alex/.m2/repository/org/yaml/snakeyaml/1.29/snakeyaml-1.29.jar:/home/alex/.m2/repository/com/google/uzaygezen/uzaygezen-core/0.2/uzaygezen-core-0.2.jar:/home/alex/.m2/repository/com/yahoo/datasketches/sketches-core/0.9.0/sketches-core-0.9.0.jar:/home/alex/.m2/repository/com/yahoo/datasketches/memory/0.9.0/memory-0.9.0.jar:/home/alex/.m2/repository/net/hydromatic/aggdesigner-algorithm/6.0/aggdesigner-algorithm-6.0.jar:/home/alex/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/home/alex/.m2/repository/org/apache/commons/commons-dbcp2/2.6.0/commons-dbcp2-2.6.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-pool2/2.6.1/commons-pool2-2.6.1.jar:/home/alex/.m2/repository/org/codehaus/janino/commons-compiler/3.0.11/commons-compiler-3.0.11.jar:/home/alex/.m2/repository/org/codehaus/janino/janino/3.0.11/janino-3.0.11.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-schema-registry-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-database-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-web-test-utils/target/classes:/home/alex/.m2/repository/com/github/stefanbirkner/fake-sftp-server-rule/2.0.1/fake-sftp-server-rule-2.0.1.jar:/home/alex/.m2/repository/com/github/marschall/memoryfilesystem/2.8.0/memoryfilesystem-2.8.0.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-database-test-utils/target/classes:/home/alex/.m2/repository/org/codehaus/groovy/groovy-json/2.5.14/groovy-json-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-servlet/2.5.14/groovy-servlet-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-templates/2.5.14/groovy-templates-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-xml/2.5.14/groovy-xml-2.5.14.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/home/alex/.m2/repository/com/squareup/okhttp3/mockwebserver/4.9.2/mockwebserver-4.9.2.jar:/home/alex/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.4.10/kotlin-stdlib-jdk8-1.4.10.jar:/home/alex/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.4.10/kotlin-stdlib-jdk7-1.4.10.jar:/home/alex/.m2/repository/org/mockito/mockito-inline/3.12.4/mockito-inline-3.12.4.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/target/surefire/surefirebooter7473415933682638322.jar /home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/target/surefire 2024-05-02T02-37-14_149-jvmRun1 surefire6139189294397462573tmp surefire_693674938239097471618tmp"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/target/classes:/home/alex/.m2/repository/org/apache/ftpserver/ftpserver-core/1.1.1/ftpserver-core-1.1.1.jar:/home/alex/.m2/repository/org/apache/ftpserver/ftplet-api/1.1.1/ftplet-api-1.1.1.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-processor-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-socket-ssl/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-event-transport/target/classes:/home/alex/.m2/repository/io/netty/netty-handler/4.1.69.Final/netty-handler-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-common/4.1.69.Final/netty-common-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-resolver/4.1.69.Final/netty-resolver-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport/4.1.69.Final/netty-transport-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-codec/4.1.69.Final/netty-codec-4.1.69.Final.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-syslog-utils/target/classes:/home/alex/.m2/repository/com/github/palindromicity/simple-syslog-5424/0.0.16/simple-syslog-5424-0.0.16.jar:/home/alex/.m2/repository/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record-path/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.1/caffeine-2.8.1.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-service-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-lookup-service-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-flowfile-packager/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-client-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-http-context-map-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-proxy-configuration-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-sink-api/target/classes:/home/alex/.m2/repository/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/home/alex/.m2/repository/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpg-jdk15on/1.69/bcpg-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/com/hierynomus/sshj/0.32.0/sshj-0.32.0.jar:/home/alex/.m2/repository/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar:/home/alex/.m2/repository/com/hierynomus/asn-one/0.6.0/asn-one-0.6.0.jar:/home/alex/.m2/repository/net/i2p/crypto/eddsa/0.3.0/eddsa-0.3.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-server/9.4.44.v20210927/jetty-server-9.4.44.v20210927.jar:/home/alex/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-http/9.4.44.v20210927/jetty-http-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util/9.4.44.v20210927/jetty-util-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-io/9.4.44.v20210927/jetty-io-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.44.v20210927/jetty-servlet-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-security/9.4.44.v20210927/jetty-security-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.44.v20210927/jetty-util-ajax-9.4.44.v20210927.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/alex/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/alex/.m2/repository/jakarta/activation/jakarta.activation-api/2.0.1/jakarta.activation-api-2.0.1.jar:/home/alex/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar:/home/alex/.m2/repository/jakarta/mail/jakarta.mail-api/2.0.1/jakarta.mail-api-2.0.1.jar:/home/alex/.m2/repository/com/sun/mail/jakarta.mail/2.0.1/jakarta.mail-2.0.1.jar:/home/alex/.m2/repository/com/github/jponge/lzma-java/1.3/lzma-java-1.3.jar:/home/alex/.m2/repository/org/tukaani/xz/1.8/xz-1.8.jar:/home/alex/.m2/repository/net/sf/saxon/Saxon-HE/10.6/Saxon-HE-10.6.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-socket-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-logging-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-load-distribution-service-api/target/classes:/home/alex/.m2/repository/javax/jms/javax.jms-api/2.0.1/javax.jms-api-2.0.1.jar:/home/alex/.m2/repository/org/apache/activemq/activemq-client/5.15.15/activemq-client-5.15.15.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1.jar:/home/alex/.m2/repository/org/fusesource/hawtbuf/hawtbuf/1.11/hawtbuf-1.11.jar:/home/alex/.m2/repository/org/apache/geronimo/specs/geronimo-j2ee-management_1.1_spec/1.0.1/geronimo-j2ee-management_1.1_spec-1.0.1.jar:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/.m2/repository/org/apache/tika/tika-core/1.26/tika-core-1.26.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-avro-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-standard-record-utils/target/classes:/home/alex/.m2/repository/org/apache/avro/avro/1.8.1/avro-1.8.1.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar:/home/alex/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/home/alex/.m2/repository/com/thoughtworks/paranamer/paranamer/2.7/paranamer-2.7.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-dbcp-service-api/target/classes:/home/alex/.m2/repository/com/squareup/okhttp3/okhttp/4.9.2/okhttp-4.9.2.jar:/home/alex/.m2/repository/com/squareup/okio/okio/2.8.0/okio-2.8.0.jar:/home/alex/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.0/kotlin-stdlib-common-1.4.0.jar:/home/alex/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.4.10/kotlin-stdlib-1.4.10.jar:/home/alex/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/home/alex/.m2/repository/io/github/rburgst/okhttp-digest/2.5/okhttp-digest-2.5.jar:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/com/google/guava/guava/28.0-jre/guava-28.0-jre.jar:/home/alex/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/alex/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/alex/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/alex/.m2/repository/org/checkerframework/checker-qual/2.8.1/checker-qual-2.8.1.jar:/home/alex/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.2/error_prone_annotations-2.3.2.jar:/home/alex/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/alex/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/home/alex/Repositories/nifi/nifi-mock/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-nar-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-authorization/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-client/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-security-utils/target/classes:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar:/home/alex/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.33/jersey-media-json-jackson-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.33/jersey-entity-filtering-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.33/jersey-hk2-2.33.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar:/home/alex/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar:/home/alex/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/alex/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.33/jersey-media-multipart-2.33.jar:/home/alex/.m2/repository/org/jvnet/mimepull/mimepull/1.9.13/mimepull-1.9.13.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-data-provenance-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/nifi-distributed-cache-client-service/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-distributed-cache-services-bundle/nifi-distributed-cache-protocol/target/classes:/home/alex/.m2/repository/io/netty/netty-buffer/4.1.69.Final/netty-buffer-4.1.69.Final.jar:/home/alex/.m2/repository/com/google/http-client/google-http-client/1.28.0/google-http-client-1.28.0.jar:/home/alex/.m2/repository/io/opencensus/opencensus-api/0.18.0/opencensus-api-0.18.0.jar:/home/alex/.m2/repository/io/grpc/grpc-context/1.14.0/grpc-context-1.14.0.jar:/home/alex/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.18.0/opencensus-contrib-http-util-0.18.0.jar:/home/alex/.m2/repository/org/apache/activemq/activemq-broker/5.15.14/activemq-broker-5.15.14.jar:/home/alex/.m2/repository/org/apache/activemq/activemq-openwire-legacy/5.15.14/activemq-openwire-legacy-5.15.14.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-bundle/nifi-ssl-context-service/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-standard-prioritizers/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-mock-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-services-bundle/nifi-record-serialization-services/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-csv/1.8/commons-csv-1.8.jar:/home/alex/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.12.3/jackson-dataformat-csv-2.12.3.jar:/home/alex/.m2/repository/net/java/dev/stax-utils/stax-utils/20070216/stax-utils-20070216.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-lookup-services-bundle/nifi-lookup-services/target/classes:/home/alex/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/home/alex/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/alex/.m2/repository/com/maxmind/geoip2/geoip2/2.12.0/geoip2-2.12.0.jar:/home/alex/.m2/repository/com/maxmind/db/maxmind-db/1.2.2/maxmind-db-1.2.2.jar:/home/alex/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar:/home/alex/.m2/repository/org/xerial/snappy/snappy-java/1.1.7.3/snappy-java-1.1.7.3.jar:/home/alex/.m2/repository/net/lingala/zip4j/zip4j/2.8.0/zip4j-2.8.0.jar:/home/alex/.m2/repository/com/h2database/h2/1.4.187/h2-1.4.187.jar:/home/alex/.m2/repository/org/mockftpserver/MockFtpServer/2.7.1/MockFtpServer-2.7.1.jar:/home/alex/.m2/repository/org/apache/sshd/sshd-core/1.7.0/sshd-core-1.7.0.jar:/home/alex/.m2/repository/com/bazaarvoice/jolt/jolt-core/0.1.1/jolt-core-0.1.1.jar:/home/alex/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/home/alex/.m2/repository/com/bazaarvoice/jolt/json-utils/0.1.1/json-utils-0.1.1.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-utils/target/classes:/home/alex/.m2/repository/net/sf/supercsv/super-csv/2.4.0/super-csv-2.4.0.jar:/home/alex/.m2/repository/com/fluenda/parcefone/2.1.0/parcefone-2.1.0.jar:/home/alex/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/home/alex/.m2/repository/javax/el/javax.el-api/3.0.0/javax.el-api-3.0.0.jar:/home/alex/.m2/repository/com/github/wnameless/json/json-flattener/0.12.0/json-flattener-0.12.0.jar:/home/alex/.m2/repository/com/github/wnameless/json/json-base/2.0.0/json-base-2.0.0.jar:/home/alex/.m2/repository/org/apache/bval/bval-jsr/1.1.2/bval-jsr-1.1.2.jar:/home/alex/.m2/repository/org/apache/bval/bval-core/1.1.2/bval-core-1.1.2.jar:/home/alex/.m2/repository/io/krakens/java-grok/0.1.9/java-grok-0.1.9.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-core/1.27.0/calcite-core-1.27.0.jar:/home/alex/.m2/repository/org/apache/calcite/calcite-linq4j/1.27.0/calcite-linq4j-1.27.0.jar:/home/alex/.m2/repository/com/esri/geometry/esri-geometry-api/2.2.0/esri-geometry-api-2.2.0.jar:/home/alex/.m2/repository/org/apache/calcite/avatica/avatica-core/1.18.0/avatica-core-1.18.0.jar:/home/alex/.m2/repository/org/apache/calcite/avatica/avatica-metrics/1.18.0/avatica-metrics-1.18.0.jar:/home/alex/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.10.0/jackson-dataformat-yaml-2.10.0.jar:/home/alex/.m2/repository/org/yaml/snakeyaml/1.29/snakeyaml-1.29.jar:/home/alex/.m2/repository/com/google/uzaygezen/uzaygezen-core/0.2/uzaygezen-core-0.2.jar:/home/alex/.m2/repository/com/yahoo/datasketches/sketches-core/0.9.0/sketches-core-0.9.0.jar:/home/alex/.m2/repository/com/yahoo/datasketches/memory/0.9.0/memory-0.9.0.jar:/home/alex/.m2/repository/net/hydromatic/aggdesigner-algorithm/6.0/aggdesigner-algorithm-6.0.jar:/home/alex/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/home/alex/.m2/repository/org/apache/commons/commons-dbcp2/2.6.0/commons-dbcp2-2.6.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-pool2/2.6.1/commons-pool2-2.6.1.jar:/home/alex/.m2/repository/org/codehaus/janino/commons-compiler/3.0.11/commons-compiler-3.0.11.jar:/home/alex/.m2/repository/org/codehaus/janino/janino/3.0.11/janino-3.0.11.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-schema-registry-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-database-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-web-test-utils/target/classes:/home/alex/.m2/repository/com/github/stefanbirkner/fake-sftp-server-rule/2.0.1/fake-sftp-server-rule-2.0.1.jar:/home/alex/.m2/repository/com/github/marschall/memoryfilesystem/2.8.0/memoryfilesystem-2.8.0.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-database-test-utils/target/classes:/home/alex/.m2/repository/org/codehaus/groovy/groovy-json/2.5.14/groovy-json-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-servlet/2.5.14/groovy-servlet-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-templates/2.5.14/groovy-templates-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-xml/2.5.14/groovy-xml-2.5.14.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/home/alex/.m2/repository/com/squareup/okhttp3/mockwebserver/4.9.2/mockwebserver-4.9.2.jar:/home/alex/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.4.10/kotlin-stdlib-jdk8-1.4.10.jar:/home/alex/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.4.10/kotlin-stdlib-jdk7-1.4.10.jar:/home/alex/.m2/repository/org/mockito/mockito-inline/3.12.4/mockito-inline-3.12.4.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="derby.stream.error.file" value="target/derby.log"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors/target/surefire/surefirebooter7473415933682638322.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="sun.nio.ch.bugLevel" value=""/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testEscapingDollarSign" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.012">
+    <system-err><![CDATA[[pool-195-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=3eb8f005-a850-45e1-bf3e-282d3f35b47a] Transferred FlowFile[0,hello.txt,12B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithNoMatch" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-196-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=4f28a606-8f12-4dcb-a7b9-7b5b9a3ce0bd] Transferred FlowFile[0,hello.txt,13B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendExceptFistLineWithCarriageReturnNewLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-197-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=fb33787d-49de-4132-9dd6-6a3b5275fa29] Transferred FlowFile[0,94714296530632.mockFlowFile,19B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testSubstituteVariablesWithEvaluationModeLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.008">
+    <system-err><![CDATA[[pool-198-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=c3002ee6-3259-4c89-bc86-7355d5bc75be] Transferred FlowFile[0,94714298534535.mockFlowFile,21B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendSimple" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-199-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=f90c7af5-3de5-42c0-a4ad-c2cdd0b8dde6] Transferred FlowFile[0,hello.txt,17B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testSubstituteVariablesWhenVariableValueMissing" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-200-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=f96b17c1-443c-4d55-8d8e-cef3e071af59] Transferred FlowFile[0,94714307821294.mockFlowFile,29B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testCapturingGroupInExpressionLanguage2" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.005">
+    <system-err><![CDATA[[pool-201-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=b979355e-753d-43b6-83fe-358a4d7d3b8e] Transferred FlowFile[0,94714309060378.mockFlowFile,83B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testEscapingDollarSignLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-202-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=a7d80b2b-f0cc-4db9-b50e-2c7e168a1c67] Transferred FlowFile[0,94714313917022.mockFlowFile,193B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendWithCarriageReturnNewLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-203-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=accf1783-ae36-4aeb-af2c-0c08d5ca42c9] Transferred FlowFile[0,94714315251671.mockFlowFile,20B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendLastLineWithCarriageReturn" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-204-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=225b3f89-0981-40e9-92b4-8882a3e74069] Transferred FlowFile[0,94714316411797.mockFlowFile,16B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testPrependSimpleLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-205-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=7e3422d4-b598-4677-b627-68bf521bef8b] Transferred FlowFile[0,94714317587668.mockFlowFile,248B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReference" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-206-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=371f03bd-f2d5-4237-a202-ecf0488ddfe4] Transferred FlowFile[0,hello.txt,15B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralBackReferenceFistLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-207-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=4036dc71-b680-46ff-b7fb-6cb651843e69] Transferred FlowFile[0,94714320758934.mockFlowFile,196B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendEndlineCR" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-208-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=1f2997c6-3e7b-4c68-b821-fa0429858fb1] Transferred FlowFile[0,94714322694577.mockFlowFile,22B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testProblematicCase1LineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.003">
+    <system-out><![CDATA[abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+abc.txt	2024/05/02T024454Z	193
+
+]]></system-out>
+    <system-err><![CDATA[[pool-209-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=0c78f250-f070-45f2-8a6e-0391712a8d4d] Transferred FlowFile[0,abc.txt,351B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testPrependLastLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-210-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=6020cac8-0f42-471a-8362-95331aa3927a] Transferred FlowFile[0,94714327556888.mockFlowFile,18B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAlwaysReplaceEntireText" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-211-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=608ba44c-6620-4544-a45f-899815920aad] Transferred FlowFile[0,abc.txt,7B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendWithNewLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-212-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=6fa00582-b88e-426b-a895-7450cd22ca94] Transferred FlowFile[0,94714330518001.mockFlowFile,18B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRegexNoCaptureDefaultReplacement" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.01"/>
+  <testcase name="testLiteralReplaceWithExpressionLanguageInSearchEntireText" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-214-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=497af577-f746-4143-8557-48fad422c6c5] Transferred FlowFile[0,94714341974662.mockFlowFile,23B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRegexWithGoodCaptureGroup" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.003">
+    <system-err><![CDATA[[pool-215-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=8c1838bc-5ee4-4ff9-8423-a74e773d890e] Transferred FlowFile[0,94714343894936.mockFlowFile,11B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testReplacementWithExpressionLanguageIsEscaped" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-216-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=ee424124-54f3-4e59-902d-df4cf2c98a5c] Transferred FlowFile[0,hello.txt,14B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testReplaceWithEmptyString" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-217-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=44170095-78fd-427f-b803-de0d2195d018] Transferred FlowFile[0,hello.txt,10B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRegexWithExpressionLanguageIsEscaped" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-218-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=23bc79e5-2ce7-4008-99aa-a9dbe90e49d4] Transferred FlowFile[0,hello.txt,13B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testZeroByteContentFileLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-219-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=b5cc4e72-0f82-46b5-9ee8-c64303557357] Transferred FlowFile[0,94714351259259.mockFlowFile,36B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralBackReferenceExceptLastLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-220-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=ca486007-758b-4264-ac4a-cf71016b6a5c] Transferred FlowFile[0,94714352426724.mockFlowFile,211B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceWithTooLargeOfIndexIsEscapedLastLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-221-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=609e4daa-d141-4f50-bcc8-92945749f784] Transferred FlowFile[0,94714353809260.mockFlowFile,197B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendSimpleLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-222-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=43d3c72d-c2fa-455c-84b3-b408f7eaf5ed] Transferred FlowFile[0,94714354948156.mockFlowFile,248B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralBackReference" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-223-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=37b77277-c6c6-4f70-9bdd-5b0f2b19006d] Transferred FlowFile[0,hello.txt,14B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRegexWithExpressionLanguageIsEscapedLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-224-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=0c739e93-2413-4ebf-9bd6-ccab368fee84] Transferred FlowFile[0,94714357277157.mockFlowFile,193B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testSimpleLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-225-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=74915123-24fd-440b-b18a-37b5064243e8] Transferred FlowFile[0,94714358930838.mockFlowFile,193B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendFirstLineWithCarriageReturn" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0">
+    <system-err><![CDATA[[pool-226-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=d5df366b-8427-4965-85b7-edcd39d5fa89] Transferred FlowFile[0,94714360200687.mockFlowFile,16B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceWithTooLargeOfIndexIsEscapedExceptFirstLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-227-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=520143f6-1cfe-4156-915e-8867dcd64114] Transferred FlowFile[0,94714361341527.mockFlowFile,199B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceWithTooLargeOfIndexIsEscapedExceptLastLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-228-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=4c3f4f53-b9e0-4e72-8467-280105a71b5a] Transferred FlowFile[0,94714362565994.mockFlowFile,205B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithNoMatchLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-229-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=abbb1758-4694-4faf-8f57-a62f23ce69d4] Transferred FlowFile[0,94714363661800.mockFlowFile,193B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithUnEscaped$InReplacement" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-230-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=44302216-b5f1-4c43-a26b-643095446190] Transferred FlowFile[0,94714364721445.mockFlowFile,3B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testPrependExceptLastLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-231-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=b76abd56-7219-43a2-a98b-e7688422ca5d] Transferred FlowFile[0,94714365884330.mockFlowFile,19B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAlwaysReplaceLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-232-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=54f0416e-0769-497c-88e8-f605ae773163] Transferred FlowFile[0,abc.txt,25B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRegexWithExpressionLanguage" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-233-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=b2671bc8-f8c2-4fa6-a605-ada92d473537] Transferred FlowFile[0,hello.txt,16B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackRefWithNoCapturingGroup" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-234-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=240b651f-1a22-4fb9-9110-386bf5c23633] Transferred FlowFile[0,hello.txt,16B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testPrependExceptFirstLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-235-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=7b178622-6369-470e-9b74-6d0c58f072c2] Transferred FlowFile[0,94714370768185.mockFlowFile,19B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceWithTooLargeOfIndexIsEscapedLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-236-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=f762ec67-1791-4348-b741-473a92c3bfc1] Transferred FlowFile[0,94714371741501.mockFlowFile,205B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testPrependFirstLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-237-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=dd5fa612-8bbe-4835-90ce-21929bd60be0] Transferred FlowFile[0,94714372839327.mockFlowFile,18B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithInvalidExpression" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-238-thread-1] WARN org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=85544c90-824d-4a56-9692-09431d1eab7b] Transferred FlowFile[0,94714373890867.mockFlowFile,2B] to 'failure' due to org.apache.nifi.attribute.expression.language.exception.IllegalAttributeException: Cannot parse attribute value as a date; date format: yyyy/MM/dd; attribute value: 12: org.apache.nifi.attribute.expression.language.exception.IllegalAttributeException: Cannot parse attribute value as a date; date format: yyyy/MM/dd; attribute value: 12
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralReplaceWithExpressionLanguageInSearchLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-239-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=2484850b-78da-4e39-8ef0-f37865c2f833] Transferred FlowFile[0,94714375851790.mockFlowFile,23B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralReplaceWithExpressionLanguageInReplacementEntireText" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-240-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=b8d16896-df52-43aa-aa5e-5f627e0429df] Transferred FlowFile[0,94714377074392.mockFlowFile,21B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testGetExistingContent" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-out><![CDATA[attribute header
+
+abc.txt
+
+data header
+
+Hello
+World!
+
+footer
+]]></system-out>
+    <system-err><![CDATA[[pool-241-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=7e03bf7a-fff4-4b3d-87cd-2ea0786bd5e5] Transferred FlowFile[0,abc.txt,60B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRoutesToFailureIfTooLarge" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-242-thread-1] WARN org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=2cb866b9-f6ef-447a-a92a-ca7f92919f65] Transferred null to 'faliure' because it was larger than the buffer size
+]]></system-err>
+  </testcase>
+  <testcase name="testAttributeToContentLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-243-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=859e6efa-e571-4d74-baef-091d354c60e3] Transferred FlowFile[0,testFile.txt,54B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithMultipleMatchesLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-244-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=1aecbcbd-b7bf-48f0-a32e-7d9472eda18a] Transferred FlowFile[0,94714381686187.mockFlowFile,193B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRoutesToSuccessIfTooLargeButRegexIsDotAsterisk" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-245-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=eeb48dd1-b594-4c7e-82d2-5ff867b78feb] Transferred FlowFile[0,hello.txt,4B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testConfigurationCornerCase" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-247-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=46fde44a-1b44-40a8-9ae7-36948a2bff0e] Transferred FlowFile[0,hello.txt,13B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendEndlineCRLF" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-248-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=dd54205a-1eff-42c8-9a04-dc5dffde0472] Transferred FlowFile[0,94714385880449.mockFlowFile,24B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testReplaceWithinCurlyBraces" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-249-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=89a50ea1-5df1-4b8c-a325-98602007f67d] Transferred FlowFile[0,abc.txt,11B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteral" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-250-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=83566232-be37-4f3c-af75-c64ba0aba07e] Transferred FlowFile[0,hello.txt,13B] to 'success'
+[pool-251-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=83566232-be37-4f3c-af75-c64ba0aba07e] Transferred FlowFile[1,94714388990298.mockFlowFile,19B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackRefFollowedByNumbers" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-out><![CDATA[Hell23o, World!
+]]></system-out>
+    <system-err><![CDATA[[pool-252-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=b98aab59-a854-45c5-b90a-21e557a38a66] Transferred FlowFile[0,hello.txt,15B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testDefaultReplacement" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-253-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=3d6e93a3-0e8a-480f-82a9-509c59c75c82] Transferred FlowFile[0,94714391240945.mockFlowFile,25B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRegexWithBadCaptureGroup" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-254-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=474c4cc6-50ad-4949-a96b-056a01ceed91] Transferred FlowFile[0,94714392493340.mockFlowFile,0B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testSimpleLiteral" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-255-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=bd6a8b4d-6681-4712-9934-21f0195ef8af] Transferred FlowFile[0,94714393989393.mockFlowFile,193B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendFirstLineWithCarriageReturnNewLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0">
+    <system-err><![CDATA[[pool-256-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=81c68178-6d10-4655-976b-fa93ccd0a718] Transferred FlowFile[0,94714395208341.mockFlowFile,18B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testForStackOverflow" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.011">
+    <system-err><![CDATA[[pool-257-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=0883b204-01de-4871-aa42-7dfe0d896929] Transferred FlowFile[0,94714401933359.mockFlowFile,1000000B] to 'failure' due to java.lang.StackOverflowError
+]]></system-err>
+  </testcase>
+  <testcase name="testReplaceWithEmptyStringLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-258-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=4b6f26b1-48f2-469f-8b6c-e88109336b1c] Transferred FlowFile[0,94714407381985.mockFlowFile,181B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testIterativeRegexReplace" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-259-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=7da8d89a-52e1-48a9-81e2-16dd86fc3f19] Transferred FlowFile[0,94714408563582.mockFlowFile,51B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testReplacementWithExpressionLanguageIsEscapedLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-260-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=58a06387-2d93-4170-908f-f390b473006a] Transferred FlowFile[0,94714410314399.mockFlowFile,205B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendWithCarriageReturn" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-261-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=e3e20774-573f-4528-85af-090307d66361] Transferred FlowFile[0,94714412074669.mockFlowFile,18B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testGetExistingContentLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-out><![CDATA[attribute header
+
+abc.txt
+
+data header
+
+Hello
+
+
+footer
+attribute header
+
+abc.txt
+
+data header
+
+World!
+
+footer
+
+]]></system-out>
+    <system-err><![CDATA[[pool-262-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=204b104e-5f41-4481-97e8-5601c51a8362] Transferred FlowFile[0,abc.txt,110B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralReplaceWithExpressionLanguageInReplacementLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-263-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=1e7e03e9-33a9-4906-bf7c-f87f9a0beaea] Transferred FlowFile[0,94714414554105.mockFlowFile,21B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralBackReferenceLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-264-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=88f95a77-7271-4183-8f14-f73bebafe10a] Transferred FlowFile[0,94714416058779.mockFlowFile,205B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0">
+    <system-err><![CDATA[[pool-265-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=865ca2e4-3ac3-4b54-bf59-c5c3f6b98bb4] Transferred FlowFile[0,94714417209597.mockFlowFile,31B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testDefaultMultilineReplacement" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0">
+    <system-err><![CDATA[[pool-266-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=27b6c47b-898e-47cf-8b95-753ce136fdfd] Transferred FlowFile[0,94714418229201.mockFlowFile,25B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testProcessorConfigurationRegexNotValid" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-267-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=b7f90b81-a175-4183-aaea-f607205df01c] Transferred FlowFile[0,94714420500946.mockFlowFile,5B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceWithTooLargeOfIndexIsEscaped" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-268-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=a5a83105-3f39-4d87-b81e-6ea8e617455e] Transferred FlowFile[0,hello.txt,15B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testPrependSimple" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-269-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=68394b80-b102-42af-ad97-8dd09915d34c] Transferred FlowFile[0,hello.txt,17B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendExceptLastLineWithCarriageReturnNewLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-270-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=d9b7e80d-40dd-4d94-8f9e-efe7a6df5217] Transferred FlowFile[0,94714423944917.mockFlowFile,19B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendExceptFirstLineWithCarriageReturn" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-271-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=d7a21b5d-53a0-4a19-8a68-c38715afbd83] Transferred FlowFile[0,94714425256639.mockFlowFile,17B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendLastLineWithCarriageReturnNewLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0">
+    <system-err><![CDATA[[pool-272-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=f08828c3-f321-41db-a886-0a5012db5cbb] Transferred FlowFile[0,94714426309009.mockFlowFile,18B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-273-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=eafe5e55-907e-4423-b10d-d386b71608c4] Transferred FlowFile[0,94714427313245.mockFlowFile,199B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAppendExceptLastLineWithCarriageReturn" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-274-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=0e436c98-c82a-4648-92de-4a54fa371d8a] Transferred FlowFile[0,94714428540790.mockFlowFile,17B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testCapturingGroupInExpressionLanguage" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.003">
+    <system-err><![CDATA[[pool-275-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=f0d440a8-3bbe-4044-b1b4-88d9ff77b370] Transferred FlowFile[0,94714429543768.mockFlowFile,79B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithEscaped$InReplacement" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-276-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=c66f8767-e9ed-45a2-ad6f-83427652b5b5] Transferred FlowFile[0,94714432726674.mockFlowFile,4B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralBackReferenceExceptFirstLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-277-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=5cce189f-60e6-4286-9974-9b345bbe8016] Transferred FlowFile[0,94714433953028.mockFlowFile,202B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testSubstituteVariablesWithEvaluationModeEntireText" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-278-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=d239b7ba-d5fc-4676-a304-a50f8b2a515a] Transferred FlowFile[0,94714435113321.mockFlowFile,21B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testReplacementWithExpressionLanguage" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-279-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=c2fe1a5c-de43-4a6e-a4ab-520679cbb1ed] Transferred FlowFile[0,hello.txt,13B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testProblematicCase1" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-out><![CDATA[abc.txt	2024/05/02T024454Z	13
+
+]]></system-out>
+    <system-err><![CDATA[[pool-280-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=2e91b6a4-4e25-4fb9-91e1-d18f5b8ccd79] Transferred FlowFile[0,abc.txt,30B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceWithInvalidReferenceIsEscaped" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-281-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=140ac3f7-bf04-44c7-9f80-a1a7b511ff74] Transferred FlowFile[0,hello.txt,12B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testIterativeRegexReplaceLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-282-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=ad247a0e-570a-4f2e-9b10-030d4d5e9034] Transferred FlowFile[0,94714440175663.mockFlowFile,51B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralSimple" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-283-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=7115aca1-20f2-472e-af67-b8f65eec559d] Transferred FlowFile[0,hello.txt,13B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceWithTooLargeOfIndexIsEscapedFirstLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-284-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=839fda2d-8c8c-4dd9-b099-f21ff4a77ea7] Transferred FlowFile[0,94714442625775.mockFlowFile,195B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testPrependLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-285-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=f3992236-4277-4cd2-ad70-e69a69f8bc11] Transferred FlowFile[0,94714443670254.mockFlowFile,20B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testLiteralBackReferenceLastLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-286-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=fbcfd918-1cb4-4e6f-bd2d-1a02c3d9953b] Transferred FlowFile[0,94714444747444.mockFlowFile,199B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceWithInvalidReferenceIsEscapedLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-287-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=a10444e6-1d65-4c23-8fc6-3deb3e24b0be] Transferred FlowFile[0,94714446052583.mockFlowFile,193B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testSimple" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0">
+    <system-err><![CDATA[[pool-288-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=063faceb-6cad-4a7d-b68e-53c1c5a57413] Transferred FlowFile[0,hello.txt,13B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testRegexWithExpressionLanguageLineByLine" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-289-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=dfc1963e-7a7e-492d-b157-d4c573cb792c] Transferred FlowFile[0,94714448448658.mockFlowFile,196B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testWithMultipleMatches" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-290-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=c4a41c32-a0ea-4a5a-a25f-505cf7ad8c13] Transferred FlowFile[0,hello.txt,13B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testBackReferenceEscapeWithRegexReplaceUsingEL" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.003">
+    <system-err><![CDATA[[pool-291-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=80de9634-4093-473d-9787-5ccf6cc8de6e] Transferred FlowFile[0,94714451745388.mockFlowFile,5B] to 'success'
+[pool-292-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=80de9634-4093-473d-9787-5ccf6cc8de6e] Transferred FlowFile[1,94714452677394.mockFlowFile,6B] to 'success'
+[pool-293-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=80de9634-4093-473d-9787-5ccf6cc8de6e] Transferred FlowFile[2,94714453529669.mockFlowFile,8B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testSubstituteVariablesWhenVariableNameEmpty" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-294-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=27427145-2f40-4d5a-bac0-49b9e2df030f] Transferred FlowFile[0,94714454809840.mockFlowFile,21B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAttributeToContentWindows" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-295-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=6739aa55-27ff-48fe-9953-6b527b5ee9e7] Transferred FlowFile[0,94714455851069.mockFlowFile,17B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testAttributeToContent" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.002">
+    <system-err><![CDATA[[pool-296-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=aa60959e-1891-4f43-bcb6-24d967ccc4ee] Transferred FlowFile[0,hello.txt,4B] to 'success'
+]]></system-err>
+  </testcase>
+  <testcase name="testSubstituteVariablesWhenVariableReferenceEscaped" classname="org.apache.nifi.processors.standard.TestReplaceText" time="0.001">
+    <system-err><![CDATA[[pool-297-thread-1] INFO org.apache.nifi.processors.standard.ReplaceText - ReplaceText[id=1f4e1ee7-5f69-46d4-83a3-27c149a494d6] Transferred FlowFile[0,94714458329023.mockFlowFile,29B] to 'success'
+]]></system-err>
+  </testcase>
+</testsuite>

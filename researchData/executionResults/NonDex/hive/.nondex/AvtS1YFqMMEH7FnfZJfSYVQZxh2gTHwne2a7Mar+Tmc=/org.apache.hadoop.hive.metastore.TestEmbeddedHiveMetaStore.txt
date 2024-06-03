@@ -1,0 +1,35 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore
+-------------------------------------------------------------------------------
+Tests run: 51, Failures: 4, Errors: 4, Skipped: 0, Time elapsed: 74.144 s <<< FAILURE! - in org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore
+org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore.testSimpleTable  Time elapsed: 0.561 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<0>
+
+org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore.testDatabase  Time elapsed: 0.096 s  <<< FAILURE!
+java.lang.AssertionError: first database is not testdb1
+
+org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore.testAlterTable  Time elapsed: 0.028 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: Unable to create database managed directory file:/home/alex/Repositories/hive/standalone-metastore/metastore-server/target/warehouse/_testDB_table_create_, failed to create database alterdb
+
+org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore.testPartition  Time elapsed: 1.689 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.InvalidOperationException: Database compdb is not empty. One or more tables exist.
+
+org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore.testDropDatabaseCascadeMVMultiDB  Time elapsed: 46.893 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.MetaException: 
+javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+NestedThrowables:
+java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (26).  The statement has been rolled back.
+Caused by: javax.jdo.JDODataStoreException: Exception thrown flushing changes to datastore
+Caused by: java.sql.BatchUpdateException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (26).  The statement has been rolled back.
+Caused by: org.apache.derby.shared.common.error.DerbySQLIntegrityConstraintViolationException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (26).  The statement has been rolled back.
+Caused by: org.apache.derby.iapi.error.StandardException: DELETE on table 'DBS' caused a violation of foreign key constraint 'TBLS_FK1' for key (26).  The statement has been rolled back.
+
+org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore.testGetTableObjects  Time elapsed: 0.233 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<0>
+
+org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore.testSimpleFunction  Time elapsed: 0.087 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<0>
+
+org.apache.hadoop.hive.metastore.TestEmbeddedHiveMetaStore.testTableDatabase  Time elapsed: 0.118 s  <<< ERROR!
+org.apache.hadoop.hive.metastore.api.AlreadyExistsException: Database testDb already exists
+

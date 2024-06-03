@@ -1,0 +1,704 @@
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated +I0RGYNx3GAp5UYZ||ZP1BN66m0+Rm8+L4vBzJyeYf6+RyEZnRaUvsuImVbJpM6Up9++u/cts to
+                                                                                          +I0RGYNxpG3A5UYZ||ZP1BN66m0+Rm8+L4vBzJyeYf6+RyEZnRaUvsuImVbJpM6Up9++u/cts
+[main] ERROR org.apache.nifi.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+javax.crypto.AEADBadTagException: mac check in GCM failed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher$AEADGenericBlockCipher.doFinal(Unknown Source)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher.engineDoFinal(Unknown Source)
+	at javax.crypto.Cipher.doFinal(Cipher.java:2168)
+	at org.apache.nifi.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.properties.SensitivePropertyProvider$unprotect$0.call(Unknown Source)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27$_closure44.doCall(AESSensitivePropertyProviderTest.groovy:375)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27$_closure44.doCall(AESSensitivePropertyProviderTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.util.GroovyTestCase.shouldFail(GroovyTestCase.java:216)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:351)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:64)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27.doCall(AESSensitivePropertyProviderTest.groovy:374)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:421)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2330)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2315)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2356)
+	at org.codehaus.groovy.runtime.dgm$186.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:244)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:127)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest.testShouldHandleUnprotectMalformedIV(AESSensitivePropertyProviderTest.groovy:366)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Error decrypting a protected value for keySize 128 and cipher text [+I0RGYNxpG3A5UYZ||ZP1BN66m0+Rm8+L4vBzJyeYf6+RyEZnRaUvsuImVbJpM6Up9++u/cts]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated cCgmC7xT1tnRi8uk||eVIlAGbl9jJ2Nc/Bd8O2QotLsEDBFaugCodjfU+YnXhIfNparuywxZU to
+                                                                                          cCgmC7xT1tRni8uk||eVIlAGbl9jJ2Nc/Bd8O2QotLsEDBFaugCodjfU+YnXhIfNparuywxZU
+[main] ERROR org.apache.nifi.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+javax.crypto.AEADBadTagException: mac check in GCM failed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher$AEADGenericBlockCipher.doFinal(Unknown Source)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher.engineDoFinal(Unknown Source)
+	at javax.crypto.Cipher.doFinal(Cipher.java:2168)
+	at org.apache.nifi.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.properties.SensitivePropertyProvider$unprotect$0.call(Unknown Source)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27$_closure44.doCall(AESSensitivePropertyProviderTest.groovy:375)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27$_closure44.doCall(AESSensitivePropertyProviderTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.util.GroovyTestCase.shouldFail(GroovyTestCase.java:216)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:351)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:64)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27.doCall(AESSensitivePropertyProviderTest.groovy:374)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:421)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2330)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2315)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2356)
+	at org.codehaus.groovy.runtime.dgm$186.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:244)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:127)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest.testShouldHandleUnprotectMalformedIV(AESSensitivePropertyProviderTest.groovy:366)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Error decrypting a protected value for keySize 192 and cipher text [cCgmC7xT1tRni8uk||eVIlAGbl9jJ2Nc/Bd8O2QotLsEDBFaugCodjfU+YnXhIfNparuywxZU]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated aOAMd//viJJUdk8z||GExuQrX7JGH9HMlHlJchX08s1Q50bV+OrJM+O+8EUK/TwZquOJrU+CM to
+                                                                                          aOAMd//viJUJdk8z||GExuQrX7JGH9HMlHlJchX08s1Q50bV+OrJM+O+8EUK/TwZquOJrU+CM
+[main] ERROR org.apache.nifi.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+javax.crypto.AEADBadTagException: mac check in GCM failed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher$AEADGenericBlockCipher.doFinal(Unknown Source)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher.engineDoFinal(Unknown Source)
+	at javax.crypto.Cipher.doFinal(Cipher.java:2168)
+	at org.apache.nifi.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.properties.SensitivePropertyProvider$unprotect$0.call(Unknown Source)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27$_closure44.doCall(AESSensitivePropertyProviderTest.groovy:375)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27$_closure44.doCall(AESSensitivePropertyProviderTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.util.GroovyTestCase.shouldFail(GroovyTestCase.java:216)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:351)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:64)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedIV_closure27.doCall(AESSensitivePropertyProviderTest.groovy:374)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:421)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2330)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2315)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2356)
+	at org.codehaus.groovy.runtime.dgm$186.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:244)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:127)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest.testShouldHandleUnprotectMalformedIV(AESSensitivePropertyProviderTest.groovy:366)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Error decrypting a protected value for keySize 256 and cipher text [aOAMd//viJUJdk8z||GExuQrX7JGH9HMlHlJchX08s1Q50bV+OrJM+O+8EUK/TwZquOJrU+CM]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - IV and delimiter: QmFkIElWIHZhbHVl||
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 128 and cipher text [QmFkIElWIHZhbHVl||]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 128 and cipher text [QmFkIElWIHZhbHVl||      ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 128 and cipher text [QmFkIElWIHZhbHVl||
+]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 192 and cipher text [QmFkIElWIHZhbHVl||]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 192 and cipher text [QmFkIElWIHZhbHVl||      ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 192 and cipher text [QmFkIElWIHZhbHVl||
+]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 256 and cipher text [QmFkIElWIHZhbHVl||]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 256 and cipher text [QmFkIElWIHZhbHVl||      ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 256 and cipher text [QmFkIElWIHZhbHVl||
+]
+[main] ERROR org.apache.nifi.properties.AESSensitivePropertyProvider - Encountered an error initializing the AES Sensitive Property Provider: No such provider: BC
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in encrypt mode with a key of length 128 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in encrypt mode with a key of length 192 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in encrypt mode with a key of length 256 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 128 length key: BjqCBx0FoR8Yy4oX||GHX2lDppEekfALtYnsdyOw44nl59JXZoVWoC4/4k8RaxTTWsWIsFv0Y=
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 192 length key: FaYwpnKPvmKmIMOk||MvkrgUp/yIaEllCj7shERSnStUoYwmD1/Umhaw98H44cC44ZGNPBT14=
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 256 length key: QVYSY/zTkkCYZiCe||aBAhRifW3Tg1OgqSJJ9Wq2y1SXxEQfVO45PGfWED0SYKklqF5Tlnsp8=
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Decrypted for 128 length key: This is a plaintext value
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Decrypted for 192 length key: This is a plaintext value
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Decrypted for 256 length key: This is a plaintext value
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Encrypted for 128 length key: +uXCvHlm0o+eK4A5||aDSD9A1/IJQlep5tzRGALhRxTDWHTlTdeiER1BP/vusCX3iI6qckxAo
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Encrypted for 192 length key: ueYDSmQqNXAzGzV2||+LJgTSlZ4MRjzPOvIba5ZVBCaYjNEamOtJwxqDZX7MgjQaQ7dG00juU
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Encrypted for 256 length key: vCmFn93ivpdCfICR||PnoP9uGPCe6q7gpoAqAt1ErnXKMIV5P2xyFui/weeSYQ24/LVxmi+JI
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in decrypt mode with a key of length 128 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in decrypt mode with a key of length 192 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in decrypt mode with a key of length 256 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 128 length key: +uXCvHlm0o+eK4A5||aDSD9A1/IJQlep5tzRGALhRxTDWHTlTdeiER1BP/vusCX3iI6qckxAo
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 192 length key: ueYDSmQqNXAzGzV2||+LJgTSlZ4MRjzPOvIba5ZVBCaYjNEamOtJwxqDZX7MgjQaQ7dG00juU
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 256 length key: vCmFn93ivpdCfICR||PnoP9uGPCe6q7gpoAqAt1ErnXKMIV5P2xyFui/weeSYQ24/LVxmi+JI
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in encrypt mode with a key of length 128 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in encrypt mode with a key of length 192 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [SETUP] Initialized a cipher in encrypt mode with a key of length 256 bits
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 128 length key: EpqubKfsO+Rg+D8r||l+IQo+BklQIo8DWHCEtcLQcW/m4spAkwvw83VDtW+5p608QKpgj8WBA=
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 192 length key: potFZPXqOY/6SpuS||1p+E+aEc6jdpblTpws7Ap9VVdetiOswxJ7N0rGS9AOasFc01szmaWDM=
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cipher text for 256 length key: 1FFhaJastPrwPf7y||aWKr/cjwiYTlg2TRh3mo2wbUrrTGf6tlCGow1YmwvQvvSC7vAKdEZJo=
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Decrypted for 128 length key: This is a plaintext value
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Decrypted for 192 length key: This is a plaintext value
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Decrypted for 256 length key: This is a plaintext value
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated 7axRrXgVoStpZrPj||YoW+xzvlIKWTXhgeM4G7W1j21OrgsgpteF2FcTQs/UbHoeeBZELlABM to
+                                                                                          7axRrXgVoStpZrPj||YoW+xzvKlWITXhgeM4G7W1j21OrgsgpteF2FcTQs/UbHoeeBZELlABM
+[main] ERROR org.apache.nifi.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+javax.crypto.AEADBadTagException: mac check in GCM failed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher$AEADGenericBlockCipher.doFinal(Unknown Source)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher.engineDoFinal(Unknown Source)
+	at javax.crypto.Cipher.doFinal(Cipher.java:2168)
+	at org.apache.nifi.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.properties.SensitivePropertyProvider$unprotect$0.call(Unknown Source)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23$_closure39.doCall(AESSensitivePropertyProviderTest.groovy:285)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23$_closure39.doCall(AESSensitivePropertyProviderTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.util.GroovyTestCase.shouldFail(GroovyTestCase.java:216)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:351)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:64)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23.doCall(AESSensitivePropertyProviderTest.groovy:284)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:421)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2330)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2315)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2356)
+	at org.codehaus.groovy.runtime.dgm$186.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:244)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:127)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest.testShouldHandleUnprotectMalformedValue(AESSensitivePropertyProviderTest.groovy:276)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Error decrypting a protected value for keySize 128 and cipher text [7axRrXgVoStpZrPj||YoW+xzvKlWITXhgeM4G7W1j21OrgsgpteF2FcTQs/UbHoeeBZELlABM]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated FndIRN4hlf5FQTjr||gnDXRYDR7tOw86ybdrsfmNvLH3oZ9lyHWM5wDmyMjAG1/ONG3DCHpSc to
+                                                                                          FndIRN4hlf5FQTjr||gnDXRYD7RtOw86ybdrsfmNvLH3oZ9lyHWM5wDmyMjAG1/ONG3DCHpSc
+[main] ERROR org.apache.nifi.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+javax.crypto.AEADBadTagException: mac check in GCM failed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher$AEADGenericBlockCipher.doFinal(Unknown Source)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher.engineDoFinal(Unknown Source)
+	at javax.crypto.Cipher.doFinal(Cipher.java:2168)
+	at org.apache.nifi.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.properties.SensitivePropertyProvider$unprotect$0.call(Unknown Source)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23$_closure39.doCall(AESSensitivePropertyProviderTest.groovy:285)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23$_closure39.doCall(AESSensitivePropertyProviderTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.util.GroovyTestCase.shouldFail(GroovyTestCase.java:216)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:351)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:64)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23.doCall(AESSensitivePropertyProviderTest.groovy:284)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:421)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2330)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2315)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2356)
+	at org.codehaus.groovy.runtime.dgm$186.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:244)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:127)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest.testShouldHandleUnprotectMalformedValue(AESSensitivePropertyProviderTest.groovy:276)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Error decrypting a protected value for keySize 192 and cipher text [FndIRN4hlf5FQTjr||gnDXRYD7RtOw86ybdrsfmNvLH3oZ9lyHWM5wDmyMjAG1/ONG3DCHpSc]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated VHYnGdwE6Wk+7rN3||sANslGoiShrbCfZ6b1DKnjqXw3o0lsb9xc96rHa++dhoZftszQEjIeU to
+                                                                                          VHYnGdwE6Wk+7rN3||sANslGoShirbCfZ6b1DKnjqXw3o0lsb9xc96rHa++dhoZftszQEjIeU
+[main] ERROR org.apache.nifi.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+javax.crypto.AEADBadTagException: mac check in GCM failed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher$AEADGenericBlockCipher.doFinal(Unknown Source)
+	at org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher.engineDoFinal(Unknown Source)
+	at javax.crypto.Cipher.doFinal(Cipher.java:2168)
+	at org.apache.nifi.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.properties.SensitivePropertyProvider$unprotect$0.call(Unknown Source)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23$_closure39.doCall(AESSensitivePropertyProviderTest.groovy:285)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23$_closure39.doCall(AESSensitivePropertyProviderTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:399)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:118)
+	at groovy.util.GroovyTestCase.shouldFail(GroovyTestCase.java:216)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:351)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:64)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest$_testShouldHandleUnprotectMalformedValue_closure23.doCall(AESSensitivePropertyProviderTest.groovy:284)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at groovy.lang.Closure.call(Closure.java:405)
+	at groovy.lang.Closure.call(Closure.java:421)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2330)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2315)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.each(DefaultGroovyMethods.java:2356)
+	at org.codehaus.groovy.runtime.dgm$186.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:244)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:127)
+	at org.apache.nifi.properties.AESSensitivePropertyProviderTest.testShouldHandleUnprotectMalformedValue(AESSensitivePropertyProviderTest.groovy:276)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:43)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:82)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:73)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Error decrypting a protected value for keySize 256 and cipher text [VHYnGdwE6Wk+7rN3||sANslGoShirbCfZ6b1DKnjqXw3o0lsb9xc96rHa++dhoZftszQEjIeU]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 128 and cipher text []
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 128 and cipher text [    ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 128 and cipher text [null]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 192 and cipher text []
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 192 and cipher text [    ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 192 and cipher text [null]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 256 and cipher text []
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 256 and cipher text [    ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot decrypt a cipher text shorter than 19 chars for keySize 256 and cipher text [null]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - thisIsABadPassword -> K0n19g/TwiyPoPm3||E8/rjUUMRcdCRc9A347gtib/wCMZJF9x9Dqgc3w1Gq9jLg
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Normal Base64 encoding would be K0n19g/TwiyPoPm3||E8/rjUUMRcdCRc9A347gtib/wCMZJF9x9Dqgc3w1Gq9jLg==
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - thisIsABadSensitiveKeyPassword -> pqk5nRGFCQ+Vu1J7||U5SQSSI+7uY6GJSBilvAzJKpmFHO65KEqeT1pz4evR2xi+7ubjCoFyqBTGdsZw
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Normal Base64 encoding would be pqk5nRGFCQ+Vu1J7||U5SQSSI+7uY6GJSBilvAzJKpmFHO65KEqeT1pz4evR2xi+7ubjCoFyqBTGdsZw==
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - thisIsABadKeystorePassword -> RemIYnZAylsIumIN||8L9grSboXg+48PdN05dMCaDmJEm8/K9muka+i1IX/MexQmUXSSdz8rnl
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Normal Base64 encoding would be RemIYnZAylsIumIN||8L9grSboXg+48PdN05dMCaDmJEm8/K9muka+i1IX/MexQmUXSSdz8rnl
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - thisIsABadKeyPassword -> usmXTZt3Qnw/dhKK||HRxtvwwH1I43UDI5cGTUy7PaJCki3rNXdz15L3+pcEdd8JICKw
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Normal Base64 encoding would be usmXTZt3Qnw/dhKK||HRxtvwwH1I43UDI5cGTUy7PaJCki3rNXdz15L3+pcEdd8JICKw==
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - thisIsABadTruststorePassword -> 1IWmZOZJootZUVMN||o6Q+QGzE0/FWnPLRb9nJVe1v2RqKP8qQfVHq+h5z1UdqaqjQfD4d4tGSWCk
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Normal Base64 encoding would be 1IWmZOZJootZUVMN||o6Q+QGzE0/FWnPLRb9nJVe1v2RqKP8qQfVHq+h5z1UdqaqjQfD4d4tGSWCk=
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - This is an encrypted banner message -> 7tQDyQgE3dx6ndHr||2TA7EP2nVRYpddOislzd0dydd5UIZCHRhYQJB1+o5ZBlsqZHb17V9Eo/qSUSx5rQizC7
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Normal Base64 encoding would be 7tQDyQgE3dx6ndHr||2TA7EP2nVRYpddOislzd0dydd5UIZCHRhYQJB1+o5ZBlsqZHb17V9Eo/qSUSx5rQizC7
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated VwNfUrUtPvwrQKZL||ebMz09yt1eEdTDV2aCvyNr9DbFzSs5V86vOERNNod51xg+AqWw3s7KY to
+                                                                                                                     ebMz09yt1eEdTDV2aCvyNr9DbFzSs5V86vOERNNod51xg+AqWw3s7KY
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] The cipher text does not contain the delimiter || -- it should be of the form Base64(IV) || Base64(cipherText) for keySize 128 and cipher text [ebMz09yt1eEdTDV2aCvyNr9DbFzSs5V86vOERNNod51xg+AqWw3s7KY]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated VwNfUrUtPvwrQKZL||ebMz09yt1eEdTDV2aCvyNr9DbFzSs5V86vOERNNod51xg+AqWw3s7KY to
+                                                                                                                   ||ebMz09yt1eEdTDV2aCvyNr9DbFzSs5V86vOERNNod51xg+AqWw3s7KY
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] The IV (0 bytes) must be at least 12 bytes for keySize 128 and cipher text [||ebMz09yt1eEdTDV2aCvyNr9DbFzSs5V86vOERNNod51xg+AqWw3s7KY]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated 1o6phb2ne5FH4mVV||Mi/yRrC7Idtkt8lK5XLwmwHd4Obv6cb6OlaTqiT9JS0nvxejYWtmEak to
+                                                                                                                     Mi/yRrC7Idtkt8lK5XLwmwHd4Obv6cb6OlaTqiT9JS0nvxejYWtmEak
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] The cipher text does not contain the delimiter || -- it should be of the form Base64(IV) || Base64(cipherText) for keySize 192 and cipher text [Mi/yRrC7Idtkt8lK5XLwmwHd4Obv6cb6OlaTqiT9JS0nvxejYWtmEak]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated 1o6phb2ne5FH4mVV||Mi/yRrC7Idtkt8lK5XLwmwHd4Obv6cb6OlaTqiT9JS0nvxejYWtmEak to
+                                                                                                                   ||Mi/yRrC7Idtkt8lK5XLwmwHd4Obv6cb6OlaTqiT9JS0nvxejYWtmEak
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] The IV (0 bytes) must be at least 12 bytes for keySize 192 and cipher text [||Mi/yRrC7Idtkt8lK5XLwmwHd4Obv6cb6OlaTqiT9JS0nvxejYWtmEak]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated TZuODPTG0xjYtrMd||l2qwISnQutvmT/gqL2CCASRZ6eiDLsiJdG0g6W4o23nhq0kUXzjcJ70 to
+                                                                                                                     l2qwISnQutvmT/gqL2CCASRZ6eiDLsiJdG0g6W4o23nhq0kUXzjcJ70
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] The cipher text does not contain the delimiter || -- it should be of the form Base64(IV) || Base64(cipherText) for keySize 256 and cipher text [l2qwISnQutvmT/gqL2CCASRZ6eiDLsiJdG0g6W4o23nhq0kUXzjcJ70]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Manipulated TZuODPTG0xjYtrMd||l2qwISnQutvmT/gqL2CCASRZ6eiDLsiJdG0g6W4o23nhq0kUXzjcJ70 to
+                                                                                                                   ||l2qwISnQutvmT/gqL2CCASRZ6eiDLsiJdG0g6W4o23nhq0kUXzjcJ70
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] The IV (0 bytes) must be at least 12 bytes for keySize 256 and cipher text [||l2qwISnQutvmT/gqL2CCASRZ6eiDLsiJdG0g6W4o23nhq0kUXzjcJ70]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Keys: [128:0123456789ABCDEFFEDCBA9876543210, 192:0123456789ABCDEFFEDCBA98765432100123456789ABCDEF, 256:0123456789ABCDEFFEDCBA98765432100123456789ABCDEFFEDCBA9876543210]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Identifier key: aes/gcm/128 for size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Identifier key: aes/gcm/192 for size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Identifier key: aes/gcm/256 for size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 128
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 128 and plaintext []
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 128 and plaintext [    ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 128 and plaintext [null]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 192
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 192 and plaintext []
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 192 and plaintext [    ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 192 and plaintext [null]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Initialized AES Sensitive Property Provider with key size 256
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 256 and plaintext []
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 256 and plaintext [    ]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - [EXPECTED] Cannot encrypt an empty value for keySize 256 and plaintext [null]
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Decrypted aYDkDKys1ENr3gp+||sTBPpMlIvHcOLTGZlfWct8r9RY8BuDlDkoaYmGJ/9m9af9tZIVzcnDwvYQAaIKxRGF7vI2yrY7Xd6x9GTDnWGiGiRXlaP458BBMMgfzH2O8 to 0123456789ABCDEFFEDCBA98765432100123456789ABCDEFFEDCBA9876543210
+[main] INFO org.apache.nifi.properties.AESSensitivePropertyProviderTest - Decrypted aYDkDKys1ENr3gp+||sTBPpMlIvHcOLTGZlfWct8r9RY8BuDlDkoaYmGJ/9m9af9tZIVzcnDwvYQAaIKxRGF7vI2yrY7Xd6x9GTDnWGiGiRXlaP458BBMMgfzH2O8 to 0123456789ABCDEFFEDCBA98765432100123456789ABCDEFFEDCBA9876543210

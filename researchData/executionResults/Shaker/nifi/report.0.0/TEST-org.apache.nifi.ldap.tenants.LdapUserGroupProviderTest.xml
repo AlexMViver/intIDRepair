@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="4.66" tests="42" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/org/springframework/security/spring-security-ldap/5.5.2/spring-security-ldap-5.5.2.jar:/home/alex/.m2/repository/org/springframework/security/spring-security-core/5.5.2/spring-security-core-5.5.2.jar:/home/alex/.m2/repository/org/springframework/security/spring-security-crypto/5.5.2/spring-security-crypto-5.5.2.jar:/home/alex/.m2/repository/org/springframework/ldap/spring-ldap-core/2.3.4.RELEASE/spring-ldap-core-2.3.4.RELEASE.jar:/home/alex/.m2/repository/org/springframework/spring-beans/5.3.11/spring-beans-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-core/5.3.11/spring-core-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-jcl/5.3.11/spring-jcl-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-context/5.3.11/spring-context-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-aop/5.3.11/spring-aop-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-expression/5.3.11/spring-expression-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-tx/5.3.11/spring-tx-5.3.11.jar:/home/alex/.m2/repository/org/apache/directory/server/apacheds-all/2.0.0-M24/apacheds-all-2.0.0-M24.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers/target/surefire/surefirebooter6759375771669722013.jar /home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers/target/surefire 2024-05-02T01-23-45_285-jvmRun1 surefire5370070140336242418tmp surefire_110284129618482356tmp"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/.m2/repository/org/springframework/security/spring-security-ldap/5.5.2/spring-security-ldap-5.5.2.jar:/home/alex/.m2/repository/org/springframework/security/spring-security-core/5.5.2/spring-security-core-5.5.2.jar:/home/alex/.m2/repository/org/springframework/security/spring-security-crypto/5.5.2/spring-security-crypto-5.5.2.jar:/home/alex/.m2/repository/org/springframework/ldap/spring-ldap-core/2.3.4.RELEASE/spring-ldap-core-2.3.4.RELEASE.jar:/home/alex/.m2/repository/org/springframework/spring-beans/5.3.11/spring-beans-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-core/5.3.11/spring-core-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-jcl/5.3.11/spring-jcl-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-context/5.3.11/spring-context-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-aop/5.3.11/spring-aop-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-expression/5.3.11/spring-expression-5.3.11.jar:/home/alex/.m2/repository/org/springframework/spring-tx/5.3.11/spring-tx-5.3.11.jar:/home/alex/.m2/repository/org/apache/directory/server/apacheds-all/2.0.0-M24/apacheds-all-2.0.0-M24.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers/target/surefire/surefirebooter6759375771669722013.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testSearchGroupsObjectSearchScope" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.893">
+    <system-err><![CDATA[[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 1.3.6.1.4.1.18060.0.0.1
+[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.7
+[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.2
+[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.18
+[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 1.2.840.113556.1.4.319
+[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.3
+[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 1.3.6.1.4.1.4203.1.10.1
+[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 1.2.840.113556.1.4.473
+[main] INFO org.apache.directory.api.ldap.codec.osgi.DefaultLdapCodecService - Registered pre-bundled control factory: 1.2.840.113556.1.4.474
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.3.6.1.4.1.18060.0.0.1
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.7
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.2
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.18
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.2.840.113556.1.4.319
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.3
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.3.6.1.4.1.4203.1.10.1
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.3.6.1.4.1.42.2.27.8.5.1
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.9
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 2.16.840.1.113730.3.4.10
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.3.6.1.4.1.4203.1.9.1.3
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.3.6.1.4.1.4203.1.9.1.4
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.3.6.1.4.1.4203.1.9.1.1
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.3.6.1.4.1.4203.1.9.1.2
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.2.840.113556.1.4.473
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.2.840.113556.1.4.474
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.2.840.113556.1.4.841
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.2.840.113556.1.4.417
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.2.840.113556.1.4.1413
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled control factory: 1.2.840.113556.1.4.528
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled extended operation factory: 1.3.6.1.1.8
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled extended operation factory: 1.3.6.1.4.1.18060.0.1.8
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled extended operation factory: 1.3.6.1.4.1.18060.0.1.3
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled extended operation factory: 1.3.6.1.4.1.18060.0.1.6
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled extended operation factory: 1.3.6.1.4.1.18060.0.1.5
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled extended operation factory: 1.3.6.1.4.1.4203.1.11.1
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled extended operation factory: 1.3.6.1.4.1.4203.1.11.3
+[main] INFO org.apache.directory.api.ldap.codec.standalone.CodecFactoryUtil - Registered pre-bundled extended operation factory: 1.3.6.1.4.1.1466.20037
+[main] INFO org.apache.directory.server.core.api.CacheService - no custom cache configuration was set, loading the default cache configuration
+[main] INFO org.apache.directory.api.ldap.schema.extractor.impl.DefaultSchemaLdifExtractor - Schema directory '/tmp/server-work-nifi-example/partitions/schema' does NOT exist: extracted state set to false.
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading system enabled schema: 
+	Schema Name: system
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: []
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading core enabled schema: 
+	Schema Name: core
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - core schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading apache enabled schema: 
+	Schema Name: apache
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [core, system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading apachemeta enabled schema: 
+	Schema Name: apachemeta
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading other enabled schema: 
+	Schema Name: other
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [core, system, apache, apachemeta]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - core schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - core schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading cosine enabled schema: 
+	Schema Name: cosine
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [core, system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading inetorgperson enabled schema: 
+	Schema Name: inetorgperson
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [core, system, cosine]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - apachemeta schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - core schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading krb5kdc enabled schema: 
+	Schema Name: krb5kdc
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [core, system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - core schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - core schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading java enabled schema: 
+	Schema Name: java
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [core, system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - apache schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading pwdpolicy enabled schema: 
+	Schema Name: pwdpolicy
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - cosine schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - core schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading collective enabled schema: 
+	Schema Name: collective
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [core, system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - core schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - apache schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - system schema has already been loaded
+[main] INFO org.apache.directory.api.ldap.schema.manager.impl.DefaultSchemaManager - Loading adsconfig enabled schema: 
+	Schema Name: adsconfig
+		Disabled: false
+		Owner: uid=admin,ou=system
+		Dependencies: [core, apache, system]
+		SchemaLoader : LdifSchemaLoader
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] WARN org.apache.directory.server.core.DefaultDirectoryService - ApacheDS shutdown hook has NOT been registered with the runtime.  This default setting for standalone operation has been overriden.
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named dnCache
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named alias
+[main] INFO org.apache.directory.server.core.api.CacheService - No cache with name alias exists, creating one
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named piar
+[main] INFO org.apache.directory.server.core.api.CacheService - No cache with name piar exists, creating one
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named entryDn
+[main] INFO org.apache.directory.server.core.api.CacheService - No cache with name entryDn exists, creating one
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaAcctFlags
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaBadPasswordCount
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaBadPasswordTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaHomeDrive
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaHomePath
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaKickoffTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLMPassword
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLogoffTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLogonHours
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLogonScript
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLogonTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaMungedDial
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaNTPassword
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaPasswordHistory
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaPrimaryGroupSID
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaProfilePath
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaPwdCanChange
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaPwdLastSet
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaPwdMustChange
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaUserWorkstations
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaSID
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaPrivilegeList
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaSID
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: gidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: uidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaSID
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaPwdLastSet
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaSID
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaNTPassword
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaTrustFlags
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaShareName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: gidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: uidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaAlgorithmicRidBase
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaForceLogoff
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLockoutDuration
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLockoutObservationWindow
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLockoutThreshold
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaLogonToChgPwd
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaMaxPwdAge
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaMinPwdAge
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaMinPwdLength
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaNextGroupRid
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaNextRid
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaNextUserRid
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaPwdHistoryLength
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaRefuseMachinePwdChange
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaSID
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaSIDList
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: gidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaGroupType
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaSID
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaSID
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaBoolOption
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaIntegerOption
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaStringListOption
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaStringOption
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: sambaOptionName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOption
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpRange
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpPoolDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpGroupDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpHostDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpClassesDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpLeasesDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOptionsDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpNetMask
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpSecondaryDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpSharedNetworkDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpSubnetDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpGroupDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpHostDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpClassesDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOptionsDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpPrimaryDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpLeaseDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpHWAddress
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOptionsDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpSubclassesDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOptionsDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpVersion
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpImplementation
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpHashBucketAssignment
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpDelayedServiceParameter
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpMaxClientLeadTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpFailOverEndpointState
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpServiceDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpHostDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOptionsDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpExpirationTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStartTimeOfState
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpLastTransactionTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpBootpFlag
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpDnsStatus
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpRequestedHostName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpAssignedHostName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpReservedForClient
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpAssignedToClient
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpRelayAgentInfo
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpHWAddress
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpAddressState
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpClassesDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpPermitList
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpLeasesDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOptionsDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpRange
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpAddressState
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpExpirationTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStartTimeOfState
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpLastTransactionTime
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpBootpFlag
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpDnsStatus
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpRequestedHostName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpAssignedHostName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpReservedForClient
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpAssignedToClient
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpRelayAgentInfo
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpHWAddress
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpErrorLog
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpSubnetDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpPoolDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOptionsDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpClassData
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpOptionsDN
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: dhcpStatements
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: corbaRepositoryId
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: corbaIor
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: corbaObject
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: caseExactIA5SubstringsMatch
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: caseExactIA5SubstringsMatch
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: caseExactIA5SubstringsMatch
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: shadowLastChange
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: shadowMin
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: shadowMax
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: shadowWarning
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: shadowInactive
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: shadowExpire
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: shadowFlag
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: loginShell
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: gecos
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: uidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: gidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: homeDirectory
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: bootFile
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: bootParameter
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: macAddress
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: ipHostNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: nisMapName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: ipServicePort
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: ipServiceProtocol
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: oncRpcNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: nisMapEntry
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: nisMapName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: memberUid
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: gidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: nisNetgroupTriple
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: memberNisNetgroup
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: ipNetmaskNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: ipNetworkNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: ipProtocolNumber
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: automountInformation
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsMxPreference
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsClass
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsSoaSerial
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsSoaRefresh
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsSoaRetry
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsSoaExpire
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsSoaMName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsSoaRName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsSoaMinimum
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsCharacterString
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsIpAddress
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsIpAddress
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsTtl
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsServicePriority
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsServiceWeight
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsServicePort
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsDomainName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: apacheDnsAbstractRecord
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: xmozillanickname
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: xmozillausehtmlmail
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: mozillaSecondEmail
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: mozillaPostalAddress2
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: mozillaHomePostalAddress2
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: mozillaHomeLocalityName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: mozillaHomeState
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: mozillaHomePostalCode
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: mozillaHomeCountryName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: mozillaHomeFriendlyCountryName
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: homeurl
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: workurl
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: custom1
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: custom2
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: custom3
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: custom4
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: nsAIMid
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: caseExactIA5SubstringsMatch
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: caseExactIA5SubstringsMatch
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: nisDomain
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.ldif.LdifReader - No version information : assuming version: 1
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: uidNumber
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: nisPublicKey
+[main] INFO org.apache.directory.api.ldap.model.entry.AbstractValue - ERR_04447_CANNOT_NORMALIZE_VALUE Cannot normalize the wrapped value ERR_04226 I do not know how to handle NameAndOptionalUID normalization with objects of class: nisSecretKey
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named alias
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named piar
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named entryDn
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmPartition - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named system
+[main] INFO org.apache.directory.server.core.api.CacheService - No cache with name system exists, creating one
+[main] INFO org.apache.directory.server.core.security.TlsKeyGenerator - Keys and self signed certificate successfully generated.
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named groupCache
+[main] INFO org.apache.directory.server.core.event.EventInterceptor - Initializing ...
+[main] INFO org.apache.directory.server.core.event.EventInterceptor - Initialization complete.
+[main] WARN org.apache.directory.server.core.DefaultDirectoryService - You didn't change the admin password of directory service instance 'nifi-example'.  Please update the admin password as soon as possible to prevent a possible security breach.
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmIndex - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named alias
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named piar
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named entryDn
+[main] INFO org.apache.directory.server.core.partition.impl.btree.jdbm.JdbmPartition - Setting CacheRecondManager's cache size to 100
+[main] INFO org.apache.directory.server.core.api.CacheService - fetching the cache named example
+[main] INFO org.apache.directory.server.core.api.CacheService - No cache with name example exists, creating one
+[main] WARN org.apache.directory.server.core.normalization.NormalizationInterceptor - The Rdn 'ou=groups-2' is not present in the entry
+[main] WARN org.apache.directory.api.ldap.model.entry.DefaultAttribute - ERR_04486_VALUE_ALREADY_EXISTS The value 'tlsKeyInfo' already exists in the attribute (objectClass)
+[main] WARN org.apache.directory.api.ldap.model.entry.DefaultAttribute - ERR_04486_VALUE_ALREADY_EXISTS The value 'inetOrgPerson' already exists in the attribute (objectClass)
+[main] INFO org.apache.directory.server.core.security.TlsKeyGenerator - Keys and self signed certificate successfully generated.
+[main] INFO org.apache.directory.server.ldap.LdapServer - Successful bind of an LDAP Service (40491) is completed.
+[main] INFO org.apache.directory.server.ldap.LdapServer - Ldap service started.
+]]></system-err>
+  </testcase>
+  <testcase name="testSearchGroupsWithoutMemberAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.005"/>
+  <testcase name="testReferencedUserUsingReferencedAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.059"/>
+  <testcase name="testGetGroupByName" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.021"/>
+  <testcase name="testSearchGroupsWithNameAndUserIdentityCnAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.022"/>
+  <testcase name="testSearchUsersAndGroupsMembershipThroughUsersCaseInsensitive" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.017"/>
+  <testcase name="testSearchUsersAndGroupsMembershipThroughGroupsCaseSensitive" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.015"/>
+  <testcase name="testSearchGroupsWithNoNameAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.011"/>
+  <testcase name="testSearchUsersAndGroupsMembershipThroughGroupsCaseInsensitive" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.016"/>
+  <testcase name="testSearchUsersAndGroupsMembershipThroughUsersAndGroups" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.015"/>
+  <testcase name="testInvalidGroupSearchScope" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.003"/>
+  <testcase name="testReferencedUserWithoutUserSearchBase" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.003"/>
+  <testcase name="testReferencedGroupUsingReferencedAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.01"/>
+  <testcase name="testSearchUsersAndGroupsMembershipThroughGroups" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.014"/>
+  <testcase name="testReferencedGroupAttributeWithoutGroupSearchBase" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.003"/>
+  <testcase name="testSearchUsersWithGroupingAndGroupName" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.012"/>
+  <testcase name="testSearchUsersWithNoIdentityAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.008"/>
+  <testcase name="testUserIdentityMapping" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.009"/>
+  <testcase name="testSearchUsersWithFilter" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.007"/>
+  <testcase name="testSearchUsersObjectSearchScope" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.008"/>
+  <testcase name="testSearchUsersWithPaging" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.075"/>
+  <testcase name="testSearchGroupsSubtreeSearchScope" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.007"/>
+  <testcase name="testSearchUsersSubtreeSearchScope" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.007"/>
+  <testcase name="testSearchUsersAndGroupsMembershipThroughUsers" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.012"/>
+  <testcase name="testSearchGroupsWithFilter" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.006"/>
+  <testcase name="testUserSearchBaseSpecifiedButNoUserObjectClass" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.001"/>
+  <testcase name="testUserIdentityMappingWithTransforms" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.007"/>
+  <testcase name="testSearchGroupsWithNameAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.009"/>
+  <testcase name="testSearchGroupsWithPaging" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.011"/>
+  <testcase name="testReferencedGroupWithoutDefiningReferencedAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.008"/>
+  <testcase name="testNoSearchBasesSpecified" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.001"/>
+  <testcase name="testSearchUsersWithUidIdentityAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.007"/>
+  <testcase name="testUserSearchBaseSpecifiedButNoGroupSearchScope" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.003"/>
+  <testcase name="testSearchGroupsWithNoNameAndUserIdentityUidAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.014"/>
+  <testcase name="testSearchUsersWithCnIdentityAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.007"/>
+  <testcase name="testReferencedUserWithoutDefiningReferencedAttribute" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.008"/>
+  <testcase name="testUserSearchBaseSpecifiedButNoUserSearchScope" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.002"/>
+  <testcase name="testUserIdentityAndGroupMappingWithTransforms" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.007"/>
+  <testcase name="testSearchUsersWithGroupingNoGroupName" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.007"/>
+  <testcase name="testGroupSearchBaseSpecifiedButNoGroupObjectClass" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.003"/>
+  <testcase name="testSearchUsersAndGroupsNoMembership" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.008"/>
+  <testcase name="testInvalidUserSearchScope" classname="org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest" time="0.001"/>
+</testsuite>

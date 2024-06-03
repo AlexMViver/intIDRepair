@@ -1,0 +1,26 @@
+Transform the json into a txt with the qualified test names
+
+cat __results.json | jq -r 'to_entries[] | .key as $class | .value | keys[] | "\($class).\(.)"' > test_names.txt
+
+Remove all #
+
+sed -i 's/#/./g' test_names.txt
+awk '!a[$0]++' test_names.txt > test_names_uniq.txt
+
+Remove malformed results
+
+grep "\." test_names_uniq.txt > test_names_filtered.csv
+
+Count tests in common between file and dataset:
+
+All
+
+awk -F ',' 'NR==FNR{a[$1]; next} $4 in a' test_names_filtered.csv /home/alex/Desktop/dataset/Original/Tests.csv | wc -l
+
+OD
+
+awk -F ',' 'NR==FNR{a[$1]; next} $4 in a' test_names_filtered.csv /home/alex/Desktop/dataset/Original/Tests_OD_only.csv | wc -l
+
+NOD
+
+awk -F ',' 'NR==FNR{a[$1]; next} $4 in a' test_names_filtered.csv /home/alex/Desktop/dataset/Original/Tests_NOD_only.csv | wc -l

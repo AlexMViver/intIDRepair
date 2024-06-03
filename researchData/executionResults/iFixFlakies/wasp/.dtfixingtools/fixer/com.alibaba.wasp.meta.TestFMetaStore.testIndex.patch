@@ -1,0 +1,52 @@
+STATUS: CLEANER DOES NOT FIX
+MODIFIED: N/A
+MODIFIED FILE: N/A
+CLEANER: com.alibaba.wasp.client.TestFromClientSide.testExecute
+CLEANER FILE: /home/alex/Repositories/wasp/src/test/java/com/alibaba/wasp/client/TestFromClientSide.java
+POLLUTER: com.alibaba.wasp.meta.TestFMetaStore.testDropTable
+POLLUTER FILE: /home/alex/Repositories/wasp/src/test/java/com/alibaba/wasp/meta/TestFMetaStore.java
+ORIGINAL CLEANER SIZE: 7
+NEW CLEANER SIZE: 7
+ELAPSED TIME: 0.0
+==========================
+@@ -0,0 +0,40 @@
++ {
++     {
++         try {
++             WaspTestingUtility.adjustLogLevel();
++             TEST_UTIL.getConfiguration().setInt("wasp.client.retries.number", 3);
++             TEST_UTIL.startMiniCluster(3);
++             TableSchemaCacheReader.getInstance(TEST_UTIL.getConfiguration()).clearCache();
++             TEST_UTIL.createTable(TABLE);
++             TEST_UTIL.getWaspAdmin().disableTable(TABLE);
++             client = new FClient(TEST_UTIL.getConfiguration());
++             client.execute("create index " + INDEX_NAME + " on " + TABLE_NAME + "(column3);");
++             TEST_UTIL.getWaspAdmin().waitTableNotLocked(TABLE);
++             TEST_UTIL.getWaspAdmin().enableTable(TABLE);
++         } catch (Throwable ex) {
++         } finally {
++         }
++     }
++     {
++         try {
++         } catch (Throwable ex) {
++         } finally {
++         }
++     }
++     Pair<String, Pair<Boolean, List<ExecuteResult>>> pair = client.execute("select column1,column2,column3 from " + TABLE_NAME + " where column1=1 and column2=2", ReadModel.CURRENT, fetchSize);
++     sessionId = pair.getFirst();
++     assertTrue(pair.getSecond().getSecond().size() == 0);
++     {
++         try {
++         } catch (Throwable ex) {
++         } finally {
++         }
++     }
++     {
++         try {
++             TEST_UTIL.shutdownMiniCluster();
++         } catch (Throwable ex) {
++         } finally {
++         }
++     }
++ }

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.nifi.processors.kudu.TestPutKudu" time="1.662" tests="29" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-processor-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-socket-ssl/target/classes:/home/alex/.m2/repository/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-event-transport/target/classes:/home/alex/.m2/repository/io/netty/netty-handler/4.1.69.Final/netty-handler-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-common/4.1.69.Final/netty-common-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-resolver/4.1.69.Final/netty-resolver-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-buffer/4.1.69.Final/netty-buffer-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport/4.1.69.Final/netty-transport-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-codec/4.1.69.Final/netty-codec-4.1.69.Final.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-kerberos-credentials-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-kerberos-user-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api/target/classes:/home/alex/.m2/repository/org/apache/kudu/kudu-client/1.15.0/kudu-client-1.15.0.jar:/home/alex/.m2/repository/com/stumbleupon/async/1.4.1/async-1.4.1.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record-path/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/home/alex/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.1/caffeine-2.8.1.jar:/home/alex/.m2/repository/org/checkerframework/checker-qual/3.1.0/checker-qual-3.1.0.jar:/home/alex/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kerberos/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kerberos-api/target/classes:/home/alex/.m2/repository/org/apache/kudu/kudu-test-utils/1.15.0/kudu-test-utils-1.15.0.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-mock-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-mock/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-nar-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-authorization/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-client/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-security-utils/target/classes:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar:/home/alex/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.33/jersey-media-json-jackson-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.33/jersey-entity-filtering-2.33.jar:/home/alex/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.11.3/jackson-module-jaxb-annotations-2.11.3.jar:/home/alex/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/home/alex/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.33/jersey-hk2-2.33.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar:/home/alex/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar:/home/alex/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/alex/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.33/jersey-media-multipart-2.33.jar:/home/alex/.m2/repository/org/jvnet/mimepull/mimepull/1.9.13/mimepull-1.9.13.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-data-provenance-utils/target/classes:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/.m2/repository/org/apache/kudu/kudu-binary/1.15.0/kudu-binary-1.15.0-linux-x86_64.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors/target/surefire/surefirebooter7416257314936479117.jar /home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors/target/surefire 2024-05-02T03-59-05_264-jvmRun1 surefire36870240489085667tmp surefire_03924204093739908961tmp"/>
+    <property name="surefire.test.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors/target/test-classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors/target/classes:/home/alex/Repositories/nifi/nifi-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-processor-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-socket-ssl/target/classes:/home/alex/.m2/repository/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-event-transport/target/classes:/home/alex/.m2/repository/io/netty/netty-handler/4.1.69.Final/netty-handler-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-common/4.1.69.Final/netty-common-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-resolver/4.1.69.Final/netty-resolver-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-buffer/4.1.69.Final/netty-buffer-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-transport/4.1.69.Final/netty-transport-4.1.69.Final.jar:/home/alex/.m2/repository/io/netty/netty-codec/4.1.69.Final/netty-codec-4.1.69.Final.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-kerberos-credentials-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-kerberos-user-service-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-standard-services/nifi-record-serialization-service-api/target/classes:/home/alex/.m2/repository/org/apache/kudu/kudu-client/1.15.0/kudu-client-1.15.0.jar:/home/alex/.m2/repository/com/stumbleupon/async/1.4.1/async-1.4.1.jar:/home/alex/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-record-path/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-properties/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-property-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-uuid5/target/classes:/home/alex/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar:/home/alex/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.8.1/caffeine-2.8.1.jar:/home/alex/.m2/repository/org/checkerframework/checker-qual/3.1.0/checker-qual-3.1.0.jar:/home/alex/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/home/alex/.m2/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kerberos/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kerberos-api/target/classes:/home/alex/.m2/repository/org/apache/kudu/kudu-test-utils/1.15.0/kudu-test-utils-1.15.0.jar:/home/alex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/alex/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-extension-utils/nifi-record-utils/nifi-mock-record-utils/target/classes:/home/alex/Repositories/nifi/nifi-mock/target/classes:/home/alex/Repositories/nifi/nifi-framework-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-parameter/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core-api/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-nar-utils/target/classes:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/classes:/home/alex/.m2/repository/io/swagger/swagger-annotations/1.6.0/swagger-annotations-1.6.0.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-site-to-site-client/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-utils-api/target/classes:/home/alex/Repositories/nifi/nifi-commons/nifi-security-kms/target/classes:/home/alex/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.69/bcprov-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar:/home/alex/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.69/bcutil-jdk15on-1.69.jar:/home/alex/.m2/repository/at/favre/lib/bcrypt/0.9.0/bcrypt-0.9.0.jar:/home/alex/.m2/repository/at/favre/lib/bytes/1.3.0/bytes-1.3.0.jar:/home/alex/.m2/repository/org/apache/commons/commons-configuration2/2.7/commons-configuration2-2.7.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpasyncclient/4.1.4/httpasyncclient-4.1.4.jar:/home/alex/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.4.10/httpcore-nio-4.4.10.jar:/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-authorization/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-data-model/target/classes:/home/alex/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/alex/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-revision/nifi-registry-revision-entity-model/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-client/target/classes:/home/alex/Repositories/nifi/nifi-registry/nifi-registry-core/nifi-registry-security-utils/target/classes:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-client/2.33/jersey-client-2.33.jar:/home/alex/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.6/jakarta.ws.rs-api-2.1.6.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.6.1/jakarta.inject-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.33/jersey-media-json-jackson-2.33.jar:/home/alex/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.33/jersey-entity-filtering-2.33.jar:/home/alex/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.11.3/jackson-module-jaxb-annotations-2.11.3.jar:/home/alex/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar:/home/alex/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar:/home/alex/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.33/jersey-hk2-2.33.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-locator/2.6.1/hk2-locator-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.6.1/aopalliance-repackaged-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-api/2.6.1/hk2-api-2.6.1.jar:/home/alex/.m2/repository/org/glassfish/hk2/hk2-utils/2.6.1/hk2-utils-2.6.1.jar:/home/alex/.m2/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA.jar:/home/alex/.m2/repository/org/glassfish/jersey/core/jersey-common/2.33/jersey-common-2.33.jar:/home/alex/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/alex/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.3/osgi-resource-locator-1.0.3.jar:/home/alex/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.33/jersey-media-multipart-2.33.jar:/home/alex/.m2/repository/org/jvnet/mimepull/mimepull/1.9.13/mimepull-1.9.13.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-expression-language/target/classes:/home/alex/.m2/repository/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar:/home/alex/.m2/repository/net/minidev/json-smart/2.4.7/json-smart-2.4.7.jar:/home/alex/.m2/repository/net/minidev/accessors-smart/2.4.7/accessors-smart-2.4.7.jar:/home/alex/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/alex/.m2/repository/org/apache/commons/commons-text/1.8/commons-text-1.8.jar:/home/alex/Repositories/nifi/nifi-commons/nifi-data-provenance-utils/target/classes:/home/alex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/home/alex/.m2/repository/org/apache/kudu/kudu-binary/1.15.0/kudu-binary-1.15.0-linux-x86_64.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.2/junit-jupiter-api-5.7.2.jar:/home/alex/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/alex/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.2/junit-jupiter-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/platform/junit-platform-engine/1.7.2/junit-platform-engine-1.7.2.jar:/home/alex/.m2/repository/org/junit/vintage/junit-vintage-engine/5.7.2/junit-vintage-engine-5.7.2.jar:/home/alex/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.2/junit-jupiter-params-5.7.2.jar:/home/alex/.m2/repository/org/mockito/mockito-core/3.11.2/mockito-core-3.11.2.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy/1.11.3/byte-buddy-1.11.3.jar:/home/alex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.3/byte-buddy-agent-1.11.3.jar:/home/alex/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/alex/.m2/repository/org/mockito/mockito-junit-jupiter/3.11.2/mockito-junit-jupiter-3.11.2.jar:/home/alex/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy-test/2.5.14/groovy-test-2.5.14.jar:/home/alex/.m2/repository/org/codehaus/groovy/groovy/2.5.14/groovy-2.5.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alex"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors/target/surefire/surefirebooter7416257314936479117.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_402-8u402-ga-2ubuntu1~22.04-b06"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="alex"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alex/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_402"/>
+    <property name="user.dir" value="/home/alex/Repositories/nifi/nifi-nar-bundles/nifi-kudu-bundle/nifi-kudu-processors"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.402-b06"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testBuildPartialRowLowercaseFields" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.614"/>
+  <testcase name="testValidSchemaShouldBeSuccessful" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.282"/>
+  <testcase name="testAddingMissingFieldsWhenHandleSchemaDriftIsAllowed" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.047">
+    <system-err><![CDATA[[pool-3-thread-1] INFO org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=4785b15e-da87-4dc0-a62c-b87594dbda65] Adding 6 columns to table 'null' to handle schema drift
+]]></system-err>
+  </testcase>
+  <testcase name="testBuildPartialRowLowercaseFieldsFalse" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.002"/>
+  <testcase name="testBuildPartialRowNullable" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.001"/>
+  <testcase name="testBuildPartialRowWithDateDefaultTimeZone" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.037"/>
+  <testcase name="testBuildPartialRowLowercaseFieldsKuduUpperFail" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.002"/>
+  <testcase name="testCustomValidate" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.027"/>
+  <testcase name="testMissingColumnInReader" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.008">
+    <system-err><![CDATA[[pool-4-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=39e35276-2e80-4733-9352-9a129c7797b0] Failed to push FlowFile[0,testMissingColumnInReader-1714618747077,7B] to Kudu: java.lang.ArrayIndexOutOfBoundsException: 3
+java.lang.ArrayIndexOutOfBoundsException: 3
+	at org.apache.nifi.serialization.record.MockRecordParser$1.nextRecord(MockRecordParser.java:106)
+	at org.apache.nifi.serialization.RecordReader.nextRecord(RecordReader.java:50)
+	at org.apache.nifi.serialization.RecordReader$1.next(RecordReader.java:96)
+	at org.apache.nifi.processors.kudu.PutKudu.processRecords(PutKudu.java:432)
+	at org.apache.nifi.processors.kudu.PutKudu.processFlowFiles(PutKudu.java:372)
+	at org.apache.nifi.processors.kudu.PutKudu.lambda$onTrigger$0(PutKudu.java:351)
+	at org.apache.nifi.processors.kudu.MockPutKudu.executeOnKuduClient(MockPutKudu.java:140)
+	at org.apache.nifi.processors.kudu.PutKudu.onTrigger(PutKudu.java:351)
+	at org.apache.nifi.processor.AbstractProcessor.onTrigger(AbstractProcessor.java:27)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+[pool-4-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=39e35276-2e80-4733-9352-9a129c7797b0] Failed to write due to java.lang.ArrayIndexOutOfBoundsException: 3: java.lang.ArrayIndexOutOfBoundsException: 3
+java.lang.ArrayIndexOutOfBoundsException: 3
+	at org.apache.nifi.serialization.record.MockRecordParser$1.nextRecord(MockRecordParser.java:106)
+	at org.apache.nifi.serialization.RecordReader.nextRecord(RecordReader.java:50)
+	at org.apache.nifi.serialization.RecordReader$1.next(RecordReader.java:96)
+	at org.apache.nifi.processors.kudu.PutKudu.processRecords(PutKudu.java:432)
+	at org.apache.nifi.processors.kudu.PutKudu.processFlowFiles(PutKudu.java:372)
+	at org.apache.nifi.processors.kudu.PutKudu.lambda$onTrigger$0(PutKudu.java:351)
+	at org.apache.nifi.processors.kudu.MockPutKudu.executeOnKuduClient(MockPutKudu.java:140)
+	at org.apache.nifi.processors.kudu.PutKudu.onTrigger(PutKudu.java:351)
+	at org.apache.nifi.processor.AbstractProcessor.onTrigger(AbstractProcessor.java:27)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+]]></system-err>
+  </testcase>
+  <testcase name="testKuduPartialFailuresOnAutoFlushBackground" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.247">
+    <system-err><![CDATA[[pool-5-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=c1b78ba1-f357-456e-94f2-93eb968f616d] Failed to write due to Mock for RowError, hashCode: 926995585
+[pool-5-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=c1b78ba1-f357-456e-94f2-93eb968f616d] Failed to write due to Mock for RowError, hashCode: 416564960
+[pool-5-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=c1b78ba1-f357-456e-94f2-93eb968f616d] Failed to push FlowFile[3,99167145845851.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1355688784
+[pool-5-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=c1b78ba1-f357-456e-94f2-93eb968f616d] Failed to write due to Mock for KuduException, hashCode: 1355688784: Mock for KuduException, hashCode: 1355688784
+[pool-6-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e520a663-f8cc-4bce-84c5-6346cccabd83] Failed to write due to Mock for RowError, hashCode: 1441517772
+[pool-6-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e520a663-f8cc-4bce-84c5-6346cccabd83] Failed to write due to Mock for RowError, hashCode: 1652113727
+[pool-6-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e520a663-f8cc-4bce-84c5-6346cccabd83] Failed to push FlowFile[3,99167163534092.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 678737321
+[pool-6-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e520a663-f8cc-4bce-84c5-6346cccabd83] Failed to write due to Mock for KuduException, hashCode: 678737321: Mock for KuduException, hashCode: 678737321
+[pool-7-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=afd56bac-a8e0-48c8-b14d-f272d4473957] Failed to write due to Mock for RowError, hashCode: 1362494475
+[pool-7-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=afd56bac-a8e0-48c8-b14d-f272d4473957] Failed to write due to Mock for RowError, hashCode: 1569554088
+[pool-7-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=afd56bac-a8e0-48c8-b14d-f272d4473957] Failed to push FlowFile[3,99167175136097.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 964034820
+[pool-7-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=afd56bac-a8e0-48c8-b14d-f272d4473957] Failed to write due to Mock for KuduException, hashCode: 964034820: Mock for KuduException, hashCode: 964034820
+[pool-8-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=62e145df-476d-427d-baee-7459e0c2194c] Failed to push FlowFile[3,99167185494597.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1660908872
+[pool-8-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=62e145df-476d-427d-baee-7459e0c2194c] Failed to write due to Mock for RowError, hashCode: 1855671606
+[pool-8-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=62e145df-476d-427d-baee-7459e0c2194c] Failed to write due to Mock for RowError, hashCode: 853239805
+[pool-8-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=62e145df-476d-427d-baee-7459e0c2194c] Failed to write due to Mock for KuduException, hashCode: 1660908872: Mock for KuduException, hashCode: 1660908872
+[pool-9-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=232dc351-979d-4a23-ac0e-fef78cd92b28] Failed to push FlowFile[3,99167194431757.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 644734443
+[pool-9-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=232dc351-979d-4a23-ac0e-fef78cd92b28] Failed to write due to Mock for RowError, hashCode: 95371937
+[pool-9-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=232dc351-979d-4a23-ac0e-fef78cd92b28] Failed to write due to Mock for RowError, hashCode: 261190066
+[pool-9-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=232dc351-979d-4a23-ac0e-fef78cd92b28] Failed to write due to Mock for KuduException, hashCode: 644734443: Mock for KuduException, hashCode: 644734443
+[pool-10-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e2a56320-f034-41f4-83b2-112104663237] Failed to push FlowFile[3,99167202118804.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1513344589
+[pool-10-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e2a56320-f034-41f4-83b2-112104663237] Failed to write due to Mock for RowError, hashCode: 1110707764
+[pool-10-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e2a56320-f034-41f4-83b2-112104663237] Failed to write due to Mock for RowError, hashCode: 752111066
+[pool-10-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e2a56320-f034-41f4-83b2-112104663237] Failed to write due to Mock for KuduException, hashCode: 1513344589: Mock for KuduException, hashCode: 1513344589
+[pool-11-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=9139c766-5b7f-4b8a-aebf-d1584e277c43] Failed to push FlowFile[3,99167209952674.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 329371782
+[pool-11-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=9139c766-5b7f-4b8a-aebf-d1584e277c43] Failed to write due to Mock for RowError, hashCode: 671681696
+[pool-11-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=9139c766-5b7f-4b8a-aebf-d1584e277c43] Failed to write due to Mock for RowError, hashCode: 46985805
+[pool-11-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=9139c766-5b7f-4b8a-aebf-d1584e277c43] Failed to write due to Mock for KuduException, hashCode: 329371782: Mock for KuduException, hashCode: 329371782
+[pool-12-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=ee5b0ff4-648e-423d-8e82-8dc9494a91bd] Failed to push FlowFile[3,99167217580018.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1171602311
+[pool-12-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=ee5b0ff4-648e-423d-8e82-8dc9494a91bd] Failed to write due to Mock for RowError, hashCode: 2101588769
+[pool-12-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=ee5b0ff4-648e-423d-8e82-8dc9494a91bd] Failed to write due to Mock for RowError, hashCode: 2039177094
+[pool-12-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=ee5b0ff4-648e-423d-8e82-8dc9494a91bd] Failed to write due to Mock for KuduException, hashCode: 1171602311: Mock for KuduException, hashCode: 1171602311
+[pool-13-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=6871f014-2ad4-43cd-84e8-457b699b1ab4] Failed to push FlowFile[3,99167226706011.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1773929376
+[pool-13-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=6871f014-2ad4-43cd-84e8-457b699b1ab4] Failed to write due to Mock for RowError, hashCode: 1474895786
+[pool-13-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=6871f014-2ad4-43cd-84e8-457b699b1ab4] Failed to write due to Mock for RowError, hashCode: 35668281
+[pool-13-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=6871f014-2ad4-43cd-84e8-457b699b1ab4] Failed to write due to Mock for KuduException, hashCode: 1773929376: Mock for KuduException, hashCode: 1773929376
+[pool-14-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=9ef6bf44-8a3f-469c-942d-4d67dc40bec2] Failed to push FlowFile[3,99167236883430.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1922268292
+[pool-14-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=9ef6bf44-8a3f-469c-942d-4d67dc40bec2] Failed to write due to Mock for RowError, hashCode: 1631338674
+[pool-14-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=9ef6bf44-8a3f-469c-942d-4d67dc40bec2] Failed to write due to Mock for RowError, hashCode: 1535896590
+[pool-14-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=9ef6bf44-8a3f-469c-942d-4d67dc40bec2] Failed to write due to Mock for KuduException, hashCode: 1922268292: Mock for KuduException, hashCode: 1922268292
+[pool-15-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=378d7eaf-fb89-44db-8c8d-8ef6e139e414] Failed to push FlowFile[3,99167246988315.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 38277430
+[pool-15-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=378d7eaf-fb89-44db-8c8d-8ef6e139e414] Failed to write due to Mock for RowError, hashCode: 1425918604
+[pool-15-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=378d7eaf-fb89-44db-8c8d-8ef6e139e414] Failed to write due to Mock for RowError, hashCode: 434205923
+[pool-15-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=378d7eaf-fb89-44db-8c8d-8ef6e139e414] Failed to write due to Mock for KuduException, hashCode: 38277430: Mock for KuduException, hashCode: 38277430
+]]></system-err>
+  </testcase>
+  <testcase name="testBuildPartialRowLowercaseFieldsKuduUpper" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.002"/>
+  <testcase name="testDeleteFlowFiles" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.107"/>
+  <testcase name="testBuildRow" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.001"/>
+  <testcase name="testBuildPartialRowWithDate" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.002"/>
+  <testcase name="testInsecureClient" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.004"/>
+  <testcase name="testUpdateFlowFiles" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.041"/>
+  <testcase name="testBuildPartialRowNullPrimaryKey" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.001"/>
+  <testcase name="testBuildPartialRowWithDateString" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.001"/>
+  <testcase name="testReadAsStringAndWriteAsInt" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.003"/>
+  <testcase name="testBuildPartialRowNotNullable" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.001"/>
+  <testcase name="testUpsertFlowFiles" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.044"/>
+  <testcase name="testKuduPartialFailuresOnManualFlush" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.073">
+    <system-err><![CDATA[[pool-22-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=433ebea0-c769-4eb7-b042-f97aad76e4cf] Failed to write due to Mock for RowError, hashCode: 352733425
+[pool-22-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=433ebea0-c769-4eb7-b042-f97aad76e4cf] Failed to write due to Mock for RowError, hashCode: 1965668286
+[pool-22-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=433ebea0-c769-4eb7-b042-f97aad76e4cf] Failed to push FlowFile[3,99167463454424.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 391943058
+[pool-22-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=433ebea0-c769-4eb7-b042-f97aad76e4cf] Failed to write due to Mock for KuduException, hashCode: 391943058: Mock for KuduException, hashCode: 391943058
+[pool-23-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e91b7a15-72bb-4dd1-9b6b-5a8389af2bd5] Failed to write due to Mock for RowError, hashCode: 191491496
+[pool-23-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e91b7a15-72bb-4dd1-9b6b-5a8389af2bd5] Failed to write due to Mock for RowError, hashCode: 1532136848
+[pool-23-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e91b7a15-72bb-4dd1-9b6b-5a8389af2bd5] Failed to push FlowFile[3,99167471075135.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1684946182
+[pool-23-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e91b7a15-72bb-4dd1-9b6b-5a8389af2bd5] Failed to write due to Mock for KuduException, hashCode: 1684946182: Mock for KuduException, hashCode: 1684946182
+[pool-24-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e7415711-99cb-4a17-834f-39243f3d50cb] Failed to write due to Mock for RowError, hashCode: 981616398
+[pool-24-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e7415711-99cb-4a17-834f-39243f3d50cb] Failed to write due to Mock for RowError, hashCode: 218135527
+[pool-24-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e7415711-99cb-4a17-834f-39243f3d50cb] Failed to push FlowFile[3,99167478697298.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1278977022
+[pool-24-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e7415711-99cb-4a17-834f-39243f3d50cb] Failed to write due to Mock for KuduException, hashCode: 1278977022: Mock for KuduException, hashCode: 1278977022
+[pool-25-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=c44af7b7-6493-433a-8833-fe9920a26777] Failed to push FlowFile[3,99167486498440.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1314539448
+[pool-25-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=c44af7b7-6493-433a-8833-fe9920a26777] Failed to write due to Mock for RowError, hashCode: 1149448603
+[pool-25-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=c44af7b7-6493-433a-8833-fe9920a26777] Failed to write due to Mock for RowError, hashCode: 1808247338
+[pool-25-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=c44af7b7-6493-433a-8833-fe9920a26777] Failed to write due to Mock for KuduException, hashCode: 1314539448: Mock for KuduException, hashCode: 1314539448
+[pool-26-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=531028b8-81b4-456e-bfd2-48909e070dac] Failed to push FlowFile[3,99167492612710.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 60974247
+[pool-26-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=531028b8-81b4-456e-bfd2-48909e070dac] Failed to write due to Mock for RowError, hashCode: 1617706302
+[pool-26-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=531028b8-81b4-456e-bfd2-48909e070dac] Failed to write due to Mock for RowError, hashCode: 717068907
+[pool-26-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=531028b8-81b4-456e-bfd2-48909e070dac] Failed to write due to Mock for KuduException, hashCode: 60974247: Mock for KuduException, hashCode: 60974247
+[pool-27-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=bbfa490d-cf8c-4e52-98dd-f0b7a62a3f4c] Failed to push FlowFile[3,99167497730348.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 998387791
+[pool-27-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=bbfa490d-cf8c-4e52-98dd-f0b7a62a3f4c] Failed to write due to Mock for RowError, hashCode: 251047165
+[pool-27-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=bbfa490d-cf8c-4e52-98dd-f0b7a62a3f4c] Failed to write due to Mock for RowError, hashCode: 1368255778
+[pool-27-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=bbfa490d-cf8c-4e52-98dd-f0b7a62a3f4c] Failed to write due to Mock for KuduException, hashCode: 998387791: Mock for KuduException, hashCode: 998387791
+[pool-28-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=547e1758-2a86-44d6-9cd0-47a1e3076563] Failed to push FlowFile[3,99167502947614.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1503714730
+[pool-28-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=547e1758-2a86-44d6-9cd0-47a1e3076563] Failed to write due to Mock for RowError, hashCode: 639425577
+[pool-28-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=547e1758-2a86-44d6-9cd0-47a1e3076563] Failed to write due to Mock for RowError, hashCode: 156062068
+[pool-28-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=547e1758-2a86-44d6-9cd0-47a1e3076563] Failed to write due to Mock for KuduException, hashCode: 1503714730: Mock for KuduException, hashCode: 1503714730
+[pool-29-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e2165f59-86ec-4bca-894c-e703b1b10766] Failed to push FlowFile[3,99167509284426.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1376120395
+[pool-29-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e2165f59-86ec-4bca-894c-e703b1b10766] Failed to write due to Mock for RowError, hashCode: 149580128
+[pool-29-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e2165f59-86ec-4bca-894c-e703b1b10766] Failed to write due to Mock for RowError, hashCode: 1709514143
+[pool-29-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e2165f59-86ec-4bca-894c-e703b1b10766] Failed to write due to Mock for KuduException, hashCode: 1376120395: Mock for KuduException, hashCode: 1376120395
+[pool-30-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=56aeb33c-122d-471d-92de-206973cb1743] Failed to push FlowFile[3,99167516420410.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 138170549
+[pool-30-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=56aeb33c-122d-471d-92de-206973cb1743] Failed to write due to Mock for RowError, hashCode: 1832033807
+[pool-30-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=56aeb33c-122d-471d-92de-206973cb1743] Failed to write due to Mock for RowError, hashCode: 320128947
+[pool-30-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=56aeb33c-122d-471d-92de-206973cb1743] Failed to write due to Mock for KuduException, hashCode: 138170549: Mock for KuduException, hashCode: 138170549
+[pool-31-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=1ff88a34-833f-4434-8fb5-957739774763] Failed to push FlowFile[3,99167523099615.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 33248968
+[pool-31-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=1ff88a34-833f-4434-8fb5-957739774763] Failed to write due to Mock for RowError, hashCode: 270168311
+[pool-31-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=1ff88a34-833f-4434-8fb5-957739774763] Failed to write due to Mock for RowError, hashCode: 859670503
+[pool-31-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=1ff88a34-833f-4434-8fb5-957739774763] Failed to write due to Mock for KuduException, hashCode: 33248968: Mock for KuduException, hashCode: 33248968
+[pool-32-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=12f0ed5b-ed03-4d86-8a20-795dd1387279] Failed to push FlowFile[3,99167529645461.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 575760254
+[pool-32-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=12f0ed5b-ed03-4d86-8a20-795dd1387279] Failed to write due to Mock for RowError, hashCode: 1897455717
+[pool-32-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=12f0ed5b-ed03-4d86-8a20-795dd1387279] Failed to write due to Mock for RowError, hashCode: 53549636
+[pool-32-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=12f0ed5b-ed03-4d86-8a20-795dd1387279] Failed to write due to Mock for KuduException, hashCode: 575760254: Mock for KuduException, hashCode: 575760254
+]]></system-err>
+  </testcase>
+  <testcase name="testInsertManyFlowFiles" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.01"/>
+  <testcase name="testKerberosEnabled" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.003"/>
+  <testcase name="testBuildPartialRowVarCharTooLong" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.001"/>
+  <testcase name="testMalformedRecordExceptionFromReaderShouldRouteToFailure" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.018">
+    <system-err><![CDATA[[pool-36-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=0f1ba596-6c8d-4d5c-9cb4-634570a79c0d] Failed to push FlowFile[0,testMalformedRecordExceptionShouldRouteToFailure-1714618747643,7B] to Kudu: java.lang.NullPointerException
+java.lang.NullPointerException
+	at org.apache.nifi.processors.kudu.PutKudu.processRecords(PutKudu.java:432)
+	at org.apache.nifi.processors.kudu.PutKudu.processFlowFiles(PutKudu.java:372)
+	at org.apache.nifi.processors.kudu.PutKudu.lambda$onTrigger$0(PutKudu.java:351)
+	at org.apache.nifi.processors.kudu.MockPutKudu.executeOnKuduClient(MockPutKudu.java:140)
+	at org.apache.nifi.processors.kudu.PutKudu.onTrigger(PutKudu.java:351)
+	at org.apache.nifi.processor.AbstractProcessor.onTrigger(AbstractProcessor.java:27)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+[pool-36-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=0f1ba596-6c8d-4d5c-9cb4-634570a79c0d] Failed to write due to java.lang.NullPointerException: java.lang.NullPointerException
+java.lang.NullPointerException
+	at org.apache.nifi.processors.kudu.PutKudu.processRecords(PutKudu.java:432)
+	at org.apache.nifi.processors.kudu.PutKudu.processFlowFiles(PutKudu.java:372)
+	at org.apache.nifi.processors.kudu.PutKudu.lambda$onTrigger$0(PutKudu.java:351)
+	at org.apache.nifi.processors.kudu.MockPutKudu.executeOnKuduClient(MockPutKudu.java:140)
+	at org.apache.nifi.processors.kudu.PutKudu.onTrigger(PutKudu.java:351)
+	at org.apache.nifi.processor.AbstractProcessor.onTrigger(AbstractProcessor.java:27)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+]]></system-err>
+  </testcase>
+  <testcase name="testInvalidReaderShouldRouteToFailure" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.005">
+    <system-err><![CDATA[[pool-37-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=4cc9d1b1-dfa7-4a96-bca2-44aa731f5716] Failed to push FlowFile[0,testInvalidAvroShouldRouteToFailure-1714618747648,7B] to Kudu: java.io.IOException: NOT AVRO
+java.io.IOException: NOT AVRO
+	at org.apache.nifi.processors.kudu.PutKudu.processRecords(PutKudu.java:413)
+	at org.apache.nifi.processors.kudu.PutKudu.processFlowFiles(PutKudu.java:372)
+	at org.apache.nifi.processors.kudu.PutKudu.lambda$onTrigger$0(PutKudu.java:351)
+	at org.apache.nifi.processors.kudu.MockPutKudu.executeOnKuduClient(MockPutKudu.java:140)
+	at org.apache.nifi.processors.kudu.PutKudu.onTrigger(PutKudu.java:351)
+	at org.apache.nifi.processor.AbstractProcessor.onTrigger(AbstractProcessor.java:27)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+[pool-37-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=4cc9d1b1-dfa7-4a96-bca2-44aa731f5716] Failed to write due to java.io.IOException: NOT AVRO: java.io.IOException: NOT AVRO
+java.io.IOException: NOT AVRO
+	at org.apache.nifi.processors.kudu.PutKudu.processRecords(PutKudu.java:413)
+	at org.apache.nifi.processors.kudu.PutKudu.processFlowFiles(PutKudu.java:372)
+	at org.apache.nifi.processors.kudu.PutKudu.lambda$onTrigger$0(PutKudu.java:351)
+	at org.apache.nifi.processors.kudu.MockPutKudu.executeOnKuduClient(MockPutKudu.java:140)
+	at org.apache.nifi.processors.kudu.PutKudu.onTrigger(PutKudu.java:351)
+	at org.apache.nifi.processor.AbstractProcessor.onTrigger(AbstractProcessor.java:27)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:284)
+	at org.apache.nifi.util.StandardProcessorTestRunner$RunProcessor.call(StandardProcessorTestRunner.java:278)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+]]></system-err>
+  </testcase>
+  <testcase name="testWriteKuduWithDefaults" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.011"/>
+  <testcase name="testKuduPartialFailuresOnAutoFlushSync" classname="org.apache.nifi.processors.kudu.TestPutKudu" time="0.051">
+    <system-err><![CDATA[[pool-39-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=10a81acd-58e6-4c67-a85a-383ca81b04a6] Failed to write due to Mock for RowError, hashCode: 2020372770
+[pool-39-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=10a81acd-58e6-4c67-a85a-383ca81b04a6] Failed to write due to Mock for RowError, hashCode: 54336073
+[pool-39-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=10a81acd-58e6-4c67-a85a-383ca81b04a6] Failed to push FlowFile[3,99167584919766.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 741364963
+[pool-39-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=10a81acd-58e6-4c67-a85a-383ca81b04a6] Failed to write due to Mock for KuduException, hashCode: 741364963: Mock for KuduException, hashCode: 741364963
+[pool-40-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=1eee2535-e24c-44c0-af03-f8fad4355441] Failed to write due to Mock for RowError, hashCode: 1000217271
+[pool-40-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=1eee2535-e24c-44c0-af03-f8fad4355441] Failed to write due to Mock for RowError, hashCode: 358526293
+[pool-40-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=1eee2535-e24c-44c0-af03-f8fad4355441] Failed to push FlowFile[3,99167590890883.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1048444083
+[pool-40-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=1eee2535-e24c-44c0-af03-f8fad4355441] Failed to write due to Mock for KuduException, hashCode: 1048444083: Mock for KuduException, hashCode: 1048444083
+[pool-41-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=4fb879ef-a6fc-449d-b7ad-2da93fb57634] Failed to write due to Mock for RowError, hashCode: 829179812
+[pool-41-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=4fb879ef-a6fc-449d-b7ad-2da93fb57634] Failed to write due to Mock for RowError, hashCode: 1625509957
+[pool-41-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=4fb879ef-a6fc-449d-b7ad-2da93fb57634] Failed to push FlowFile[3,99167596609503.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1102946641
+[pool-41-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=4fb879ef-a6fc-449d-b7ad-2da93fb57634] Failed to write due to Mock for KuduException, hashCode: 1102946641: Mock for KuduException, hashCode: 1102946641
+[pool-42-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=b5c18dad-c21a-41d9-a2bd-a860b626c5ee] Failed to push FlowFile[3,99167601189934.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1883709832
+[pool-42-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=b5c18dad-c21a-41d9-a2bd-a860b626c5ee] Failed to write due to Mock for RowError, hashCode: 1177594173
+[pool-42-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=b5c18dad-c21a-41d9-a2bd-a860b626c5ee] Failed to write due to Mock for RowError, hashCode: 66789102
+[pool-42-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=b5c18dad-c21a-41d9-a2bd-a860b626c5ee] Failed to write due to Mock for KuduException, hashCode: 1883709832: Mock for KuduException, hashCode: 1883709832
+[pool-43-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=279750ba-1dab-4113-8daf-290537089122] Failed to push FlowFile[3,99167605237655.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 133714227
+[pool-43-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=279750ba-1dab-4113-8daf-290537089122] Failed to write due to Mock for RowError, hashCode: 505289491
+[pool-43-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=279750ba-1dab-4113-8daf-290537089122] Failed to write due to Mock for RowError, hashCode: 2077736957
+[pool-43-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=279750ba-1dab-4113-8daf-290537089122] Failed to write due to Mock for KuduException, hashCode: 133714227: Mock for KuduException, hashCode: 133714227
+[pool-44-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=91318213-b8f5-4f7d-aac5-3d4f508efafa] Failed to push FlowFile[3,99167609383738.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1379688457
+[pool-44-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=91318213-b8f5-4f7d-aac5-3d4f508efafa] Failed to write due to Mock for RowError, hashCode: 245676947
+[pool-44-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=91318213-b8f5-4f7d-aac5-3d4f508efafa] Failed to write due to Mock for RowError, hashCode: 400133199
+[pool-44-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=91318213-b8f5-4f7d-aac5-3d4f508efafa] Failed to write due to Mock for KuduException, hashCode: 1379688457: Mock for KuduException, hashCode: 1379688457
+[pool-45-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=82879842-d81e-454c-9343-7b4ca0157b09] Failed to push FlowFile[3,99167613907744.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 1213499916
+[pool-45-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=82879842-d81e-454c-9343-7b4ca0157b09] Failed to write due to Mock for RowError, hashCode: 1628934030
+[pool-45-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=82879842-d81e-454c-9343-7b4ca0157b09] Failed to write due to Mock for RowError, hashCode: 1079583889
+[pool-45-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=82879842-d81e-454c-9343-7b4ca0157b09] Failed to write due to Mock for KuduException, hashCode: 1213499916: Mock for KuduException, hashCode: 1213499916
+[pool-46-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=324ecceb-d933-4dd4-a103-0ebe945b5e0a] Failed to push FlowFile[3,99167617978068.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 49018649
+[pool-46-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=324ecceb-d933-4dd4-a103-0ebe945b5e0a] Failed to write due to Mock for RowError, hashCode: 1211032867
+[pool-46-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=324ecceb-d933-4dd4-a103-0ebe945b5e0a] Failed to write due to Mock for RowError, hashCode: 337172508
+[pool-46-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=324ecceb-d933-4dd4-a103-0ebe945b5e0a] Failed to write due to Mock for KuduException, hashCode: 49018649: Mock for KuduException, hashCode: 49018649
+[pool-47-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=b8e06994-2814-4716-bfd9-8dff7f390121] Failed to push FlowFile[3,99167621853115.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 660798262
+[pool-47-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=b8e06994-2814-4716-bfd9-8dff7f390121] Failed to write due to Mock for RowError, hashCode: 932886764
+[pool-47-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=b8e06994-2814-4716-bfd9-8dff7f390121] Failed to write due to Mock for RowError, hashCode: 819969530
+[pool-47-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=b8e06994-2814-4716-bfd9-8dff7f390121] Failed to write due to Mock for KuduException, hashCode: 660798262: Mock for KuduException, hashCode: 660798262
+[pool-48-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=064dd0d9-2e90-4ad7-b878-cbb45f67da3f] Failed to push FlowFile[3,99167625626341.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 747187094
+[pool-48-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=064dd0d9-2e90-4ad7-b878-cbb45f67da3f] Failed to write due to Mock for RowError, hashCode: 829149895
+[pool-48-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=064dd0d9-2e90-4ad7-b878-cbb45f67da3f] Failed to write due to Mock for RowError, hashCode: 1355564432
+[pool-48-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=064dd0d9-2e90-4ad7-b878-cbb45f67da3f] Failed to write due to Mock for KuduException, hashCode: 747187094: Mock for KuduException, hashCode: 747187094
+[pool-49-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e76391b4-aea2-4ca9-99bc-2bbb679aa4f6] Failed to push FlowFile[3,99167629612365.mockFlowFile,0B] to Kudu: Mock for KuduException, hashCode: 201568697
+[pool-49-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e76391b4-aea2-4ca9-99bc-2bbb679aa4f6] Failed to write due to Mock for RowError, hashCode: 1305427114
+[pool-49-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e76391b4-aea2-4ca9-99bc-2bbb679aa4f6] Failed to write due to Mock for RowError, hashCode: 1426460659
+[pool-49-thread-1] ERROR org.apache.nifi.processors.kudu.MockPutKudu - MockPutKudu[id=e76391b4-aea2-4ca9-99bc-2bbb679aa4f6] Failed to write due to Mock for KuduException, hashCode: 201568697: Mock for KuduException, hashCode: 201568697
+]]></system-err>
+  </testcase>
+</testsuite>
